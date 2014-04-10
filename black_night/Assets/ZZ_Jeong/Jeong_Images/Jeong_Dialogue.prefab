@@ -1,0 +1,237 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: Jeong_Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: a4e5b8a6742ce634d9801d9d6eb23e0d, type: 2}
+  sprites:
+  - name: dialogue
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 1808
+      width: 1449
+      height: 240
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 1808
+      width: 1449
+      height: 240
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: check
+    outer:
+      serializedVersion: 2
+      x: 1717
+      y: 1893
+      width: 39
+      height: 35
+    inner:
+      serializedVersion: 2
+      x: 1717
+      y: 1893
+      width: 39
+      height: 35
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: littleprince
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 831
+      width: 256
+      height: 292
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 831
+      width: 256
+      height: 292
+    rotated: 0
+    paddingLeft: .01953125
+    paddingRight: .00390625
+    paddingTop: .01369863
+    paddingBottom: 0
+  - name: prince
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 1124
+      width: 422
+      height: 683
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 1124
+      width: 422
+      height: 683
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: select_back
+    outer:
+      serializedVersion: 2
+      x: 423
+      y: 967
+      width: 752
+      height: 228
+    inner:
+      serializedVersion: 2
+      x: 423
+      y: 967
+      width: 752
+      height: 228
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: select
+    outer:
+      serializedVersion: 2
+      x: 1717
+      y: 1929
+      width: 172
+      height: 119
+    inner:
+      serializedVersion: 2
+      x: 1717
+      y: 1929
+      width: 172
+      height: 119
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: dialog
+    outer:
+      serializedVersion: 2
+      x: 423
+      y: 1407
+      width: 1043
+      height: 189
+    inner:
+      serializedVersion: 2
+      x: 423
+      y: 1407
+      width: 1043
+      height: 189
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: dialog-box
+    outer:
+      serializedVersion: 2
+      x: 423
+      y: 1597
+      width: 1202
+      height: 210
+    inner:
+      serializedVersion: 2
+      x: 423
+      y: 1597
+      width: 1202
+      height: 210
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: "_0000_\uB808\uC774\uC5B4-1-\uC0AC\uBCF8"
+    outer:
+      serializedVersion: 2
+      x: 1450
+      y: 1838
+      width: 266
+      height: 210
+    inner:
+      serializedVersion: 2
+      x: 1450
+      y: 1838
+      width: 266
+      height: 210
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: "_0001_\uB808\uC774\uC5B4-1-\uC0AC\uBCF8-2"
+    outer:
+      serializedVersion: 2
+      x: 423
+      y: 1196
+      width: 918
+      height: 210
+    inner:
+      serializedVersion: 2
+      x: 423
+      y: 1196
+      width: 918
+      height: 210
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

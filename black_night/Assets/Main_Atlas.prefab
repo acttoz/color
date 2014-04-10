@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: Main_Atlas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 6109b88443c7bcc429e64d24864b836d, type: 2}
+  sprites:
+  - name: main
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 1336
+      width: 1142
+      height: 712
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 1336
+      width: 1142
+      height: 712
+    rotated: 0
+    paddingLeft: .0359019265
+    paddingRight: .084938705
+    paddingTop: .0898876414
+    paddingBottom: .0337078646
+  - name: ci
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 1216
+      width: 1223
+      height: 119
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 1216
+      width: 1223
+      height: 119
+    rotated: 0
+    paddingLeft: .0228945222
+    paddingRight: .0237121824
+    paddingTop: .59663868
+    paddingBottom: .630252123
+  - name: "_0001_\uC7A5\uBBF8-\uB208"
+    outer:
+      serializedVersion: 2
+      x: 1143
+      y: 2037
+      width: 45
+      height: 11
+    inner:
+      serializedVersion: 2
+      x: 1143
+      y: 2037
+      width: 45
+      height: 11
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: "_0000_\uC655\uC790-\uB208"
+    outer:
+      serializedVersion: 2
+      x: 1143
+      y: 2025
+      width: 41
+      height: 11
+    inner:
+      serializedVersion: 2
+      x: 1143
+      y: 2025
+      width: 41
+      height: 11
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1
