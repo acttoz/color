@@ -6,7 +6,7 @@ public class src_balloon : MonoBehaviour
 		Animator anim;
 //		public AudioClip itemSound;
 		bool exist = false;
-		public GameObject GAMEMANAGER, pop, item;
+		public GameObject GAMEMANAGER, item;
 		public GameObject[] effects = new GameObject[3];
 		public Sprite   balloon;
 		bool isUndead = false;
@@ -65,17 +65,19 @@ public class src_balloon : MonoBehaviour
 		{
 				monster = temp;
 				isMonster = true;
+				Debug.Log ("isMOnstedr");
 		}
 
 		void offMonster ()
 		{
+				Debug.Log ("!ismonster");
 				isMonster = false;
 		}
 
 		void OnTriggerEnter (Collider myTrigger)
 		{
 				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && !isMonster) {
-						
+						Debug.Log ("!ismonster");
 						exist = false;
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);
 						
@@ -85,13 +87,18 @@ public class src_balloon : MonoBehaviour
 						Debug.Log (" ");
 						if (monster.Equals ("b")) {
 								Instantiate (effects [0], transform.position, Quaternion.identity);
-								Debug.Log (" ");
 								GetComponent<SpriteRenderer> ().sprite = balloon;
 								Destroy (GameObject.FindGameObjectWithTag ("monster"));
 						}
 						if (monster.Equals ("o")) {
+								Instantiate (effects [1], transform.position, Quaternion.identity);
+								GetComponent<SpriteRenderer> ().sprite = balloon;
+								Destroy (GameObject.FindGameObjectWithTag ("monster"));
 						}
 						if (monster.Equals ("p")) {
+								Instantiate (effects [2], transform.position, Quaternion.identity);
+								GetComponent<SpriteRenderer> ().sprite = balloon;
+								Destroy (GameObject.FindGameObjectWithTag ("monster"));
 						}
 			
 			

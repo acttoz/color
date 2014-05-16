@@ -19,8 +19,6 @@ public class scr_monParent : MonoBehaviour
 		{
 				float step = speed * Time.deltaTime;
 				transform.position = Vector3.MoveTowards (transform.position, oBalloon.transform.position, step);
-		
-
 		}
 
 		void countDown ()
@@ -33,7 +31,7 @@ public class scr_monParent : MonoBehaviour
 		{
 				oBalloon.SendMessage ("onMonster", monster);
 				yield return new WaitForSeconds (3f);
-				oBalloon.SendMessage ("offMonster");
+//				oBalloon.SendMessage ("offMonster");
 		}
 }
 

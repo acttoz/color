@@ -4,7 +4,6 @@ using System.Collections;
 public class scr_monster : MonoBehaviour
 {
 		public string monsterColor;
-		public float speed;
 		// Use this for initialization
 		void Start ()
 		{
