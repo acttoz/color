@@ -115,6 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBoss: 0
+  sprite:
+  - {fileID: 21300000, guid: 0b976426b111f65439f2ae9f500e9d04, type: 3}
+  - {fileID: 21300000, guid: e190de9804b8fd54da9b21a8999ae5e0, type: 3}
+  - {fileID: 21300000, guid: 8fc7e44285acc8a43a7b3f57a3a62d0f, type: 3}
   speed: 2
   increaseRate: .5
 --- !u!135 &13500000
@@ -150,7 +154,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -4
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 9c6a4a812a9e7c44db3980e37e8d4db0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 452d465d233995d47852e931a40e0813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

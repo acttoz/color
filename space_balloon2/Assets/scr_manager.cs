@@ -138,7 +138,7 @@ public class scr_manager : MonoBehaviour
 				enableTouch ();
 				timeStarted = true;
 				onPlay = true;
-				
+
 				InvokeRepeating ("itemCreate", 1f, itemCreateRate);
 				InvokeRepeating ("enemyCreate", 1f, enemyCreateRate);
 				 
@@ -194,8 +194,8 @@ public class scr_manager : MonoBehaviour
 				bgm.SendMessage ("superMode", 1);
 				existBalloon = false;
 				// back & enemy reset
-				balloon.transform.localScale = new Vector3 (0, 0, 0);
-			 
+//				balloon.transform.localScale = new Vector3 (0, 0, 0);
+				
 //				oAirs [0].SetActive (true);
 //				oAirs [1].SetActive (true);
 //				oAirs [2].SetActive (true);
@@ -206,7 +206,7 @@ public class scr_manager : MonoBehaviour
 //				enemy [1].SendMessage ("superMode", 1);
 //				enemy [2].SendMessage ("superMode", 1);
 				
-				balloon.GetComponentInChildren<SphereCollider> ().enabled = true;
+//				balloon.GetComponentInChildren<SphereCollider> ().enabled = true;
 
 		}
 
@@ -388,8 +388,8 @@ public class scr_manager : MonoBehaviour
 						StartCoroutine ("getAnim", GameObject.Find ("star1"));
 						numHave++;
 						audio.PlayOneShot (itemSound);
-						StartCoroutine ("monster", colCreate);
-								StartCoroutine ("undead",6f);
+//						StartCoroutine ("monster", colCreate);
+//						StartCoroutine ("undead", 6f);
 //						StartCoroutine ("monster", colHave1);
 //						StopCoroutine ("undead",4f);
 //						StartCoroutine ("undead",4f);
@@ -416,8 +416,8 @@ public class scr_manager : MonoBehaviour
 								//monster
 								star3.sprite = tempStar;
 								StartCoroutine ("monster", colCreate);
-								StopCoroutine ("undead");
-								StartCoroutine ("undead",6f);
+//								StopCoroutine ("undead");
+								StartCoroutine ("undead", 5f);
 								//moster
 								
 
@@ -577,7 +577,6 @@ public class scr_manager : MonoBehaviour
 //				oAirs [timer].animation.Play ();
 				superLevel = 0;
 				balloon.SetActive (true);
-				
 				balloon.transform.localRotation = new Quaternion (0, 0, 0, 0);
 				balloon.GetComponentInChildren<SpriteRenderer> ().color = Color.red;
 				balloon.SendMessage ("undead", false);
@@ -837,7 +836,7 @@ public class scr_manager : MonoBehaviour
 				case 2:
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
 						StopCoroutine ("undead");
-						StartCoroutine ("undead",4f);
+						StartCoroutine ("undead", 4f);
 						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.2";
 						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
@@ -849,7 +848,7 @@ public class scr_manager : MonoBehaviour
 				case 3:
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
 						StopCoroutine ("undead");
-						StartCoroutine ("undead",4f);
+						StartCoroutine ("undead", 4f);
 						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.3";
 						audio.PlayOneShot (levelUp);
@@ -864,7 +863,7 @@ public class scr_manager : MonoBehaviour
 				case 4:
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 12);
 						StopCoroutine ("undead");
-						StartCoroutine ("undead",4f);
+						StartCoroutine ("undead", 4f);
 						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.4";
 						audio.PlayOneShot (levelUp);
@@ -882,7 +881,7 @@ public class scr_manager : MonoBehaviour
 								Destroy (tempZone);
 						CancelInvoke ("zoneCreate");
 						StopCoroutine ("undead");
-						StartCoroutine ("undead",4f);
+						StartCoroutine ("undead", 4f);
 						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.5";
 						audio.PlayOneShot (levelUp);

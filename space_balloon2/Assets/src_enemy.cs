@@ -5,6 +5,9 @@ public class src_enemy : MonoBehaviour
 {
 //	Random.Range(1, 5);
 		public bool isBoss;
+		bool exist = true;
+		string color;
+		public Sprite[] sprite = new Sprite[3];
 		public float speed;
 		int xTemp = 1;
 		int yTemp = 1;
@@ -14,8 +17,24 @@ public class src_enemy : MonoBehaviour
 		// Use this for initialization
 		void Awake ()
 		{
-				if (!isBoss)
+				if (!isBoss) {
 						speed = Random.Range (5, 21) / 10f;
+						switch (Random.Range (1, 4)) {
+						case 1:
+								color = "b";
+								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [0];
+								break;
+						case 2:
+								color = "o";
+								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [1];
+								break;
+						case 3:
+								color = "p";
+								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [2];
+								break;
+
+						}
+				}
 //				Debug.Log ("" + speed);
 				if (Random.Range (0, 2) == 0) {
 						xTemp = -1;
@@ -72,11 +91,32 @@ public class src_enemy : MonoBehaviour
 		
 		void OnTriggerEnter (Collider myTrigger)
 		{
-				if (myTrigger.gameObject.name == "down") {
-
-						rigidbody.velocity = new Vector3 (rigidbody.velocity.x, -rigidbody.velocity.y, 0);
+				if (!isBoss) {
+						if (myTrigger.transform.tag == "bomb_b" && color.Equals ("b")) {
+								Debug.Log (this.transform.name);
+								Destroy (this.gameObject);
 						
 
+						}
+						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
+			
+								Destroy (this.gameObject);
+			
+			
+						}
+						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
+			
+								Destroy (this.gameObject);
+			
+			
+						}
+				}
+
+				if (myTrigger.gameObject.name == "down") {
+			
+						rigidbody.velocity = new Vector3 (rigidbody.velocity.x, -rigidbody.velocity.y, 0);
+			
+			
 				}
 
 				if (myTrigger.gameObject.name == "up") {

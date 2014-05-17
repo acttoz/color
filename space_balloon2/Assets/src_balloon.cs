@@ -65,26 +65,24 @@ public class src_balloon : MonoBehaviour
 		{
 				monster = temp;
 				isMonster = true;
-				Debug.Log ("isMOnstedr");
 		}
 
 		void offMonster ()
 		{
-				Debug.Log ("!ismonster");
 				isMonster = false;
 		}
 
 		void OnTriggerEnter (Collider myTrigger)
 		{
 				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && !isMonster) {
-						Debug.Log ("!ismonster");
 						exist = false;
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);
 						
 				}
 				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && isMonster) {
-//						offMonster ();
-						Debug.Log (" ");
+						undead (true);
+						StartCoroutine ("undeadOff");
+						offMonster ();
 						if (monster.Equals ("b")) {
 								Instantiate (effects [0], transform.position, Quaternion.identity);
 								GetComponent<SpriteRenderer> ().sprite = balloon;
@@ -112,6 +110,12 @@ public class src_balloon : MonoBehaviour
 			
 				}
 		 
+		}
+
+		IEnumerator undeadOff ()
+		{
+				yield return new WaitForSeconds (1f);
+				isUndead = false;
 		}
 	 
 }
