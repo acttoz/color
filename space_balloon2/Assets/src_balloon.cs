@@ -3,7 +3,9 @@ using System.Collections;
 
 public class src_balloon : MonoBehaviour
 {
+		float bombSize = 0.2f;
 		Animator anim;
+		GameObject bomb;
 //		public AudioClip itemSound;
 		bool exist = false;
 		public GameObject GAMEMANAGER, item;
@@ -72,6 +74,15 @@ public class src_balloon : MonoBehaviour
 				isMonster = false;
 		}
 
+		void biggerBomb (bool temp)
+		{
+				if (temp) {
+						bombSize += 0.2f;
+				} else {
+						bombSize = 0.2f;
+				}
+		}
+
 		void OnTriggerEnter (Collider myTrigger)
 		{
 				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && !isMonster) {
@@ -84,17 +95,20 @@ public class src_balloon : MonoBehaviour
 						StartCoroutine ("undeadOff");
 						offMonster ();
 						if (monster.Equals ("b")) {
-								Instantiate (effects [0], transform.position, Quaternion.identity);
+								bomb = Instantiate (effects [0], transform.position, Quaternion.identity) as GameObject;
+								bomb.transform.localScale = new Vector2 (bombSize, bombSize);
 								GetComponent<SpriteRenderer> ().sprite = balloon;
 								Destroy (GameObject.FindGameObjectWithTag ("monster"));
 						}
 						if (monster.Equals ("o")) {
-								Instantiate (effects [1], transform.position, Quaternion.identity);
+								bomb = Instantiate (effects [1], transform.position, Quaternion.identity) as GameObject;
+								bomb.transform.localScale = new Vector2 (bombSize, bombSize);
 								GetComponent<SpriteRenderer> ().sprite = balloon;
 								Destroy (GameObject.FindGameObjectWithTag ("monster"));
 						}
 						if (monster.Equals ("p")) {
-								Instantiate (effects [2], transform.position, Quaternion.identity);
+								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
+								bomb.transform.localScale = new Vector2 (bombSize, bombSize);
 								GetComponent<SpriteRenderer> ().sprite = balloon;
 								Destroy (GameObject.FindGameObjectWithTag ("monster"));
 						}

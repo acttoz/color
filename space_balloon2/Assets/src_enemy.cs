@@ -5,7 +5,7 @@ public class src_enemy : MonoBehaviour
 {
 //	Random.Range(1, 5);
 		public bool isBoss;
-		bool exist = true;
+//		bool exist = true;
 		string color;
 		public Sprite[] sprite = new Sprite[3];
 		public float speed;

@@ -6,12 +6,12 @@ public class scr_manager : MonoBehaviour
 		public bool test;
 		public GameObject oBoss, backFirst, testBack, prf_enemy, backElement, oStars;
 		GameObject[] back;
-		float deadLine;
-		bool isUndead = false;
+//		float deadLine;
+//		bool isUndead = false;
 		public float enemyCreateRate;
 		private Vector2 zonePosition;
 //		public GameObject[] oAirs = new GameObject[3];
-		public GameObject oZone, oEnergy, oStopSound, btnRestart, balloon, itemBlue, itemOrange, itemPurple, monsterB, monsterO, monsterP, monsterEffect, super_back1, super_back2;
+		public GameObject oZone, oEnergy, oStopSound, btnRestart, balloon, itemBlue, itemOrange, itemPurple, monsterB, monsterO, monsterP, monsterEffect, super_back2;
 		public Sprite bStar, oStar, pStar, eStar, superBalloon4, superBalloon5;
 		public float stopRateControl;
 		public float[] levelRate = new float[4];
@@ -32,7 +32,7 @@ public class scr_manager : MonoBehaviour
 		public GameObject effectSuper1, effectSuper2, effectPop, effectPoint, effectPointBack;
 		public Vector3 backSize;
 		public Vector3 balloonSize;
-		string colHave1 = "n", colHave2 = "n", colCreate = "n";//b;o,p
+		string colHave1 = "n", colCreate = "n";//b;o,p
 		int numHave = 0;
 		GameObject[] enemy, realEnemy;
 		public int superTime;
@@ -47,8 +47,8 @@ public class scr_manager : MonoBehaviour
 		float mUp, mDown, mLeft, mRight;
 		// Use this for initialization
 		bool existBalloon = false;
-		bool timeStarted = false;
-		bool isScoreUp = false;
+//		bool timeStarted = false;
+//		bool isScoreUp = false;
 
 		void Start ()
 		{
@@ -136,7 +136,7 @@ public class scr_manager : MonoBehaviour
 		{
 				audio.PlayOneShot (go);
 				enableTouch ();
-				timeStarted = true;
+//				timeStarted = true;
 				onPlay = true;
 
 				InvokeRepeating ("itemCreate", 1f, itemCreateRate);
@@ -158,6 +158,7 @@ public class scr_manager : MonoBehaviour
 		{
 				
 				CancelInvoke ("itemCreate");
+				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0);
 				if (existItem != null)
 						Destroy (existItem);
 				GameObject tempZone = GameObject.FindGameObjectWithTag ("zone");
@@ -183,7 +184,7 @@ public class scr_manager : MonoBehaviour
 				onPlay = false;
 				score = 0;
 				scoreText.text = ": " + score;
-				timeStarted = false;
+//				timeStarted = false;
 				disableTouch ();
 				resetStar ();
 //				timer = gameTime;
@@ -388,24 +389,27 @@ public class scr_manager : MonoBehaviour
 						StartCoroutine ("getAnim", GameObject.Find ("star1"));
 						numHave++;
 						audio.PlayOneShot (itemSound);
-//						StartCoroutine ("monster", colCreate);
+						StartCoroutine ("monster", colCreate);
 //						StartCoroutine ("undead", 6f);
 //						StartCoroutine ("monster", colHave1);
 //						StopCoroutine ("undead",4f);
-//						StartCoroutine ("undead",4f);
+						StartCoroutine ("undead", 2f);
 
 						
 						break;
 			
 				case 1:
 						if (colHave1 == colCreate) {
-								numHave++;
-								StartCoroutine ("getAnim", GameObject.Find ("star2"));
-						
+//								numHave++;
+//								StartCoroutine ("getAnim", GameObject.Find ("star2"));
+//						
+								balloon.SendMessage ("biggerBomb",true);		
 								audio.PlayOneShot (itemSound);
-								star2.sprite = tempStar;
+//								star2.sprite = tempStar;
 						} else {
-								resetStar ();
+								Destroy (GameObject.FindGameObjectWithTag ("monster"));
+								balloon.SendMessage ("biggerBomb",false);		
+								numHave = 0;
 								getItem ();
 						}
 						break;
@@ -466,7 +470,7 @@ public class scr_manager : MonoBehaviour
 
 		IEnumerator scoreUp ()
 		{
-				isScoreUp = true;
+//				isScoreUp = true;
 				itemEffectO.animation.wrapMode = WrapMode.Loop;
 				itemEffectO.animation.Play ();
 
@@ -478,7 +482,7 @@ public class scr_manager : MonoBehaviour
 				itemEffectO.transform.localScale = new Vector2 (1, 1);
 				GameObject.Find ("score").GetComponent<tk2dTextMesh> ().color = new Color (1, 1, 1);
 				scoreText.text = ": " + score;
-				isScoreUp = false;
+//				isScoreUp = false;
 		}
 
 		IEnumerator monster (string mColHave)
@@ -488,25 +492,25 @@ public class scr_manager : MonoBehaviour
 				//enemy alpha
 //				Debug.Log (mColHave);
 
-				oStars.animation.Play ();
+//				oStars.animation.Play ();
 
-				yield return new WaitForSeconds (0.5f);
-				StartCoroutine ("getAnim", GameObject.Find ("star1"));
-				StartCoroutine ("getAnim", GameObject.Find ("star2"));
-				StartCoroutine ("getAnim", GameObject.Find ("star3"));
+//				yield return new WaitForSeconds (0.5f);
+//				StartCoroutine ("getAnim", GameObject.Find ("star1"));
+//				StartCoroutine ("getAnim", GameObject.Find ("star2"));
+//				StartCoroutine ("getAnim", GameObject.Find ("star3"));
 				 
 			
 		
 		
-				yield return new WaitForSeconds (1f);
 				if (mColHave.Equals ("b"))
 						Instantiate (monsterB, new Vector2 (0, 0), Quaternion.identity);
 				if (mColHave.Equals ("o"))
 						Instantiate (monsterO, new Vector2 (0, 0), Quaternion.identity);
 				if (mColHave.Equals ("p"))
 						Instantiate (monsterP, new Vector2 (0, 0), Quaternion.identity);
-				Instantiate (monsterEffect, new Vector2 (0, 0), Quaternion.identity);
-				resetStar ();
+//				Instantiate (monsterEffect, new Vector2 (0, 0), Quaternion.identity);
+				yield return new WaitForSeconds (1f);
+//				resetStar ();
 		}
 
 		IEnumerator  undead (float num)
@@ -613,7 +617,7 @@ public class scr_manager : MonoBehaviour
 				case 1:
 						superLevel = 6;
 			
-						deadLine = score - 20;
+//						deadLine = score - 20;
 						 
 						superMode (superLevel);
 						balloon.SendMessage ("cancel", 1);
@@ -842,7 +846,7 @@ public class scr_manager : MonoBehaviour
 						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
 						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 						audio.PlayOneShot (levelUp);
-						Instantiate (super_back1, new Vector2 (0, 0), Quaternion.identity);
+						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						break;
 				case 3:
@@ -870,7 +874,7 @@ public class scr_manager : MonoBehaviour
 						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
 						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
-						Instantiate (super_back1, new Vector2 (0, 0), Quaternion.identity);
+						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						balloonSprite.sprite = superBalloon4;
 						break;
 
