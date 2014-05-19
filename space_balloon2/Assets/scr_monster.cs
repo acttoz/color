@@ -4,9 +4,13 @@ using System.Collections;
 public class scr_monster : MonoBehaviour
 {
 		public string monsterColor;
+		public Sprite temp;
+		GameObject oBalloon;
+
 		// Use this for initialization
 		void Start ()
 		{
+				oBalloon = GameObject.FindGameObjectWithTag ("balloon");
 		}
 	
 		// Update is called once per frame
@@ -18,12 +22,24 @@ public class scr_monster : MonoBehaviour
 		void gogo ()
 		{
 				transform.parent.gameObject.GetComponent<scr_monParent> ().enabled = true;
+				transform.parent.parent = oBalloon.transform;
 		}
 
 		void itemUse ()
 		{
-				GameObject.Find ("GAMEMANAGER").SendMessage ("itemUse", monsterColor);
-				transform.parent.gameObject.animation.Play ();
-				transform.parent.SendMessage ("countDown");
+//				GameObject.Find ("GAMEMANAGER").SendMessage ("itemUse", monsterColor);
+//				transform.parent.gameObject.animation.Play ();
+				
+				oBalloon.GetComponent<SpriteRenderer> ().sprite = temp;
+				oBalloon.SendMessage ("onMonster", monsterColor);
 		}
+
+		void countDown ()
+		{
+//				oBalloon.GetComponent<SpriteRenderer> ().sprite = temp;
+//				oBalloon.SendMessage ("onMonster", monster);
+//				StartCoroutine ("startCount");
+		}
+	
+		
 }

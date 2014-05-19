@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterColor: p
+  temp: {fileID: 21300000, guid: 0117fe2f13e010c47be97c14561c3fe2, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,8 +251,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  temp: {fileID: 21300000, guid: 0117fe2f13e010c47be97c14561c3fe2, type: 3}
-  monster: p
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

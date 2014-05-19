@@ -19,5 +19,6 @@ public class scr_warn : MonoBehaviour
 		void create ()
 		{
 				Instantiate (prf_enemy, transform.position, Quaternion.identity);
+				Destroy (this.gameObject);
 		}
 }
