@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Explosion orange_s0_Explosion_s0_Punch_orange
+  m_Name: Explosion blue_s0_Punch08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,28 +38,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b488e2fad7816d449c546904fad79d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteSheetMaterial: {fileID: 2100000, guid: 3cbd1c4cb0cebde4a84699b1843157ae, type: 2}
-  spriteCount: 16
-  uvAnimationTileX: 4
+  spriteSheetMaterial: {fileID: 2100000, guid: 8e79bc7e137f57d4f8fda407bfb063be, type: 2}
+  spriteCount: 32
+  uvAnimationTileX: 8
   uvAnimationTileY: 4
-  framesPerSecond: 20
-  sizeStart: {x: 10, y: 10, z: 0}
-  sizeEnd: {x: 10, y: 10, z: 0}
+  framesPerSecond: 25
+  sizeStart: {x: 7, y: 7, z: 0}
+  sizeEnd: {x: 7, y: 7, z: 0}
   randomRotation: 0
   rotationStart: 0
   rotationEnd: 0
   isOneShot: 1
   life: 0
   billboarding: 3
-  addLightEffect: 0
+  addLightEffect: 1
   lightRange: 0
   lightColor: {r: 0, g: 0, b: 0, a: 0}
   lightFadeSpeed: 1
   addColorEffect: 1
-  colorStart: {r: .992647052, g: .640287578, b: .262759596, a: 1}
-  colorEnd: {r: .985294104, g: .455673456, b: .260813087, a: 0}
+  colorStart: {r: .139705896, g: .608417928, b: 1, a: 1}
+  colorEnd: {r: .132352948, g: .353752404, b: 1, a: 1}
   foldOut: 1
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 8.44152641, y: -5.46000004, z: 1.27999973}
   waittingTime: 0
   copy: 0
 --- !u!1001 &100100000

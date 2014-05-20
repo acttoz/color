@@ -6,9 +6,10 @@ public class src_balloon : MonoBehaviour
 		float bombSize = 0.4f;
 		Animator anim;
 		GameObject bomb;
+
 //		public AudioClip itemSound;
 		bool exist = false;
-		public GameObject GAMEMANAGER, item;
+		public GameObject GAMEMANAGER, item, shine, fire;
 		public GameObject[] effects = new GameObject[3];
 		public Sprite   balloon, rainbow, hot;
 		bool isUndead = false;
@@ -29,8 +30,10 @@ public class src_balloon : MonoBehaviour
 
 		void create (int num)
 		{
+				fire.SetActive (false);
 				exist = true;
 //				if (num < 4)
+				shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				GetComponent<SpriteRenderer> ().sprite = balloon;
 //				Debug.Log ("OnEnable()");
 				anim = GetComponent<Animator> ();
@@ -54,8 +57,14 @@ public class src_balloon : MonoBehaviour
 
 		void superMode (int num)
 		{
+				 
 				anim.SetInteger ("super", num);
-		
+				if (num == 5) {
+						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 0);
+						fire.SetActive (true);
+			
+				}
+			
 		}
 
 		void stopBalloon (bool stop)
@@ -66,13 +75,17 @@ public class src_balloon : MonoBehaviour
 
 		void onMonster (string temp)
 		{
+				
 				monster = temp;
 				isMonster = true;
+				shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 0);
 		}
 
 		void offMonster ()
 		{
 				isMonster = false;
+				shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+				
 		}
 
 		void biggerBomb (bool temp)
@@ -108,21 +121,8 @@ public class src_balloon : MonoBehaviour
 								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
 						}
 						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
-//						bomb.transform.parent = transform;
-						switch (scr_manager.superLevel) {
-						case 4:
-								GetComponent<SpriteRenderer> ().sprite = rainbow;
-								break;
-						case 5:
-								GetComponent<SpriteRenderer> ().sprite = hot;
-								break;
-						default:
-								GetComponent<SpriteRenderer> ().sprite = balloon;
-								break;
-					
-						}
-						
-						Destroy (GameObject.FindGameObjectWithTag ("monster"));
+						bomb.transform.parent = transform;
+						resetMonster ();
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
 						biggerBomb (false);
 			
@@ -138,6 +138,26 @@ public class src_balloon : MonoBehaviour
 				}
 		 
 		}
+
+		void resetMonster ()
+		{
+				switch (scr_manager.superLevel) {
+				case 4:
+						GetComponent<SpriteRenderer> ().sprite = rainbow;
+						break;
+				case 5:
+						GetComponent<SpriteRenderer> ().sprite = hot;
+						break;
+				default:
+						GetComponent<SpriteRenderer> ().sprite = balloon;
+						break;
+			
+				}
+		
+				Destroy (GameObject.FindGameObjectWithTag ("monster"));
+		}
+
+		 
 
 		 
 	 

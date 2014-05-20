@@ -40,13 +40,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequences:
-  - spriteSheet: {fileID: 100000, guid: 5d5f1a5452313824d9642454091d43b0, type: 2}
+  - spriteSheet: {fileID: 100000, guid: c4e0744aa286d0e4e88275469e3744b1, type: 2}
     offset: {x: 0, y: 0, z: 0}
     waittingTime: 0
     foldOut: 1
     color: {r: .879896641, g: .54122299, b: .0193107128, a: 1}
-    spriteSheetRef: {fileID: 100000, guid: 5d5f1a5452313824d9642454091d43b0, type: 2}
-    oldSpriteSheetRef: {fileID: 100000, guid: 5d5f1a5452313824d9642454091d43b0, type: 2}
+    spriteSheetRef: {fileID: 100000, guid: c4e0744aa286d0e4e88275469e3744b1, type: 2}
+    oldSpriteSheetRef: {fileID: 100000, guid: c4e0744aa286d0e4e88275469e3744b1, type: 2}
     play: 0
   billboarding: 0
   autoDestruct: 1

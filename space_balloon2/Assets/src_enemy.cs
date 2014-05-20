@@ -93,19 +93,21 @@ public class src_enemy : MonoBehaviour
 		{
 				if (!isBoss) {
 						if (myTrigger.transform.tag == "bomb_b" && color.Equals ("b")) {
-								Debug.Log (this.transform.name);
+				Debug.Log (myTrigger);
 								Destroy (this.gameObject);
 						
 
 						}
 						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
 			
+				Debug.Log (myTrigger);
 								Destroy (this.gameObject);
 			
 			
 						}
 						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
 			
+				Debug.Log (myTrigger);
 								Destroy (this.gameObject);
 			
 			

@@ -161,7 +161,6 @@ public class scr_manager : MonoBehaviour
 				enableTouch ();
 //				timeStarted = true;
 				onPlay = true;
-
 				InvokeRepeating ("itemCreate", 1f, itemCreateRate);
 				InvokeRepeating ("enemyCreate", 1f, enemyCreateRate);
 				 
@@ -349,7 +348,7 @@ public class scr_manager : MonoBehaviour
 //				Debug.Log ("itemCreate");
 				int tempCol = Random.Range (1, 4);
 				//test
-//				tempCol = 1;
+				tempCol = 2;
 				switch (tempCol) {
 				case 1:
 						colCreate = "b";
@@ -425,7 +424,7 @@ public class scr_manager : MonoBehaviour
 			//						StartCoroutine ("undead", 6f);
 //						StartCoroutine ("monster", colHave1);
 //						StopCoroutine ("undead",4f);
-						undeadTime = 4;
+						undeadTime = 3;
 
 						
 						break;
@@ -441,6 +440,8 @@ public class scr_manager : MonoBehaviour
 						} else {
 								
 								balloon.SendMessage ("biggerBomb", false);		
+								Destroy (GameObject.FindGameObjectWithTag ("monster"));
+								balloon.SendMessage ("resetMonster");
 								numHave = 0;
 								getItem ();
 						}
@@ -587,7 +588,10 @@ public class scr_manager : MonoBehaviour
 //				timer--;
 //				oAirs [timer].animation.Play ();
 				superLevel = 0;
+				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
 				balloon.SetActive (true);
+				balloon.SendMessage ("offMonster");
+		
 				balloon.transform.localRotation = new Quaternion (0, 0, 0, 0);
 				balloon.GetComponentInChildren<SpriteRenderer> ().color = Color.red;
 				balloon.SendMessage ("undead", false);
@@ -613,7 +617,8 @@ public class scr_manager : MonoBehaviour
 				oStopSound.audio.Stop ();
 				oEnergy.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1);
 				CancelInvoke ("scoreCount");
-				
+				lv.SendMessage ("levelUp");
+				lvText.text = "Lv.1";
 				CancelInvoke ("superModeCount");
 				CancelInvoke ("normalModeCount");
 				stopRate = stopRateControl;
@@ -880,7 +885,8 @@ public class scr_manager : MonoBehaviour
 						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
-						balloonSprite.sprite = superBalloon4;
+						if (numHave == 0)
+								balloonSprite.sprite = superBalloon4;
 						break;
 
 				case 5:
@@ -897,7 +903,8 @@ public class scr_manager : MonoBehaviour
 						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
-						balloonSprite.sprite = superBalloon5;
+						if (numHave == 0)
+								balloonSprite.sprite = superBalloon5;
 						break;
 				case 6:
 						InvokeRepeating ("scoreCount", 0.1f, 0.1f);
