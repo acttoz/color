@@ -19,7 +19,7 @@ public class src_enemy : MonoBehaviour
 		{
 				if (!isBoss) {
 						speed = Random.Range (5, 21) / 10f;
-						switch (Random.Range (1, 4)) {
+						switch (Random.Range (1, 2)) {
 						case 1:
 								color = "b";
 								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [0];

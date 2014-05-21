@@ -96,7 +96,7 @@ public class src_balloon : MonoBehaviour
 				} else {
 
 						bombSize = 0.4f;
-						transform.parent.localScale = new Vector3 (0.5f, 0.5f, 0.4f);
+						transform.parent.localScale = new Vector3 (0.7f, 0.7f, 0.4f);
 				}
 		}
 
@@ -121,7 +121,7 @@ public class src_balloon : MonoBehaviour
 								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
 						}
 						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
-						bomb.transform.parent = transform;
+//						bomb.transform.parent = transform;
 						resetMonster ();
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
 						biggerBomb (false);

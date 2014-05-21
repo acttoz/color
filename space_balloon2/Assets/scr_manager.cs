@@ -54,6 +54,7 @@ public class scr_manager : MonoBehaviour
 
 		void Start ()
 		{
+//				balloon.transform.localScale = new Vector3 (0, 0, 0);
 				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
 //				score = 1000;
 				countGem = PlayerPrefs.GetInt ("NUMGEM");
@@ -61,9 +62,9 @@ public class scr_manager : MonoBehaviour
 						Instantiate (testBack, new Vector2 (0, 0), Quaternion.identity);
 						
 //				timer = gameTime;
-				star1 = GameObject.Find ("star1").GetComponent<SpriteRenderer> ();
-				star2 = GameObject.Find ("star2").GetComponent<SpriteRenderer> ();
-				star3 = GameObject.Find ("star3").GetComponent<SpriteRenderer> ();
+//				star1 = GameObject.Find ("star1").GetComponent<SpriteRenderer> ();
+//				star2 = GameObject.Find ("star2").GetComponent<SpriteRenderer> ();
+//				star3 = GameObject.Find ("star3").GetComponent<SpriteRenderer> ();
 				balloonSprite = balloon.GetComponentInChildren<SpriteRenderer> ();
 				scoreText = GameObject.Find ("score").GetComponent<tk2dTextMesh> ();
 				lvText = GameObject.Find ("lv").GetComponent<tk2dTextMesh> ();
@@ -208,7 +209,7 @@ public class scr_manager : MonoBehaviour
 				scoreText.text = ": " + score;
 //				timeStarted = false;
 				disableTouch ();
-				resetStar ();
+//				resetStar ();
 //				timer = gameTime;
 				///level reset
 				lvText.text = "Lv.1";
@@ -348,7 +349,7 @@ public class scr_manager : MonoBehaviour
 //				Debug.Log ("itemCreate");
 				int tempCol = Random.Range (1, 4);
 				//test
-				tempCol = 2;
+//				tempCol = 1;
 				switch (tempCol) {
 				case 1:
 						colCreate = "b";
@@ -409,9 +410,9 @@ public class scr_manager : MonoBehaviour
 		{
 				switch (numHave) {
 				case 0:
+						undeadTime = 2.5f;
 						colHave1 = colCreate;
-						star1.sprite = tempStar;
-						StartCoroutine ("getAnim", GameObject.Find ("star1"));
+//						star1.sprite = tempStar;
 						numHave++;
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
@@ -424,9 +425,6 @@ public class scr_manager : MonoBehaviour
 			//						StartCoroutine ("undead", 6f);
 //						StartCoroutine ("monster", colHave1);
 //						StopCoroutine ("undead",4f);
-						undeadTime = 3;
-
-						
 						break;
 			
 				case 1:
@@ -466,13 +464,6 @@ public class scr_manager : MonoBehaviour
 				}
 				 
 
-		}
-	
-		IEnumerator getAnim (GameObject star)
-		{
-				star.GetComponent<Animator> ().SetInteger ("item", 1);
-				yield return new WaitForSeconds (0.5f);
-				star.GetComponent<Animator> ().SetInteger ("item", 0);
 		}
 
 		void itemUse (string col)
@@ -546,13 +537,13 @@ public class scr_manager : MonoBehaviour
 //				resetStar ();
 		}
 
-		void resetStar ()
-		{
-				star1.sprite = eStar;
-				star2.sprite = eStar;
-				star3.sprite = eStar;
-				numHave = 0;
-		}
+//		void resetStar ()
+//		{
+//				star1.sprite = eStar;
+//				star2.sprite = eStar;
+//				star3.sprite = eStar;
+//				numHave = 0;
+//		}
 
 
 
@@ -926,11 +917,11 @@ public class scr_manager : MonoBehaviour
 						score -= 1;
 				}
 
-				scoreText.text = ": " + score / 10 + " km";
+				scoreText.text = " :  " + score / 10 + " balloon";
 				if (score < 0) {
 						CancelInvoke ("scoreCount");
 						score = 0;
-						scoreText.text = ": " + "0 km";
+						scoreText.text = " :  " + "0 balloon";
 						StartCoroutine ("timesUp");
 				}
 				 

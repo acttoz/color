@@ -44,7 +44,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0, z: 0}
     waittingTime: 0
     foldOut: 1
-    color: {r: .879896641, g: .54122299, b: .0193107128, a: 1}
+    color: {r: 1, g: .45588237, b: .45588237, a: 1}
     spriteSheetRef: {fileID: 100000, guid: c4e0744aa286d0e4e88275469e3744b1, type: 2}
     oldSpriteSheetRef: {fileID: 100000, guid: c4e0744aa286d0e4e88275469e3744b1, type: 2}
     play: 0
@@ -61,7 +61,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.57999992
+  m_Radius: 1.78999996
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

@@ -39,25 +39,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteSheetMaterial: {fileID: 2100000, guid: 8e79bc7e137f57d4f8fda407bfb063be, type: 2}
-  spriteCount: 32
-  uvAnimationTileX: 8
-  uvAnimationTileY: 4
-  framesPerSecond: 25
-  sizeStart: {x: 9, y: 9, z: 0}
-  sizeEnd: {x: 9, y: 9, z: 0}
+  spriteCount: 8
+  uvAnimationTileX: 4
+  uvAnimationTileY: 2
+  framesPerSecond: 10
+  sizeStart: {x: 7, y: 7, z: 0}
+  sizeEnd: {x: 7, y: 7, z: 0}
   randomRotation: 0
   rotationStart: 0
   rotationEnd: 0
-  isOneShot: 1
-  life: 0
+  isOneShot: 0
+  life: 5
   billboarding: 3
   addLightEffect: 0
   lightRange: 0
   lightColor: {r: 0, g: 0, b: 0, a: 0}
   lightFadeSpeed: 1
   addColorEffect: 1
-  colorStart: {r: 1, g: .595334649, b: .161764681, a: 1}
-  colorEnd: {r: .985294104, g: .39351809, b: .0724481046, a: 1}
+  colorStart: {r: 1, g: .387221098, b: .161764681, a: 1}
+  colorEnd: {r: .823529422, g: .427049309, b: .211937726, a: .56078434}
   foldOut: 1
   offset: {x: 8.44152641, y: -5.46000004, z: 1.27999973}
   waittingTime: 0
