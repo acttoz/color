@@ -3,10 +3,12 @@ using System.Collections;
 
 public class scr_manager : MonoBehaviour
 {
-	public int spaceId=0;	
-	public bool test;
+		public int spaceId = 0;
+		public GameObject[] spaces = new GameObject[13];
+		public float[] spacesHeight = new float[12];
+		public bool test;
 		public float undeadTime = 0;
-		public GameObject oBoss, backFirst, testBack, prf_enemy, backElement, oStars, mainCamera;
+		public GameObject oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
 		GameObject[] back;
 		public bool isUndead = false;
 //		float deadLine;
@@ -359,7 +361,7 @@ public class scr_manager : MonoBehaviour
 //				Debug.Log ("itemCreate");
 				int tempCol = Random.Range (1, 4);
 				//test
-				tempCol = 1;
+//				tempCol = 1;
 				switch (tempCol) {
 				case 1:
 						colCreate = "b";
@@ -390,10 +392,18 @@ public class scr_manager : MonoBehaviour
 		{
 				if (superLevel > 0 && superLevel < 6) {
 						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
-						Instantiate (backElement, new Vector3 (tempX, 7, 0), Quaternion.identity);
+						if (spaceId < 2) {
+								Instantiate (backElement, new Vector3 (tempX, 7, 0), Quaternion.identity);
+						} else {
+								Instantiate (backStars, new Vector3 (tempX, 7, 0), Quaternion.identity);
+						}
 				} else if (superLevel == 6 && score > 30) {
 						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
-						Instantiate (backElement, new Vector3 (tempX, -7, 0), Quaternion.identity);
+						if (spaceId < 2) {
+								Instantiate (backElement, new Vector3 (tempX, -7, 0), Quaternion.identity);
+						} else {
+								Instantiate (backStars, new Vector3 (tempX, -7, 0), Quaternion.identity);
+						}
 				}
 		}
 
@@ -938,9 +948,72 @@ public class scr_manager : MonoBehaviour
 						StartCoroutine ("timesUp");
 				}
 
-//		if(score>90 && spaceId==0)
-		//here
+				if (score > spacesHeight [spaceId] && spaceId == 0) {
+						mainCamera.animation.Play ("anim_maincamera");
+						spaceId = 1;
+				}
 
+				if (score > spacesHeight [spaceId] && spaceId == 1) {
+						spaceId = 2;
+						mainCamera.animation.Play ("anim_maincamera2");
+				}
+
+				if (score > spacesHeight [spaceId] && spaceId == 2) {
+						//setellite
+						spaceId = 3;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+
+				}
+
+				if (score > spacesHeight [spaceId] && spaceId == 3) {
+						//moon
+						spaceId = 4;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+				if (score > spacesHeight [spaceId] && spaceId == 4) {
+						//spaceman
+						spaceId = 5;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+				if (score > spacesHeight [spaceId] && spaceId == 5) {
+						//sun
+						spaceId = 6;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+				if (score > spacesHeight [spaceId] && spaceId == 6) {
+						spaceId = 7;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+				if (score > spacesHeight [spaceId] && spaceId == 7) {
+						spaceId = 8;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+				if (score > spacesHeight [spaceId] && spaceId == 8) {
+						spaceId = 9;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+				if (score > spacesHeight [spaceId] && spaceId == 9) {
+						spaceId = 10;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+				if (score > spacesHeight [spaceId] && spaceId == 10) {
+						spaceId = 11;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+				if (score > spacesHeight [spaceId] && spaceId == 11) {
+						spaceId = 12;
+						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+			
+				}
+		 
 				 
 		}
 	

@@ -158,6 +158,8 @@
      <Compile Include="Assets\scr_numGem.cs" />
      <Compile Include="Assets\scr_selectLevel.cs" />
      <Compile Include="Assets\scr_selfTimer.cs" />
+     <Compile Include="Assets\scr_space.cs" />
+     <Compile Include="Assets\scr_star.cs" />
      <Compile Include="Assets\scr_startManager.cs" />
      <Compile Include="Assets\scr_timesup.cs" />
      <Compile Include="Assets\scr_toStart.cs" />
