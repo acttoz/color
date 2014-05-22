@@ -62,16 +62,15 @@ public class src_balloon : MonoBehaviour
 				if (num == 5) {
 						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 0);
 						fire.SetActive (true);
-			
 				}
 			
 		}
 
-		void stopBalloon (bool stop)
-		{
-				anim.SetBool ("stop", stop);
-	
-		}
+//		void stopBalloon (bool stop)
+//		{
+//				anim.SetBool ("stop", stop);
+//	
+//		}
 
 		void onMonster (string temp)
 		{
@@ -84,7 +83,8 @@ public class src_balloon : MonoBehaviour
 		void offMonster ()
 		{
 				isMonster = false;
-				shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+				if (scr_manager.superLevel != 0)
+						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				
 		}
 
@@ -137,6 +137,45 @@ public class src_balloon : MonoBehaviour
 			
 				}
 		 
+		}
+
+		void OnTriggerStay (Collider myTrigger)
+		{
+				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && !isMonster) {
+						exist = false;
+						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);
+			
+				}
+				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && isMonster) {
+						undead (true);
+						GAMEMANAGER.SendMessage ("getBalloonMSG", 5);
+						offMonster ();
+						if (monster.Equals ("b")) {
+								bomb = Instantiate (effects [0], transform.position, Quaternion.identity) as GameObject;
+						}
+						if (monster.Equals ("o")) {
+								bomb = Instantiate (effects [1], transform.position, Quaternion.identity) as GameObject;
+						}
+						if (monster.Equals ("p")) {
+								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
+						}
+						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
+						//						bomb.transform.parent = transform;
+						resetMonster ();
+						GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
+						biggerBomb (false);
+			
+			
+				}
+				if (myTrigger.transform.tag == "item") {
+						GAMEMANAGER.SendMessage ("getItem");
+						//						audio.PlayOneShot (itemSound);
+						Instantiate (item, myTrigger.gameObject.transform.position, Quaternion.identity);
+						Destroy (myTrigger.gameObject);
+			
+			
+				}
+		
 		}
 
 		void resetMonster ()

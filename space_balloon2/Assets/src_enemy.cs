@@ -5,6 +5,7 @@ public class src_enemy : MonoBehaviour
 {
 //	Random.Range(1, 5);
 		public bool isBoss;
+		public GameObject pop;
 //		bool exist = true;
 		string color;
 		public Sprite[] sprite = new Sprite[3];
@@ -19,7 +20,7 @@ public class src_enemy : MonoBehaviour
 		{
 				if (!isBoss) {
 						speed = Random.Range (5, 21) / 10f;
-						switch (Random.Range (1, 2)) {
+						switch (Random.Range (1, 4)) {
 						case 1:
 								color = "b";
 								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [0];
@@ -88,26 +89,53 @@ public class src_enemy : MonoBehaviour
 //				Debug.Log ("enemy_velocity" + rigidbody.velocity.normalized);
 			
 		}
+
+		void OnTriggerStay (Collider myTrigger)
+		{
+				if (!isBoss) {
+						if (myTrigger.transform.tag == "bomb_b" && color.Equals ("b")) {
+								Instantiate (pop, transform.position, Quaternion.identity);
+								Destroy (this.gameObject);
+				
+				
+						}
+						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
+				
+								Instantiate (pop, transform.position, Quaternion.identity);
+								Destroy (this.gameObject);
+				
+				
+						}
+						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
+				
+								Instantiate (pop, transform.position, Quaternion.identity);
+								Destroy (this.gameObject);
+				
+				
+						}
+				}
 		
+		}
+
 		void OnTriggerEnter (Collider myTrigger)
 		{
 				if (!isBoss) {
 						if (myTrigger.transform.tag == "bomb_b" && color.Equals ("b")) {
-				Debug.Log (myTrigger);
+								Instantiate (pop, transform.position, Quaternion.identity);
 								Destroy (this.gameObject);
 						
 
 						}
 						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
 			
-				Debug.Log (myTrigger);
+								Instantiate (pop, transform.position, Quaternion.identity);
 								Destroy (this.gameObject);
 			
 			
 						}
 						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
 			
-				Debug.Log (myTrigger);
+								Instantiate (pop, transform.position, Quaternion.identity);
 								Destroy (this.gameObject);
 			
 			

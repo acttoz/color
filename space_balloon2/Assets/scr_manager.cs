@@ -3,9 +3,10 @@ using System.Collections;
 
 public class scr_manager : MonoBehaviour
 {
-		public bool test;
+	public int spaceId=0;	
+	public bool test;
 		public float undeadTime = 0;
-		public GameObject oBoss, backFirst, testBack, prf_enemy, backElement, oStars;
+		public GameObject oBoss, backFirst, testBack, prf_enemy, backElement, oStars, mainCamera;
 		GameObject[] back;
 		public bool isUndead = false;
 //		float deadLine;
@@ -180,7 +181,16 @@ public class scr_manager : MonoBehaviour
 
 		void gameReset ()
 		{
-				
+
+				if (GameObject.Find ("prf_warn(Clone)") != null)
+						Destroy (GameObject.Find ("prf_warn(Clone)"));
+				if (GameObject.FindGameObjectWithTag ("bomb_b") != null)
+						Destroy (GameObject.FindGameObjectWithTag ("bomb_b"));
+				if (GameObject.FindGameObjectWithTag ("bomb_o") != null)
+						Destroy (GameObject.FindGameObjectWithTag ("bomb_o"));
+				if (GameObject.FindGameObjectWithTag ("bomb_p") != null)
+						Destroy (GameObject.FindGameObjectWithTag ("bomb_p"));
+				balloon.GetComponent<SpriteRenderer> ().sortingOrder = -1;
 				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0);
 				if (existItem != null)
 						Destroy (existItem);
@@ -349,7 +359,7 @@ public class scr_manager : MonoBehaviour
 //				Debug.Log ("itemCreate");
 				int tempCol = Random.Range (1, 4);
 				//test
-//				tempCol = 1;
+				tempCol = 1;
 				switch (tempCol) {
 				case 1:
 						colCreate = "b";
@@ -741,21 +751,21 @@ public class scr_manager : MonoBehaviour
 						Vector2 tempVector = currentBalloon - previousBalloon;
 						float zoneLimit = 2f;
 						if (-1 * zoneLimit < tempVector.x && tempVector.x < zoneLimit && -1 * zoneLimit < tempVector.y && tempVector.y < zoneLimit) {
-								balloon.SendMessage ("stopBalloon", true);
+//								balloon.SendMessage ("stopBalloon", true);
 								oEnergy.animation.Play ();
 								if (!oStopSound.audio.isPlaying)
 										oStopSound.audio.Play ();
 //								Instantiate (effectStop, balloon.transform.position, Quaternion.identity);
 								stopRate = stopRateControl;
 						} else {
-								balloon.SendMessage ("stopBalloon", false);
+//								balloon.SendMessage ("stopBalloon", false);
 								oEnergy.animation.Stop ();
 								oEnergy.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1);
 								oStopSound.audio.Stop ();
 								stopRate = 0;
 						}
 				} else if (existBalloon && superLevel == 5) {
-						balloon.SendMessage ("stopBalloon", false);
+//						balloon.SendMessage ("stopBalloon", false);
 						oEnergy.animation.Stop ();
 						oStopSound.audio.Stop ();
 						stopRate = 0;
@@ -777,6 +787,9 @@ public class scr_manager : MonoBehaviour
 						}
 				} else {
 						gauge.transform.localScale += new Vector3 (0, superTimer / 5000f * stopRate, 0);
+						if (stopRate != 0)
+								Instantiate (itemEffectBack, balloon.transform.position, Quaternion.identity);
+
 				}
 		}
 	
@@ -808,7 +821,7 @@ public class scr_manager : MonoBehaviour
 				CancelInvoke ("backCreate");
 				CancelInvoke ("balloonStop");
 				CancelInvoke ("normalModeCount");
-				balloon.SendMessage ("stopBalloon", false);
+//				balloon.SendMessage ("stopBalloon", false);
 				Debug.Log ("supermode" + num);
 				stopRate = 0;
 				if (num == 0) {
@@ -924,6 +937,10 @@ public class scr_manager : MonoBehaviour
 						scoreText.text = " :  " + "0 balloon";
 						StartCoroutine ("timesUp");
 				}
+
+//		if(score>90 && spaceId==0)
+		//here
+
 				 
 		}
 	

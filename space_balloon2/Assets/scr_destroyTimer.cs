@@ -20,7 +20,13 @@ public class scr_destroyTimer : MonoBehaviour
 		IEnumerator timer ()
 		{
 				yield return new WaitForSeconds (destroyTime);
-				GameObject.Find ("img-ballon").GetComponent<SpriteRenderer> ().sortingOrder = -1;
+				GameObject temp = GameObject.Find ("img-ballon");
+				if (temp != null) {
+						temp.GetComponent<SpriteRenderer> ().sortingOrder = -1;
+						if (scr_manager.superLevel == 5)
+								temp.audio.Play ();
+
+				}
 				Destroy (this.gameObject);
 		
 		}

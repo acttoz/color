@@ -23,6 +23,7 @@ public class scr_monster : MonoBehaviour
 		{
 				transform.parent.gameObject.GetComponent<scr_monParent> ().enabled = true;
 				transform.parent.parent = oBalloon.transform;
+				audio.Play ();
 		}
 
 		void itemUse ()
