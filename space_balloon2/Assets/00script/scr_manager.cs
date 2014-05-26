@@ -4,9 +4,12 @@ using System.Collections;
 public class scr_manager : MonoBehaviour
 {
 		public int spaceId = 0;
+		public Color colSky;
 		public GameObject[] spaces = new GameObject[13];
+		public GameObject[] stars = new GameObject[6];
 		public float[] spacesHeight = new float[12];
 		public bool test;
+		public bool isMonster = false;
 		public float undeadTime = 0;
 		public GameObject oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
 		GameObject[] back;
@@ -46,7 +49,7 @@ public class scr_manager : MonoBehaviour
 		tk2dTextMesh scoreText;
 		tk2dTextMesh lvText;
 		tk2dTextMesh timeText, resultText, gemText;
-		float score = 0;
+		float score = 400;
 		int gem = 0;
 		public static int superLevel = 0;
 		float mUp, mDown, mLeft, mRight;
@@ -65,9 +68,9 @@ public class scr_manager : MonoBehaviour
 						Instantiate (testBack, new Vector2 (0, 0), Quaternion.identity);
 						
 //				timer = gameTime;
-//				star1 = GameObject.Find ("star1").GetComponent<SpriteRenderer> ();
-//				star2 = GameObject.Find ("star2").GetComponent<SpriteRenderer> ();
-//				star3 = GameObject.Find ("star3").GetComponent<SpriteRenderer> ();
+				star1 = GameObject.Find ("star1").GetComponent<SpriteRenderer> ();
+				star2 = GameObject.Find ("star2").GetComponent<SpriteRenderer> ();
+				star3 = GameObject.Find ("star3").GetComponent<SpriteRenderer> ();
 				balloonSprite = balloon.GetComponentInChildren<SpriteRenderer> ();
 				scoreText = GameObject.Find ("score").GetComponent<tk2dTextMesh> ();
 				lvText = GameObject.Find ("lv").GetComponent<tk2dTextMesh> ();
@@ -173,17 +176,21 @@ public class scr_manager : MonoBehaviour
 
 		void enemyCreate ()
 		{
-			 
 				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
 				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
-				
-					
 				Instantiate (prf_enemy, new Vector2 (tempX, tempY), Quaternion.identity);
 		}
 
 		void gameReset ()
 		{
-
+				isMonster = false;
+				spaceId = 0;
+				mainCamera.camera.backgroundColor = colSky;
+				GameObject[] temp;
+				temp = GameObject.FindGameObjectsWithTag ("back");
+				for (int i=0; i<temp.Length; i++) {
+						Destroy (temp [i]);
+				}
 				if (GameObject.Find ("prf_warn(Clone)") != null)
 						Destroy (GameObject.Find ("prf_warn(Clone)"));
 				if (GameObject.FindGameObjectWithTag ("bomb_b") != null)
@@ -359,7 +366,7 @@ public class scr_manager : MonoBehaviour
 				if (existItem != null)
 						Destroy (existItem);
 //				Debug.Log ("itemCreate");
-				int tempCol = Random.Range (1, 4);
+				int tempCol = Random.Range (1, 3);
 				//test
 //				tempCol = 1;
 				switch (tempCol) {
@@ -384,7 +391,7 @@ public class scr_manager : MonoBehaviour
 				
 				
 //				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
-				if (!isUndead)
+				if (!isUndead && !isMonster)
 						existItem = Instantiate (createItem, new Vector3 (tempX, 7, 0), Quaternion.identity) as GameObject;
 		}
 
@@ -395,14 +402,14 @@ public class scr_manager : MonoBehaviour
 						if (spaceId < 2) {
 								Instantiate (backElement, new Vector3 (tempX, 7, 0), Quaternion.identity);
 						} else {
-								Instantiate (backStars, new Vector3 (tempX, 7, 0), Quaternion.identity);
+								Instantiate (stars [Random.Range (0, 6)], new Vector3 (tempX, 7, 0), Quaternion.identity);
 						}
 				} else if (superLevel == 6 && score > 30) {
 						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
 						if (spaceId < 2) {
 								Instantiate (backElement, new Vector3 (tempX, -7, 0), Quaternion.identity);
 						} else {
-								Instantiate (backStars, new Vector3 (tempX, -7, 0), Quaternion.identity);
+								Instantiate (stars [Random.Range (0, 6)], new Vector3 (tempX, -7, 0), Quaternion.identity);
 						}
 				}
 		}
@@ -430,18 +437,12 @@ public class scr_manager : MonoBehaviour
 		{
 				switch (numHave) {
 				case 0:
-						undeadTime = 2.5f;
 						colHave1 = colCreate;
-//						star1.sprite = tempStar;
-						numHave++;
+						star1.sprite = tempStar;
+			numHave++;	StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
-						if (colCreate.Equals ("b"))
-								Instantiate (monsterB, new Vector2 (0, 0), Quaternion.identity);
-						if (colCreate.Equals ("o"))
-								Instantiate (monsterO, new Vector2 (0, 0), Quaternion.identity);
-						if (colCreate.Equals ("p"))
-								Instantiate (monsterP, new Vector2 (0, 0), Quaternion.identity);
+					
 			//						StartCoroutine ("undead", 6f);
 //						StartCoroutine ("monster", colHave1);
 //						StopCoroutine ("undead",4f);
@@ -449,38 +450,48 @@ public class scr_manager : MonoBehaviour
 			
 				case 1:
 						if (colHave1 == colCreate) {
-//								numHave++;
+								numHave++;
 //								StartCoroutine ("getAnim", GameObject.Find ("star2"));
 //						
-								balloon.SendMessage ("biggerBomb", true);		
+//								balloon.SendMessage ("biggerBomb", true);		
 								audio.PlayOneShot (itemSound);
-//								star2.sprite = tempStar;
+								star2.sprite = tempStar;
 						} else {
 								
-								balloon.SendMessage ("biggerBomb", false);		
-								Destroy (GameObject.FindGameObjectWithTag ("monster"));
-								balloon.SendMessage ("resetMonster");
+//								balloon.SendMessage ("biggerBomb", false);		
+//								Destroy (GameObject.FindGameObjectWithTag ("monster"));
+//								balloon.SendMessage ("resetMonster");
+
+								resetStar ();
 								numHave = 0;
 								getItem ();
 						}
 						break;
 		
-//				case 2:
-//						audio.PlayOneShot (itemSound);
-//						if (colHave1 == colCreate) {
-//								//monster
-//								star3.sprite = tempStar;
-//								StartCoroutine ("monster", colCreate);
-////								StopCoroutine ("undead");
-//								StartCoroutine ("undead", 5f);
-//								//moster
-//								
-//
-//						} else {
-//								resetStar ();
-//								getItem ();
-//						}
-//						break;
+				case 2:
+						audio.PlayOneShot (itemSound);
+						if (colHave1 == colCreate) {
+								//monster
+								isMonster = true;
+								star3.sprite = tempStar;
+								undeadTime = 3.5f;
+//								if (colCreate.Equals ("b"))
+//										Instantiate (monsterB, new Vector2 (0, 0), Quaternion.identity);
+//								if (colCreate.Equals ("o"))
+//										Instantiate (monsterO, new Vector2 (0, 0), Quaternion.identity);
+//								if (colCreate.Equals ("p"))
+//										Instantiate (monsterP, new Vector2 (0, 0), Quaternion.identity);
+								//moster
+								StartCoroutine ("monster", colCreate);
+								
+
+						} else {
+								isMonster = false;
+								resetStar ();
+								numHave = 0;
+								getItem ();
+						}
+						break;
 				}
 				 
 
@@ -536,12 +547,12 @@ public class scr_manager : MonoBehaviour
 				//enemy alpha
 //				Debug.Log (mColHave);
 
-//				oStars.animation.Play ();
+				oStars.animation.Play ();
 
-//				yield return new WaitForSeconds (0.5f);
-//				StartCoroutine ("getAnim", GameObject.Find ("star1"));
-//				StartCoroutine ("getAnim", GameObject.Find ("star2"));
-//				StartCoroutine ("getAnim", GameObject.Find ("star3"));
+				yield return new WaitForSeconds (0.5f);
+				StartCoroutine ("getAnim", GameObject.Find ("star1"));
+				StartCoroutine ("getAnim", GameObject.Find ("star2"));
+				StartCoroutine ("getAnim", GameObject.Find ("star3"));
 				 
 			
 		
@@ -557,15 +568,20 @@ public class scr_manager : MonoBehaviour
 //				resetStar ();
 		}
 
-//		void resetStar ()
-//		{
-//				star1.sprite = eStar;
-//				star2.sprite = eStar;
-//				star3.sprite = eStar;
-//				numHave = 0;
-//		}
+		void resetStar ()
+		{
+				star1.sprite = eStar;
+				star2.sprite = eStar;
+				star3.sprite = eStar;
+				numHave = 0;
+		}
 
-
+		IEnumerator getAnim (GameObject star)
+		{
+				star.GetComponent<Animator> ().SetInteger ("item", 1);
+				yield return new WaitForSeconds (0.5f);
+				star.GetComponent<Animator> ().SetInteger ("item", 0);
+		}
 
 
 
@@ -1047,6 +1063,7 @@ public class scr_manager : MonoBehaviour
 						break;
 				case 4:
 						numHave = 0;
+						resetStar ();
 						break;
 				case 5:
 						undeadTime = 1.5f;

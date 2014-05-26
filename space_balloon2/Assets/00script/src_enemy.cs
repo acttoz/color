@@ -19,22 +19,22 @@ public class src_enemy : MonoBehaviour
 		void Awake ()
 		{
 				if (!isBoss) {
-						speed = Random.Range (5, 21) / 10f;
-						switch (Random.Range (1, 4)) {
-						case 1:
-								color = "b";
-								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [0];
-								break;
-						case 2:
-								color = "o";
-								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [1];
-								break;
-						case 3:
-								color = "p";
-								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [2];
-								break;
-
-						}
+						speed = Random.Range (5, 12) / 10f;
+//						switch (Random.Range (1, 3)) {
+//						case 1:
+//								color = "b";
+//								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [0];
+//								break;
+//						case 2:
+//								color = "o";
+//								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [1];
+//								break;
+//						case 3:
+//								color = "p";
+//								this.GetComponentInChildren<SpriteRenderer> ().sprite = sprite [2];
+//								break;
+//
+//						}
 				}
 //				Debug.Log ("" + speed);
 				if (Random.Range (0, 2) == 0) {
@@ -93,26 +93,26 @@ public class src_enemy : MonoBehaviour
 		void OnTriggerStay (Collider myTrigger)
 		{
 				if (!isBoss) {
-						if (myTrigger.transform.tag == "bomb_b" && color.Equals ("b")) {
+						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, transform.position, Quaternion.identity);
 								Destroy (this.gameObject);
 				
 				
 						}
-						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
-				
-								Instantiate (pop, transform.position, Quaternion.identity);
-								Destroy (this.gameObject);
-				
-				
-						}
-						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
-				
-								Instantiate (pop, transform.position, Quaternion.identity);
-								Destroy (this.gameObject);
-				
-				
-						}
+//						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
+//				
+//								Instantiate (pop, transform.position, Quaternion.identity);
+//								Destroy (this.gameObject);
+//				
+//				
+//						}
+//						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
+//				
+//								Instantiate (pop, transform.position, Quaternion.identity);
+//								Destroy (this.gameObject);
+//				
+//				
+//						}
 				}
 		
 		}
@@ -120,26 +120,26 @@ public class src_enemy : MonoBehaviour
 		void OnTriggerEnter (Collider myTrigger)
 		{
 				if (!isBoss) {
-						if (myTrigger.transform.tag == "bomb_b" && color.Equals ("b")) {
+						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, transform.position, Quaternion.identity);
 								Destroy (this.gameObject);
-						
-
+				
+				
 						}
-						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
-			
-								Instantiate (pop, transform.position, Quaternion.identity);
-								Destroy (this.gameObject);
-			
-			
-						}
-						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
-			
-								Instantiate (pop, transform.position, Quaternion.identity);
-								Destroy (this.gameObject);
-			
-			
-						}
+						//						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
+						//				
+						//								Instantiate (pop, transform.position, Quaternion.identity);
+						//								Destroy (this.gameObject);
+						//				
+						//				
+						//						}
+						//						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
+						//				
+						//								Instantiate (pop, transform.position, Quaternion.identity);
+						//								Destroy (this.gameObject);
+						//				
+						//				
+						//						}
 				}
 
 				if (myTrigger.gameObject.name == "down") {

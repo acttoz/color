@@ -8,13 +8,29 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   - 135: {fileID: 13500000}
   - 82: {fileID: 8200000}
-  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Explosion blue
-  m_TagString: bomb_b
+  m_Name: Explosion orange
+  m_TagString: bomb
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400002}
+  - 114: {fileID: 11400004}
+  m_Layer: 0
+  m_Name: bomb_o
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,9 +42,21 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.5379318, y: 3.93019557, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 400002}
+--- !u!4 &400002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .393837512, y: -2.67626858, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400000}
   m_Father: {fileID: 0}
 --- !u!82 &8200000
 AudioSource:
@@ -38,11 +66,11 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 8ffa19dfa4e382541af63b1010e16bc7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b8696b75c8397ab4e8e784698bfb3775, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .660000026
+  m_Volume: .519999981
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -96,27 +124,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ef0282658803b48a3533c49815d8a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 210a4bb5e5d2e2b468755760474f8994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequences:
-  - spriteSheet: {fileID: 100000, guid: e7b08013eb0743840b3b9ddff29a9f93, type: 2}
-    offset: {x: 0, y: 0, z: 0}
-    waittingTime: 0
-    foldOut: 1
-    color: {r: .879896641, g: .54122299, b: .0193107128, a: 1}
-    spriteSheetRef: {fileID: 100000, guid: e7b08013eb0743840b3b9ddff29a9f93, type: 2}
-    oldSpriteSheetRef: {fileID: 100000, guid: e7b08013eb0743840b3b9ddff29a9f93, type: 2}
-    play: 0
-  billboarding: 0
-  autoDestruct: 1
-  editorMode: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef0282658803b48a3533c49815d8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequences:
+  - spriteSheet: {fileID: 100000, guid: c4e0744aa286d0e4e88275469e3744b1, type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    waittingTime: 0
+    foldOut: 1
+    color: {r: 1, g: .45588237, b: .45588237, a: 1}
+    spriteSheetRef: {fileID: 100000, guid: c4e0744aa286d0e4e88275469e3744b1, type: 2}
+    oldSpriteSheetRef: {fileID: 100000, guid: c4e0744aa286d0e4e88275469e3744b1, type: 2}
+    play: 0
+  billboarding: 0
+  autoDestruct: 1
+  editorMode: 0
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 210a4bb5e5d2e2b468755760474f8994, type: 3}
@@ -143,6 +182,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 100000}
+  m_RootGameObject: {fileID: 100002}
   m_IsPrefabParent: 1
   m_IsExploded: 1

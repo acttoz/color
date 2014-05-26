@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class src_balloon : MonoBehaviour
 {
 		float bombSize = 0.4f;
+		float[] levels = new float[]{0,0.5f,2f,4f,6f,10f,15f,20f,25f};
 		Animator anim;
 		GameObject bomb;
+		int monsterLevel = 1;
 
 //		public AudioClip itemSound;
 		bool exist = false;
@@ -82,8 +84,9 @@ public class src_balloon : MonoBehaviour
 
 		void offMonster ()
 		{
+				
 				isMonster = false;
-				if (scr_manager.superLevel != 0)
+				if (scr_manager.superLevel != 5)
 						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				
 		}
@@ -91,10 +94,11 @@ public class src_balloon : MonoBehaviour
 		void biggerBomb (bool temp)
 		{
 				if (temp) {
+						monsterLevel++;
 						bombSize += 0.2f;
 						transform.parent.localScale += new Vector3 (0.2f, 0.2f, 0f);
 				} else {
-
+						monsterLevel = 1;
 						bombSize = 0.4f;
 						transform.parent.localScale = new Vector3 (0.7f, 0.7f, 0.4f);
 				}
@@ -113,6 +117,7 @@ public class src_balloon : MonoBehaviour
 						offMonster ();
 						if (monster.Equals ("b")) {
 								bomb = Instantiate (effects [0], transform.position, Quaternion.identity) as GameObject;
+								bomb.SendMessage ("onTimer", 2f);
 						}
 						if (monster.Equals ("o")) {
 								bomb = Instantiate (effects [1], transform.position, Quaternion.identity) as GameObject;
@@ -120,7 +125,8 @@ public class src_balloon : MonoBehaviour
 						if (monster.Equals ("p")) {
 								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
 						}
-						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
+						Debug.Log (levels [monsterLevel]);
+//						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
 //						bomb.transform.parent = transform;
 						resetMonster ();
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
@@ -159,8 +165,9 @@ public class src_balloon : MonoBehaviour
 						if (monster.Equals ("p")) {
 								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
 						}
+						Debug.Log (levels [monsterLevel]);
 						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
-						//						bomb.transform.parent = transform;
+//						bomb.transform.parent = transform;
 						resetMonster ();
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
 						biggerBomb (false);
@@ -192,7 +199,7 @@ public class src_balloon : MonoBehaviour
 						break;
 			
 				}
-		
+				
 				Destroy (GameObject.FindGameObjectWithTag ("monster"));
 		}
 

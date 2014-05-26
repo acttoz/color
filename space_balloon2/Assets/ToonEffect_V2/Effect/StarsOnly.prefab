@@ -45,9 +45,9 @@ MonoBehaviour:
   framesPerSecond: 30
   sizeStart: {x: 5, y: 5, z: 0}
   sizeEnd: {x: 5, y: 5, z: 0}
-  randomRotation: 0
+  randomRotation: 1
   rotationStart: 0
-  rotationEnd: 0
+  rotationEnd: 10
   isOneShot: 1
   life: 0
   billboarding: 0

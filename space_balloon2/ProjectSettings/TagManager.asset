@@ -16,6 +16,7 @@ TagManager:
   - bomb_b
   - bomb_o
   - bomb_p
+  - bomb
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
