@@ -49,7 +49,7 @@ MonoBehaviour:
   rotationStart: 0
   rotationEnd: 0
   isOneShot: 0
-  life: 5
+  life: 1
   billboarding: 3
   addLightEffect: 0
   lightRange: 0

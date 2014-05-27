@@ -25,8 +25,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 95: {fileID: 9500000}
-  - 114: {fileID: 11400000}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: prf_mon_purple
   m_TagString: Untagged
@@ -58,8 +58,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  - 114: {fileID: 11400002}
   - 111: {fileID: 11100000}
+  - 114: {fileID: 11400002}
+  - 135: {fileID: 13500000}
   m_Layer: 0
   m_Name: prf_mon_purple_parent
   m_TagString: monster
@@ -160,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.38989258}
+  m_LocalPosition: {x: -1.55249, y: -.433299661, z: -1.38989258}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -285,19 +286,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22b1baa8823e994981f1f8ff7c7447b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterColor: p
-  temp: {fileID: 21300000, guid: 0117fe2f13e010c47be97c14561c3fe2, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,10 +294,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 100006}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd76d6824dc99804d84da85bef9d541e, type: 3}
+  m_Script: {fileID: 11500000, guid: f3de9927b322ce34f867aff27f55a263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7fde971fb830c41a2c6f1b3e4bcf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterColor: p
+  temp: {fileID: 21300000, guid: 0117fe2f13e010c47be97c14561c3fe2, type: 3}
+--- !u!135 &13500000
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.17999995
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
