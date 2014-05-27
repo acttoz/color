@@ -8,7 +8,7 @@ public class scr_destroyTimer : MonoBehaviour
 		void Start ()
 		{
 				StartCoroutine ("timer");
-				GameObject.Find ("img-ballon").GetComponent<SpriteRenderer> ().sortingOrder = 1;
+//				GameObject.Find ("img-ballon").GetComponent<SpriteRenderer> ().sortingOrder = 1;
 		}
 	
 		// Update is called once per frame
@@ -20,13 +20,14 @@ public class scr_destroyTimer : MonoBehaviour
 		IEnumerator timer ()
 		{
 				yield return new WaitForSeconds (destroyTime);
-				GameObject temp = GameObject.Find ("img-ballon");
-				if (temp != null) {
-						temp.GetComponent<SpriteRenderer> ().sortingOrder = -1;
-						if (scr_manager.superLevel == 5)
-								temp.audio.Play ();
+//				GameObject temp = GameObject.Find ("img-ballon");
+//				if (temp != null) {
+//						temp.GetComponent<SpriteRenderer> ().sortingOrder = -1;
+//						if (scr_manager.superLevel == 5)
+//								temp.audio.Play ();
+//
+//				}
 
-				}
 				Destroy (this.gameObject);
 		
 		}

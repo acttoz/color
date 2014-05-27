@@ -98,11 +98,13 @@ public class src_enemy : MonoBehaviour
 						GetComponent<SphereCollider> ().radius = 0.17f;
 						Instantiate (bomb, transform.position, Quaternion.identity);
 //						transform.localScale = new Vector2 (transform.localScale.x / 2f, transform.localScale.y / 2f);
+						GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 8);
 						animation.Play ("anim_boss");
 				} else {
 						GetComponent<SphereCollider> ().radius = 0;
 						Instantiate (bomb, transform.position, Quaternion.identity);
 						animation.Play ("anim_boss2");
+						GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 7);
 //						Destroy (this.gameObject);
 				}
 
@@ -118,6 +120,7 @@ public class src_enemy : MonoBehaviour
 				if (!isBoss) {
 						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, transform.position, Quaternion.identity);
+								GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 6);
 								Destroy (this.gameObject);
 				
 				
@@ -149,6 +152,7 @@ public class src_enemy : MonoBehaviour
 				if (!isBoss) {
 						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, transform.position, Quaternion.identity);
+								GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 6);
 								Destroy (this.gameObject);
 				
 				

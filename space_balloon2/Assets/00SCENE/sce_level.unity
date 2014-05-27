@@ -416,7 +416,7 @@ GameObject:
   - 65: {fileID: 129807581}
   - 114: {fileID: 129807580}
   m_Layer: 0
-  m_Name: 7
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3757,7 +3757,7 @@ GameObject:
   - 65: {fileID: 1193003618}
   - 114: {fileID: 1193003617}
   m_Layer: 0
-  m_Name: 6
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

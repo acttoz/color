@@ -22,6 +22,7 @@ public class scr_manager : MonoBehaviour
 		public GameObject[] stars = new GameObject[6];
 		public float[] spacesHeight = new float[12];
 		public bool test;
+		int killNum = 0;
 		public bool isMonster = false;
 		public float undeadTime = 0;
 		public GameObject oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
@@ -206,13 +207,13 @@ public class scr_manager : MonoBehaviour
 				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
 				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 
-				if (LEVEL == 5 && enemyNum > 4)
+				if (LEVEL == 5 && enemyNum > 3)
 						return;
-				if (LEVEL == 4 && enemyNum > 3)
+				if (LEVEL == 4 && enemyNum > 2)
 						return;
-				if (LEVEL == 3 && enemyNum > 2)
+				if (LEVEL == 3 && enemyNum > 1)
 						return;
-				if (LEVEL == 2 && enemyNum > 1)
+				if (LEVEL == 2 && enemyNum > 0)
 						return;
 				if (LEVEL == 1 && enemyNum > 0)
 						return;
@@ -224,6 +225,8 @@ public class scr_manager : MonoBehaviour
 
 		void gameReset ()
 		{
+				killNum = 0;
+		
 				enemyNum = 0;
 				item1 = PlayerPrefs.GetInt ("ITEM1", 0);
 				item2 = PlayerPrefs.GetInt ("ITEM2", 0);
@@ -611,6 +614,7 @@ public class scr_manager : MonoBehaviour
 				GameObject.Find ("score").GetComponent<tk2dTextMesh> ().color = new Color (1, 1, 1);
 				scoreText.text = ": " + score;
 //				isScoreUp = false;
+
 		}
 
 		IEnumerator monster (string mColHave)
@@ -638,6 +642,7 @@ public class scr_manager : MonoBehaviour
 						Instantiate (monsterP, new Vector2 (0, 0), Quaternion.identity);
 //				Instantiate (monsterEffect, new Vector2 (0, 0), Quaternion.identity);
 				yield return new WaitForSeconds (1f);
+				resetStar ();
 //				resetStar ();
 		}
 
@@ -964,6 +969,11 @@ public class scr_manager : MonoBehaviour
 						audio.PlayOneShot (levelUp);
 						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
+			//LEVEL2
+						if (LEVEL == 2 && onPlay) {
+								PlayerPrefs.SetInt ("2", 1);
+								StartCoroutine ("timesUp");
+						}
 						break;
 				case 3:
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
@@ -977,6 +987,11 @@ public class scr_manager : MonoBehaviour
 						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
+			//LEVEL3
+						if (LEVEL == 3 && onPlay) {
+								PlayerPrefs.SetInt ("3", 1);
+								StartCoroutine ("timesUp");
+						}
 						break;
 			
 				 
@@ -995,6 +1010,11 @@ public class scr_manager : MonoBehaviour
 						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (numHave == 0)
 								balloonSprite.sprite = superBalloon4;
+			//LEVEL4
+						if (LEVEL == 4 && onPlay) {
+								PlayerPrefs.SetInt ("4", 1);
+								StartCoroutine ("timesUp");
+						}
 						break;
 
 				case 5:
@@ -1015,6 +1035,11 @@ public class scr_manager : MonoBehaviour
 						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (numHave == 0)
 								balloonSprite.sprite = superBalloon5;
+			//LEVEL5
+						if (LEVEL == 5 && onPlay) {
+								PlayerPrefs.SetInt ("5", 1);
+								StartCoroutine ("timesUp");
+						}
 						break;
 				case 6:
 						InvokeRepeating ("scoreCount", 0.1f, 0.1f);
@@ -1043,7 +1068,15 @@ public class scr_manager : MonoBehaviour
 						scoreText.text = " :  " + "0 balloon";
 						StartCoroutine ("timesUp");
 				}
-
+				//LEVEL1
+				if (LEVEL == 1 && onPlay && score > 20) {
+						PlayerPrefs.SetInt ("1", 1);
+						StartCoroutine ("timesUp");
+				}
+				if (LEVEL == 9 && onPlay && score > 1000) {
+						PlayerPrefs.SetInt ("1", 1);
+						StartCoroutine ("timesUp");
+				}
 //				if (score > spacesHeight [spaceId] && spaceId == 0) {
 //						mainCamera.animation.Play ("anim_maincamera");
 //						spaceId = 1;
@@ -1163,6 +1196,31 @@ public class scr_manager : MonoBehaviour
 						isUndead = true;
 						balloon.SendMessage ("undead", true);
 						undeadTime = 1.5f;
+						isMonster = false;
+						break;
+				case 6:
+			//LEVEL6,7
+						killNum++;
+						if (LEVEL == 6 && onPlay && killNum > 5) {
+								onPlay = false;
+								PlayerPrefs.SetInt ("6", 1);
+								StartCoroutine ("timesUp");
+						}
+						if (LEVEL == 7 && onPlay && killNum > 5) {
+								onPlay = false;
+								PlayerPrefs.SetInt ("7", 1);
+								StartCoroutine ("timesUp");
+						}
+						break;
+				case 7:
+			//LEVEL8
+						if (LEVEL == 8 && onPlay) {
+								onPlay = false;
+								PlayerPrefs.SetInt ("8", 1);
+								StartCoroutine ("timesUp");
+						}
+						break;
+				case 8:
 						isMonster = false;
 						break;
 				default:
