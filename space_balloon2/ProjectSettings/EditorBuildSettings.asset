@@ -16,20 +16,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00SCENE/sce_tutorial.unity
   - enabled: 1
-    path: Assets/00SCENE/1.unity
-  - enabled: 1
-    path: Assets/00SCENE/2.unity
-  - enabled: 1
-    path: Assets/00SCENE/3.unity
-  - enabled: 1
-    path: Assets/00SCENE/4.unity
-  - enabled: 1
-    path: Assets/00SCENE/5.unity
-  - enabled: 1
-    path: Assets/00SCENE/6.unity
-  - enabled: 1
-    path: Assets/00SCENE/7.unity
-  - enabled: 1
-    path: Assets/00SCENE/8.unity
-  - enabled: 1
-    path: Assets/00SCENE/9.unity
+    path: Assets/00SCENE/game.unity

@@ -26,7 +26,7 @@ public class scr_selectLevel : MonoBehaviour
 		void OnTap (TapGesture gesture)
 		{
 				if (gesture.Selection == btn_back) {
-						StartCoroutine ("loadLV", 1);
+						Application.LoadLevel (1);
 						//						Application.LoadLevel (1);
 				}
 				if (gesture.Selection == btn_back2) {
@@ -171,7 +171,8 @@ public class scr_selectLevel : MonoBehaviour
 				oCart.animation.Play ("anim_menu2");
 				yield return new WaitForSeconds (1.5f);
 				Destroy (GameObject.Find ("back"));
-				Application.LoadLevel (num);
+				PlayerPrefs.SetInt ("LEVEL", num-4);
+				Application.LoadLevel (5);
 		}
 
 		void cart ()

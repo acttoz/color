@@ -67,7 +67,7 @@ public class scr_manager : MonoBehaviour
 
 		void Start ()
 		{
-				PlayerPrefs.SetInt ("LEVEL", 2);
+//				PlayerPrefs.SetInt ("LEVEL", 2);
 				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
 				item1 = PlayerPrefs.GetInt ("ITEM1", 0);
 				item2 = PlayerPrefs.GetInt ("ITEM2", 0);
