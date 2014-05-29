@@ -4,7 +4,7 @@ using System.Collections;
 public class scr_selectLevel : MonoBehaviour
 {
 		GameObject[] oLevels = new GameObject[9];
-		public GameObject btn_back, btn_back2, oCart, btn_play, oToast;
+		public GameObject btn_back, btn_back2, oCart, btn_play, oToast, loading, UI;
 		public GameObject oItem_time, oItem_shield, oItem_smaller, oItem_star, oSelectedPan1, oSelectedPan2;
 		public Sprite[] items = new Sprite[5] ;
 		int selectedLevel = 5;
@@ -168,11 +168,11 @@ public class scr_selectLevel : MonoBehaviour
 
 		IEnumerator play (int num)
 		{
-				oCart.animation.Play ("anim_menu2");
-				yield return new WaitForSeconds (1.5f);
-				Destroy (GameObject.Find ("back"));
-				PlayerPrefs.SetInt ("LEVEL", num-4);
+				PlayerPrefs.SetInt ("LEVEL", num - 4);
+				UI.SetActive (false);
+				loading.SetActive (true);
 				Application.LoadLevel (5);
+				yield return new WaitForSeconds (1.5f);
 		}
 
 		void cart ()

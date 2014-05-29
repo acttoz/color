@@ -32,7 +32,7 @@ public class scr_manager : MonoBehaviour
 //		bool isUndead = false;
 		private Vector2 zonePosition;
 //		public GameObject[] oAirs = new GameObject[3];
-		public GameObject oZone, oEnergy, oStopSound, btnRestart, balloon, itemBlue, itemOrange, itemPurple, monsterB, monsterO, monsterP, monsterEffect, super_back2;
+		public GameObject oZone, oEnergy, oStopSound, btnRestart, btnNext, balloon, itemBlue, itemOrange, itemPurple, monsterB, monsterO, monsterP, monsterEffect, super_back2;
 		public Sprite bStar, oStar, pStar, eStar, superBalloon4, superBalloon5;
 		public GameObject itemEffectO, itemEffectB, effectPoint2, effectStop, itemEffectP, itemEffectBack, walls, btn_pause, prf_pause, btn_resume;
 //		int timer;
@@ -186,7 +186,7 @@ public class scr_manager : MonoBehaviour
 		/// /
 		///                      START
 		/// 
-		/// 
+		///                     RESET
 		/// 
 		/// 
 		/// 
@@ -201,15 +201,15 @@ public class scr_manager : MonoBehaviour
 				 
 				Instantiate (backFirst, new Vector2 (0, 0), Quaternion.identity);
 		}
-
+	//ENEMY
 		void enemyCreate ()
 		{
 				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
 				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 
-				if (LEVEL == 5 && enemyNum > 3)
+				if (LEVEL == 5 && enemyNum > 2)
 						return;
-				if (LEVEL == 4 && enemyNum > 2)
+				if (LEVEL == 4 && enemyNum > 1)
 						return;
 				if (LEVEL == 3 && enemyNum > 1)
 						return;
@@ -226,7 +226,7 @@ public class scr_manager : MonoBehaviour
 		void gameReset ()
 		{
 				killNum = 0;
-		
+				
 				enemyNum = 0;
 				item1 = PlayerPrefs.GetInt ("ITEM1", 0);
 				item2 = PlayerPrefs.GetInt ("ITEM2", 0);
@@ -237,7 +237,8 @@ public class scr_manager : MonoBehaviour
 						superLevel = 2;
 				if (item2 == 1)
 						isShield = true;
-				GameObject.Find ("boss").transform.localScale = new Vector2 (1.2f, 1.2f);
+				oBoss.transform.localScale = new Vector2 (1.2f, 1.2f);
+//				oBoss.GetComponent<SphereCollider> ().radius = 0.34f;
 				resetStar ();
 				isMonster = false;
 				spaceId = 0;
@@ -327,7 +328,7 @@ public class scr_manager : MonoBehaviour
 		IEnumerator timesUp ()
 		{
 				onPlay = false;
-				
+				superLevel = 0;
 				balloon.SetActive (false);
 				existBalloon = false;
 				disableTouch ();
@@ -340,6 +341,7 @@ public class scr_manager : MonoBehaviour
 				countScore = 0;
 				btn_menu = GameObject.Find ("btn_menu");
 				btn_replay = GameObject.Find ("btn_replay");
+				btnNext = GameObject.Find ("btn_next");
 				InvokeRepeating ("resultCount", 0f, 0.01f);
 		
 		}
@@ -1056,9 +1058,11 @@ public class scr_manager : MonoBehaviour
 		void scoreCount ()
 		{
 				if (superLevel < 6) {
-						score += 1;
+						if (onPlay)
+								score += 1;
 				} else {
-						score -= 1;
+						if (onPlay)
+								score -= 1;
 				}
 
 				scoreText.text = " :  " + score / 10 + " balloon";
@@ -1167,7 +1171,7 @@ public class scr_manager : MonoBehaviour
 				case 1:
 						if (isShield) {
 
-								audio.PlayOneShot (pop);
+								audio.PlayOneShot (levelUp);
 								GameObject ep = (GameObject)GameObject.Instantiate (effectPop);
 								ep.transform.position = balloon.transform.position;
 								isUndead = true;
@@ -1176,7 +1180,7 @@ public class scr_manager : MonoBehaviour
 								balloon.SendMessage ("shield");
 								isShield = false;
 								Instantiate (itemShield, new Vector2 (0, 0), Quaternion.identity);
-								Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
+//								Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 				
 						} else {
 								CancelInvoke ("balloonStop");
@@ -1273,6 +1277,10 @@ public class scr_manager : MonoBehaviour
 						btn_replay.GetComponent<SpriteRenderer> ().color = Color.yellow;
 //												Application.LoadLevel (0);
 				}
+				if (e.Selection == btnNext) {
+						btnNext.GetComponent<SpriteRenderer> ().color = Color.yellow;
+						//												Application.LoadLevel (0);
+				}
 				if (!existBalloon && onPlay && e.Selection != btn_pause) {
 						existBalloon = true;
 						Create (GetWorldPos (e.Position));
@@ -1300,6 +1308,19 @@ public class scr_manager : MonoBehaviour
 						Time.timeScale = 1.0f;
 //						gameReset ();
 						Application.LoadLevel (1);
+				}
+				if (e.Selection == btnNext) {
+						btnNext.GetComponent<SpriteRenderer> ().color = Color.white;
+						PlayerPrefs.SetInt (LEVEL + "", 1);
+						LEVEL++;
+						PlayerPrefs.SetInt ("LEVEL", LEVEL);
+
+						Destroy (GameObject.Find ("prf_timesup(Clone)"));
+						Destroy (GameObject.Find ("prf_pause(Clone)"));
+						Time.timeScale = 1.0f;
+						gameReset ();
+						//						gameReset ();
+//						Application.LoadLevel (1);
 				}
 				if (e.Selection == btn_resume) {
 						btn_resume.GetComponent<SpriteRenderer> ().color = Color.white;

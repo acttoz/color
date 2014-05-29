@@ -21,45 +21,21 @@ AnimationClip:
         value: {x: 1.10238874, y: 1.10238254, z: .999999881}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 158432276
+        tangentMode: 0
       - time: .0833333358
         value: {x: 1.05963564, y: 1.05962932, z: .999999881}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 7
+        tangentMode: 0
       - time: .166666672
         value: {x: 1.10238874, y: 1.10238254, z: .999999881}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
+        tangentMode: 3
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: 
   m_FloatCurves:
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 1.42868328
-        inSlope: -.579910755
-        outSlope: -.579910755
-        tangentMode: 10
-      - time: .0833333358
-        value: 1.38035738
-        inSlope: -9.72747803e-05
-        outSlope: -9.72747803e-05
-        tangentMode: 10
-      - time: .166666672
-        value: 1.42866707
-        inSlope: .579716206
-        outSlope: .579716206
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_Radius
-    path: 
-    classID: 135
-    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -211,30 +187,6 @@ AnimationClip:
     attribute: m_LocalScale.z
     path: 
     classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 1.42868328
-        inSlope: -.579910755
-        outSlope: -.579910755
-        tangentMode: 10
-      - time: .0833333358
-        value: 1.38035738
-        inSlope: -9.72747803e-05
-        outSlope: -9.72747803e-05
-        tangentMode: 10
-      - time: .166666672
-        value: 1.42866707
-        inSlope: .579716206
-        outSlope: .579716206
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_Radius
-    path: 
-    classID: 135
     script: {fileID: 0}
   - curve:
       serializedVersion: 2

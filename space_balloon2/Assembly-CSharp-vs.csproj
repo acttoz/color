@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Final_audio_play.cs" />
      <Compile Include="Assets\FingerGestures Samples\1) Finger Events\Scripts\FingerEventsSamplePart1.cs" />
      <Compile Include="Assets\FingerGestures Samples\1) Finger Events\Scripts\FingerEventsSamplePart2.cs" />
      <Compile Include="Assets\FingerGestures Samples\2) Gestures\Scripts\BasicGesturesSample.cs" />
@@ -137,6 +138,7 @@
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSheet.cs" />
      <Compile Include="Assets\bombTimer.cs" />
      <Compile Include="Assets\mission.cs" />
+     <Compile Include="Assets\nextBtn.cs" />
      <Compile Include="Assets\scr_air.cs" />
      <Compile Include="Assets\scr_back.cs" />
      <Compile Include="Assets\scr_back2.cs" />

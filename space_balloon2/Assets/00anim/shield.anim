@@ -151,7 +151,7 @@ AnimationClip:
         value: {x: -7.03693485, y: .95585525, z: 0}
         inSlope: {x: 32.4781609, y: 1.38293183, z: 0}
         outSlope: {x: 32.4781609, y: 1.38293183, z: 0}
-        tangentMode: 0
+        tangentMode: 1
       - time: .216666669
         value: {x: 0, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
@@ -172,12 +172,12 @@ AnimationClip:
         value: {x: -.00569581985, y: -.0114410073, z: 0}
         inSlope: {x: 7.70908594, y: 9.25090981, z: 0}
         outSlope: {x: 7.70908594, y: 9.25090981, z: 0}
-        tangentMode: 1104674816
+        tangentMode: 0
       - time: .600000024
         value: {x: 1.53612149, y: 1.83874106, z: 0}
         inSlope: {x: 7.70908594, y: 9.25090981, z: 0}
         outSlope: {x: 7.70908594, y: 9.25090981, z: 0}
-        tangentMode: 0
+        tangentMode: 7930113
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: item_shield2
@@ -193,11 +193,48 @@ AnimationClip:
         value: {x: -1.87999582, y: 1.84394538, z: 0}
         inSlope: {x: -9.48806953, y: 9.25090504, z: 0}
         outSlope: {x: -9.48806953, y: 9.25090504, z: 0}
-        tangentMode: 0
+        tangentMode: 5
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: item_shield
-  m_ScaleCurves: []
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: .388032019, y: 1.87684488, z: 0}
+        inSlope: {x: -.517480791, y: 4.13984442, z: 0}
+        outSlope: {x: -.517480791, y: 4.13984442, z: 0}
+        tangentMode: 1
+      - time: .300000012
+        value: {x: .232787773, y: 3.11879826, z: 0}
+        inSlope: {x: -.819348693, y: -9.57339954, z: 0}
+        outSlope: {x: -.819348693, y: -9.57339954, z: 0}
+        tangentMode: 0
+      - time: .5
+        value: {x: .00854447577, y: -1.53853011, z: 0}
+        inSlope: {x: -1.12121654, y: -23.286644, z: 0}
+        outSlope: {x: -1.12121654, y: -23.286644, z: 0}
+        tangentMode: 7012451
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: IconEnergy
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 1}
+        inSlope: {x: 3.33333325, y: 3.33333325, z: 0}
+        outSlope: {x: 3.33333325, y: 3.33333325, z: 0}
+        tangentMode: 0
+      - time: .300000012
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 3.33333325, y: 3.33333325, z: 0}
+        outSlope: {x: 3.33333325, y: 3.33333325, z: 0}
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: IconEnergy
   m_FloatCurves:
   - curve:
       serializedVersion: 2
@@ -1269,6 +1306,135 @@ AnimationClip:
     path: item_shield2
     classID: 212
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 3.33333325
+        outSlope: 3.33333325
+        tangentMode: 10
+      - time: .300000012
+        value: 1
+        inSlope: 3.33333325
+        outSlope: 3.33333325
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.x
+    path: IconEnergy
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 3.33333325
+        outSlope: 3.33333325
+        tangentMode: 10
+      - time: .300000012
+        value: 1
+        inSlope: 3.33333325
+        outSlope: 3.33333325
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.y
+    path: IconEnergy
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .300000012
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.z
+    path: IconEnergy
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: .388032019
+        inSlope: -.517480791
+        outSlope: -.517480791
+        tangentMode: 10
+      - time: .300000012
+        value: .232787773
+        inSlope: -.819348693
+        outSlope: -.819348693
+        tangentMode: 10
+      - time: .5
+        value: .00854447577
+        inSlope: -1.12121654
+        outSlope: -1.12121654
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.x
+    path: IconEnergy
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1.87684488
+        inSlope: 4.13984442
+        outSlope: 4.13984442
+        tangentMode: 10
+      - time: .300000012
+        value: 3.11879826
+        inSlope: -9.57339954
+        outSlope: -9.57339954
+        tangentMode: 10
+      - time: .5
+        value: -1.53853011
+        inSlope: -23.286644
+        outSlope: -23.286644
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.y
+    path: IconEnergy
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .300000012
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.z
+    path: IconEnergy
+    classID: 4
+    script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2
@@ -1342,4 +1508,11 @@ AnimationClip:
     path: 
     classID: 4
     script: {fileID: 0}
-  m_Events: []
+  m_Events:
+  - time: 1.20000005
+    functionName: destroySelf
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
