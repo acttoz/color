@@ -5,12 +5,12 @@ public class scr_monster_p : MonoBehaviour
 {
 		public string monsterColor;
 		public Sprite temp;
-		GameObject oBalloon;
+//		GameObject oBalloon;
 
 		// Use this for initialization
 		void Start ()
 		{
-				oBalloon = GameObject.FindGameObjectWithTag ("balloon");
+//				oBalloon = GameObject.FindGameObjectWithTag ("balloon");
 		}
 	
 		// Update is called once per frame

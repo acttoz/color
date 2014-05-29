@@ -54,4 +54,9 @@ public class scr_bgm : MonoBehaviour
 		
 		
 		}
+
+		void clearCamera ()
+		{
+				camera.clearFlags = CameraClearFlags.Nothing;
+		}
 }

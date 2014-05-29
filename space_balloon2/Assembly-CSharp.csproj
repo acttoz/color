@@ -138,11 +138,13 @@
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSheet.cs" />
      <Compile Include="Assets\bombTimer.cs" />
      <Compile Include="Assets\mission.cs" />
+     <Compile Include="Assets\monster_choice.cs" />
      <Compile Include="Assets\nextBtn.cs" />
      <Compile Include="Assets\scr_air.cs" />
      <Compile Include="Assets\scr_back.cs" />
      <Compile Include="Assets\scr_back2.cs" />
      <Compile Include="Assets\scr_backManager.cs" />
+     <Compile Include="Assets\scr_back_space.cs" />
      <Compile Include="Assets\scr_bgm.cs" />
      <Compile Include="Assets\scr_bomb_b.cs" />
      <Compile Include="Assets\scr_bomb_p.cs" />

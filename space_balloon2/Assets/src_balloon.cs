@@ -3,7 +3,7 @@ using System.Collections;
 
 public class src_balloon : MonoBehaviour
 {
-		float bombSize = 0.4f;
+//		float bombSize = 0.4f;
 		float[] levels = new float[]{0,0.5f,2f,4f,6f,10f,15f,20f,25f};
 		Animator anim;
 		GameObject bomb;
@@ -111,7 +111,7 @@ public class src_balloon : MonoBehaviour
 
 		void OnTriggerEnter (Collider myTrigger)
 		{
-		Debug.Log (exist + " " + isUndead + " " + isMonster);
+//		Debug.Log (exist + " " + isUndead + " " + isMonster);
 				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && !isMonster) {
 						exist = false;
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);

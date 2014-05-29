@@ -17,6 +17,7 @@ TagManager:
   - bomb_o
   - bomb_p
   - bomb
+  - bombparent
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   Builtin Layer 7: 
   User Layer 8: ui
   User Layer 9: zone
-  User Layer 10: 
+  User Layer 10: space
   User Layer 11: 
   User Layer 12: 
   User Layer 13: 

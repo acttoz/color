@@ -19,7 +19,7 @@ public class scr_toStart : MonoBehaviour
 		void OnTap ()
 		{
 				
-				GameObject.Find ("GAMEMANAGER").SendMessage ("gameStart");
+				GameObject.Find ("GAMEMANAGER").SendMessage ("monsterChoice");
 				Destroy (this.gameObject);
 		}
 }
