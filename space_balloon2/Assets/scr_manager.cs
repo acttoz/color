@@ -11,6 +11,7 @@ public class scr_manager : MonoBehaviour
 		public int superTime;
 		int LEVEL;
 		int enemyNum = 0;
+		public Sprite[] sItems;
 		public float[] levelRate = new float[4];
 		float stopRate = 0;
 		int selectedMonsterNum = 0;
@@ -120,13 +121,14 @@ public class scr_manager : MonoBehaviour
 		//RESET
 		void gameReset ()
 		{
-				selectedMonsterNum = 0;
+		CancelInvoke ("backCreate");
 				GameObject[] temp2;
 				temp2 = GameObject.FindGameObjectsWithTag ("bombparent");
 				for (int i=0; i<temp2.Length; i++) {
 						Destroy (temp2 [i]);
 				}
 				mainCamera.camera.clearFlags = CameraClearFlags.SolidColor;
+				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
 		
 				killNum = 0;
 		
@@ -143,7 +145,7 @@ public class scr_manager : MonoBehaviour
 				if (oBoss != null)
 						oBoss.transform.localScale = new Vector2 (1.2f, 1.2f);
 				//				oBoss.GetComponent<SphereCollider> ().radius = 0.34f;
-				resetStar ();
+				resetStar (0);
 				isMonster = false;
 				spaceId = 0;
 				mainCamera.camera.backgroundColor = colSky;
@@ -222,6 +224,13 @@ public class scr_manager : MonoBehaviour
 				monsterIcons [0] = GameObject.Find ("btn1");
 				monsterIcons [1] = GameObject.Find ("btn2");
 				monsterIcons [2] = GameObject.Find ("btn3");
+				selectedMonsterNum = 0;
+				selectedMonster1 = false;
+				selectedMonster2 = false;
+				selectedMonster3 = false;
+				for (int i=0; i<3; i++) {
+						monsterIcons [i].GetComponent<SpriteRenderer> ().color = new Color (0.5f, 0.5f, 0.5f, 1);
+				}
 		}
 	
 		IEnumerator pauseGame ()
@@ -374,7 +383,7 @@ public class scr_manager : MonoBehaviour
 				if (existItem != null)
 						Destroy (existItem);
 //				Debug.Log ("itemCreate");
-				int tempCol = Random.Range (1, 6);
+				int tempCol = Random.Range (1, 5);
 				//test
 //				tempCol = 3;
 				switch (LEVEL) {
@@ -392,41 +401,62 @@ public class scr_manager : MonoBehaviour
 				}
 				switch (tempCol) {
 				case 1:
-						colCreate = "b";
-						createItem = itemBlue;
-						tempStar = bStar;
+						if (selectedMonster1) {
+								colCreate = "b";
+								createItem = itemBlue;
+								tempStar = bStar;
+						} else {
+								createItem = itemOrange;
+								colCreate = "o";
+								tempStar = oStar;
+						}
 						break;
 
 				case 2:
-						createItem = itemOrange;
-						colCreate = "o";
-						tempStar = oStar;
+						if (selectedMonster2) {
+								createItem = itemOrange;
+								colCreate = "o";
+								tempStar = oStar;
+						} else {
+								createItem = itemBlue;
+								colCreate = "b";
+								tempStar = bStar;
+						}
 						break;
 
 				case 3:
-						createItem = itemPurple;
-						colCreate = "p";
-						tempStar = pStar;
+						if (selectedMonster3) {
+								createItem = itemPurple;
+								colCreate = "p";
+								tempStar = pStar;
+						} else {
+								createItem = itemBlue;
+								colCreate = "b";
+								tempStar = bStar;
+						}
 						break;
 				case 4:
-						colCreate = "b";
-						createItem = itemBlue;
-						tempStar = bStar;
+						if (selectedMonster3) {
+								createItem = itemPurple;
+								colCreate = "p";
+								tempStar = pStar;
+						} else {
+								createItem = itemOrange;
+								colCreate = "o";
+								tempStar = oStar;
+						}
 						break;
-			
-				case 5:
-						createItem = itemOrange;
-						colCreate = "o";
-						tempStar = oStar;
-						break;
+				 
 		
 				}
 				
 				
 //				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 				if (LEVEL > 5) {
-						if (!isUndead && !isMonster)
+						if (!isUndead && !isMonster) {
 								existItem = Instantiate (createItem, new Vector3 (tempX, 7, 0), Quaternion.identity) as GameObject;
+
+						}
 				}
 		}
 
@@ -478,6 +508,12 @@ public class scr_manager : MonoBehaviour
 				switch (numHave) {
 				case 0:
 						colHave1 = colCreate;
+						if (colCreate.Equals ("b"))
+								resetStar (1);
+						if (colCreate.Equals ("o"))
+								resetStar (2);
+						if (colCreate.Equals ("p"))
+								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
 //						StartCoroutine ("monster", colCreate);
@@ -503,7 +539,7 @@ public class scr_manager : MonoBehaviour
 //								Destroy (GameObject.FindGameObjectWithTag ("monster"));
 //								balloon.SendMessage ("resetMonster");
 
-								resetStar ();
+								resetStar (0);
 								getItem ();
 						}
 						break;
@@ -529,7 +565,7 @@ public class scr_manager : MonoBehaviour
 
 						} else {
 								isMonster = false;
-								resetStar ();
+								resetStar (0);
 								getItem ();
 						}
 						break;
@@ -607,15 +643,17 @@ public class scr_manager : MonoBehaviour
 						Instantiate (monsterP, new Vector2 (0, 0), Quaternion.identity);
 //				Instantiate (monsterEffect, new Vector2 (0, 0), Quaternion.identity);
 				yield return new WaitForSeconds (1f);
-				resetStar ();
+				resetStar (0);
 //				resetStar ();
 		}
 
-		void resetStar ()
+		void resetStar (int num)
 		{
-				star1.sprite = eStar;
-				star2.sprite = eStar;
-				star3.sprite = eStar;
+				 
+				star1.sprite = sItems [num];
+				star2.sprite = sItems [num];
+				star3.sprite = sItems [num];
+						 
 				numHave = 0;
 		}
 
@@ -660,6 +698,8 @@ public class scr_manager : MonoBehaviour
 				superLevel = 0;
 				if (item1 == 1)
 						superLevel = 2;
+		//TEST
+						superLevel = 4;
 //				superLevel = 3;
 				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
 				balloon.SetActive (true);
@@ -1161,7 +1201,7 @@ public class scr_manager : MonoBehaviour
 						score += 50;
 						break;
 				case 4:
-						resetStar ();
+						resetStar (0);
 						break;
 				case 5:
 						isUndead = true;
@@ -1206,7 +1246,6 @@ public class scr_manager : MonoBehaviour
 				//		score = 200;
 				//				PlayerPrefs.SetInt ("LEVEL", 9);
 				////				PlayerPrefs.SetInt ("LEVEL", 2);
-				//				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
 				item1 = PlayerPrefs.GetInt ("ITEM1", 0);
 				item2 = PlayerPrefs.GetInt ("ITEM2", 0);
 				item3 = PlayerPrefs.GetInt ("ITEM3", 0);
@@ -1318,34 +1357,25 @@ public class scr_manager : MonoBehaviour
 				Debug.Log (monsterIcons [0]);
 				if (onToast) {
 						if (e.Selection == monsterIcons [0]) {
-								selectedMonsterNum++;
+								if (!selectedMonster1)
+										selectedMonsterNum++;
 								selectedMonster1 = true;
 								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-								if (selectedMonsterNum == 2) {
-										Destroy (GameObject.Find ("toast 1(Clone)"));
-										onToast = false;
-										gameStart ();
-								}
+								 
 						}
 						if (e.Selection == monsterIcons [1]) {
-								selectedMonsterNum++;
-								selectedMonster1 = true;
+								if (!selectedMonster2)
+										selectedMonsterNum++;
+								selectedMonster2 = true;
 								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-								if (selectedMonsterNum == 2) {
-										Destroy (GameObject.Find ("toast 1(Clone)"));
-										onToast = false;
-										gameStart ();
-								}
+								 
 						}
 						if (e.Selection == monsterIcons [2]) {
-								selectedMonsterNum++;
-								selectedMonster1 = true;
+								if (!selectedMonster3)
+										selectedMonsterNum++;
+								selectedMonster3 = true;
 								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-								if (selectedMonsterNum == 2) {
-										Destroy (GameObject.Find ("toast 1(Clone)"));
-										onToast = false;
-										gameStart ();
-								}
+								 
 						}
 				}
 				if (e.Selection == btn_menu) {
@@ -1381,6 +1411,17 @@ public class scr_manager : MonoBehaviour
 	 
 		void OnFingerUp (FingerUpEvent e)
 		{
+				if (onToast) {
+						if (e.Selection == monsterIcons [0] || e.Selection == monsterIcons [1] || e.Selection == monsterIcons [2]) {
+								 
+								if (selectedMonsterNum == 2) {
+										Destroy (GameObject.Find ("toast 1(Clone)"));
+										onToast = false;
+										gameStart ();
+								}
+						}
+						 
+				}
 				if (e.Selection == btn_menu) {
 						btn_menu.GetComponent<SpriteRenderer> ().color = Color.white;
 						Time.timeScale = 1.0f;
@@ -1423,7 +1464,7 @@ public class scr_manager : MonoBehaviour
 				}
 				if (existBalloon && onPlay) {
 						CancelInvoke ("balloonStop");
-						StartCoroutine (Remove (1));			
+//						StartCoroutine (Remove (1));			
 			
 				}
 				//		balloonRemove ();
