@@ -66,6 +66,7 @@
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SampleUI.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\StartMenu.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SwipeParticlesEmitter.cs" />
+     <Compile Include="Assets\Store.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraUtil.cs" />
@@ -171,6 +172,7 @@
      <Compile Include="Assets\scr_space.cs" />
      <Compile Include="Assets\scr_star.cs" />
      <Compile Include="Assets\scr_startManager.cs" />
+     <Compile Include="Assets\scr_store.cs" />
      <Compile Include="Assets\scr_timesup.cs" />
      <Compile Include="Assets\scr_toStart.cs" />
      <Compile Include="Assets\scr_warn.cs" />

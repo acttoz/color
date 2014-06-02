@@ -46,7 +46,7 @@ public class scr_manager : MonoBehaviour
 //		int gameTime = 3;
 		public int leftTime;
 		bool onPlay;
-		int min, sec, countScore = 0, countGem = 0;
+		int min, sec, countScore = 0, countGem1 = 0, countGem2 = 0, countGem3 = 0;
 		Sprite tempStar;
 		SpriteRenderer star1, star2, star3, balloonSprite;
 		GameObject existItem, createItem, btn_menu, btn_replay;
@@ -61,7 +61,7 @@ public class scr_manager : MonoBehaviour
 		public AudioClip create, remove, pop, bing, levelUp, go, itemSound, timesup;
 		tk2dTextMesh scoreText;
 		tk2dTextMesh lvText;
-		tk2dTextMesh timeText, resultText, gemText;
+		tk2dTextMesh timeText, resultText, gemText1, gemText2, gemText3;
 		float score = 0;
 		int gem = 0;
 		public static int superLevel = 0;
@@ -121,7 +121,7 @@ public class scr_manager : MonoBehaviour
 		//RESET
 		void gameReset ()
 		{
-		CancelInvoke ("backCreate");
+				CancelInvoke ("backCreate");
 				GameObject[] temp2;
 				temp2 = GameObject.FindGameObjectsWithTag ("bombparent");
 				for (int i=0; i<temp2.Length; i++) {
@@ -186,7 +186,7 @@ public class scr_manager : MonoBehaviour
 				CancelInvoke ("normalModeCount");
 				gauge.transform.localScale = new Vector3 (1.75f, 0.3f, 1);
 				onPlay = false;
-				score = 0;
+				score = 10000;
 				scoreText.text = ": " + score;
 				//				timeStarted = false;
 				disableTouch ();
@@ -258,8 +258,12 @@ public class scr_manager : MonoBehaviour
 				audio.PlayOneShot (timesup);
 				Instantiate (oTimeUp, new Vector2 (0, 0), Quaternion.identity);
 				resultText = GameObject.Find ("numscore").GetComponent<tk2dTextMesh> ();
-				gemText = GameObject.Find ("numgem").GetComponent<tk2dTextMesh> ();
-				gemText.text = "" + countGem;
+				gemText1 = GameObject.Find ("numgem1").GetComponent<tk2dTextMesh> ();
+				gemText2 = GameObject.Find ("numgem2").GetComponent<tk2dTextMesh> ();
+				gemText3 = GameObject.Find ("numgem3").GetComponent<tk2dTextMesh> ();
+				gemText1.text = "" + countGem1;
+				gemText2.text = "" + countGem2;
+				gemText3.text = "" + countGem3;
 				yield return new WaitForSeconds (1f);
 				countScore = 0;
 				btn_menu = GameObject.Find ("btn_menu");
@@ -277,9 +281,15 @@ public class scr_manager : MonoBehaviour
 						CancelInvoke ("resultCount");
 			
 						resultText.text = "" + score;
-						if (score >= 1000) {
+						if (score >= 100000) {
+								gem = (int)score / 100000;
+								InvokeRepeating ("resultGemCount3", 0.5f, 0.3f);
+						} else if (score >= 10000) {
+								gem = (int)score / 10000;
+								InvokeRepeating ("resultGemCount2", 0.5f, 0.3f);
+						} else if (score >= 1000) {
 								gem = (int)score / 1000;
-								InvokeRepeating ("resultGemCount", 0.5f, 0.3f);
+								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
 						} else {
 								enableTouch ();
 						}
@@ -292,19 +302,70 @@ public class scr_manager : MonoBehaviour
 		
 		}
 	
-		void resultGemCount ()
+		void resultGemCount3 ()
 		{
 				audio.PlayOneShot (itemSound);
-				countGem++;
+				countGem3++;
 				gem--;
-				gemText.text = "" + countGem;
+				gemText3.text = ": " + countGem3;
+				resultText.text = "" + (score -= 100000);
+		
+				if (gem < 1) {
+			
+						CancelInvoke ("resultGemCount3");
+						PlayerPrefs.SetInt ("NUMGEM3", countGem3);
+						if (score >= 10000) {
+								gem = (int)score / 10000;
+								InvokeRepeating ("resultGemCount2", 0.5f, 0.3f);
+						} else if (score >= 1000) {
+								gem = (int)score / 1000;
+								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
+						} else {
+								enableTouch ();
+						}
+				}  
+		
+		
+		}
+
+		void resultGemCount2 ()
+		{
+				audio.PlayOneShot (itemSound);
+				countGem2++;
+				gem--;
+				gemText2.text = ": " + countGem2;
+				resultText.text = "" + (score -= 10000);
+		
+				if (gem < 1) {
+			
+						CancelInvoke ("resultGemCount2");
+						PlayerPrefs.SetInt ("NUMGEM2", countGem2);
+						if (score >= 1000) {
+								gem = (int)score / 1000;
+								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
+						} else {
+								enableTouch ();
+						}
+				}  
+		
+		
+		}
+
+		void resultGemCount1 ()
+		{
+				audio.PlayOneShot (itemSound);
+				countGem1++;
+				gem--;
+				gemText1.text = ": " + countGem1;
 				resultText.text = "" + (score -= 1000);
 		
 				if (gem < 1) {
 			
-						CancelInvoke ("resultGemCount");
-						PlayerPrefs.SetInt ("NUMGEM", countGem);
+						CancelInvoke ("resultGemCount1");
+						PlayerPrefs.SetInt ("NUMGEM1", countGem1);
+						
 						enableTouch ();
+						
 				}  
 		
 		
@@ -698,8 +759,8 @@ public class scr_manager : MonoBehaviour
 				superLevel = 0;
 				if (item1 == 1)
 						superLevel = 2;
-		//TEST
-						superLevel = 4;
+				//TEST
+				superLevel = 4;
 //				superLevel = 3;
 				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
 				balloon.SetActive (true);
@@ -1268,7 +1329,9 @@ public class scr_manager : MonoBehaviour
 				//
 				//				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
 				////				score = 1000;
-				countGem = PlayerPrefs.GetInt ("NUMGEM");
+				countGem1 = PlayerPrefs.GetInt ("NUMGEM1");
+				countGem2 = PlayerPrefs.GetInt ("NUMGEM2");
+				countGem3 = PlayerPrefs.GetInt ("NUMGEM3");
 				//				if (test)
 				//						Instantiate (testBack, new Vector2 (0, 0), Quaternion.identity);
 				//						
@@ -1431,11 +1494,14 @@ public class scr_manager : MonoBehaviour
 				if (e.Selection == btnNext) {
 						btnNext.GetComponent<SpriteRenderer> ().color = Color.white;
 						PlayerPrefs.SetInt (LEVEL + "", 1);
-						LEVEL++;
-						if (LEVEL < 9)
+			LEVEL=9;
+						if (LEVEL < 10) {
+								LEVEL++;
 								PlayerPrefs.SetInt ("LEVEL", LEVEL);
+				Application.LoadLevel(1);
+						}
 
-						Destroy (GameObject.Find ("prf_timesup(Clone)"));
+						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
 						Destroy (GameObject.Find ("prf_pause(Clone)"));
 						Time.timeScale = 1.0f;
 						gameReset ();
@@ -1450,7 +1516,7 @@ public class scr_manager : MonoBehaviour
 				}
 				if (e.Selection == btn_replay) {
 						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
-						Destroy (GameObject.Find ("prf_timesup(Clone)"));
+						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
 						Destroy (GameObject.Find ("prf_pause(Clone)"));
 						Time.timeScale = 1.0f;
 						gameReset ();
