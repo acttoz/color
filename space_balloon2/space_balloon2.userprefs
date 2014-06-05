@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_store.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_numGem.cs">
     <Files>
-      <File FileName="Assets\scr_store.cs" Line="23" Column="50" />
-      <File FileName="Assets\Store.cs" Line="16" Column="1" />
-      <File FileName="Assets\scr_manager.cs" Line="1506" Column="20" />
-      <File FileName="Assets\mission.cs" Line="15" Column="4" />
-      <File FileName="Assets\scr_numGem.cs" Line="15" Column="45" />
+      <File FileName="..\..\sddd\Assets\Solar System\Scripts\rotate.js" Line="10" Column="2" />
+      <File FileName="Assets\scr_button.cs" Line="1" Column="1" />
+      <File FileName="Assets\scr_selectLevel.cs" Line="195" Column="1" />
+      <File FileName="Assets\scr_realLevel.cs" Line="132" Column="30" />
+      <File FileName="Assets\scr_numGem.cs" Line="26" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

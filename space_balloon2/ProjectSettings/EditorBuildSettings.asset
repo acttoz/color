@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/00SCENE/sce_tutorial.unity
   - enabled: 1
     path: Assets/00SCENE/game.unity
+  - enabled: 1
+    path: Assets/00SCENE/sce_reallevel.unity

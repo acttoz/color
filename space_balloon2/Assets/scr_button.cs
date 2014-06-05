@@ -3,10 +3,15 @@ using System.Collections;
 
 public class scr_button : MonoBehaviour
 {
-		public GameObject btn1, btn2, btn3, loading, UI;
+		public GameObject btn1, btn2, btn3, loading, UI, realBtn;
 		// Use this for initialization
 		void Start ()
 		{
+				if (PlayerPrefs.GetInt ("9", 0) == 1) {
+						btn1.GetComponent<CapsuleCollider> ().enabled = false;
+			realBtn.GetComponent<CapsuleCollider>().enabled=true;
+						animation.Play ();
+				}
 //				DontDestroyOnLoad (GameObject.Find ("back"));
 				
 
@@ -46,9 +51,18 @@ public class scr_button : MonoBehaviour
 						StartCoroutine ("loadLV", 4);
 						//						Application.LoadLevel (1);
 				}
+				if (realBtn != null && gesture.Selection == realBtn) {
+						btn1.GetComponent<SpriteRenderer> ().color = Color.yellow;
+						StartCoroutine ("loadLV", 6);
+			
+				}
 
 				 
 
+		}
+
+		void playAudio ()
+		{
 		}
 
 		IEnumerator loadLV (int num)
@@ -57,7 +71,6 @@ public class scr_button : MonoBehaviour
 				loading.SetActive (true);
 //				animation.Play ("anim_menu2");
 				Application.LoadLevel (num);
-						yield return new WaitForSeconds (1.5f);
-		}
+				yield return new WaitForSeconds (0.1f);		}
 		 
 }
