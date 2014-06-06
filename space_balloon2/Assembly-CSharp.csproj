@@ -180,6 +180,7 @@
      <Compile Include="Assets\src_back.cs" />
      <Compile Include="Assets\src_balloon.cs" />
      <Compile Include="Assets\src_enemy.cs" />
+     <Compile Include="Assets\store_label.cs" />
      <Compile Include="Assets\success.cs" />
      <Compile Include="Assets\super_back.cs" />
      <Compile Include="Assets\tk2dUIExtensions\Code\Controls\tk2dUIExtIndicator.cs" />

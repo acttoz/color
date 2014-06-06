@@ -10,8 +10,11 @@ public class success : MonoBehaviour
 				int level = PlayerPrefs.GetInt ("LEVEL", 0);
 				int success = PlayerPrefs.GetInt ("" + level, 0);
 //		Debug.Log(level+ " " +success);
-				if (success != 1)
+				if (level == 10) {
+						Destroy (this.gameObject);
+				} else	if (success != 1)
 						GetComponent<SpriteRenderer> ().sprite = failed;
+
 		}
 	
 		// Update is called once per frame

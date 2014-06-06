@@ -10,6 +10,7 @@ public class scr_manager : MonoBehaviour
 		public float stopRateControl;
 		public int superTime;
 		int LEVEL;
+	int numGem;
 		int enemyNum = 0;
 		public Sprite[] sItems;
 		public float[] levelRate = new float[4];
@@ -186,7 +187,7 @@ public class scr_manager : MonoBehaviour
 				CancelInvoke ("normalModeCount");
 				gauge.transform.localScale = new Vector3 (1.75f, 0.3f, 1);
 				onPlay = false;
-				score = 10000;
+//				score = 60000;
 				scoreText.text = ": " + score;
 				//				timeStarted = false;
 				disableTouch ();
@@ -258,21 +259,21 @@ public class scr_manager : MonoBehaviour
 				audio.PlayOneShot (timesup);
 				Instantiate (oTimeUp, new Vector2 (0, 0), Quaternion.identity);
 				resultText = GameObject.Find ("numscore").GetComponent<tk2dTextMesh> ();
-				gemText1 = GameObject.Find ("numgem1").GetComponent<tk2dTextMesh> ();
-				gemText2 = GameObject.Find ("numgem2").GetComponent<tk2dTextMesh> ();
-				gemText3 = GameObject.Find ("numgem3").GetComponent<tk2dTextMesh> ();
+				gemText1 = GameObject.Find ("numgem").GetComponent<tk2dTextMesh> ();
+//				gemText2 = GameObject.Find ("numgem2").GetComponent<tk2dTextMesh> ();
+//				gemText3 = GameObject.Find ("numgem3").GetComponent<tk2dTextMesh> ();
 				gemText1.text = "" + countGem1;
-				gemText2.text = "" + countGem2;
-				gemText3.text = "" + countGem3;
+//				gemText2.text = "" + countGem2;
+//				gemText3.text = "" + countGem3;
 				yield return new WaitForSeconds (1f);
 				countScore = 0;
 				btn_menu = GameObject.Find ("btn_menu");
 				btn_replay = GameObject.Find ("btn_replay");
 				btnNext = GameObject.Find ("btn_next");
 				InvokeRepeating ("resultCount", 0f, 0.01f);
-		
+		numGem=PlayerPrefs.GetInt("NUMGEM",0);
 		}
-	
+	//RESULT
 		void resultCount ()
 		{
 				if (score < countScore) {
@@ -280,23 +281,25 @@ public class scr_manager : MonoBehaviour
 			
 						CancelInvoke ("resultCount");
 			
-						resultText.text = "" + score;
-						if (score >= 100000) {
-								gem = (int)score / 100000;
-								InvokeRepeating ("resultGemCount3", 0.5f, 0.3f);
-						} else if (score >= 10000) {
-								gem = (int)score / 10000;
-								InvokeRepeating ("resultGemCount2", 0.5f, 0.3f);
-						} else if (score >= 1000) {
+						resultText.text = "" + score/10;
+//						if (score >= 100000) {
+//								gem = (int)score / 100000;
+//								InvokeRepeating ("resultGemCount3", 0.5f, 0.3f);
+//						} else if (score >= 10000) {
+//								gem = (int)score / 10000;
+//								InvokeRepeating (	"resultGemCount2", 0.5f, 0.3f);
+//						} else 
+			
+			if (score >= 1000) {
 								gem = (int)score / 1000;
-								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
+								InvokeRepeating ("resultGemCount1", 0.5f, 0.05f);
 						} else {
 								enableTouch ();
 						}
 				} else {
 						audio.PlayOneShot (bing);
-						resultText.text = "" + countScore;
-						countScore += 50;
+						resultText.text = "" + countScore/10;
+						countScore += 500;
 				}
 		
 		
@@ -308,12 +311,14 @@ public class scr_manager : MonoBehaviour
 				countGem3++;
 				gem--;
 				gemText3.text = ": " + countGem3;
-				resultText.text = "" + (score -= 100000);
-		
+				resultText.text = "" + (score -= 100000)/10;
+		numGem=numGem+100;
+		PlayerPrefs.SetInt("NUMGEM",numGem);
 				if (gem < 1) {
 			
 						CancelInvoke ("resultGemCount3");
 						PlayerPrefs.SetInt ("NUMGEM3", countGem3);
+
 						if (score >= 10000) {
 								gem = (int)score / 10000;
 								InvokeRepeating ("resultGemCount2", 0.5f, 0.3f);
@@ -322,6 +327,7 @@ public class scr_manager : MonoBehaviour
 								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
 						} else {
 								enableTouch ();
+				Debug.Log("gemcount"+countGem3+countGem2+countGem1);
 						}
 				}  
 		
@@ -332,10 +338,17 @@ public class scr_manager : MonoBehaviour
 		{
 				audio.PlayOneShot (itemSound);
 				countGem2++;
+		if(countGem2>9){
+			countGem3++;
+			gemText3.text = ": " + countGem3;
+			PlayerPrefs.SetInt ("NUMGEM3", countGem3);
+			countGem2=0;
+		}
 				gem--;
 				gemText2.text = ": " + countGem2;
-				resultText.text = "" + (score -= 10000);
-		
+				resultText.text = "" + (score -= 10000)/10;
+		numGem=numGem+10;
+		PlayerPrefs.SetInt("NUMGEM",numGem);
 				if (gem < 1) {
 			
 						CancelInvoke ("resultGemCount2");
@@ -344,6 +357,7 @@ public class scr_manager : MonoBehaviour
 								gem = (int)score / 1000;
 								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
 						} else {
+				Debug.Log("gemcount"+countGem3+countGem2+countGem1);
 								enableTouch ();
 						}
 				}  
@@ -353,17 +367,26 @@ public class scr_manager : MonoBehaviour
 
 		void resultGemCount1 ()
 		{
-				audio.PlayOneShot (itemSound);
-				countGem1++;
+				audio.PlayOneShot (bing);
+//				countGem1++;
+//		if(countGem1>9){
+//			countGem2++;
+//			gemText2.text = ": " + countGem2;
+//			PlayerPrefs.SetInt ("NUMGEM2", countGem2);
+//			countGem1=0;
+//		}
 				gem--;
-				gemText1.text = ": " + countGem1;
-				resultText.text = "" + (score -= 1000);
-		
+		numGem=numGem+1;
+		gemText1.text = ":  " + numGem;
+				resultText.text = "" + (score -= 1000)/10;
+		PlayerPrefs.SetInt("NUMGEM",numGem);
 				if (gem < 1) {
 			
 						CancelInvoke ("resultGemCount1");
-						PlayerPrefs.SetInt ("NUMGEM1", countGem1);
+//						PlayerPrefs.SetInt ("NUMGEM1", countGem1);
 						
+				Debug.Log("gemcount"+countGem3+countGem2+countGem1);
+			audio.PlayOneShot (itemSound);
 						enableTouch ();
 						
 				}  
@@ -760,7 +783,7 @@ public class scr_manager : MonoBehaviour
 				if (item1 == 1)
 						superLevel = 2;
 				//TEST
-				superLevel = 4;
+//				superLevel = 4;
 //				superLevel = 3;
 				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
 				balloon.SetActive (true);
@@ -970,7 +993,6 @@ public class scr_manager : MonoBehaviour
 				if (superTimer < 0) {
 							
 							
-						Debug.Log ("normalCancel");
 						CancelInvoke ("normalModeCount");
 						superLevel++;
 						if (superLevel < 4)
@@ -1137,7 +1159,8 @@ public class scr_manager : MonoBehaviour
 						CancelInvoke ("scoreCount");
 						score = 0;
 						scoreText.text = " :  " + "0 balloon";
-						StartCoroutine ("timesUp");
+			superLevel=6;
+//						StartCoroutine ("timesUp");
 				}
 				//LEVEL1
 				if (LEVEL == 1 && onPlay && score > 20) {
@@ -1365,7 +1388,7 @@ public class scr_manager : MonoBehaviour
 		void Update ()
 		{
 		
-		
+		Debug.Log(LEVEL);
 		
 				if (Application.platform == RuntimePlatform.Android) {
 						if (Input.GetKey (KeyCode.Escape)) {
@@ -1417,7 +1440,6 @@ public class scr_manager : MonoBehaviour
 	
 		void OnFingerDown (FingerDownEvent e)
 		{
-				Debug.Log (monsterIcons [0]);
 				if (onToast) {
 						if (e.Selection == monsterIcons [0]) {
 								if (!selectedMonster1)
@@ -1530,7 +1552,7 @@ public class scr_manager : MonoBehaviour
 				}
 				if (existBalloon && onPlay) {
 						CancelInvoke ("balloonStop");
-//						StartCoroutine (Remove (1));			
+						StartCoroutine (Remove (1));			
 			
 				}
 				//		balloonRemove ();

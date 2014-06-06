@@ -131,7 +131,6 @@ public class src_balloon : MonoBehaviour
 						if (monster.Equals ("p")) {
 								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
 						}
-						Debug.Log (levels [monsterLevel]);
 //						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
 //						bomb.transform.parent = transform;
 						resetMonster ();

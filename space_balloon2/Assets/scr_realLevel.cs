@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class scr_realLevel : MonoBehaviour
 {
-		public GameObject btn_back, btn_back2, oCart, btn_play, oToast, loading, UI;
+	public GameObject btn_back, btn_back2, oCart, btn_play, oToast, loading, UI ;
 		public GameObject oItem_time, oItem_shield, oItem_smaller, oItem_star, oSelectedPan1, oSelectedPan2;
 		public Sprite[] items = new Sprite[5] ;
 		int selectedLevel = 5;
