@@ -30,7 +30,7 @@ public class scr_monster_p : MonoBehaviour
 		{
 //				GameObject.Find ("GAMEMANAGER").SendMessage ("itemUse", monsterColor);
 //				transform.parent.gameObject.animation.Play ();
-				
+		GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 5);
 //				oBalloon.GetComponent<SpriteRenderer> ().sprite = temp;
 //				oBalloon.SendMessage ("onMonster", monsterColor);
 		}

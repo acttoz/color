@@ -3,7 +3,7 @@ using System.Collections;
 
 public class scr_space : MonoBehaviour
 {
-	float[] levels = new float[]{0,0.0001f,0.0003f,0.001f,0.002f,0.004f,0.06f,0.001f,0.003f,0.01f,0.02f,0.04f,11,12,13,14,15,16,17,18,19,-0.03f};
+	float[] levels = new float[]{0,0.001f,0.002f,0.004f,0.008f,0.016f,0.032f,0.06f,0.1f,0.2f,0.4f,11,12,13,14,15,16,17,18,19,-0.03f};
 		// Use this for initialization
 		void Start ()
 		{

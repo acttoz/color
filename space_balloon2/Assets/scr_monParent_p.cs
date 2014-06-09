@@ -19,6 +19,8 @@ public class scr_monParent_p : MonoBehaviour
 				transform.position = Vector3.MoveTowards (transform.position, oBalloon.transform.position, step);
 				if (transform.position == oBalloon.transform.position) {
 						oBalloon.SendMessage ("monsterP");
+		GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 5);
+			
 						Destroy (this.gameObject);
 				}
 		}

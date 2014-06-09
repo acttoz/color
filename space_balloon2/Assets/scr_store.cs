@@ -7,12 +7,16 @@ public class scr_store : MonoBehaviour
 		public int pay;
 		public bool equipped = false;
 		string level, preLevel;
-		public GameObject oEquip;
+		public GameObject oEquip, payLabel;
 		SpriteRenderer[] componentArray;
 		// Use this for initialization
 		void Start ()
 		{
-				
+				if (pay == 0) {
+						payLabel.GetComponent<tk2dTextMesh> ().text = "free";
+				} else {
+						payLabel.GetComponent<tk2dTextMesh> ().text = "" + pay;
+				}
 		}
 	
 		// Update is called once per frame

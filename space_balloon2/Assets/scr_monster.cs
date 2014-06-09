@@ -6,6 +6,7 @@ public class scr_monster : MonoBehaviour
 		public string monsterColor;
 		public Sprite temp;
 		GameObject oBalloon;
+		public int isOrange;
 
 		// Use this for initialization
 		void Start ()
@@ -31,8 +32,12 @@ public class scr_monster : MonoBehaviour
 //				GameObject.Find ("GAMEMANAGER").SendMessage ("itemUse", monsterColor);
 //				transform.parent.gameObject.animation.Play ();
 				
-				oBalloon.GetComponent<SpriteRenderer> ().sprite = temp;
-				oBalloon.SendMessage ("onMonster", monsterColor);
+				if (isOrange != 1) {
+						oBalloon.GetComponent<SpriteRenderer> ().sprite = temp;
+						oBalloon.SendMessage ("onMonster", monsterColor);
+				} else {
+						GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 5);
+				}
 		}
 
 		void countDown ()
