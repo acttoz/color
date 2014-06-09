@@ -145,6 +145,7 @@
      <Compile Include="Assets\scr_back.cs" />
      <Compile Include="Assets\scr_back2.cs" />
      <Compile Include="Assets\scr_backManager.cs" />
+     <Compile Include="Assets\scr_back_light.cs" />
      <Compile Include="Assets\scr_back_space.cs" />
      <Compile Include="Assets\scr_bgm.cs" />
      <Compile Include="Assets\scr_bomb_b.cs" />

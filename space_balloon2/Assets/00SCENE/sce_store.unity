@@ -1575,6 +1575,7 @@ MonoBehaviour:
   - {fileID: 1707410086}
   - {fileID: 1367407478}
   - {fileID: 129807578}
+  backBtn: {fileID: 1418417019}
 --- !u!114 &701585731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3167,7 +3168,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .61500001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -2.91000009}
 --- !u!212 &1418417022
 SpriteRenderer:
   m_ObjectHideFlags: 0

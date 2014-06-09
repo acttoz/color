@@ -8,10 +8,11 @@ public class src_balloon : MonoBehaviour
 		Animator anim;
 		GameObject bomb;
 		int monsterLevel = 1;
-
+		public Sprite[] ufos;
+	
 //		public AudioClip itemSound;
 		bool exist = false;
-		public GameObject GAMEMANAGER, item, shine, fire;
+		public GameObject GAMEMANAGER, item, shine;
 		public GameObject[] effects = new GameObject[3];
 		public Sprite   balloon, rainbow, hot;
 		bool isUndead = false;
@@ -32,7 +33,7 @@ public class src_balloon : MonoBehaviour
 
 		void create (int num)
 		{
-				fire.SetActive (false);
+//				fire.SetActive (false);
 				exist = true;
 //				if (num < 4)
 				shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
@@ -66,9 +67,9 @@ public class src_balloon : MonoBehaviour
 		{
 				 
 				anim.SetInteger ("super", num);
-				if (num == 5) {
+				if (num > 4) {
 						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 0);
-						fire.SetActive (true);
+//						fire.SetActive (true);
 				}
 			
 		}
@@ -91,7 +92,7 @@ public class src_balloon : MonoBehaviour
 		{
 				
 				isMonster = false;
-				if (scr_manager.superLevel != 5)
+				if (scr_manager.superLevel < 5)
 						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				
 		}
@@ -198,6 +199,21 @@ public class src_balloon : MonoBehaviour
 						break;
 				case 5:
 						GetComponent<SpriteRenderer> ().sprite = hot;
+						break;
+				case 6:
+						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						break;
+				case 7:
+						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						break;
+				case 8:
+						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						break;
+				case 9:
+						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						break;
+				case 10:
+						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
 						break;
 				default:
 						GetComponent<SpriteRenderer> ().sprite = balloon;

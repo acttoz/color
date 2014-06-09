@@ -3,10 +3,11 @@ using System.Collections;
 
 public class scr_realLevel : MonoBehaviour
 {
-	public GameObject btn_back, btn_back2, oCart, btn_play, oToast, loading, UI ;
+		public GameObject btn_back, btn_back2, oCart, btn_play, oToast, loading, UI ;
 		public GameObject oItem_time, oItem_shield, oItem_smaller, oItem_star, oSelectedPan1, oSelectedPan2;
 		public Sprite[] items = new Sprite[5] ;
 		int selectedLevel = 5;
+		bool onplay = true;
 		int numGem;
 		int iSelectedItem = 0;
 		// Use this for initialization
@@ -134,9 +135,6 @@ public class scr_realLevel : MonoBehaviour
 				yield return new WaitForSeconds (1.5f);
 		}
 
-		 
-		 
-
 		void onToast ()
 		{
 		
@@ -154,7 +152,8 @@ public class scr_realLevel : MonoBehaviour
 								return;
 						}
 				}
-				if (numGem < 5) {
+				if (numGem < 5 && onplay) {
+						onplay = false;
 						oItem_star.SendMessage ("selected");
 						oItem_time.SendMessage ("selected");
 						oItem_smaller.SendMessage ("selected");
