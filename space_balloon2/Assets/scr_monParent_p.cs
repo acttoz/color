@@ -9,7 +9,7 @@ public class scr_monParent_p : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-				oBalloon = GameObject.Find ("boss");
+				oBalloon = GameObject.FindGameObjectWithTag ("boss");
 		}
 	
 		// Update is called once per frame
@@ -19,7 +19,7 @@ public class scr_monParent_p : MonoBehaviour
 				transform.position = Vector3.MoveTowards (transform.position, oBalloon.transform.position, step);
 				if (transform.position == oBalloon.transform.position) {
 						oBalloon.SendMessage ("monsterP");
-		GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 5);
+						GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 5);
 			
 						Destroy (this.gameObject);
 				}

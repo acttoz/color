@@ -8,6 +8,8 @@ public class scr_monParent : MonoBehaviour
 		GameObject oBalloon;
 		public GameObject bombO;
 		public int isOrange;
+		bool onTimer = false;
+		int time = 4;
 		// Use this for initialization
 		void Start ()
 		{
@@ -19,14 +21,30 @@ public class scr_monParent : MonoBehaviour
 		{
 				float step = speed * Time.deltaTime;
 				transform.position = Vector3.MoveTowards (transform.position, oBalloon.transform.position, step);
-				if (isOrange == 1 && transform.position == oBalloon.transform.position) {
-						GameObject.Find ("GAMEMANAGER").SendMessage ("monsterOrange");
-						Instantiate (bombO, transform.position, Quaternion.identity);
-						Destroy (this.gameObject);
+				if (transform.position == oBalloon.transform.position && !onTimer) {
+						onTimer = true;
+						InvokeRepeating ("Timer", 1f, 0.5f);
+//						GameObject.Find ("GAMEMANAGER").SendMessage ("monsterOrange");
+//						Instantiate (bombO, transform.position, Quaternion.identity);
+//						Destroy (this.gameObject);
+
 
 				}
+
 		}
 
+		void Timer ()
+		{
+		time--;
+		GetComponentInChildren<tk2dTextMesh>().text = time+"";
+		if (time == 0) {
+			CancelInvoke("Timer");
+			oBalloon.SendMessage("monsterShot");
+			GameObject bomb;
+			bomb = Instantiate (bombO, transform.position, Quaternion.identity) as GameObject;
+			bomb.SendMessage ("onTimer", 5f);
+				}
+		}
 		
 }
 

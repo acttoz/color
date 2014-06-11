@@ -7,9 +7,10 @@ public class scr_button : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+		PlayerPrefs.SetInt ("NUMGEM", 1000000);
 				if (PlayerPrefs.GetInt ("9", 0) == 1) {
 						btn1.GetComponent<CapsuleCollider> ().enabled = false;
-			realBtn.GetComponent<CapsuleCollider>().enabled=true;
+						realBtn.GetComponent<CapsuleCollider> ().enabled = true;
 						animation.Play ();
 				}
 //				DontDestroyOnLoad (GameObject.Find ("back"));
@@ -71,6 +72,7 @@ public class scr_button : MonoBehaviour
 				loading.SetActive (true);
 //				animation.Play ("anim_menu2");
 				Application.LoadLevel (num);
-				yield return new WaitForSeconds (0.1f);		}
+				yield return new WaitForSeconds (0.1f);
+		}
 		 
 }

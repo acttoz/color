@@ -113,33 +113,16 @@ public class src_balloon : MonoBehaviour
 		void OnTriggerEnter (Collider myTrigger)
 		{
 //		Debug.Log (exist + " " + isUndead + " " + isMonster);
-				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && !isMonster) {
+				if ((myTrigger.transform.tag == "boss" || myTrigger.transform.tag == "enemy") && exist && !isUndead && !isMonster) {
 						exist = false;
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);
 						
 				}
-				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && isMonster) {
-						undead (true);
-						GAMEMANAGER.SendMessage ("getBalloonMSG", 5);
-						offMonster ();
-						if (monster.Equals ("b")) {
-								bomb = Instantiate (effects [0], transform.position, Quaternion.identity) as GameObject;
-								bomb.SendMessage ("onTimer", 2f);
-						}
-						if (monster.Equals ("o")) {
-								bomb = Instantiate (effects [1], transform.position, Quaternion.identity) as GameObject;
-						}
-						if (monster.Equals ("p")) {
-								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
-						}
-//						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
-//						bomb.transform.parent = transform;
-						resetMonster ();
-						GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
-//						biggerBomb (false);
-			
-			
-				}
+//				if ((myTrigger.transform.tag == "boss" || myTrigger.transform.tag == "enemy") && exist && !isUndead && isMonster) {
+//						
+//			
+//			
+//				}
 				if (myTrigger.transform.tag == "item") {
 						GAMEMANAGER.SendMessage ("getItem");
 //						audio.PlayOneShot (itemSound);
@@ -153,33 +136,33 @@ public class src_balloon : MonoBehaviour
 
 		void OnTriggerStay (Collider myTrigger)
 		{
-				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && !isMonster) {
+				if ((myTrigger.transform.tag == "boss" || myTrigger.transform.tag == "enemy") && exist && !isUndead && !isMonster) {
 						exist = false;
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);
 			
 				}
-				if (myTrigger.transform.tag == "enemy" && exist && !isUndead && isMonster) {
-						undead (true);
-						GAMEMANAGER.SendMessage ("getBalloonMSG", 5);
-						offMonster ();
-						if (monster.Equals ("b")) {
-								bomb = Instantiate (effects [0], transform.position, Quaternion.identity) as GameObject;
-						}
-						if (monster.Equals ("o")) {
-								bomb = Instantiate (effects [1], transform.position, Quaternion.identity) as GameObject;
-						}
-						if (monster.Equals ("p")) {
-								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
-						}
-						Debug.Log (levels [monsterLevel]);
-//						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
-//						bomb.transform.parent = transform;
-						resetMonster ();
-						GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
-//						biggerBomb (false);
-			
-			
-				}
+//				if ((myTrigger.transform.tag == "boss" || myTrigger.transform.tag == "enemy") && exist && !isUndead && isMonster) {
+//						undead (true);
+//						GAMEMANAGER.SendMessage ("getBalloonMSG", 5);
+//						offMonster ();
+//						if (monster.Equals ("b")) {
+//								bomb = Instantiate (effects [0], transform.position, Quaternion.identity) as GameObject;
+//						}
+//						if (monster.Equals ("o")) {
+//								bomb = Instantiate (effects [1], transform.position, Quaternion.identity) as GameObject;
+//						}
+//						if (monster.Equals ("p")) {
+//								bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
+//						}
+//						Debug.Log (levels [monsterLevel]);
+////						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
+////						bomb.transform.parent = transform;
+//						resetMonster ();
+//						GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
+////						biggerBomb (false);
+//			
+//			
+//				}
 				if (myTrigger.transform.tag == "item") {
 						GAMEMANAGER.SendMessage ("getItem");
 						//						audio.PlayOneShot (itemSound);
@@ -189,6 +172,29 @@ public class src_balloon : MonoBehaviour
 			
 				}
 		
+		}
+
+		void monsterShot ()
+		{
+				undead (true);
+				GAMEMANAGER.SendMessage ("getBalloonMSG", 5);
+				offMonster ();
+//				if (monster.Equals ("b")) {
+//						bomb = Instantiate (effects [0], transform.position, Quaternion.identity) as GameObject;
+//						bomb.SendMessage ("onTimer", 2f);
+//				}
+//				if (monster.Equals ("o")) {
+//						bomb = Instantiate (effects [1], transform.position, Quaternion.identity) as GameObject;
+//				}
+//				if (monster.Equals ("p")) {
+//						bomb = Instantiate (effects [2], transform.position, Quaternion.identity) as GameObject;
+//				}
+				//						bomb.transform.localScale = new Vector2 (bombSize, bombSize);
+				//						bomb.transform.parent = transform;
+				resetMonster ();
+				GAMEMANAGER.SendMessage ("getBalloonMSG", 4);
+				//						biggerBomb (false);
+
 		}
 
 		void resetMonster ()

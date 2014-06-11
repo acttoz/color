@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400000}
+  - 135: {fileID: 13500000}
   m_Layer: 0
   m_Name: Explosion orange
   m_TagString: bomb
@@ -27,6 +28,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400004}
+  - 111: {fileID: 11100000}
   m_Layer: 0
   m_Name: bomb_o
   m_TagString: bombparent
@@ -52,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.923960507, y: -.617385566, z: 0}
-  m_LocalScale: {x: .47037226, y: .47037226, z: .671959817}
+  m_LocalPosition: {x: 3.06022, y: 21.7357597, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1.09029305}
   m_Children:
   - {fileID: 400000}
   m_Father: {fileID: 0}
@@ -115,6 +117,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!111 &11100000
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e5bca0bab39ab2241af901761485e91a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e5bca0bab39ab2241af901761485e91a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,6 +177,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210a4bb5e5d2e2b468755760474f8994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &13500000
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.05999994
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

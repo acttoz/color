@@ -104,7 +104,7 @@ public class src_enemy : MonoBehaviour
 						GetComponent<SphereCollider> ().radius = 0;
 						Instantiate (bomb, transform.position, Quaternion.identity);
 						animation.Play ("anim_boss2");
-						GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 7);
+						
 //						Destroy (this.gameObject);
 				}
 
@@ -112,7 +112,8 @@ public class src_enemy : MonoBehaviour
 
 		void destroySelf ()
 		{
-				Destroy (this.gameObject);
+				GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 7);
+//				Destroy (this.gameObject);
 		}
 
 		void OnTriggerStay (Collider myTrigger)
@@ -142,6 +143,7 @@ public class src_enemy : MonoBehaviour
 				} else {
 						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, myTrigger.transform.position, Quaternion.identity);
+								animation.Play ("anim_boss3");
 								Destroy (myTrigger.gameObject);
 						}
 				}
@@ -174,6 +176,7 @@ public class src_enemy : MonoBehaviour
 				} else {
 						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, myTrigger.transform.position, Quaternion.identity);
+								animation.Play ("anim_boss3");
 								Destroy (myTrigger.gameObject);
 						}
 				}

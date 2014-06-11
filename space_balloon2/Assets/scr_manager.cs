@@ -36,7 +36,7 @@ public class scr_manager : MonoBehaviour
 		int killNum = 0;
 		public bool isMonster = false;
 		public float undeadTime = 0;
-		public GameObject lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
+		public GameObject warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
 		GameObject[] back;
 		public bool isUndead = false;
 //		float deadLine;
@@ -98,34 +98,44 @@ public class scr_manager : MonoBehaviour
 				//				timeStarted = true;
 				onPlay = true;
 				InvokeRepeating ("itemCreate", 1f, itemCreateRate);
-				InvokeRepeating ("enemyCreate", 1f, enemyCreateRate);
+				StartCoroutine ("enemyCreate");
+//				InvokeRepeating ("enemyCreate", 1f, enemyCreateRate);
 		
 				Instantiate (backFirst, new Vector2 (0, 0), Quaternion.identity);
 		}
 		//ENEMY
-		void enemyCreate ()
+		IEnumerator enemyCreate ()
 		{
-				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
-				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
+				while (true) {
+						Debug.Log (enemyCreateRate);
+						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
+						float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 		
-				if (LEVEL == 5 && enemyNum > 2)
-						return;
-				if (LEVEL == 4 && enemyNum > 1)
-						return;
-				if (LEVEL == 3 && enemyNum > 1)
-						return;
-				if (LEVEL == 2 && enemyNum > 0)
-						return;
-				if (LEVEL == 1 && enemyNum > 0)
-						return;
+						if (LEVEL == 5 && enemyNum > 2)
+								StopCoroutine ("enemyCreate");
+						if (LEVEL == 4 && enemyNum > 1)
+								StopCoroutine ("enemyCreate");
+						if (LEVEL == 3 && enemyNum > 1)
+								StopCoroutine ("enemyCreate");
+						if (LEVEL == 2 && enemyNum > 0)
+								StopCoroutine ("enemyCreate");
+						if (LEVEL == 1 && enemyNum > 0)
+								StopCoroutine ("enemyCreate");
 		
 		
-				enemyNum++;
-				Instantiate (prf_enemy, new Vector2 (tempX, tempY), Quaternion.identity);
+						enemyNum++;
+						Instantiate (prf_enemy, new Vector2 (tempX, tempY), Quaternion.identity);
+						yield return new WaitForSeconds (enemyCreateRate / 1.2f);
+			
+				}
 		}
 		//RESET
 		void gameReset ()
 		{
+				StopCoroutine ("enemyCreate");
+				if (oBoss == null) {
+						oBoss = Instantiate (prf_boss, new Vector2 (0, 0), Quaternion.identity) as GameObject;
+				}
 				CancelInvoke ("backCreate");
 				GameObject[] temp2;
 				temp2 = GameObject.FindGameObjectsWithTag ("bombparent");
@@ -175,12 +185,12 @@ public class scr_manager : MonoBehaviour
 						Destroy (tempZone);
 				CancelInvoke ("zoneCreate");
 				CancelInvoke ("enemyCreate");
-				oBoss.transform.tag = "boss";
+//				oBoss.transform.tag = "boss";
 				enemy = GameObject.FindGameObjectsWithTag ("enemy");
 				for (int i=0; i<enemy.Length; i++) {
 						Destroy (enemy [i]);
 				}
-				oBoss.transform.tag = "enemy";
+//				oBoss.transform.tag = "enemy";
 				oBoss.GetComponentInChildren<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				undeadTime = 0;
 				CancelInvoke ("itemCreate");
@@ -190,7 +200,7 @@ public class scr_manager : MonoBehaviour
 				CancelInvoke ("normalModeCount");
 				gauge.transform.localScale = new Vector3 (1.75f, 0.3f, 1);
 				onPlay = false;
-				score = 1000;
+				score = 0;
 				scoreText.text = ": " + score;
 				//				timeStarted = false;
 				disableTouch ();
@@ -222,18 +232,22 @@ public class scr_manager : MonoBehaviour
 
 		void monsterChoice ()
 		{
-				onToast = true;
-				enableTouch ();
-				Instantiate (monsterIcons [3], new Vector2 (0, 0), Quaternion.identity);
-				monsterIcons [0] = GameObject.Find ("btn1");
-				monsterIcons [1] = GameObject.Find ("btn2");
-				monsterIcons [2] = GameObject.Find ("btn3");
-				selectedMonsterNum = 0;
-				selectedMonster1 = false;
-				selectedMonster2 = false;
-				selectedMonster3 = false;
-				for (int i=0; i<3; i++) {
-						monsterIcons [i].GetComponent<SpriteRenderer> ().color = new Color (0.5f, 0.5f, 0.5f, 1);
+				if (LEVEL > 8) {
+						onToast = true;
+						enableTouch ();
+						Instantiate (monsterIcons [3], new Vector2 (0, 0), Quaternion.identity);
+						monsterIcons [0] = GameObject.Find ("btn1");
+						monsterIcons [1] = GameObject.Find ("btn2");
+						monsterIcons [2] = GameObject.Find ("btn3");
+						selectedMonsterNum = 0;
+						selectedMonster1 = false;
+						selectedMonster2 = false;
+						selectedMonster3 = false;
+						for (int i=0; i<3; i++) {
+								monsterIcons [i].GetComponent<SpriteRenderer> ().color = new Color (0.5f, 0.5f, 0.5f, 1);
+						}
+				} else {
+						gameStart ();
 				}
 		}
 	
@@ -284,7 +298,7 @@ public class scr_manager : MonoBehaviour
 			
 						CancelInvoke ("resultCount");
 			
-						resultText.text = "" + score / 10;
+						resultText.text = "" + score;
 //						if (score >= 100000) {
 //								gem = (int)score / 100000;
 //								InvokeRepeating ("resultGemCount3", 0.5f, 0.3f);
@@ -305,7 +319,7 @@ public class scr_manager : MonoBehaviour
 						}
 				} else {
 						audio.PlayOneShot (bing);
-						resultText.text = "" + countScore / 10;
+						resultText.text = "" + countScore;
 						countScore += 1000;
 				}
 		
@@ -383,7 +397,7 @@ public class scr_manager : MonoBehaviour
 				gem--;
 				numGem = numGem + 1;
 				gemText1.text = "" + numGem;
-				resultText.text = "" + (score -= 1000) / 10;
+				resultText.text = "" + (score -= 1000);
 				PlayerPrefs.SetInt ("NUMGEM", numGem);
 				if (gem < 1) {
 			
@@ -467,26 +481,17 @@ public class scr_manager : MonoBehaviour
 		/// 
 		void itemCreate ()
 		{
+				if (oBoss == null)
+						oBoss = GameObject.FindGameObjectWithTag ("boss");
+		
 				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
 				if (existItem != null)
 						Destroy (existItem);
-//				Debug.Log ("itemCreate");
 				int tempCol = Random.Range (1, 5);
 				//test
 //				tempCol = 3;
-				switch (LEVEL) {
-				case 6:
-						tempCol = 1;
-						break;
-				case 7:
-						tempCol = 2;
-						break;
-				case 8:
-						tempCol = 3;
-						break;
-				default:
-						break;
-				}
+
+				
 				switch (tempCol) {
 				case 1:
 						if (selectedMonster1) {
@@ -502,9 +507,21 @@ public class scr_manager : MonoBehaviour
 
 				case 2:
 						if (selectedMonster2) {
-								createItem = itemOrange;
-								colCreate = "o";
-								tempStar = oStar;
+								if (superLevel == levelLimit) {
+										if (selectedMonster1) {
+												createItem = itemBlue;
+												colCreate = "b";
+												tempStar = bStar;
+										} else {
+												createItem = itemPurple;
+												colCreate = "p";
+												tempStar = pStar;
+										}
+								} else {
+										createItem = itemOrange;
+										colCreate = "o";
+										tempStar = oStar;
+								}
 						} else {
 								createItem = itemBlue;
 								colCreate = "b";
@@ -514,9 +531,22 @@ public class scr_manager : MonoBehaviour
 
 				case 3:
 						if (selectedMonster3) {
-								createItem = itemPurple;
-								colCreate = "p";
-								tempStar = pStar;
+
+								if (oBoss != null) {
+										createItem = itemPurple;
+										colCreate = "p";
+										tempStar = pStar;
+								} else {
+										if (selectedMonster1) {
+												createItem = itemBlue;
+												colCreate = "b";
+												tempStar = bStar;
+										} else {
+												createItem = itemOrange;
+												colCreate = "o";
+												tempStar = oStar;
+										}
+								}
 						} else {
 								createItem = itemBlue;
 								colCreate = "b";
@@ -525,9 +555,21 @@ public class scr_manager : MonoBehaviour
 						break;
 				case 4:
 						if (selectedMonster3) {
-								createItem = itemPurple;
-								colCreate = "p";
-								tempStar = pStar;
+								if (oBoss != null) {
+										createItem = itemPurple;
+										colCreate = "p";
+										tempStar = pStar;
+								} else {
+										if (selectedMonster1) {
+												createItem = itemBlue;
+												colCreate = "b";
+												tempStar = bStar;
+										} else {
+												createItem = itemOrange;
+												colCreate = "o";
+												tempStar = oStar;
+										}
+								}
 						} else {
 								createItem = itemOrange;
 								colCreate = "o";
@@ -538,7 +580,25 @@ public class scr_manager : MonoBehaviour
 		
 				}
 				
-				
+				switch (LEVEL) {
+				case 6:
+						createItem = itemOrange;
+						colCreate = "o";
+						tempStar = oStar;
+						break;
+				case 7:
+						colCreate = "b";
+						createItem = itemBlue;
+						tempStar = bStar;
+						break;
+				case 8:
+						createItem = itemPurple;
+						colCreate = "p";
+						tempStar = pStar;
+						break;
+				default:
+						break;
+				}
 //				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 				if (LEVEL > 5) {
 						if (!isUndead && !isMonster) {
@@ -551,7 +611,7 @@ public class scr_manager : MonoBehaviour
 		void backCreate ()
 		{
 				if (superLevel > 0 && superLevel < 20) {
-						float tempX = (Random.Range (mLeft * 10, mRight * 10)) / 10f;
+						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100f;
 						if (spaceId < 2) {
 								Instantiate (backElement, new Vector3 (tempX, 8, 0), Quaternion.identity);
 						} else {
@@ -582,6 +642,7 @@ public class scr_manager : MonoBehaviour
 				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 				if (LEVEL > 1) {
 						zonePosition = new Vector2 (tempX, tempY);
+
 						GameObject obj = Instantiate (oZone, new Vector3 (tempX, tempY, 0), Quaternion.identity) as GameObject;
 						if (item4 == 1)
 								obj.transform.localScale = new Vector2 (1.5f, 1.5f);
@@ -695,11 +756,11 @@ public class scr_manager : MonoBehaviour
 
 		void monsterOrange ()
 		{
+				isMonster = false;
 				if (superLevel < levelLimit) {
 						superLevel++;
 						superMode (superLevel);
 				}
-				isMonster = false;
 		}
 
 		IEnumerator scoreUp ()
@@ -1052,7 +1113,7 @@ public class scr_manager : MonoBehaviour
 						superTimer = 3;
 						superLevel = 0;
 						InvokeRepeating ("normalModeCount", 0.1f, 1f);
-				} else {
+				} else if (LEVEL != 6 && LEVEL != 7) {
 						zoneReset ();
 						if (num == 1)
 								InvokeRepeating ("zoneCreate", 0.1f, zoneCreateRate);
@@ -1095,6 +1156,7 @@ public class scr_manager : MonoBehaviour
 								PlayerPrefs.SetInt ("2", 1);
 								StartCoroutine ("timesUp");
 						}
+						
 						break;
 				case 3:
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
@@ -1181,6 +1243,7 @@ public class scr_manager : MonoBehaviour
 						 
 						break;
 				case 7:
+						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
 						isUndead = true;
@@ -1200,6 +1263,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 8:
+						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 15);
 						scoreRate = scoreRates [num - 6];
 						isUndead = true;
@@ -1219,6 +1283,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 9:
+						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
 						scoreRate = scoreRates [num - 6];
 						isUndead = true;
@@ -1238,6 +1303,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 10:
+						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
 						scoreRate = scoreRates [num - 6];
 						isUndead = true;
@@ -1289,7 +1355,7 @@ public class scr_manager : MonoBehaviour
 								score -= 1;
 				}
 
-				scoreText.text = " :  " + score / 10 + " balloon";
+				scoreText.text = " :  " + score + " balloon";
 				if (score < 0) {
 						CancelInvoke ("scoreCount");
 						score = 0;
@@ -1314,62 +1380,76 @@ public class scr_manager : MonoBehaviour
 						
 						spaceId = 2;
 						mainCamera.animation.Play ();
+						enemyCreateRate = 9;
 				}
 
 				if (score > spacesHeight [spaceId] && spaceId == 2) {
 						//setellite
 						spaceId = 3;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
-
+						enemyCreateRate = 8f;
 				}
 
 				if (score > spacesHeight [spaceId] && spaceId == 3) {
 						//moon
 						spaceId = 4;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
-			
+						enemyCreateRate = 7;
+
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 4) {
 						//spaceman
 						spaceId = 5;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+						enemyCreateRate = 6f;
 			
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 5) {
 						//sun
 						spaceId = 6;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
-			
+						enemyCreateRate = 5;
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 6) {
 						spaceId = 7;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 			
+						enemyCreateRate = 4.5f;
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 7) {
 						spaceId = 8;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
-			
+						enemyCreateRate = 4;
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
+
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 8) {
 						spaceId = 9;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+						enemyCreateRate = 3.5f;
 			
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 9) {
 						spaceId = 10;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 			
+						enemyCreateRate = 3;
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 10) {
 						spaceId = 11;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
+						enemyCreateRate = 2.5f;
 			
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 11) {
 						spaceId = 12;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
-			
+						enemyCreateRate = 2;
 				}
 		 
 				 
@@ -1423,7 +1503,8 @@ public class scr_manager : MonoBehaviour
 						break;
 				case 5:
 						isUndead = true;
-						balloon.SendMessage ("undead", true);
+						if (onPlay)
+								balloon.SendMessage ("undead", true);
 						undeadTime = 1.5f;
 						isMonster = false;
 						break;
@@ -1443,6 +1524,9 @@ public class scr_manager : MonoBehaviour
 						break;
 				case 7:
 			//LEVEL8
+						if (oBoss != null) 
+								Destroy (oBoss);
+						Debug.Log (GameObject.FindGameObjectWithTag ("boss"));
 						if (LEVEL == 8 && onPlay) {
 								onPlay = false;
 								PlayerPrefs.SetInt ("8", 1);
@@ -1522,7 +1606,6 @@ public class scr_manager : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				Debug.Log (isMonster);
 		
 				if (Application.platform == RuntimePlatform.Android) {
 						if (Input.GetKey (KeyCode.Escape)) {

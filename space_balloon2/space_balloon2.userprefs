@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_manager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\src_enemy.cs">
     <Files>
-      <File FileName="Assets\scr_manager.cs" Line="713" Column="43" />
-      <File FileName="Assets\scr_monParent_p.cs" Line="18" Column="22" />
-      <File FileName="Assets\src_balloon.cs" Line="137" Column="23" />
-      <File FileName="Assets\scr_monParent.cs" Line="16" Column="2" />
-      <File FileName="Assets\scr_monster_p.cs" Line="33" Column="68" />
+      <File FileName="Assets\src_enemy.cs" Line="184" Column="47" />
+      <File FileName="Assets\scr_monParent.cs" Line="42" Column="40" />
+      <File FileName="Assets\src_balloon.cs" Line="206" Column="12" />
+      <File FileName="Assets\scr_manager.cs" Line="1777" Column="23" />
+      <File FileName="Assets\scr_monster.cs" Line="37" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

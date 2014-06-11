@@ -3,7 +3,8 @@ using System.Collections;
 
 public class scr_warn : MonoBehaviour
 {
-		public GameObject prf_enemy;
+		public GameObject prf_enemy, prf_boss;
+		public int isBoss;
 		// Use this for initialization
 		void Start ()
 		{
@@ -18,7 +19,12 @@ public class scr_warn : MonoBehaviour
 
 		void create ()
 		{
-				Instantiate (prf_enemy, transform.position, Quaternion.identity);
+				if (isBoss == 1) {
+						Instantiate (prf_boss, transform.position, Quaternion.identity);
+			
+				} else {
+						Instantiate (prf_enemy, transform.position, Quaternion.identity);
+				}
 				Destroy (this.gameObject);
 		}
 }

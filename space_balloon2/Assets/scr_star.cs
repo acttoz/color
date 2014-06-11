@@ -43,7 +43,7 @@ public class scr_star : MonoBehaviour
 		void Update ()
 		{
 				transform.position -= new Vector3 (0, levels [scr_manager.superLevel], 0);
-				if (transform.position.y < -8 || transform.position.y > 8)
+				if (transform.position.y < -10 || transform.position.y > 10)
 						Destroy (this.gameObject);
 //				if (scr_manager.superLevel > 5) {
 //						for (int i=0; i<sr.Length; i++) {

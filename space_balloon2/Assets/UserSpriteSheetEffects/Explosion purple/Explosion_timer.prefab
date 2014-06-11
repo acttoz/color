@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Explosion orange_s0_Punch08
+  m_Name: Explosion_timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,22 +42,22 @@ MonoBehaviour:
   spriteCount: 8
   uvAnimationTileX: 4
   uvAnimationTileY: 2
-  framesPerSecond: 10
+  framesPerSecond: 5
   sizeStart: {x: 7, y: 7, z: 0}
   sizeEnd: {x: 7, y: 7, z: 0}
   randomRotation: 0
   rotationStart: 0
   rotationEnd: 0
   isOneShot: 0
-  life: 1
+  life: 0
   billboarding: 3
   addLightEffect: 0
   lightRange: 0
   lightColor: {r: 0, g: 0, b: 0, a: 0}
   lightFadeSpeed: 1
-  addColorEffect: 1
-  colorStart: {r: 1, g: .387221098, b: .161764681, a: 1}
-  colorEnd: {r: .823529422, g: .427049309, b: .211937726, a: .56078434}
+  addColorEffect: 0
+  colorStart: {r: .946044803, g: .441176474, b: 1, a: 1}
+  colorEnd: {r: .816176474, g: .216046721, b: .799621284, a: .611764729}
   foldOut: 1
   offset: {x: 8.44152641, y: -5.46000004, z: 1.27999973}
   waittingTime: 0
