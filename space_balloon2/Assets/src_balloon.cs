@@ -112,7 +112,7 @@ public class src_balloon : MonoBehaviour
 
 		void OnTriggerEnter (Collider myTrigger)
 		{
-//		Debug.Log (exist + " " + isUndead + " " + isMonster);
+		Debug.Log (exist + " " + isUndead + " " + isMonster + "col"+ myTrigger);
 				if ((myTrigger.transform.tag == "boss" || myTrigger.transform.tag == "enemy") && exist && !isUndead && !isMonster) {
 						exist = false;
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);

@@ -9,7 +9,7 @@ public class scr_monParent : MonoBehaviour
 		public GameObject bombO;
 		public int isOrange;
 		bool onTimer = false;
-		int time = 4;
+		int time = 6;
 		// Use this for initialization
 		void Start ()
 		{
@@ -23,7 +23,7 @@ public class scr_monParent : MonoBehaviour
 				transform.position = Vector3.MoveTowards (transform.position, oBalloon.transform.position, step);
 				if (transform.position == oBalloon.transform.position && !onTimer) {
 						onTimer = true;
-						InvokeRepeating ("Timer", 1f, 0.5f);
+						InvokeRepeating ("Timer", 0f, 0.5f);
 //						GameObject.Find ("GAMEMANAGER").SendMessage ("monsterOrange");
 //						Instantiate (bombO, transform.position, Quaternion.identity);
 //						Destroy (this.gameObject);

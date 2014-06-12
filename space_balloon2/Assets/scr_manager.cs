@@ -670,7 +670,7 @@ public class scr_manager : MonoBehaviour
 								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
-//						StartCoroutine ("monster", colCreate);
+						StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
 					
