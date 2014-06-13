@@ -42,6 +42,7 @@ public class src_balloon : MonoBehaviour
 				anim = GetComponent<Animator> ();
 				anim.SetBool ("balloonExist", true);
 				anim.SetInteger ("super", num);
+				GAMEMANAGER.SendMessage ("getBalloonMSG", 9);
 		}
 
 		void shield ()

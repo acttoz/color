@@ -15,6 +15,7 @@ public class scr_manager : MonoBehaviour
 		int LEVEL;
 		int numGem;
 		int enemyNum = 0;
+		int failTime = 3;
 		public Sprite[] sItems;
 		public float[] levelRate = new float[4];
 		float stopRate = 0;
@@ -36,7 +37,7 @@ public class scr_manager : MonoBehaviour
 		int killNum = 0;
 		public bool isMonster = false;
 		public float undeadTime = 0;
-		public GameObject warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
+		public GameObject prf_FailTimer, oFailTimer, warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
 		GameObject[] back;
 		public bool isUndead = false;
 //		float deadLine;
@@ -900,20 +901,21 @@ public class scr_manager : MonoBehaviour
 				
 				switch (num) {
 				case 1:
-						superLevel = 20;
+						superLevel = 0;
 			
 //						deadLine = score - 20;
 						 
-						superMode (superLevel);
+//						superMode (superLevel);
 						balloon.SendMessage ("cancel", 1);
 
 			//						if (audio.isPlaying)
 						audio.Stop ();
 						audio.PlayOneShot (remove);
 			//decrease energy
-						if (superLevel < levelLimit)
-								InvokeRepeating ("decreaseEnergy", 0.2f, 0.2f);
-						
+//						if (superLevel < levelLimit)
+//								InvokeRepeating ("decreaseEnergy", 0.2f, 0.2f);
+//						
+						oFailTimer= Instantiate (prf_FailTimer, new Vector2 (0, 0), Quaternion.identity) as GameObject;
 						break;
 			
 				case 2:
@@ -973,6 +975,12 @@ public class scr_manager : MonoBehaviour
 		
 				//				Debug.Log ("removeTimer");
 		
+		}
+
+		void timeOut ()
+		{
+				StartCoroutine ("timesUp");
+
 		}
 
 		void decreaseEnergy ()
@@ -1536,6 +1544,11 @@ public class scr_manager : MonoBehaviour
 				case 8:
 						isMonster = false;
 						break;
+		case 9:
+			//stop Timer
+			if(oFailTimer!=null)
+				Destroy(oFailTimer);
+			break;
 				default:
 						break;
 			

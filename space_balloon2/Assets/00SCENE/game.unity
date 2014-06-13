@@ -1859,6 +1859,8 @@ MonoBehaviour:
   test: 0
   isMonster: 0
   undeadTime: 0
+  prf_FailTimer: {fileID: 0}
+  oFailTimer: {fileID: 0}
   warn_boss: {fileID: 100000, guid: e38547a43d67f0340bd73ef6e6cc5d04, type: 2}
   prf_boss: {fileID: 100002, guid: dc6981dd221d4c044b8feff62d05ee41, type: 2}
   lightSpeed: {fileID: 100000, guid: 7ce5eff73e033ff46a8aacc5bc9fa5bb, type: 2}
