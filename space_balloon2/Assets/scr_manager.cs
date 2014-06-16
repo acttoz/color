@@ -671,7 +671,7 @@ public class scr_manager : MonoBehaviour
 								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
-						StartCoroutine ("monster", colCreate);
+//						StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
 					
@@ -915,7 +915,7 @@ public class scr_manager : MonoBehaviour
 //						if (superLevel < levelLimit)
 //								InvokeRepeating ("decreaseEnergy", 0.2f, 0.2f);
 //						
-						oFailTimer= Instantiate (prf_FailTimer, new Vector2 (0, 0), Quaternion.identity) as GameObject;
+//						oFailTimer= Instantiate (prf_FailTimer, new Vector2 (0, 0), Quaternion.identity) as GameObject;
 						break;
 			
 				case 2:
@@ -952,13 +952,13 @@ public class scr_manager : MonoBehaviour
 				yield return new WaitForSeconds (0.2f);
 				if (existBalloon) {
 						existBalloon = false;
-						balloon.transform.localScale = new Vector3 (0, 0, 0);
+//						balloon.transform.localScale = new Vector3 (0, 0, 0);
 			
 						
 			
 			
 						//						if (num == 1)
-						balloon.SetActive (false);
+//						balloon.SetActive (false);
 //						if (timer == 0)
 //								StartCoroutine ("timesUp");
 			

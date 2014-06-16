@@ -12,7 +12,8 @@ public class src_balloon : MonoBehaviour
 	
 //		public AudioClip itemSound;
 		bool exist = false;
-		public GameObject GAMEMANAGER, item, shine;
+	int countDownTime=3;
+		public GameObject GAMEMANAGER, item, shine, timer;
 		public GameObject[] effects = new GameObject[3];
 		public Sprite   balloon, rainbow, hot;
 		bool isUndead = false;
@@ -64,6 +65,10 @@ public class src_balloon : MonoBehaviour
 				isUndead = mbool;
 		}
 
+		void countDown ()
+		{
+		}
+
 		void superMode (int num)
 		{
 				 
@@ -113,9 +118,10 @@ public class src_balloon : MonoBehaviour
 
 		void OnTriggerEnter (Collider myTrigger)
 		{
-		Debug.Log (exist + " " + isUndead + " " + isMonster + "col"+ myTrigger);
+				Debug.Log (exist + " " + isUndead + " " + isMonster + "col" + myTrigger);
 				if ((myTrigger.transform.tag == "boss" || myTrigger.transform.tag == "enemy") && exist && !isUndead && !isMonster) {
 						exist = false;
+						anim.SetInteger ("cancel", 0);
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);
 						
 				}
@@ -139,6 +145,7 @@ public class src_balloon : MonoBehaviour
 		{
 				if ((myTrigger.transform.tag == "boss" || myTrigger.transform.tag == "enemy") && exist && !isUndead && !isMonster) {
 						exist = false;
+						anim.SetInteger ("cancel", 0);
 						GAMEMANAGER.SendMessage ("getBalloonMSG", 1);
 			
 				}
