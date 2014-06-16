@@ -452,7 +452,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 8.32999992, y: 13.9099998, z: 2.68000007}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 11.9399996}
 --- !u!4 &298214620
 Transform:
   m_ObjectHideFlags: 0
@@ -2248,6 +2248,7 @@ MonoBehaviour:
   item: {fileID: 100000, guid: 08be23873f3cf92468452684487eff24, type: 2}
   shine: {fileID: 1172556360}
   timer: {fileID: 0}
+  oCountDown: {fileID: 1780493800}
   effects:
   - {fileID: 100008, guid: c46fcdc26934a5649b1d86df3add936d, type: 2}
   - {fileID: 100002, guid: a3d57c81b76c6324cb0a6c0b6bb2731b, type: 2}
@@ -2302,7 +2303,7 @@ Transform:
   m_GameObject: {fileID: 1608268327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.68391657}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1172556361}
   - {fileID: 1780493801}
@@ -2704,15 +2705,13 @@ GameObject:
   - 33: {fileID: 1780493806}
   - 23: {fileID: 1780493805}
   - 114: {fileID: 1780493804}
-  - 95: {fileID: 1780493803}
-  - 114: {fileID: 1780493802}
   m_Layer: 0
   m_Name: countdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1780493801
 Transform:
   m_ObjectHideFlags: 0
@@ -2724,31 +2723,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1608268332}
---- !u!114 &1780493802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1780493800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f505d11cf229a9439477cd23b2189de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &1780493803
-Animator:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1780493800}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2af301def7997234dbfe296e83be0da0, type: 2}
-  m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
-  m_HasTransformHierarchy: 1
 --- !u!114 &1780493804
 MonoBehaviour:
   m_ObjectHideFlags: 0

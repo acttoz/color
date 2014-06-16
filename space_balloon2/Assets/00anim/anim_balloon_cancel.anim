@@ -19,13 +19,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: {x: 1, y: 1, z: .520976186}
-        inSlope: {x: -4.06891727, y: -.0102622584, z: 0}
-        outSlope: {x: -.027116064, y: -.0102622584, z: 0}
-        tangentMode: 0
-      - time: 1.01666665
+        inSlope: {x: -4.06891727, y: -.0798635855, z: 0}
+        outSlope: {x: -.103201762, y: -.0798635855, z: 0}
+        tangentMode: 1106771968
+      - time: 3
         value: {x: 0, y: 0, z: .520976186}
-        inSlope: {x: -1.65842485, y: -1.57838988, z: 0}
-        outSlope: {x: -1.65842485, y: -1.57838988, z: 0}
+        inSlope: {x: -.763398409, y: -.765452504, z: 0}
+        outSlope: {x: -.763398409, y: -.765452504, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -40,11 +40,11 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: 1.01666665
+    m_StopTime: 3
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -61,12 +61,12 @@ AnimationClip:
       - time: 0
         value: 1
         inSlope: -4.06891727
-        outSlope: -.027116064
+        outSlope: -.103201762
         tangentMode: 1
-      - time: 1.01666665
+      - time: 3
         value: 0
-        inSlope: -1.65842485
-        outSlope: -1.65842485
+        inSlope: -.763398409
+        outSlope: -.763398409
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -79,13 +79,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 1
-        inSlope: -.0102622584
-        outSlope: -.0102622584
+        inSlope: -.0798635855
+        outSlope: -.0798635855
         tangentMode: 0
-      - time: 1.01666665
+      - time: 3
         value: 0
-        inSlope: -1.57838988
-        outSlope: -1.57838988
+        inSlope: -.765452504
+        outSlope: -.765452504
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -108,4 +108,25 @@ AnimationClip:
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []
-  m_Events: []
+  m_Events:
+  - time: .983333349
+    functionName: countDown
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.9666667
+    functionName: countDown
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.9333334
+    functionName: countDown
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -16,6 +16,7 @@ public class scr_manager : MonoBehaviour
 		int numGem;
 		int enemyNum = 0;
 		int failTime = 3;
+	bool onCount=false;
 		public Sprite[] sItems;
 		public float[] levelRate = new float[4];
 		float stopRate = 0;
@@ -271,7 +272,6 @@ public class scr_manager : MonoBehaviour
 		{
 				onPlay = false;
 				superLevel = 0;
-				balloon.SetActive (false);
 				existBalloon = false;
 				disableTouch ();
 				audio.PlayOneShot (timesup);
@@ -290,6 +290,7 @@ public class scr_manager : MonoBehaviour
 				btnNext = GameObject.Find ("btn_next");
 				InvokeRepeating ("resultCount", 0f, 0.01f);
 				numGem = PlayerPrefs.GetInt ("NUMGEM", 0);
+		balloon.SetActive (false);
 		}
 		//RESULT
 		void resultCount ()
@@ -906,7 +907,10 @@ public class scr_manager : MonoBehaviour
 //						deadLine = score - 20;
 						 
 //						superMode (superLevel);
-						balloon.SendMessage ("cancel", 1);
+//						balloon.SendMessage ("cancel", 1);
+						balloon.SendMessage ("startCoundDown");
+			onCount=true;
+			onPlay=false;
 
 			//						if (audio.isPlaying)
 						audio.Stop ();
@@ -1099,6 +1103,7 @@ public class scr_manager : MonoBehaviour
 	
 		void superMode (int num)
 		{
+		Debug.Log ("supermode");
 				if (!onPlay)
 						return;
 
@@ -1544,11 +1549,16 @@ public class scr_manager : MonoBehaviour
 				case 8:
 						isMonster = false;
 						break;
-		case 9:
+				case 9:
 			//stop Timer
-			if(oFailTimer!=null)
-				Destroy(oFailTimer);
-			break;
+						if (oFailTimer != null)
+								Destroy (oFailTimer);
+						break;
+				case 10:
+			//stop Timer
+						StartCoroutine ("timesUp");
+	
+						break;
 				default:
 						break;
 			
@@ -1708,8 +1718,16 @@ public class scr_manager : MonoBehaviour
 						existBalloon = true;
 						Create (GetWorldPos (e.Position));
 				}
+		if (!existBalloon && !onPlay && e.Selection == balloon && onCount) {
+			onPlay=true;
+//			balloon.SendMessage("stopCount");
+			onCount=false;
+			existBalloon = true;
+			Create (GetWorldPos (e.Position));
+		}
 
-				if (e.Selection == btn_pause && onPlay) {
+		
+		if (e.Selection == btn_pause && onPlay) {
 						btn_pause.GetComponent<SpriteRenderer> ().color = Color.yellow;
 						//							 					Application.LoadLevel (0);
 				}

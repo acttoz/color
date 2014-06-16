@@ -9,11 +9,11 @@ public class src_balloon : MonoBehaviour
 		GameObject bomb;
 		int monsterLevel = 1;
 		public Sprite[] ufos;
-	
+		bool onCount = false;
 //		public AudioClip itemSound;
 		bool exist = false;
-	int countDownTime=3;
-		public GameObject GAMEMANAGER, item, shine, timer;
+		int countDownTime = 3;
+		public GameObject GAMEMANAGER, item, shine, timer, oCountDown;
 		public GameObject[] effects = new GameObject[3];
 		public Sprite   balloon, rainbow, hot;
 		bool isUndead = false;
@@ -25,7 +25,7 @@ public class src_balloon : MonoBehaviour
 				anim = GetComponent<Animator> ();
 
 		}
-	
+
 		// Update is called once per frame
 		void Update ()
 		{
@@ -34,13 +34,18 @@ public class src_balloon : MonoBehaviour
 
 		void create (int num)
 		{
+		Debug.Log ("create");
+				onCount = false;
 //				fire.SetActive (false);
 				exist = true;
+				isUndead = false;
 //				if (num < 4)
 				shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				GetComponent<SpriteRenderer> ().sprite = balloon;
 //				Debug.Log ("OnEnable()");
+				oCountDown.SetActive (false);
 				anim = GetComponent<Animator> ();
+				anim.SetInteger ("cancel", 0);
 				anim.SetBool ("balloonExist", true);
 				anim.SetInteger ("super", num);
 				GAMEMANAGER.SendMessage ("getBalloonMSG", 9);
@@ -65,8 +70,38 @@ public class src_balloon : MonoBehaviour
 				isUndead = mbool;
 		}
 
+		void startCoundDown ()
+		{
+		onCount = true;
+				Destroy (GameObject.FindGameObjectWithTag ("monster"));
+				exist = false;
+				anim.SetBool ("balloonExist", false);
+				oCountDown.SetActive (true);
+				countDownTime = 3;
+				countDown ();
+				anim.SetInteger ("cancel", 1);
+				isUndead = true;
+//				oCountDown.animation.Play ();
+		}
+
+		 
+	
 		void countDown ()
 		{
+				if (!onCount)
+						return;
+				Debug.Log (countDownTime);
+				oCountDown.GetComponent<tk2dTextMesh> ().text = "" + countDownTime;
+				countDownTime--;
+				if (countDownTime < 0) {
+						onCount = false;
+						oCountDown.SetActive (false);
+						transform.position = new Vector2 (100, 100);
+						isUndead = false;
+						GAMEMANAGER.SendMessage ("getBalloonMSG", 10);
+				}
+
+
 		}
 
 		void superMode (int num)
