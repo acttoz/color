@@ -57,6 +57,11 @@ public class src_enemy : MonoBehaviour
 		{
 		}
 
+		void resetLife ()
+		{
+				bosslife = 2;
+		}
+
 		void superMode (int num)
 		{
 
@@ -144,7 +149,8 @@ public class src_enemy : MonoBehaviour
 						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, myTrigger.transform.position, Quaternion.identity);
 								animation.Play ("anim_boss3");
-								Destroy (myTrigger.gameObject);
+								myTrigger.gameObject.SendMessage ("boss", transform.position);
+//								Destroy (myTrigger.gameObject);
 						}
 				}
 		}
@@ -177,7 +183,7 @@ public class src_enemy : MonoBehaviour
 						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, myTrigger.transform.position, Quaternion.identity);
 								animation.Play ("anim_boss3");
-								Destroy (myTrigger.gameObject);
+								myTrigger.gameObject.SendMessage ("boss", transform.position);
 						}
 				}
 		

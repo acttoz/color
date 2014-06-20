@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class scr_bomb_b : MonoBehaviour
+public class scr_bomb_o : MonoBehaviour
 {
-		public int direction;
 		Vector3 mDirection;
 		public float speed;
 		bool bossCollide = false;
@@ -14,30 +13,16 @@ public class scr_bomb_b : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-				switch (direction) {
-				case 1:
-						mDirection = new Vector3 (-speed, 0, 0);
-						break;
-				case 2:
-						mDirection = new Vector3 (0, speed, 0);
-						break;
-				case 3:
-						mDirection = new Vector3 (speed, 0, 0);
-						break;
-				case 4:
-						mDirection = new Vector3 (0, -speed, 0);
-						break;
-
-				}
+		mDirection = new Vector3 (0, 0, 0);			 
 	
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
-				transform.position -= mDirection;
+
 				if (bossCollide)
-						Debug.Log (mDirection);
+						transform.position -= mDirection;
 //				if (bossCollide) {
 //				}
 
@@ -46,8 +31,9 @@ public class scr_bomb_b : MonoBehaviour
 		void boss (Vector3 bossPos)
 		{
 				bossCollide = true;
-//				transform.parent.gameObject.SendMessage ("onTimer", 2f);
 				GetComponent<SphereCollider> ().enabled = false;
+		transform.parent.animation.Stop ();
+//		transform.parent.gameObject.SendMessage ("onTimer", 2f);
 				mDirection = bossPos - transform.position;
 				mDirection = mDirection.normalized / 5f;
 				Debug.Log (mDirection);

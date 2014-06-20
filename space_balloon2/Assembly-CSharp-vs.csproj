@@ -149,6 +149,7 @@
      <Compile Include="Assets\scr_back_space.cs" />
      <Compile Include="Assets\scr_bgm.cs" />
      <Compile Include="Assets\scr_bomb_b.cs" />
+     <Compile Include="Assets\scr_bomb_o.cs" />
      <Compile Include="Assets\scr_bomb_p.cs" />
      <Compile Include="Assets\scr_button.cs" />
      <Compile Include="Assets\scr_button1.cs" />
