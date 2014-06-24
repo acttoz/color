@@ -4,7 +4,7 @@ using System.Collections;
 public class scr_star : MonoBehaviour
 {
 		public Sprite original, temp;
-		SpriteRenderer[] sr;
+//		SpriteRenderer[] sr;
 		float[] levels = new float[] {
 				0,
 				0.01f,
@@ -34,7 +34,7 @@ public class scr_star : MonoBehaviour
 		void Start ()
 		{
 				original = GetComponentInChildren<SpriteRenderer> ().sprite;
-				sr = GetComponentsInChildren<SpriteRenderer> ();
+//				sr = GetComponentsInChildren<SpriteRenderer> ();
 //				int temp = Random.Range (0, stars.Length);
 //				GetComponent<SpriteRenderer> ().sprite = stars [temp];
 		}

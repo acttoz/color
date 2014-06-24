@@ -183,6 +183,7 @@ public class GoogleMobileAdsScript : MonoBehaviour
 		public void HandleInterstitialFailedToLoad (object sender, AdFailedToLoadEventArgs args)
 		{
 				print ("HandleInterstitialFailedToLoad event received with message: " + args.Message);
+
 		}
 
 		public void HandleInterstitialOpened (object sender, EventArgs args)
@@ -200,7 +201,7 @@ public class GoogleMobileAdsScript : MonoBehaviour
 				print ("HandleInterstitialClosed event received");
 				interstitial.Destroy ();
 				RequestInterstitial ();
-		GameObject.Find ("GAMEMANAGER").SendMessage ("gameStart");
+//				GameObject.Find ("GAMEMANAGER").SendMessage ("ruReady");
 		}
 
 		public void HandleInterstitialLeftApplication (object sender, EventArgs args)

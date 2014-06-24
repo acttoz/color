@@ -2,14 +2,16 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_manager.cs">
     <Files>
-      <File FileName="Assets\scr_manager.cs" Line="1130" Column="52" />
+      <File FileName="Assets\scr_manager.cs" Line="1032" Column="7" />
       <File FileName="Assets\scr_back.cs" Line="1" Column="1" />
-      <File FileName="Assets\src_enemy.cs" Line="46" Column="6" />
-      <File FileName="Assets\scr_bomb_b.cs" Line="24" Column="12" />
-      <File FileName="Assets\src_balloon.cs" Line="70" Column="22" />
-      <File FileName="Assets\scr_bomb_o.cs" Line="36" Column="44" />
-      <File FileName="Assets\bombTimer.cs" Line="19" Column="15" />
-      <File FileName="Assets\scr_monParent.cs" Line="32" Column="6" />
+      <File FileName="Assets\src_enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\scr_bomb_b.cs" Line="1" Column="1" />
+      <File FileName="Assets\src_balloon.cs" Line="1" Column="1" />
+      <File FileName="Assets\scr_bomb_o.cs" Line="1" Column="1" />
+      <File FileName="Assets\bombTimer.cs" Line="1" Column="1" />
+      <File FileName="Assets\scr_monParent.cs" Line="1" Column="1" />
+      <File FileName="Assets\GoogleMobileAdsScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\scr_star.cs" Line="40" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

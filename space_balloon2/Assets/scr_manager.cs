@@ -16,9 +16,9 @@ public class scr_manager : MonoBehaviour
 		int LEVEL;
 		int numGem;
 		int enemyNum = 0;
-		int failTime = 3;
+//		int failTime = 3;
 		bool onCount = false;
-		bool seenTutorial1 = false;
+//		bool seenTutorial1 = false;
 		Component admob;
 		public Sprite[] sItems;
 		public float[] levelRate = new float[4];
@@ -71,7 +71,7 @@ public class scr_manager : MonoBehaviour
 		public AudioClip create, remove, pop, bing, levelUp, go, itemSound, timesup;
 		tk2dTextMesh scoreText;
 		tk2dTextMesh lvText;
-		tk2dTextMesh timeText, resultText, gemText1, gemText2, gemText3;
+	tk2dTextMesh timeText, resultText, gemText1;
 		float score = 0;
 		int gem = 0;
 		public static int superLevel = 0;
@@ -219,9 +219,9 @@ public class scr_manager : MonoBehaviour
 		
 				bgm.SendMessage ("superMode", 1);
 				existBalloon = false;
-				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
-				if (LEVEL > 1)
-						admob.SendMessage ("ShowInterstitial");
+		Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
+//				if (LEVEL > 1)
+						
 				// back & enemy reset
 				//				balloon.transform.localScale = new Vector3 (0, 0, 0);
 		
@@ -238,6 +238,11 @@ public class scr_manager : MonoBehaviour
 				//				balloon.GetComponentInChildren<SphereCollider> ().enabled = true;
 		
 		}
+
+//		void ruReady ()
+//		{
+//				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
+//		}
 
 		void monsterChoice ()
 		{
@@ -342,63 +347,63 @@ public class scr_manager : MonoBehaviour
 		
 		}
 	
-		void resultGemCount3 ()
-		{
-				audio.PlayOneShot (itemSound);
-				countGem3++;
-				gem--;
-				gemText3.text = ": " + countGem3;
-				resultText.text = "" + (score -= 100000) / 10;
-				numGem = numGem + 100;
-				PlayerPrefs.SetInt ("NUMGEM", numGem);
-				if (gem < 1) {
-			
-						CancelInvoke ("resultGemCount3");
-						PlayerPrefs.SetInt ("NUMGEM3", countGem3);
+//		void resultGemCount3 ()
+//		{
+//				audio.PlayOneShot (itemSound);
+//				countGem3++;
+//				gem--;
+//				gemText3.text = ": " + countGem3;
+//				resultText.text = "" + (score -= 100000) / 10;
+//				numGem = numGem + 100;
+//				PlayerPrefs.SetInt ("NUMGEM", numGem);
+//				if (gem < 1) {
+//			
+//						CancelInvoke ("resultGemCount3");
+//						PlayerPrefs.SetInt ("NUMGEM3", countGem3);
+//
+//						if (score >= 10000) {
+//								gem = (int)score / 10000;
+//								InvokeRepeating ("resultGemCount2", 0.5f, 0.3f);
+//						} else if (score >= 1000) {
+//								gem = (int)score / 1000;
+//								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
+//						} else {
+//								enableTouch ();
+//						}
+//				}  
+//		
+//		
+//		}
 
-						if (score >= 10000) {
-								gem = (int)score / 10000;
-								InvokeRepeating ("resultGemCount2", 0.5f, 0.3f);
-						} else if (score >= 1000) {
-								gem = (int)score / 1000;
-								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
-						} else {
-								enableTouch ();
-						}
-				}  
-		
-		
-		}
-
-		void resultGemCount2 ()
-		{
-				audio.PlayOneShot (itemSound);
-				countGem2++;
-				if (countGem2 > 9) {
-						countGem3++;
-						gemText3.text = ": " + countGem3;
-						PlayerPrefs.SetInt ("NUMGEM3", countGem3);
-						countGem2 = 0;
-				}
-				gem--;
-				gemText2.text = ": " + countGem2;
-				resultText.text = "" + (score -= 10000) / 10;
-				numGem = numGem + 10;
-				PlayerPrefs.SetInt ("NUMGEM", numGem);
-				if (gem < 1) {
-			
-						CancelInvoke ("resultGemCount2");
-						PlayerPrefs.SetInt ("NUMGEM2", countGem2);
-						if (score >= 1000) {
-								gem = (int)score / 1000;
-								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
-						} else {
-								enableTouch ();
-						}
-				}  
-		
-		
-		}
+//		void resultGemCount2 ()
+//		{
+//				audio.PlayOneShot (itemSound);
+//				countGem2++;
+//				if (countGem2 > 9) {
+//						countGem3++;
+//						gemText3.text = ": " + countGem3;
+//						PlayerPrefs.SetInt ("NUMGEM3", countGem3);
+//						countGem2 = 0;
+//				}
+//				gem--;
+//				gemText2.text = ": " + countGem2;
+//				resultText.text = "" + (score -= 10000) / 10;
+//				numGem = numGem + 10;
+//				PlayerPrefs.SetInt ("NUMGEM", numGem);
+//				if (gem < 1) {
+//			
+//						CancelInvoke ("resultGemCount2");
+//						PlayerPrefs.SetInt ("NUMGEM2", countGem2);
+//						if (score >= 1000) {
+//								gem = (int)score / 1000;
+//								InvokeRepeating ("resultGemCount1", 0.5f, 0.3f);
+//						} else {
+//								enableTouch ();
+//						}
+//				}  
+//		
+//		
+//		}
 
 		void resultGemCount1 ()
 		{
@@ -686,7 +691,7 @@ public class scr_manager : MonoBehaviour
 								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
-						StartCoroutine ("monster", colCreate);
+//						StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
 					
@@ -1814,6 +1819,7 @@ public class scr_manager : MonoBehaviour
 				}
 				if (e.Selection == btnNext) {
 						btnNext.GetComponent<SpriteRenderer> ().color = Color.white;
+			admob.SendMessage ("ShowInterstitial");
 //						PlayerPrefs.SetInt (LEVEL + "", 1);
 //			LEVEL = 9;
 						if (LEVEL < 10) {
@@ -1837,6 +1843,7 @@ public class scr_manager : MonoBehaviour
 						Time.timeScale = 1.0f;
 				}
 				if (e.Selection == btn_replay) {
+			admob.SendMessage ("ShowInterstitial");
 						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
 						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
 						Destroy (GameObject.Find ("prf_pause(Clone)"));
