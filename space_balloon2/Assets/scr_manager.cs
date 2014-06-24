@@ -19,6 +19,7 @@ public class scr_manager : MonoBehaviour
 		int failTime = 3;
 		bool onCount = false;
 		bool seenTutorial1 = false;
+		Component admob;
 		public Sprite[] sItems;
 		public float[] levelRate = new float[4];
 		float stopRate = 0;
@@ -99,7 +100,7 @@ public class scr_manager : MonoBehaviour
 		{
 				audio.PlayOneShot (go);
 //		GameObject.Find ("ADS").SendMessage ("showAd");
-		enableTouch ();
+				enableTouch ();
 				//				timeStarted = true;
 				onPlay = true;
 				InvokeRepeating ("itemCreate", 1f, itemCreateRate);
@@ -219,7 +220,8 @@ public class scr_manager : MonoBehaviour
 				bgm.SendMessage ("superMode", 1);
 				existBalloon = false;
 				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
-	
+				if (LEVEL > 1)
+						admob.SendMessage ("ShowInterstitial");
 				// back & enemy reset
 				//				balloon.transform.localScale = new Vector3 (0, 0, 0);
 		
@@ -281,6 +283,7 @@ public class scr_manager : MonoBehaviour
 	
 		IEnumerator timesUp ()
 		{
+
 				onPlay = false;
 				superLevel = 0;
 				existBalloon = false;
@@ -1610,6 +1613,8 @@ public class scr_manager : MonoBehaviour
 
 		void Start ()
 		{
+				admob = GetComponent<GoogleMobileAdsScript> ();
+				admob.SendMessage ("RequestInterstitial");
 				//		score = 200;
 				//				PlayerPrefs.SetInt ("LEVEL", 9);
 				////				PlayerPrefs.SetInt ("LEVEL", 2);
