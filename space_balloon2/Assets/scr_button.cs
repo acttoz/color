@@ -7,7 +7,7 @@ public class scr_button : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-		PlayerPrefs.SetInt ("NUMGEM", 1000000);
+//		PlayerPrefs.SetInt ("NUMGEM", 1000000);
 				if (PlayerPrefs.GetInt ("9", 0) == 1) {
 						btn1.GetComponent<CapsuleCollider> ().enabled = false;
 						realBtn.GetComponent<CapsuleCollider> ().enabled = true;

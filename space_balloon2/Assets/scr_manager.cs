@@ -18,6 +18,7 @@ public class scr_manager : MonoBehaviour
 		int enemyNum = 0;
 		int failTime = 3;
 		bool onCount = false;
+		bool seenTutorial1 = false;
 		public Sprite[] sItems;
 		public float[] levelRate = new float[4];
 		float stopRate = 0;
@@ -39,7 +40,7 @@ public class scr_manager : MonoBehaviour
 		int killNum = 0;
 		public bool isMonster = false;
 		public float undeadTime = 0;
-		public GameObject enemyPop, prf_FailTimer, oFailTimer, warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
+		public GameObject oTutorial1, enemyPop, prf_FailTimer, oFailTimer, warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
 		GameObject[] back;
 		public bool isUndead = false;
 //		float deadLine;
@@ -97,7 +98,8 @@ public class scr_manager : MonoBehaviour
 		void gameStart ()
 		{
 				audio.PlayOneShot (go);
-				enableTouch ();
+//		GameObject.Find ("ADS").SendMessage ("showAd");
+		enableTouch ();
 				//				timeStarted = true;
 				onPlay = true;
 				InvokeRepeating ("itemCreate", 1f, itemCreateRate);
@@ -114,6 +116,7 @@ public class scr_manager : MonoBehaviour
 						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
 						float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 		
+						enemyNum++;
 						if (LEVEL == 5 && enemyNum > 2)
 								StopCoroutine ("enemyCreate");
 						if (LEVEL == 4 && enemyNum > 1)
@@ -126,7 +129,6 @@ public class scr_manager : MonoBehaviour
 								StopCoroutine ("enemyCreate");
 		
 		
-						enemyNum++;
 						Instantiate (prf_enemy, new Vector2 (tempX, tempY), Quaternion.identity);
 						yield return new WaitForSeconds (enemyCreateRate / 1.2f);
 			
@@ -217,6 +219,7 @@ public class scr_manager : MonoBehaviour
 				bgm.SendMessage ("superMode", 1);
 				existBalloon = false;
 				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
+	
 				// back & enemy reset
 				//				balloon.transform.localScale = new Vector3 (0, 0, 0);
 		
@@ -251,7 +254,13 @@ public class scr_manager : MonoBehaviour
 								monsterIcons [i].GetComponent<SpriteRenderer> ().color = new Color (0.5f, 0.5f, 0.5f, 1);
 						}
 				} else {
-						gameStart ();
+						if (PlayerPrefs.GetInt ("TUTO1", 0) == 0) {
+								PlayerPrefs.SetInt ("TUTO1", 1);
+								Instantiate (oTutorial1, new Vector2 (0, 0), Quaternion.identity);
+						} else {
+								gameStart ();
+						}
+
 				}
 		}
 	
@@ -1391,11 +1400,11 @@ public class scr_manager : MonoBehaviour
 								score -= 1;
 				}
 
-				scoreText.text = " :  " + score + " balloon";
+				scoreText.text = " :  " + score;
 				if (score < 0) {
 						CancelInvoke ("scoreCount");
 						score = 0;
-						scoreText.text = " :  " + "0 balloon";
+						scoreText.text = " :  " + "0";
 						superLevel = 0;
 //						StartCoroutine ("timesUp");
 				}
