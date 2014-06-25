@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{3BB7B0D0-FDF9-E265-0D5D-FB3606AFEB0A}</ProjectGuid>
+	<ProjectGuid>{09CF2F2F-355B-4E1D-2D7B-8DAA81158945}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -88,6 +88,7 @@
      <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
      <Compile Include="Assets\GoogleMobileAdsDemoScript.cs" />
      <Compile Include="Assets\GoogleMobileAdsScript.cs" />
+     <Compile Include="Assets\Highscore\Script\Highscore.cs" />
      <Compile Include="Assets\MANAGER_START.cs" />
      <Compile Include="Assets\Store.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
@@ -164,6 +165,7 @@
      <Compile Include="Assets\mission.cs" />
      <Compile Include="Assets\monster_choice.cs" />
      <Compile Include="Assets\nextBtn.cs" />
+     <Compile Include="Assets\scoreList.cs" />
      <Compile Include="Assets\scr_air.cs" />
      <Compile Include="Assets\scr_back.cs" />
      <Compile Include="Assets\scr_back2.cs" />
@@ -428,6 +430,7 @@
      <None Include="Assets\Plugins\Android\res\values-bg\auth_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\wallet_secondary_text_holo_dark.xml" />
+     <None Include="Assets\Highscore\Read Me\Read Me.txt" />
      <None Include="Assets\Plugins\Android\res\values-fa\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-am\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-tl\auth_strings.xml" />
@@ -451,6 +454,7 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-fr-rCA\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-hr\auth_strings.xml" />
+     <None Include="Assets\Highscore\Read Me\Create database table.txt" />
      <None Include="Assets\Plugins\Android\res\values-it\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-de\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zu\auth_strings.xml" />
@@ -528,9 +532,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{F7E14687-39B6-7467-554A-579770C5BE46}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{FCB87665-BBBD-ED40-1F7B-FD1A30002049}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{B614B14A-6D26-3E17-C645-1E4864E309E0}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{224C70BA-FE02-F4B6-FE55-B0217104B6D3}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

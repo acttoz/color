@@ -19,5 +19,7 @@ EditorBuildSettings:
     path: Assets/00SCENE/game.unity
   - enabled: 1
     path: Assets/00SCENE/sce_reallevel.unity
+  - enabled: 1
+    path: Assets/00SCENE/sce_rank.unity
   - enabled: 0
     path: Assets/MainScene.unity

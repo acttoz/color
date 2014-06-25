@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A43FA3AA-B7ED-6646-6160-8328A1A554D3}</ProjectGuid>
+	<ProjectGuid>{499AF637-7E2C-9D2B-1F2B-406FF0D96B8E}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -356,6 +356,7 @@
      <None Include="Assets\Plugins\Android\res\values-bg\auth_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\wallet_secondary_text_holo_dark.xml" />
+     <None Include="Assets\Highscore\Read Me\Read Me.txt" />
      <None Include="Assets\Plugins\Android\res\values-fa\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-am\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-tl\auth_strings.xml" />
@@ -379,6 +380,7 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-fr-rCA\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-hr\auth_strings.xml" />
+     <None Include="Assets\Highscore\Read Me\Create database table.txt" />
      <None Include="Assets\Plugins\Android\res\values-it\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-de\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zu\auth_strings.xml" />
@@ -480,13 +482,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{F7E14687-39B6-7467-554A-579770C5BE46}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{FCB87665-BBBD-ED40-1F7B-FD1A30002049}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{B614B14A-6D26-3E17-C645-1E4864E309E0}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{224C70BA-FE02-F4B6-FE55-B0217104B6D3}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{3BB7B0D0-FDF9-E265-0D5D-FB3606AFEB0A}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{09CF2F2F-355B-4E1D-2D7B-8DAA81158945}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript.unityproj">
-      <Project>{88423B0D-237E-B4C9-0ED4-DA9C0BD80F33}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+      <Project>{A3227E11-5F82-FDB5-EDBC-8502E59B9E16}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
