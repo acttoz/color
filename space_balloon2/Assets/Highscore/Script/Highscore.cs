@@ -8,6 +8,7 @@ public class Highscore : MonoBehaviour
 		public bool isScore = false;
 		public string secretKey = "12345";
 		public string PostScoreUrl = "http://YouWebsite.com/.../postScore.php?";
+		public string PostNameUrl = "http://YouWebsite.com/.../postScore.php?";
 		public string GetHighscoreUrl = "http://YouWebsite.com/.../getHighscore.php";
 		private string name = "Name";
 		private string score = "Score";
@@ -29,7 +30,6 @@ public class Highscore : MonoBehaviour
 		void Start ()
 		{
 				scoreText = GetComponent<tk2dTextMesh> ();
-				windowRect = new Rect (120, 40, 300, 300);
 				StartCoroutine ("GetScore");		
 		}
 
@@ -88,6 +88,16 @@ public class Highscore : MonoBehaviour
 				scoreList.SendMessage ("showScores", Scores);
 		}
 
+		void postRank ()
+		{
+				StartCoroutine (PostScore (PlayerPrefs.GetString ("MYNAME", "noname"), PlayerPrefs.GetInt ("NUMGEM", 0)));
+		}
+
+		void postName ()
+		{
+				StartCoroutine (PostName (PlayerPrefs.GetString ("MYNAME", "noname"), PlayerPrefs.GetInt ("NUMGEM", 0)));
+		}
+
 		void textSplit (string www)
 		{
 				rankList = www.Split ('\n');
@@ -98,6 +108,31 @@ public class Highscore : MonoBehaviour
 		}
 	
 		IEnumerator PostScore (string name, int score)
+		{
+				string _name = name;
+				int _score = 10;
+		
+				string hash = Md5Sum (_name + _score + secretKey).ToLower ();
+		
+				WWWForm form = new WWWForm ();
+				form.AddField ("name", _name);
+				form.AddField ("score", _score);
+				form.AddField ("hash", hash);
+		
+				WWW www = new WWW (PostScoreUrl, form);
+				WindowTitel = "Wait";
+				yield return www;
+		
+				if (www.text == "done") {
+						//						StartCoroutine ("GetScore");
+						GameObject.Find ("UI_MENU").SendMessage ("returnName", "OK");
+				} else {
+						//						print ("There was an error posting the high score: " + www.error);
+						GameObject.Find ("UI_MENU").SendMessage ("returnName", www.error + "");
+				}
+		}
+
+		IEnumerator PostName (string name, int score)
 		{
 				string _name = name;
 				int _score = score;
@@ -114,10 +149,11 @@ public class Highscore : MonoBehaviour
 				yield return www;
 		
 				if (www.text == "done") {
-						StartCoroutine ("GetScore");
+						//						StartCoroutine ("GetScore");
+						GameObject.Find ("UI_MENU").SendMessage ("returnName", "OK");
 				} else {
-						print ("There was an error posting the high score: " + www.error);
-						WindowTitel = "There was an error posting the high score";
+						//						print ("There was an error posting the high score: " + www.error);
+						GameObject.Find ("UI_MENU").SendMessage ("returnName", www.error + "");
 				}
 		}
 	

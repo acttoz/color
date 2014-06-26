@@ -3,7 +3,7 @@ using System.Collections;
 
 public class scr_rank_manager : MonoBehaviour
 {
-		public GameObject mainCam, prf_inputName, oInputName, prf_warning, oWarning;
+		public GameObject mainCam, prf_inputName, oInputName, prf_warning, oWarning, prf_error, oError;
 		public GameObject btn1, btn2;
 		public GameObject score;
 		public GameObject btn10, btn20, btn30, btn40, btn50;
@@ -32,6 +32,8 @@ public class scr_rank_manager : MonoBehaviour
 						oCursors [3] = GameObject.Find ("cursor3");
 						oCursors [4] = GameObject.Find ("cursor4");
 						oCursors [5] = GameObject.Find ("cursor5");
+				} else {
+						score.SendMessage ("postRank");
 				}
 		}
 	
@@ -64,7 +66,7 @@ public class scr_rank_manager : MonoBehaviour
 						
 				}
 				if (gesture.Selection.name.Equals ("YES")) {
-			PlayerPrefs.SetInt("NUMGEM",0);
+						PlayerPrefs.SetInt ("NUMGEM", 0);
 						Destroy (oWarning);
 						oInputName = Instantiate (prf_inputName, new Vector2 (0, 0), Quaternion.identity)as GameObject;
 						oCursors [0] = GameObject.Find ("cursor1");
@@ -134,13 +136,28 @@ public class scr_rank_manager : MonoBehaviour
 								}
 								Debug.Log (NAME);
 								PlayerPrefs.SetString ("MYNAME", NAME);
-								Destroy (oInputName);
+								score.SendMessage ("postName");
+//								Destroy (oInputName);
 						}
+				}
+				if (gesture.Selection.name.Equals ("Ok")) {
+						Destroy (oError);
 				}
 
 
 
 				 
+		}
+
+		void returnName (string msg)
+		{
+				if (msg.Equals ("OK")) {
+						Destroy (oInputName);
+				} else {
+						oError = Instantiate (prf_error, new Vector2 (0, 0), Quaternion.identity) as GameObject;
+			Debug.Log(msg);
+				}
+
 		}
 
 		void keyInput (string inputString)
