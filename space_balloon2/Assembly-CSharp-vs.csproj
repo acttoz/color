@@ -162,6 +162,8 @@
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSequencer.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSheet.cs" />
      <Compile Include="Assets\bombTimer.cs" />
+     <Compile Include="Assets\cusor.cs" />
+     <Compile Include="Assets\key.cs" />
      <Compile Include="Assets\mission.cs" />
      <Compile Include="Assets\monster_choice.cs" />
      <Compile Include="Assets\nextBtn.cs" />
@@ -194,6 +196,7 @@
      <Compile Include="Assets\scr_name2text.cs" />
      <Compile Include="Assets\scr_num5.cs" />
      <Compile Include="Assets\scr_numGem.cs" />
+     <Compile Include="Assets\scr_rank_manager.cs" />
      <Compile Include="Assets\scr_realLevel.cs" />
      <Compile Include="Assets\scr_selectLevel.cs" />
      <Compile Include="Assets\scr_selfTimer.cs" />

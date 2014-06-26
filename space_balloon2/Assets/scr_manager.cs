@@ -50,7 +50,7 @@ public class scr_manager : MonoBehaviour
 //		public GameObject[] oAirs = new GameObject[3];
 		public GameObject oZone, oEnergy, oStopSound, btnRestart, btnNext, balloon, itemBlue, itemOrange, itemPurple, monsterB, monsterO, monsterP, monsterEffect, super_back2;
 		public Sprite bStar, oStar, pStar, eStar, superBalloon4, superBalloon5;
-		public GameObject itemEffectO, itemEffectB, effectPoint2, effectStop, itemEffectP, itemEffectBack, walls, btn_pause, prf_pause, btn_resume;
+		public GameObject itemEffectO, itemEffectB, effectPoint2, effectStop, itemEffectP, itemEffectBack,   btn_pause, prf_pause, btn_resume;
 //		int timer;
 		Vector2 previousBalloon, currentBalloon;
 //		int gameTime = 3;

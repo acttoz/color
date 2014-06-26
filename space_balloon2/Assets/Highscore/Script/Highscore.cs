@@ -15,7 +15,7 @@ public class Highscore : MonoBehaviour
 		private string Scores = "";
 		private string Names = "";
 		private tk2dTextMesh scoreText;
-		private string[] rankList=new string[50];
+		private string[] rankList = new string[50];
 		public GUISkin Skin;
 		public float windowWidth = 380;
 		private float windowHeight = 300;
@@ -68,6 +68,8 @@ public class Highscore : MonoBehaviour
 
 		void showRank (int lastId)
 		{
+				Names = "";
+				Scores = "";
 				for (int i=lastId-10; i<lastId; i++) {
 
 						string[] temp = rankList [i].Split (',');
