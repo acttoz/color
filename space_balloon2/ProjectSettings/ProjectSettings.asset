@@ -10,8 +10,8 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: space
+  companyName: Loud Develop
+  productName: Space Balloon
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -73,7 +73,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: kr.co.moon.recycler
+  iPhoneBundleIdentifier: kr.moom.space.balloon
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: a2d1e9578ef893e4f8fe56b9e752f1d0
@@ -112,8 +112,36 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 4ee837d250046614ba51985167ed8ec2, type: 3}
       m_Size: 128
+  - m_BuildTarget: Android
+    m_Icons:
+    - m_Icon: {fileID: 2800000, guid: 94acce17d08e5374c85fe2c9a57ad01b, type: 3}
+      m_Size: 144
+    - m_Icon: {fileID: 2800000, guid: 778e832589fbecd47befa41de0eb281c, type: 3}
+      m_Size: 96
+    - m_Icon: {fileID: 2800000, guid: 42f7a05436368a4478f9ad60a5ac13e3, type: 3}
+      m_Size: 72
+    - m_Icon: {fileID: 2800000, guid: 83e6c8f94b424604bb0b4f46c5173565, type: 3}
+      m_Size: 48
+    - m_Icon: {fileID: 2800000, guid: 5684b7dd6c1732b409dfa2c1776d2dc4, type: 3}
+      m_Size: 36
+  - m_BuildTarget: iPhone
+    m_Icons:
+    - m_Icon: {fileID: 2800000, guid: 03e7c1e352b6dc24eae77b63b76da2f4, type: 3}
+      m_Size: 152
+    - m_Icon: {fileID: 2800000, guid: 94acce17d08e5374c85fe2c9a57ad01b, type: 3}
+      m_Size: 144
+    - m_Icon: {fileID: 2800000, guid: aadecb663f4dca646b9896ffd00f3a70, type: 3}
+      m_Size: 120
+    - m_Icon: {fileID: 2800000, guid: 8d3b524115fcafd46938b26fb122be3f, type: 3}
+      m_Size: 114
+    - m_Icon: {fileID: 2800000, guid: 4734d25478eadc84eaa80f24510e774e, type: 3}
+      m_Size: 76
+    - m_Icon: {fileID: 2800000, guid: 8c738bc107c9b664dbe0fc6ff37dfe49, type: 3}
+      m_Size: 72
+    - m_Icon: {fileID: 2800000, guid: d4b5bbc05daa6a44f97d959f19d7f1c5, type: 3}
+      m_Size: 57
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
@@ -152,7 +180,8 @@ PlayerSettings:
   ps3TrialMode: 0
   flashStrippingLevel: 2
   spritePackerPolicy: 
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    4: 
   metroPackageName: space
   metroPackageLogo: 
   metroPackageVersion: 

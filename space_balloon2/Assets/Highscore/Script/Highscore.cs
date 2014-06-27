@@ -110,7 +110,7 @@ public class Highscore : MonoBehaviour
 		IEnumerator PostScore (string name, int score)
 		{
 				string _name = name;
-				int _score = 10;
+				int _score = score;
 		
 				string hash = Md5Sum (_name + _score + secretKey).ToLower ();
 		
@@ -144,7 +144,7 @@ public class Highscore : MonoBehaviour
 				form.AddField ("score", _score);
 				form.AddField ("hash", hash);
 		
-				WWW www = new WWW (PostScoreUrl, form);
+				WWW www = new WWW (PostNameUrl, form);
 				WindowTitel = "Wait";
 				yield return www;
 		
