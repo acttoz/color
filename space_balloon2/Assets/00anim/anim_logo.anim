@@ -498,7 +498,7 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_Events:
   - time: 1.64999998
-    functionName: destroy
+    functionName: opening_call
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

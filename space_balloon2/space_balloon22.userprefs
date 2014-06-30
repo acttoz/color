@@ -1,12 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_monster_p.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\openingStart.cs">
     <Files>
-      <File FileName="Assets\scr_rank_manager.cs" Line="15" Column="16" />
-      <File FileName="Assets\Highscore\Script\Highscore.cs" Line="56" Column="22" />
-      <File FileName="Assets\scr_bgm.cs" Line="28" Column="19" />
-      <File FileName="Assets\src_enemy.cs" Line="10" Column="23" />
-      <File FileName="Assets\scr_monster_p.cs" Line="23" Column="4" />
+      <File FileName="Assets\scr_logo_back.cs" Line="25" Column="1" />
+      <File FileName="Assets\openingStart.cs" Line="13" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -167,6 +167,7 @@
      <Compile Include="Assets\mission.cs" />
      <Compile Include="Assets\monster_choice.cs" />
      <Compile Include="Assets\nextBtn.cs" />
+     <Compile Include="Assets\openingStart.cs" />
      <Compile Include="Assets\scoreList.cs" />
      <Compile Include="Assets\scr_air.cs" />
      <Compile Include="Assets\scr_back.cs" />
