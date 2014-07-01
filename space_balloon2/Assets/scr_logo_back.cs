@@ -3,7 +3,7 @@ using System.Collections;
 
 public class scr_logo_back : MonoBehaviour
 {
-		public GameObject menu, mainCam, pop,oUfo;
+		public GameObject menu, mainCam, pop, oUfo, explosion, explosion2,ufoSound;
 		public AudioClip ufo, crush, down, scream;
 		// Use this for initialization
 		void Start ()
@@ -34,6 +34,16 @@ public class scr_logo_back : MonoBehaviour
 		{
 				audio.PlayOneShot (crush);
 				Instantiate (pop, oUfo.transform.position, Quaternion.identity);
+		}
+
+		void explosionCreate ()
+		{
+				explosion.SetActive (true);
+		}
+	
+		void explosionCreate2 ()
+		{
+				explosion2.SetActive (true);
 		}
 
 		void audioDown ()

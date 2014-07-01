@@ -289,7 +289,23 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!1 &100036
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400036}
+  - 114: {fileID: 11400004}
+  m_Layer: 0
+  m_Name: ExplosionUFo
+  m_TagString: bomb_p
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -313,6 +329,7 @@ Transform:
   m_Children:
   - {fileID: 400026}
   - {fileID: 400034}
+  - {fileID: 400036}
   m_Father: {fileID: 400032}
 --- !u!4 &400004
 Transform:
@@ -501,8 +518,19 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.817806244, z: 0}
+  m_LocalPosition: {x: -.678846061, y: -.473733902, z: 0}
   m_LocalScale: {x: .481483579, y: .481483579, z: .481483579}
+  m_Children: []
+  m_Father: {fileID: 400002}
+--- !u!4 &400036
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .274527431, y: .674164116, z: 0}
+  m_LocalScale: {x: .481483996, y: .481483996, z: .481483996}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!82 &8200000
@@ -573,7 +601,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 91b6c1826d134634cab2e14412e0bb05, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .50999999
+  m_Volume: .479999989
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -651,6 +679,9 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   pop: {fileID: 100000, guid: f3750ae4bd4776246a1aca6f3b1e69db, type: 2}
   oUfo: {fileID: 100002}
+  explosion: {fileID: 100036}
+  explosion2: {fileID: 100034}
+  ufoSound: {fileID: 0}
   ufo: {fileID: 8300000, guid: 8ffa19dfa4e382541af63b1010e16bc7, type: 3}
   crush: {fileID: 8300000, guid: 62183ff5a65a4214785016d02cfb7796, type: 3}
   down: {fileID: 8300000, guid: 6a723bc5135f34141b9e224f665a3e41, type: 3}
@@ -667,13 +698,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequences:
-  - spriteSheet: {fileID: 100000, guid: 959b2d8095977a54bb4c5809fddf06a7, type: 2}
+  - spriteSheet: {fileID: 100000, guid: 9c069982aece94d458646de7772048c2, type: 2}
     offset: {x: 0, y: 0, z: 0}
     waittingTime: 0
     foldOut: 1
     color: {r: .879896641, g: .54122299, b: .0193107128, a: 1}
-    spriteSheetRef: {fileID: 100000, guid: 959b2d8095977a54bb4c5809fddf06a7, type: 2}
-    oldSpriteSheetRef: {fileID: 100000, guid: 959b2d8095977a54bb4c5809fddf06a7, type: 2}
+    spriteSheetRef: {fileID: 100000, guid: 9c069982aece94d458646de7772048c2, type: 2}
+    oldSpriteSheetRef: {fileID: 100000, guid: 9c069982aece94d458646de7772048c2, type: 2}
+    play: 0
+  billboarding: 0
+  autoDestruct: 1
+  editorMode: 0
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef0282658803b48a3533c49815d8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequences:
+  - spriteSheet: {fileID: 100000, guid: 9c069982aece94d458646de7772048c2, type: 2}
+    offset: {x: 0, y: 0, z: 0}
+    waittingTime: 0
+    foldOut: 1
+    color: {r: .879896641, g: .54122299, b: .0193107128, a: 1}
+    spriteSheetRef: {fileID: 100000, guid: 9c069982aece94d458646de7772048c2, type: 2}
+    oldSpriteSheetRef: {fileID: 100000, guid: 9c069982aece94d458646de7772048c2, type: 2}
     play: 0
   billboarding: 0
   autoDestruct: 1

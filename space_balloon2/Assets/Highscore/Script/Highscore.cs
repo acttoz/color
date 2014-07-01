@@ -10,7 +10,6 @@ public class Highscore : MonoBehaviour
 		public string PostScoreUrl = "http://YouWebsite.com/.../postScore.php?";
 		public string PostNameUrl = "http://YouWebsite.com/.../postScore.php?";
 		public string GetHighscoreUrl = "http://YouWebsite.com/.../getHighscore.php";
-		private string name = "Name";
 		private string score = "Score";
 		private string WindowTitel = "";
 		private string Scores = "";

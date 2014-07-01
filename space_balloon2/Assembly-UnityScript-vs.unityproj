@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A3227E11-5F82-FDB5-EDBC-8502E59B9E16}</ProjectGuid>
+	<ProjectGuid>{E7F82E00-78E0-E6EB-D587-2D7A89244A54}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,11 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\src_enemy2.js" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ro\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ca\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-vi\common_strings.xml" />
      <None Include="Assets\ToonEffect_V2\Documentation\03 - HTSpriteSheet.cs parameters.txt" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\drawable\common_signin_btn_text_dark.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-en-rIN\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-sw\common_strings.xml" />
@@ -77,6 +79,9 @@
      <None Include="Assets\Plugins\Android\res\values-et-rEE\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-sk\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hi\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_top_button.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_search_box.xml" />
      <None Include="Assets\Plugins\Android\res\values-cs\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-it\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-vi\common_strings.xml" />
@@ -85,9 +90,12 @@
      <None Include="Assets\Plugins\Android\res\values-de\auth_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ms-rMY\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-ldpi\dimens.xml" />
      <None Include="Assets\Plugins\Android\res\values\common_colors.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\admob_ads_attrs.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fa\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\colors.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_friendpickerfragment.xml" />
      <None Include="Assets\Plugins\Android\res\values-ca\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-pl\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-de\common_strings.xml" />
@@ -109,10 +117,12 @@
      <None Include="Assets\Plugins\Android\res\values-ja\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-el\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-ca\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_button.xml" />
      <None Include="Assets\Plugins\Android\res\values\wallet_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-lo-rLA\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-af\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-sw\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\ids.xml" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr-rCA\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-nb\common_strings.xml" />
@@ -134,6 +144,7 @@
      <None Include="Assets\Plugins\Android\res\values-km-rKH\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-es-rUS\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values\wallet_colors.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_usersettingsfragment.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pl\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sr\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-ru\common_strings.xml" />
@@ -143,26 +154,32 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hy-rAM\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\color\common_signin_btn_text_light.xml" />
      <None Include="Assets\Plugins\Android\res\values-es-rUS\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_checkbox.xml" />
      <None Include="Assets\Plugins\Android\res\values-vi\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-fr-rCA\common_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\goodies\PackedTextMesh.shader" />
      <None Include="Assets\Plugins\Android\res\color\common_signin_btn_text_dark.xml" />
      <None Include="Assets\Plugins\Android\res\drawable\common_signin_btn_icon_light.xml" />
+     <None Include="Assets\Plugins\Android\facebook\bin\R.txt" />
      <None Include="Assets\Plugins\Android\res\values-en-rGB\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values\maps_attrs.xml" />
      <None Include="Assets\Plugins\Android\res\values-ms-rMY\auth_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\Blend2TexVertexColor.shader" />
      <None Include="Assets\Plugins\Android\res\values-pl\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\wallet_styles.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar_stub.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-et-rEE\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-km-rKH\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-cs\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-zh-rTW\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-tl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fa\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\proguard.txt" />
      <None Include="Assets\Plugins\Android\res\values-hi\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-ko\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_item_background.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_image.xml" />
      <None Include="Assets\Plugins\Android\res\values-zh-rHK\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hi\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\common_signin_btn_text_light.xml" />
@@ -172,13 +189,16 @@
      <None Include="Assets\Plugins\Android\res\values-ro\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hy-rAM\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-in\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sk\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-ms-rMY\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hr\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sv\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-hdpi\dimens.xml" />
      <None Include="Assets\Plugins\Android\res\values-sv\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\common_colors.xml" />
      <None Include="Assets\Plugins\Android\res\values-ja\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\build.xml" />
      <None Include="Assets\Plugins\Android\res\values-sr\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sr\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\proguard.txt" />
@@ -195,6 +215,7 @@
      <None Include="Assets\Plugins\Android\res\values-ko\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-vi\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-th\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_blue.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-af\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-sk\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-el\auth_strings.xml" />
@@ -214,6 +235,7 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ko\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fi\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-mn-rMN\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sl\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-be\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-bg\common_strings.xml" />
@@ -223,11 +245,14 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-am\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-sl\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_search_bar_layout.xml" />
+     <None Include="Assets\Plugins\Android\facebook\bin\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\common_strings.xml" />
      <None Include="Assets\ToonEffect_V2\Documentation\01 - Package description.txt" />
      <None Include="Assets\Plugins\Android\res\values-pt-rPT\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-es\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-pt-rPT\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\analytics.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zu\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-cs\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-iw\auth_strings.xml" />
@@ -242,6 +267,7 @@
      <None Include="Assets\Plugins\Android\res\values-th\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-lt\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-bg\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_login_activity_layout.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\wallet_secondary_text_holo_dark.xml" />
      <None Include="Assets\Highscore\Read Me\Read Me.txt" />
@@ -254,6 +280,7 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sk\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-zh-rCN\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-es-rUS\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-mdpi\dimens.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ru\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-tr\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-hy-rAM\common_strings.xml" />
@@ -263,13 +290,17 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-nl\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\maps_attrs.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rHK\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_list_section_header.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar.xml" />
      <None Include="Assets\Plugins\Android\res\values-lo-rLA\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\CutoutVertexColor.shader" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-fr-rCA\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-hr\auth_strings.xml" />
      <None Include="Assets\Highscore\Read Me\Create database table.txt" />
      <None Include="Assets\Plugins\Android\res\values-it\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-de\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zu\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-bg\common_strings.xml" />
@@ -283,6 +314,7 @@
      <None Include="Assets\Plugins\Android\res\values-es\wallet_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values\version.xml" />
      <None Include="Assets\Plugins\Android\res\values-pt\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment_list_row.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\drawable\common_signin_btn_text_light.xml" />
      <None Include="Assets\Plugins\Android\res\values-da\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-en-rIN\common_strings.xml" />
@@ -291,15 +323,20 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-cs\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lt\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\drawable\common_signin_btn_icon_light.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\drawables.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rCN\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values\wallet_attrs.xml" />
      <None Include="Assets\Plugins\Android\res\values-fi\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-es\common_strings.xml" />
      <None Include="Assets\tk2dUIExtensions\Fonts\AveriaSansLibre.fnt" />
+     <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_loginbutton_silver.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lt\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rTW\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\ids 1.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ka-rGE\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-be\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector_background_transition.xml" />
      <None Include="Assets\Plugins\Android\res\values-pt-rBR\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-hi\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-am\common_strings.xml" />
@@ -326,19 +363,26 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lv\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ja\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\wallet_primary_text_holo_light.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-he\strings.xml" />
      <None Include="Assets\tk2dUIExtensions\ReadMe.txt" />
+     <None Include="Assets\Plugins\Android\facebook\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\res\values-ka-rGE\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-es\strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-el\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_check.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sv\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-iw\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ms-rMY\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values\wallet_styles.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_list_row.xml" />
      <None Include="Assets\Plugins\Android\res\values-tl\auth_strings.xml" />
      <None Include="Assets\ToonEffect_V2\Documentation\04 - How to create a sequence.txt" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-th\common_strings.xml" />
      <None Include="Assets\ToonEffect_V2\Documentation\02 - How to create an effect.txt" />
      <None Include="Assets\Plugins\Android\res\values-af\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\styles.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-xhdpi\dimens.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-da\common_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-hr\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr\auth_strings.xml" />
@@ -346,10 +390,13 @@
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
+ <Reference Include="IFacebook">
+ <HintPath>Assets\Facebook\Scripts\IFacebook.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{FCB87665-BBBD-ED40-1F7B-FD1A30002049}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+      <Project>{706224DC-F26A-A09F-7CDB-582C2ABFF575}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class scr_button : MonoBehaviour
 {
-		public GameObject btn1, btn2, btn3, btn4, loading, UI, realBtn;
+		public GameObject btn1, btn2, btn3, btn4, loading, UI, realBtn, shareManager;
 		// Use this for initialization
 		void Start ()
 		{
@@ -61,6 +61,9 @@ public class scr_button : MonoBehaviour
 						btn1.GetComponent<SpriteRenderer> ().color = Color.yellow;
 						StartCoroutine ("loadLV", 6);
 			
+				}
+				if (gesture.Selection.name.Equals ("share")) {
+						shareManager.SendMessage ("OnClick");
 				}
 
 				 
