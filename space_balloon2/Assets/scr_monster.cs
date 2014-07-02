@@ -22,6 +22,8 @@ public class scr_monster : MonoBehaviour
 
 		void gogo ()
 		{
+		if (oBalloon == null)
+						Destroy (this.gameObject);
 				transform.parent.gameObject.GetComponent<scr_monParent> ().enabled = true;
 				transform.parent.parent = oBalloon.transform;
 				audio.Play ();

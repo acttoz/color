@@ -11,13 +11,13 @@ public class scr_button1 : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-				mainCam.SendMessage ("playAfterLogo");
+//				mainCam.SendMessage ("playAfterLogo");
 				btn10s = btn10.GetComponent<SpriteRenderer> ();
 				btn20s = btn20.GetComponent<SpriteRenderer> ();
 				btn30s = btn30.GetComponent<SpriteRenderer> ();
 				btn40s = btn40.GetComponent<SpriteRenderer> ();
 				btn50s = btn50.GetComponent<SpriteRenderer> ();
-		btnReset ();
+				btnReset ();
 		}
 	
 		// Update is called once per frame
@@ -45,38 +45,38 @@ public class scr_button1 : MonoBehaviour
 					
 				}
 				if (gesture.Selection == btn10) {
-			btnReset();
+						btnReset ();
 						btn10s.color = hexColor (231, 100, 100, 255);
-			score.SendMessage("showRank",10);
+						score.SendMessage ("showRank", 10);
 			
 				}
-		if (gesture.Selection == btn20) {
-			btnReset();
-			btn20s.color = hexColor (231, 100, 100, 255);
+				if (gesture.Selection == btn20) {
+						btnReset ();
+						btn20s.color = hexColor (231, 100, 100, 255);
 			
-			score.SendMessage("showRank",20);
-		}
+						score.SendMessage ("showRank", 20);
+				}
 
-		if (gesture.Selection == btn30) {
-			btnReset();
-			btn30s.color = hexColor (231, 100, 100, 255);
-			score.SendMessage("showRank",30);
+				if (gesture.Selection == btn30) {
+						btnReset ();
+						btn30s.color = hexColor (231, 100, 100, 255);
+						score.SendMessage ("showRank", 30);
 			
-		}
+				}
 
-		if (gesture.Selection == btn40) {
-			btnReset();
-			btn40s.color = hexColor (231, 100, 100, 255);
-			score.SendMessage("showRank",40);
+				if (gesture.Selection == btn40) {
+						btnReset ();
+						btn40s.color = hexColor (231, 100, 100, 255);
+						score.SendMessage ("showRank", 40);
 			
-		}
+				}
 
-		if (gesture.Selection == btn50) {
-			btnReset();
-			btn50s.color = hexColor (231, 100, 100, 255);
-			score.SendMessage("showRank",50);
+				if (gesture.Selection == btn50) {
+						btnReset ();
+						btn50s.color = hexColor (231, 100, 100, 255);
+						score.SendMessage ("showRank", 50);
 			
-		}
+				}
 
 
 

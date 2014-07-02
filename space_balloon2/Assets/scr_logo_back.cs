@@ -3,7 +3,7 @@ using System.Collections;
 
 public class scr_logo_back : MonoBehaviour
 {
-		public GameObject menu, mainCam, pop, oUfo, explosion, explosion2,ufoSound;
+		public GameObject menu, mainCam, pop, oUfo, explosion, explosion2, ufoSound;
 		public AudioClip ufo, crush, down, scream;
 		// Use this for initialization
 		void Start ()
@@ -21,6 +21,11 @@ public class scr_logo_back : MonoBehaviour
 		void Update ()
 		{
 	
+		}
+
+		void OnTap ()
+		{
+				Application.LoadLevel (1);
 		}
 
 		void audioUfo ()

@@ -15,7 +15,7 @@ public class scr_rank_manager : MonoBehaviour
 		void Start ()
 		{
 
-				mainCam.SendMessage ("playAfterLogo");
+//				mainCam.SendMessage ("playAfterLogo");
 				
 				btn10s = btn10.GetComponent<SpriteRenderer> ();
 				btn20s = btn20.GetComponent<SpriteRenderer> ();

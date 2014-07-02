@@ -198,13 +198,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequences:
-  - spriteSheet: {fileID: 100000, guid: 959b2d8095977a54bb4c5809fddf06a7, type: 2}
+  - spriteSheet: {fileID: 100000, guid: 323ac173ff3392844a0d45439654f93c, type: 2}
     offset: {x: 0, y: 0, z: 0}
     waittingTime: 0
     foldOut: 1
     color: {r: .879896641, g: .54122299, b: .0193107128, a: 1}
-    spriteSheetRef: {fileID: 100000, guid: 959b2d8095977a54bb4c5809fddf06a7, type: 2}
-    oldSpriteSheetRef: {fileID: 100000, guid: 959b2d8095977a54bb4c5809fddf06a7, type: 2}
+    spriteSheetRef: {fileID: 100000, guid: 323ac173ff3392844a0d45439654f93c, type: 2}
+    oldSpriteSheetRef: {fileID: 100000, guid: 323ac173ff3392844a0d45439654f93c, type: 2}
     play: 0
   billboarding: 0
   autoDestruct: 1

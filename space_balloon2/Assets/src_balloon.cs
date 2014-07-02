@@ -10,7 +10,7 @@ public class src_balloon : MonoBehaviour
 		int monsterLevel = 1;
 		public Sprite[] ufos;
 		bool onCount = false;
-//		public AudioClip itemSound;
+		public AudioClip sCountDown;
 		bool exist = false;
 		int countDownTime = 3;
 		public GameObject GAMEMANAGER, item, shine, timer, oCountDown;
@@ -34,7 +34,7 @@ public class src_balloon : MonoBehaviour
 
 		void create (int num)
 		{
-		Debug.Log ("create");
+				Debug.Log ("create");
 				onCount = false;
 //				fire.SetActive (false);
 				exist = true;
@@ -72,7 +72,7 @@ public class src_balloon : MonoBehaviour
 
 		void startCoundDown ()
 		{
-		onCount = true;
+				onCount = true;
 				Destroy (GameObject.FindGameObjectWithTag ("monster"));
 				exist = false;
 				anim.SetBool ("balloonExist", false);
@@ -83,16 +83,14 @@ public class src_balloon : MonoBehaviour
 				isUndead = true;
 //				oCountDown.animation.Play ();
 		}
-
-		 
 	
 		void countDown ()
 		{
 				if (!onCount)
 						return;
-				Debug.Log (countDownTime);
 				oCountDown.GetComponent<tk2dTextMesh> ().text = "" + countDownTime;
 				countDownTime--;
+				audio.PlayOneShot (sCountDown);
 				if (countDownTime < 0) {
 						onCount = false;
 						oCountDown.SetActive (false);
@@ -153,7 +151,6 @@ public class src_balloon : MonoBehaviour
 
 		void OnTriggerEnter (Collider myTrigger)
 		{
-				Debug.Log (exist + " " + isUndead + " " + isMonster + "col" + myTrigger);
 				if ((myTrigger.transform.tag == "boss" || myTrigger.transform.tag == "enemy") && exist && !isUndead && !isMonster) {
 						exist = false;
 						anim.SetInteger ("cancel", 0);

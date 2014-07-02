@@ -261,6 +261,7 @@
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSequence.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSequencer.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSheet.cs" />
+     <Compile Include="Assets\audio_play.cs" />
      <Compile Include="Assets\bombTimer.cs" />
      <Compile Include="Assets\cusor.cs" />
      <Compile Include="Assets\key.cs" />
@@ -281,6 +282,7 @@
      <Compile Include="Assets\scr_bomb_p.cs" />
      <Compile Include="Assets\scr_button.cs" />
      <Compile Include="Assets\scr_button1.cs" />
+     <Compile Include="Assets\scr_button2.cs" />
      <Compile Include="Assets\scr_cart_item.cs" />
      <Compile Include="Assets\scr_destroy.cs" />
      <Compile Include="Assets\scr_destroyTimer.cs" />

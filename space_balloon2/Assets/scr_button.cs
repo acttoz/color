@@ -3,11 +3,14 @@ using System.Collections;
 
 public class scr_button : MonoBehaviour
 {
-		public GameObject btn1, btn2, btn3, btn4, loading, UI, realBtn, shareManager;
+		public GameObject btn1, btn2, btn3, btn4, loading, UI, realBtn, shareManager, BGM;
 		// Use this for initialization
 		void Start ()
 		{
 //		PlayerPrefs.SetInt ("NUMGEM", 1000000);
+				if (GameObject.FindGameObjectWithTag ("BGM") == null) {
+						Instantiate (BGM, new Vector2 (0, 0), Quaternion.identity);
+				}
 				if (PlayerPrefs.GetInt ("9", 0) == 1) {
 						btn1.GetComponent<CapsuleCollider> ().enabled = false;
 						realBtn.GetComponent<CapsuleCollider> ().enabled = true;

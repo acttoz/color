@@ -41,7 +41,7 @@ public class scr_manager : MonoBehaviour
 		int killNum = 0;
 		public bool isMonster = false;
 		public float undeadTime = 0;
-		public GameObject oTutorial1, enemyPop, prf_FailTimer, oFailTimer, warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
+		public GameObject oBGM, oTutorial1, enemyPop, prf_FailTimer, oFailTimer, warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
 		GameObject[] back;
 		public bool isUndead = false;
 //		float deadLine;
@@ -50,7 +50,7 @@ public class scr_manager : MonoBehaviour
 //		public GameObject[] oAirs = new GameObject[3];
 		public GameObject oZone, oEnergy, oStopSound, btnRestart, btnNext, balloon, itemBlue, itemOrange, itemPurple, monsterB, monsterO, monsterP, monsterEffect, super_back2;
 		public Sprite bStar, oStar, pStar, eStar, superBalloon4, superBalloon5;
-		public GameObject itemEffectO, itemEffectB, effectPoint2, effectStop, itemEffectP, itemEffectBack,   btn_pause, prf_pause, btn_resume;
+		public GameObject itemEffectO, itemEffectB, effectPoint2, effectStop, itemEffectP, itemEffectBack, btn_pause, prf_pause, btn_resume;
 //		int timer;
 		Vector2 previousBalloon, currentBalloon;
 //		int gameTime = 3;
@@ -71,7 +71,7 @@ public class scr_manager : MonoBehaviour
 		public AudioClip create, remove, pop, bing, levelUp, go, itemSound, timesup;
 		tk2dTextMesh scoreText;
 		tk2dTextMesh lvText;
-	tk2dTextMesh timeText, resultText, gemText1;
+		tk2dTextMesh timeText, resultText, gemText1;
 		float score = 0;
 		int gem = 0;
 		public static int superLevel = 0;
@@ -113,7 +113,6 @@ public class scr_manager : MonoBehaviour
 		IEnumerator enemyCreate ()
 		{
 				while (true) {
-						Debug.Log (enemyCreateRate);
 						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
 						float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 		
@@ -219,7 +218,7 @@ public class scr_manager : MonoBehaviour
 		
 				bgm.SendMessage ("superMode", 1);
 				existBalloon = false;
-		Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
+				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
 //				if (LEVEL > 1)
 						
 				// back & enemy reset
@@ -691,7 +690,7 @@ public class scr_manager : MonoBehaviour
 								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
-//						StartCoroutine ("monster", colCreate);
+						StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
 					
@@ -1121,7 +1120,6 @@ public class scr_manager : MonoBehaviour
 	
 		void superMode (int num)
 		{
-				Debug.Log ("supermode");
 				if (!onPlay)
 						return;
 
@@ -1552,6 +1550,10 @@ public class scr_manager : MonoBehaviour
 				
 						} else {
 								CancelInvoke ("balloonStop");
+								GameObject[] temp = GameObject.FindGameObjectsWithTag ("monster");
+								for (int i=0; i<temp.Length; i++) {
+										Destroy (temp [i]);
+								}
 								StartCoroutine (Remove (2));
 						}
 						break;
@@ -1618,6 +1620,9 @@ public class scr_manager : MonoBehaviour
 
 		void Start ()
 		{
+				if (GameObject.FindGameObjectWithTag ("BGM") == null)
+						Instantiate (oBGM, new Vector2 (0, 0), Quaternion.identity);
+				bgm = GameObject.FindGameObjectWithTag ("BGM");
 				admob = GetComponent<GoogleMobileAdsScript> ();
 				admob.SendMessage ("RequestInterstitial");
 				//		score = 200;
@@ -1819,7 +1824,7 @@ public class scr_manager : MonoBehaviour
 				}
 				if (e.Selection == btnNext) {
 						btnNext.GetComponent<SpriteRenderer> ().color = Color.white;
-			admob.SendMessage ("ShowInterstitial");
+						admob.SendMessage ("ShowInterstitial");
 //						PlayerPrefs.SetInt (LEVEL + "", 1);
 //			LEVEL = 9;
 						if (LEVEL < 10) {
@@ -1843,7 +1848,7 @@ public class scr_manager : MonoBehaviour
 						Time.timeScale = 1.0f;
 				}
 				if (e.Selection == btn_replay) {
-			admob.SendMessage ("ShowInterstitial");
+						admob.SendMessage ("ShowInterstitial");
 						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
 						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
 						Destroy (GameObject.Find ("prf_pause(Clone)"));

@@ -36,8 +36,6 @@ public class scr_bomb_b : MonoBehaviour
 		void Update ()
 		{
 				transform.position -= mDirection;
-				if (bossCollide)
-						Debug.Log (mDirection);
 //				if (bossCollide) {
 //				}
 
