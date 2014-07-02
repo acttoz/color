@@ -31,12 +31,7 @@ public class MSPIOSSocialManager : EventDispatcher {
 	private static MSPIOSSocialManager _instance = null;
 
 
-	
-	public const string TWITTER_POST_FAILED  = "twitter_post_failed";
-	public const string TWITTER_POST_SUCCESS = "twitter_post_success";
-	
-	public const string FACEBOOK_POST_FAILED  = "facebook_post_failed";
-	public const string FACEBOOK_POST_SUCCESS = "facebook_post_success";
+	 
 
 
 	//--------------------------------------
@@ -70,41 +65,7 @@ public class MSPIOSSocialManager : EventDispatcher {
 		#endif
 	}
 
-	public void TwitterPost(string text) {
-		TwitterPost(text, null);
-	}
-
-
-	public void TwitterPost(string text, Texture2D texture) {
-		#if (UNITY_IPHONE && !UNITY_EDITOR) || SA_DEBUG_MODE
-
-		if(texture == null) {
-			_MSP_TwPost(text);
-		} else {
-			byte[] val = texture.EncodeToPNG();
-			string bytesString = System.Convert.ToBase64String (val);
-			_MSP_TwPostWithMedia(text, bytesString);
-		}
-		#endif
-
-	}
-
-
-	public void FacebookPost(string text) {
-		FacebookPost(text, null);
-	}
-	
-	public void FacebookPost(string text, Texture2D texture) {
-		#if (UNITY_IPHONE && !UNITY_EDITOR) || SA_DEBUG_MODE
-		if(texture == null) {
-			_MSP_FbPost(text);
-		} else {
-			byte[] val = texture.EncodeToPNG();
-			string bytesString = System.Convert.ToBase64String (val);
-			_MSP_FbPostWithMedia(text, bytesString);
-		}
-		#endif
-	}
+	 
 	
 	//--------------------------------------
 	//  GET/SET
@@ -121,26 +82,7 @@ public class MSPIOSSocialManager : EventDispatcher {
 		}
 	}
 	
-	//--------------------------------------
-	//  EVENTS
-	//--------------------------------------
-
-	private void OnTwitterPostFailed() {
-		dispatch(TWITTER_POST_FAILED);
-	}
-
-	private void OnTwitterPostSuccess() {
-		dispatch(TWITTER_POST_SUCCESS);
-	}
-
-	private void OnFacebookPostFailed() {
-		dispatch(FACEBOOK_POST_FAILED);
-	}
-	
-	private void OnFacebookPostSuccess() {
-		dispatch(FACEBOOK_POST_SUCCESS);
-	}
-	
+ 
 	//--------------------------------------
 	//  PRIVATE METHODS
 	//--------------------------------------

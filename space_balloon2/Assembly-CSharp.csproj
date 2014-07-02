@@ -102,9 +102,7 @@
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Enum\InstagramEvents.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\IOS\Instagram\IOSInstagramManager.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\IOS\NativeSharing\MSPIOSSocialManager.cs" />
-     <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Tasks\FacebookPostScreenshotTask.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Tasks\InstagramPostScreenshotTask.cs" />
-     <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Tasks\TwitterPostScreenshotTask.cs" />
      <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\DefaultPreviewButton.cs" />
      <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SALevelLoader.cs" />
      <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SALoadedSceneOnClick.cs" />
