@@ -21,19 +21,7 @@ public class MSPIOSSocialManager : EventDispatcher {
 
 
 	#if (UNITY_IPHONE && !UNITY_EDITOR) || SA_DEBUG_MODE
-	[DllImport ("__Internal")]
-	private static extern void _MSP_TwPost(string text);
-	
-	[DllImport ("__Internal")]
-	private static extern void _MSP_TwPostWithMedia(string text, string encodedMedia);
-	
-
-	[DllImport ("__Internal")]
-	private static extern void _MSP_FbPost(string text);
-	
-	[DllImport ("__Internal")]
-	private static extern void _MSP_FbPostWithMedia(string text, string encodedMedia);
-
+	 
 	[DllImport ("__Internal")]
 	private static extern void _MSP_MediaShare(string text, string encodedMedia);
 	#endif

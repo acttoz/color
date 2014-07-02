@@ -97,7 +97,7 @@ public class GoogleMobileAdsScript : MonoBehaviour
 				#elif UNITY_ANDROID
 		string adUnitId = "ca-app-pub-6805343954393346/2888331311";
 				#elif UNITY_IPHONE
-		string adUnitId = "ca-app-pub-6805343954393346/2888331311";
+		string adUnitId = "ca-app-pub-6805343954393346/2200013712";
 				#else
 				string adUnitId = "unexpected_platform";
 				#endif

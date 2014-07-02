@@ -77,7 +77,6 @@
      <Compile Include="Assets\Extensions\GooglePlayCommon\Events\TwitterEvents.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\Interfaces\GoogleMobileAdBanner.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\Interfaces\GoogleMobileAdInterface.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Interfaces\TwitterManagerInterface.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AndroidADBanner.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AsyncTask.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GADBannerIdFactory.cs" />
@@ -91,31 +90,18 @@
      <Compile Include="Assets\Extensions\GooglePlayCommon\PUtil\PlayServiceUtil.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\PUtil\Singleton.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\PUtil\WWWTextureLoader.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Manage\SPFacebook.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FacebookPictureType.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FacebookUserInfo.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Tasks\FBPostingTask.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Manage\AndroidTwitterManager.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Models\TWResult.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Models\TwitterStatus.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Models\TwitterUserInfo.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TwitterPostingTask.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\Templates\GPScore.cs" />
      <Compile Include="Assets\Extensions\GooglePlayCommon\Templates\GooglePlayerTemplate.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Example\Scripts\InstagramUseExample.cs" />
-     <Compile Include="Assets\Extensions\MobileSocialPlugin\Example\Scripts\MSPFacebookUseExample.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Example\Scripts\MSPMoreActionsExample.cs" />
-     <Compile Include="Assets\Extensions\MobileSocialPlugin\Example\Scripts\MSPTwitterUseExample.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Android\Instagram\AndroidInstagramManager.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Android\NativeSharing\MSPAndroidSocialGate.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Core\SPInstagram.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Core\SPShareUtility.cs" />
-     <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Core\SPTwitter.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Enum\InstaErrorCode.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Enum\InstagramEvents.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\IOS\Instagram\IOSInstagramManager.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\IOS\NativeSharing\MSPIOSSocialManager.cs" />
-     <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\IOS\Twitter\IOSTwitterManager.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Tasks\FacebookPostScreenshotTask.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Tasks\InstagramPostScreenshotTask.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Tasks\TwitterPostScreenshotTask.cs" />
@@ -134,18 +120,6 @@
      <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\ScreenPlacementExtension\ScreenPlacementExtension.cs" />
      <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\ScreenPlacementExtension\ScreenScaler.cs" />
      <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\ScreenPlacementExtension\XScaleModifayer.cs" />
-     <Compile Include="Assets\Facebook\Scripts\AndroidFacebook.cs" />
-     <Compile Include="Assets\Facebook\Scripts\AndroidFacebookLoader.cs" />
-     <Compile Include="Assets\Facebook\Scripts\CanvasFacebookLoader.cs" />
-     <Compile Include="Assets\Facebook\Scripts\EditorFacebook.cs" />
-     <Compile Include="Assets\Facebook\Scripts\EditorFacebookAccessToken.cs" />
-     <Compile Include="Assets\Facebook\Scripts\EditorFacebookLoader.cs" />
-     <Compile Include="Assets\Facebook\Scripts\FB.cs" />
-     <Compile Include="Assets\Facebook\Scripts\FBScreen.cs" />
-     <Compile Include="Assets\Facebook\Scripts\FBSettings.cs" />
-     <Compile Include="Assets\Facebook\Scripts\IOSFacebook.cs" />
-     <Compile Include="Assets\Facebook\Scripts\IOSFacebookLoader.cs" />
-     <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
      <Compile Include="Assets\Final_audio_play.cs" />
      <Compile Include="Assets\FingerGestures Samples\1) Finger Events\Scripts\FingerEventsSamplePart1.cs" />
      <Compile Include="Assets\FingerGestures Samples\1) Finger Events\Scripts\FingerEventsSamplePart2.cs" />
@@ -353,6 +327,7 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lo-rLA\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pl\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-nb\common_strings.xml" />
+     <None Include="Assets\Plugins\iOS\README.txt" />
      <None Include="Assets\Plugins\Android\res\values-lv\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ar\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-es-rUS\auth_strings.xml" />
@@ -681,9 +656,6 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt-rPT\auth_strings.xml" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
- <Reference Include="IFacebook">
- <HintPath>Assets\Facebook\Scripts\IFacebook.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

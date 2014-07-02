@@ -61,6 +61,7 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lo-rLA\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pl\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-nb\common_strings.xml" />
+     <None Include="Assets\Plugins\iOS\README.txt" />
      <None Include="Assets\Plugins\Android\res\values-lv\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ar\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-es-rUS\auth_strings.xml" />
@@ -387,9 +388,6 @@
      <None Include="Assets\Plugins\Android\res\values-hr\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt-rPT\auth_strings.xml" />
- <Reference Include="IFacebook">
- <HintPath>Assets\Facebook\Scripts\IFacebook.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
