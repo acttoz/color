@@ -56,6 +56,7 @@ public class Highscore : MonoBehaviour
 						loading.GetComponent<tk2dTextMesh> ().text = "Network Error..";
 						print ("There was an error getting the high score: " + www.error);
 						WindowTitel = "There was an error getting the high score";
+						yield return new WaitForSeconds (1f);
 				} else {
 						loading.SetActive (false);
 						WindowTitel = "Done";

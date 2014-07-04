@@ -1,16 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_button.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Highscore\Script\Highscore.cs">
     <Files>
-      <File FileName="Assets\scr_manager.cs" Line="6" Column="24" />
-      <File FileName="F:\backup\Recycler2\Assets\MainManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_button.cs" Line="9" Column="16" />
-      <File FileName="Assets\scr_rank_manager.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_manager.cs" Line="1800" Column="19" />
-      <File FileName="Assets\scr_bgm.cs" Line="1" Column="1" />
-      <File FileName="Assets\game_camera.cs" Line="1" Column="1" />
-      <File FileName="Assets\src_balloon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Plugins\Android\AndroidManifest.xml" Line="1" Column="1" />
+      <File FileName="Assets\scr_button.cs" Line="102" Column="15" />
+      <File FileName="Assets\Highscore\Script\Highscore.cs" Line="59" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
