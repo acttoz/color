@@ -1781,7 +1781,7 @@ public class scr_manager : MonoBehaviour
 						adNum = PlayerPrefs.GetInt ("ADTIME", 0);
 						adNum++;
 						PlayerPrefs.SetInt ("ADTIME", adNum);
-						if (adNum > 5)
+						if (adNum > 10)
 								admob.SendMessage ("ShowInterstitial");
 						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
 						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
@@ -1797,7 +1797,8 @@ public class scr_manager : MonoBehaviour
 						adNum = PlayerPrefs.GetInt ("ADTIME", 0);
 						adNum++;
 						PlayerPrefs.SetInt ("ADTIME", adNum);
-						admob.SendMessage ("ShowInterstitial");
+						if (adNum > 10)
+								admob.SendMessage ("ShowInterstitial");
 						//						PlayerPrefs.SetInt (LEVEL + "", 1);
 						//			LEVEL = 9;
 						if (LEVEL < 10) {
