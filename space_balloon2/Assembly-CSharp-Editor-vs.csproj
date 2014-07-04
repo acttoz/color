@@ -46,8 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Editor\SocialPlatfromMenu.cs" />
-     <Compile Include="Assets\Extensions\GooglePlayCommon\Editor\SocialPlatfromSettingsEditor.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\DragRecognizerInspector.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerDownDetectorInspector.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerEventDetectorInspector.cs" />
