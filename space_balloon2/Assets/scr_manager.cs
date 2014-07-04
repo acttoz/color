@@ -7,6 +7,7 @@ public class scr_manager : MonoBehaviour
 		public float enemyCreateRate;
 		public float itemCreateRate;
 		public float zoneCreateRate;
+		private int tempLevel;
 		public int scoreRate;
 		public float stopRateControl;
 		public int superTime;
@@ -137,6 +138,10 @@ public class scr_manager : MonoBehaviour
 		//RESET
 		void gameReset ()
 		{
+				superLevel = 1;
+				if (item1 == 1)
+						superLevel = 2;
+				tempLevel = superLevel;
 				StopCoroutine ("enemyCreate");
 				if (oBoss == null) {
 						oBoss = Instantiate (prf_boss, new Vector2 (0, 0), Quaternion.identity) as GameObject;
@@ -207,6 +212,9 @@ public class scr_manager : MonoBehaviour
 				gauge.transform.localScale = new Vector3 (1.75f, 0.3f, 1);
 				onPlay = false;
 				score = 0;
+				superLevel = 1;
+				if (item1 == 1)
+						superLevel = 2;
 				scoreText.text = ": " + score;
 				//				timeStarted = false;
 				disableTouch ();
@@ -690,7 +698,7 @@ public class scr_manager : MonoBehaviour
 								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
-						StartCoroutine ("monster", colCreate);
+//						StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
 					
@@ -878,16 +886,18 @@ public class scr_manager : MonoBehaviour
 		{
 //				timer--;
 //				oAirs [timer].animation.Play ();
-				superLevel = 1;
-				if (item1 == 1)
-						superLevel = 2;
+//				superLevel = 1;
+//				if (item1 == 1)
+//						superLevel = 2;
 //		superLevel = 5;
 		
 				//TEST
 //				superLevel = 4;
 //				superLevel = 3;
+				superLevel = tempLevel;
 				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
 				balloon.SetActive (true);
+				isMonster = false;
 				balloon.SendMessage ("offMonster");
 		
 				balloon.transform.localRotation = new Quaternion (0, 0, 0, 0);
@@ -910,7 +920,6 @@ public class scr_manager : MonoBehaviour
 				oStopSound.audio.Stop ();
 				oEnergy.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1);
 				CancelInvoke ("scoreCount");
-				
 				CancelInvoke ("superModeCount");
 				CancelInvoke ("normalModeCount");
 				stopRate = 0;
@@ -1173,7 +1182,7 @@ public class scr_manager : MonoBehaviour
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
 						break;
 				case 2:
-						enemyBomb ();
+//						enemyBomb ();
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
 						isUndead = true;
 						balloon.SendMessage ("undead", true);
@@ -1193,7 +1202,7 @@ public class scr_manager : MonoBehaviour
 						
 						break;
 				case 3:
-						enemyBomb ();
+//						enemyBomb ();
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
 						isUndead = true;
 						balloon.SendMessage ("undead", true);
@@ -1215,7 +1224,7 @@ public class scr_manager : MonoBehaviour
 				 
 
 				case 4:
-						enemyBomb ();
+//						enemyBomb ();
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 12);
 						isUndead = true;
 						balloon.SendMessage ("undead", true);
@@ -1237,7 +1246,7 @@ public class scr_manager : MonoBehaviour
 						break;
 
 				case 5:
-						enemyBomb ();
+//						enemyBomb ();
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 20);
 						
 						isUndead = true;
@@ -1259,7 +1268,7 @@ public class scr_manager : MonoBehaviour
 						}
 						break;
 				case 6:
-						enemyBomb ();
+//						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
@@ -1281,7 +1290,7 @@ public class scr_manager : MonoBehaviour
 						 
 						break;
 				case 7:
-						enemyBomb ();
+//						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
@@ -1302,7 +1311,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 8:
-						enemyBomb ();
+//						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 15);
 						scoreRate = scoreRates [num - 6];
@@ -1323,7 +1332,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 9:
-						enemyBomb ();
+//						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
 						scoreRate = scoreRates [num - 6];
@@ -1344,7 +1353,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 10:
-						enemyBomb ();
+//						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
 						scoreRate = scoreRates [num - 6];
@@ -1576,12 +1585,12 @@ public class scr_manager : MonoBehaviour
 				case 6:
 			//LEVEL6,7
 						killNum++;
-						if (LEVEL == 6 && onPlay && killNum > 5) {
+						if (LEVEL == 6 && onPlay && killNum > 4) {
 								onPlay = false;
 								PlayerPrefs.SetInt ("6", 1);
 								StartCoroutine ("timesUp");
 						}
-						if (LEVEL == 7 && onPlay && killNum > 5) {
+						if (LEVEL == 7 && onPlay && killNum > 4) {
 								onPlay = false;
 								PlayerPrefs.SetInt ("7", 1);
 								StartCoroutine ("timesUp");
@@ -1761,14 +1770,49 @@ public class scr_manager : MonoBehaviour
 						}
 				}
 				if (e.Selection == btn_menu) {
-						btn_menu.GetComponent<SpriteRenderer> ().color = Color.yellow;
+//						btn_menu.GetComponent<SpriteRenderer> ().color = Color.yellow;
+						Time.timeScale = 1.0f;
+						//						gameReset ();
+						Application.LoadLevel (1);
 				}
 				if (e.Selection == btn_replay) {
-						btn_replay.GetComponent<SpriteRenderer> ().color = Color.yellow;
+//						btn_replay.GetComponent<SpriteRenderer> ().color = Color.yellow;
+						int adNum;
+						adNum = PlayerPrefs.GetInt ("ADTIME", 0);
+						adNum++;
+						PlayerPrefs.SetInt ("ADTIME", adNum);
+						if (adNum > 5)
+								admob.SendMessage ("ShowInterstitial");
+						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
+						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
+						Destroy (GameObject.Find ("prf_pause(Clone)"));
+						Time.timeScale = 1.0f;
+						gameReset ();
 //												Application.LoadLevel (0);
 				}
 				if (e.Selection == btnNext) {
-						btnNext.GetComponent<SpriteRenderer> ().color = Color.yellow;
+//						btnNext.GetComponent<SpriteRenderer> ().color = Color.yellow;
+						btnNext.GetComponent<SpriteRenderer> ().color = Color.white;
+						int adNum;
+						adNum = PlayerPrefs.GetInt ("ADTIME", 0);
+						adNum++;
+						PlayerPrefs.SetInt ("ADTIME", adNum);
+						admob.SendMessage ("ShowInterstitial");
+						//						PlayerPrefs.SetInt (LEVEL + "", 1);
+						//			LEVEL = 9;
+						if (LEVEL < 10) {
+								LEVEL++;
+								PlayerPrefs.SetInt ("LEVEL", LEVEL);
+								if (LEVEL == 10)
+										Application.LoadLevel (1);
+						}
+			
+						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
+						Destroy (GameObject.Find ("prf_pause(Clone)"));
+						Time.timeScale = 1.0f;
+						gameReset ();
+						//						gameReset ();
+						//						Application.LoadLevel (1);
 						//												Application.LoadLevel (0);
 				}
 				if (!existBalloon && onPlay && e.Selection != btn_pause) {
@@ -1785,12 +1829,24 @@ public class scr_manager : MonoBehaviour
 
 		
 				if (e.Selection == btn_pause && onPlay) {
-						btn_pause.GetComponent<SpriteRenderer> ().color = Color.yellow;
+//						btn_pause.GetComponent<SpriteRenderer> ().color = Color.yellow;
+						btn_pause.GetComponent<SpriteRenderer> ().color = Color.white;
+						StartCoroutine (pauseGame ());
+						//							 					Application.LoadLevel (0);
+				}
+				if (e.Selection == btn_pause && onCount) {
+						//						btn_pause.GetComponent<SpriteRenderer> ().color = Color.yellow;
+						btn_pause.GetComponent<SpriteRenderer> ().color = Color.white;
+						StartCoroutine (pauseGame ());
 						//							 					Application.LoadLevel (0);
 				}
 
 				if (e.Selection == btn_resume) {
-						btn_resume.GetComponent<SpriteRenderer> ().color = Color.yellow;
+//						btn_resume.GetComponent<SpriteRenderer> ().color = Color.yellow;
+						btn_resume.GetComponent<SpriteRenderer> ().color = Color.white;
+						Destroy (GameObject.Find ("prf_pause(Clone)"));
+						onPlay = true;
+						Time.timeScale = 1.0f;
 
 						//												Application.LoadLevel (0);
 				}
@@ -1798,9 +1854,11 @@ public class scr_manager : MonoBehaviour
 
 				//				Debug.Log ("click");
 		}
-	 
+		//FINGERUP
 		void OnFingerUp (FingerUpEvent e)
 		{
+				Destroy (GameObject.FindGameObjectWithTag ("monster"));
+				tempLevel = superLevel;
 				GameObject[] temp = GameObject.FindGameObjectsWithTag ("light");
 				for (int i=0; i<temp.Length; i++) {
 						Destroy (temp [i]);
@@ -1817,48 +1875,21 @@ public class scr_manager : MonoBehaviour
 						 
 				}
 				if (e.Selection == btn_menu) {
-						btn_menu.GetComponent<SpriteRenderer> ().color = Color.white;
-						Time.timeScale = 1.0f;
-//						gameReset ();
-						Application.LoadLevel (1);
+//						btn_menu.GetComponent<SpriteRenderer> ().color = Color.white;
+						
 				}
 				if (e.Selection == btnNext) {
-						btnNext.GetComponent<SpriteRenderer> ().color = Color.white;
-						admob.SendMessage ("ShowInterstitial");
-//						PlayerPrefs.SetInt (LEVEL + "", 1);
-//			LEVEL = 9;
-						if (LEVEL < 10) {
-								LEVEL++;
-								PlayerPrefs.SetInt ("LEVEL", LEVEL);
-								if (LEVEL == 10)
-										Application.LoadLevel (1);
-						}
-
-						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
-						Destroy (GameObject.Find ("prf_pause(Clone)"));
-						Time.timeScale = 1.0f;
-						gameReset ();
-						//						gameReset ();
-//						Application.LoadLevel (1);
+						
 				}
 				if (e.Selection == btn_resume) {
-						btn_resume.GetComponent<SpriteRenderer> ().color = Color.white;
-						Destroy (GameObject.Find ("prf_pause(Clone)"));
-						onPlay = true;
-						Time.timeScale = 1.0f;
+						
 				}
 				if (e.Selection == btn_replay) {
-						admob.SendMessage ("ShowInterstitial");
-						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
-						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
-						Destroy (GameObject.Find ("prf_pause(Clone)"));
-						Time.timeScale = 1.0f;
-						gameReset ();
+						
 						//												Application.LoadLevel (0);
 				}
 				if (e.Selection == btn_pause && onPlay) {
-						btn_pause.GetComponent<SpriteRenderer> ().color = Color.white;
-						StartCoroutine (pauseGame ());
+						
 
 						//												Application.LoadLevel (0);
 				}

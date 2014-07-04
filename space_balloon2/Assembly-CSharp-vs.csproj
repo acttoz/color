@@ -236,6 +236,7 @@
      <Compile Include="Assets\audio_play.cs" />
      <Compile Include="Assets\bombTimer.cs" />
      <Compile Include="Assets\cusor.cs" />
+     <Compile Include="Assets\game_camera.cs" />
      <Compile Include="Assets\key.cs" />
      <Compile Include="Assets\mission.cs" />
      <Compile Include="Assets\monster_choice.cs" />

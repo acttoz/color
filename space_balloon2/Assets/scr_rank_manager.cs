@@ -127,6 +127,10 @@ public class scr_rank_manager : MonoBehaviour
 								delKeyInput ();
 			
 				}
+				if (gesture.Selection.name.Equals ("Cancel")) {
+						Application.LoadLevel (1);
+			
+				}
 
 				if (gesture.Selection.name.Equals ("OK")) {
 						if (posCursor > 1) {
@@ -155,7 +159,7 @@ public class scr_rank_manager : MonoBehaviour
 						Destroy (oInputName);
 				} else {
 						oError = Instantiate (prf_error, new Vector2 (0, 0), Quaternion.identity) as GameObject;
-			Debug.Log(msg);
+						Debug.Log (msg);
 				}
 
 		}

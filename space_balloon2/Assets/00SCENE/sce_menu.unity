@@ -1033,6 +1033,7 @@ MonoBehaviour:
   realBtn: {fileID: 517984304}
   shareManager: {fileID: 0}
   BGM: {fileID: 100000, guid: b809b0446d58a3e469e063aee42248d3, type: 2}
+  popNetwork: {fileID: 100004, guid: 31697612cc2af0a479f7e1cd5b4ce2b8, type: 2}
 --- !u!114 &701585731
 MonoBehaviour:
   m_ObjectHideFlags: 0
