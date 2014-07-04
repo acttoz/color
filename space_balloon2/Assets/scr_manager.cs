@@ -1744,31 +1744,9 @@ public class scr_manager : MonoBehaviour
 				}
 		}
 	
-		void OnFingerDown (FingerDownEvent e)
+		void OnTap (TapGesture e)
 		{
-				if (onToast) {
-						if (e.Selection == monsterIcons [0]) {
-								if (!selectedMonster1)
-										selectedMonsterNum++;
-								selectedMonster1 = true;
-								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-								 
-						}
-						if (e.Selection == monsterIcons [1]) {
-								if (!selectedMonster2)
-										selectedMonsterNum++;
-								selectedMonster2 = true;
-								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-								 
-						}
-						if (e.Selection == monsterIcons [2]) {
-								if (!selectedMonster3)
-										selectedMonsterNum++;
-								selectedMonster3 = true;
-								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-								 
-						}
-				}
+				
 				if (e.Selection == btn_menu) {
 //						btn_menu.GetComponent<SpriteRenderer> ().color = Color.yellow;
 						Time.timeScale = 1.0f;
@@ -1816,17 +1794,7 @@ public class scr_manager : MonoBehaviour
 						//						Application.LoadLevel (1);
 						//												Application.LoadLevel (0);
 				}
-				if (!existBalloon && onPlay && e.Selection != btn_pause) {
-						existBalloon = true;
-						Create (GetWorldPos (e.Position));
-				}
-				if (!existBalloon && !onPlay && e.Selection == balloon && onCount) {
-						onPlay = true;
-//			balloon.SendMessage("stopCount");
-						onCount = false;
-						existBalloon = true;
-						Create (GetWorldPos (e.Position));
-				}
+				
 
 		
 				if (e.Selection == btn_pause && onPlay) {
@@ -1854,6 +1822,45 @@ public class scr_manager : MonoBehaviour
 				
 
 				//				Debug.Log ("click");
+		}
+
+		void OnFingerDown (FingerDownEvent e)
+		{
+				if (onToast) {
+						if (e.Selection == monsterIcons [0]) {
+								if (!selectedMonster1)
+										selectedMonsterNum++;
+								selectedMonster1 = true;
+								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+				
+						}
+						if (e.Selection == monsterIcons [1]) {
+								if (!selectedMonster2)
+										selectedMonsterNum++;
+								selectedMonster2 = true;
+								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+				
+						}
+						if (e.Selection == monsterIcons [2]) {
+								if (!selectedMonster3)
+										selectedMonsterNum++;
+								selectedMonster3 = true;
+								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+				
+						}
+				}
+
+				if (!existBalloon && onPlay && e.Selection != btn_pause) {
+						existBalloon = true;
+						Create (GetWorldPos (e.Position));
+				}
+				if (!existBalloon && !onPlay && e.Selection == balloon && onCount) {
+						onPlay = true;
+						//			balloon.SendMessage("stopCount");
+						onCount = false;
+						existBalloon = true;
+						Create (GetWorldPos (e.Position));
+				}
 		}
 		//FINGERUP
 		void OnFingerUp (FingerUpEvent e)
