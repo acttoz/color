@@ -32,8 +32,8 @@ PlayerSettings:
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
-  use32BitDisplayBuffer: 1
-  use24BitDepthBuffer: 1
+  use32BitDisplayBuffer: 0
+  use24BitDepthBuffer: 0
   defaultIsFullScreen: 1
   defaultIsNativeResolution: 1
   runInBackground: 0
@@ -73,7 +73,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: kr.moom.space.balloon
+  iPhoneBundleIdentifier: com.moon.space.balloon
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: a2d1e9578ef893e4f8fe56b9e752f1d0
