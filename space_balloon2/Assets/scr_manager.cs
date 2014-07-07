@@ -1059,7 +1059,7 @@ public class scr_manager : MonoBehaviour
 						previousBalloon = zonePosition;
 						currentBalloon = balloon.transform.position;
 						Vector2 tempVector = currentBalloon - previousBalloon;
-						float zoneLimit = 1.4f;
+						float zoneLimit = 1.8f;
 
 						if (item4 == 1)
 								zoneLimit = 3.5f;
