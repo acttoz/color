@@ -175,6 +175,8 @@ MonoBehaviour:
   isBoss: 0
   pop: {fileID: 100000, guid: f3750ae4bd4776246a1aca6f3b1e69db, type: 2}
   bomb: {fileID: 0}
+  GAMEMANAGER: {fileID: 0}
+  mPoint: {fileID: 100000, guid: 8c39d5232b7446447821f8d2abe6ea10, type: 2}
   sprite:
   - {fileID: 21300000, guid: 0b976426b111f65439f2ae9f500e9d04, type: 3}
   - {fileID: 21300000, guid: e190de9804b8fd54da9b21a8999ae5e0, type: 3}

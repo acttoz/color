@@ -5,7 +5,7 @@ public class src_enemy : MonoBehaviour
 {
 //	Random.Range(1, 5);
 		public bool isBoss;
-		public GameObject pop, bomb;
+		public GameObject pop, bomb, GAMEMANAGER, mPoint;
 		int bosslife = 2;
 //		bool exist = true;
 		string color;
@@ -49,7 +49,7 @@ public class src_enemy : MonoBehaviour
 
 		void Start ()
 		{
-
+				GAMEMANAGER = GameObject.Find ("GAMEMANAGER");
 		}
 	
 		// Update is called once per frame
@@ -109,6 +109,8 @@ public class src_enemy : MonoBehaviour
 						GetComponent<SphereCollider> ().radius = 0;
 						Instantiate (bomb, transform.position, Quaternion.identity);
 						animation.Play ("anim_boss2");
+						Instantiate (mPoint, transform.position, Quaternion.identity);
+						GAMEMANAGER.SendMessage ("getBalloonMSG", 12);
 						
 //						Destroy (this.gameObject);
 				}
@@ -126,6 +128,8 @@ public class src_enemy : MonoBehaviour
 				if (!isBoss) {
 						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, transform.position, Quaternion.identity);
+								Instantiate (mPoint, transform.position, Quaternion.identity);
+								GAMEMANAGER.SendMessage ("getBalloonMSG", 11);
 								GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 6);
 								Destroy (this.gameObject);
 				
@@ -160,6 +164,8 @@ public class src_enemy : MonoBehaviour
 				if (!isBoss) {
 						if (myTrigger.transform.tag == "bomb") {
 								Instantiate (pop, transform.position, Quaternion.identity);
+								Instantiate (mPoint, transform.position, Quaternion.identity);
+								GAMEMANAGER.SendMessage ("getBalloonMSG", 11);
 								GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 6);
 								Destroy (this.gameObject);
 				

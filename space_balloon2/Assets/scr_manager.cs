@@ -692,7 +692,7 @@ public class scr_manager : MonoBehaviour
 						colHave1 = colCreate;
 						if (colCreate.Equals ("b"))
 								resetStar (1);
-						if (colCreate.Equals ("o"))
+						if (colCreate.Equals ("o")) 
 								resetStar (2);
 						if (colCreate.Equals ("p"))
 								resetStar (3);
@@ -1467,7 +1467,8 @@ public class scr_manager : MonoBehaviour
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 						enemyCreateRate = enemyRates [spaceId];
 						
-			
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 5) {
 						//sun
@@ -1483,7 +1484,8 @@ public class scr_manager : MonoBehaviour
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 			
 						enemyCreateRate = enemyRates [spaceId];
-						
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 7) {
 						spaceId = 8;
@@ -1499,27 +1501,31 @@ public class scr_manager : MonoBehaviour
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 						enemyCreateRate = enemyRates [spaceId];
 						
-			
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 9) {
 						spaceId = 10;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 			
 						enemyCreateRate = enemyRates [spaceId];
-						
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 10) {
 						spaceId = 11;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 						enemyCreateRate = enemyRates [spaceId];
 						
-			
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 11) {
 						spaceId = 12;
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 						enemyCreateRate = enemyRates [spaceId];
-						
+						//               BOSS
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 		 
 				 
@@ -1619,6 +1625,16 @@ public class scr_manager : MonoBehaviour
 			//stop Timer
 						StartCoroutine ("timesUp");
 	
+						break;
+				case 11:
+			//point 100
+						score += 100;
+						scoreText.text = " :  " + score;
+						break;
+				case 12:
+			//point 500
+						score += 500;
+						scoreText.text = " :  " + score;
 						break;
 				default:
 						break;
