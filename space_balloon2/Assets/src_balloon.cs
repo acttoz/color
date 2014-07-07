@@ -4,10 +4,10 @@ using System.Collections;
 public class src_balloon : MonoBehaviour
 {
 //		float bombSize = 0.4f;
-		float[] levels = new float[]{0,0.5f,2f,4f,6f,10f,15f,20f,25f};
+//		float[] levels = new float[]{0,0.5f,2f,4f,6f,10f,15f,20f,25f};
 		Animator anim;
 		GameObject bomb;
-		int monsterLevel = 1;
+//		int monsterLevel = 1;
 		public Sprite[] ufos;
 		bool onCount = false;
 		public AudioClip sCountDown;

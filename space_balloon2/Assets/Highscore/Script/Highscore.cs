@@ -11,7 +11,7 @@ public class Highscore : MonoBehaviour
 		public string PostNameUrl = "http://YouWebsite.com/.../postScore.php?";
 		public string GetHighscoreUrl = "http://YouWebsite.com/.../getHighscore.php";
 		private string score = "Score";
-		private string WindowTitel = "";
+//		private string WindowTitel = "";
 		private string Scores = "";
 		private string Names = "";
 		private tk2dTextMesh scoreText;
@@ -43,7 +43,7 @@ public class Highscore : MonoBehaviour
 		{
 				Scores = "";
 			
-				WindowTitel = "Loading";
+//				WindowTitel = "Loading";
 	
 		
 				WWWForm form = new WWWForm ();
@@ -55,11 +55,12 @@ public class Highscore : MonoBehaviour
 				if (www.text == "") {
 						loading.GetComponent<tk2dTextMesh> ().text = "Network Error..";
 						print ("There was an error getting the high score: " + www.error);
-						WindowTitel = "There was an error getting the high score";
+//						WindowTitel = "There was an error getting the high score";
 						yield return new WaitForSeconds (1f);
+						Application.LoadLevel (1);
 				} else {
 						loading.SetActive (false);
-						WindowTitel = "Done";
+//						WindowTitel = "Done";
 						textSplit (www.text);
 						showRank (10);
 //						Score = textSplit (www.text)[0];
@@ -120,7 +121,7 @@ public class Highscore : MonoBehaviour
 				form.AddField ("hash", hash);
 		
 				WWW www = new WWW (PostScoreUrl, form);
-				WindowTitel = "Wait";
+//				WindowTitel = "Wait";
 				yield return www;
 		
 				if (www.text == "done") {
@@ -145,7 +146,7 @@ public class Highscore : MonoBehaviour
 				form.AddField ("hash", hash);
 		
 				WWW www = new WWW (PostNameUrl, form);
-				WindowTitel = "Wait";
+//				WindowTitel = "Wait";
 				yield return www;
 		
 				if (www.text == "done") {

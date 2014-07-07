@@ -57,7 +57,7 @@ public class scr_manager : MonoBehaviour
 //		int gameTime = 3;
 		public int leftTime;
 		bool onPlay;
-		int min, sec, countScore = 0, countGem1 = 0, countGem2 = 0, countGem3 = 0;
+		int min, sec, countScore = 0, countGem1 = 0;
 		Sprite tempStar;
 		SpriteRenderer star1, star2, star3, balloonSprite;
 		GameObject existItem, createItem, btn_menu, btn_replay;
@@ -1661,8 +1661,8 @@ public class scr_manager : MonoBehaviour
 				//				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
 				////				score = 1000;
 				countGem1 = PlayerPrefs.GetInt ("NUMGEM1");
-				countGem2 = PlayerPrefs.GetInt ("NUMGEM2");
-				countGem3 = PlayerPrefs.GetInt ("NUMGEM3");
+//				countGem2 = PlayerPrefs.GetInt ("NUMGEM2");
+//				countGem3 = PlayerPrefs.GetInt ("NUMGEM3");
 				//				if (test)
 				//						Instantiate (testBack, new Vector2 (0, 0), Quaternion.identity);
 				//						

@@ -6,7 +6,7 @@ public class scr_bomb_b : MonoBehaviour
 		public int direction;
 		Vector3 mDirection;
 		public float speed;
-		bool bossCollide = false;
+//		bool bossCollide = false;
 		//     2
 		//  1     3
 		//     4 
@@ -43,7 +43,7 @@ public class scr_bomb_b : MonoBehaviour
 
 		void boss (Vector3 bossPos)
 		{
-				bossCollide = true;
+//				bossCollide = true;
 //				transform.parent.gameObject.SendMessage ("onTimer", 2f);
 				GetComponent<SphereCollider> ().enabled = false;
 				mDirection = bossPos - transform.position;
