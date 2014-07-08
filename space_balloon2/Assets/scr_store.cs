@@ -31,7 +31,7 @@ public class scr_store : MonoBehaviour
 						equipped = true;
 				//				PlayerPrefs.SetInt ("9", 1);
 				componentArray = GetComponentsInChildren<SpriteRenderer> ();
-				if (PlayerPrefs.GetInt ("NUMGEM") > pay && !equipped && PlayerPrefs.GetInt (preLevel, 0) == 1) {
+				if ((PlayerPrefs.GetInt ("NUMGEM") > pay || PlayerPrefs.GetInt ("NUMGEM") == pay) && !equipped && PlayerPrefs.GetInt (preLevel, 0) == 1) {
 						//payable
 						GetComponent<BoxCollider> ().enabled = true;
 						GetComponentInChildren<tk2dTextMesh> ().color = Color.white;
