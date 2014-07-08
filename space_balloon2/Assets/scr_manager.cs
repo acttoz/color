@@ -4,6 +4,7 @@ using System.Collections;
 public class scr_manager : MonoBehaviour
 {
 		bool onToast = false;
+	public bool testItem=false;
 		public float enemyCreateRate;
 		public float itemCreateRate;
 		public float zoneCreateRate;
@@ -69,7 +70,7 @@ public class scr_manager : MonoBehaviour
 		int numHave = 0;
 		GameObject[] enemy, realEnemy;
 		int superTimer;
-		public AudioClip create, remove, pop, bing, levelUp, go, itemSound, timesup, sBoss;
+		public AudioClip create, remove, pop, bing, levelUp, go, itemSound, timesup;
 		tk2dTextMesh scoreText;
 		tk2dTextMesh lvText;
 		tk2dTextMesh timeText, resultText, gemText1;
@@ -706,7 +707,8 @@ public class scr_manager : MonoBehaviour
 								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
-//						StartCoroutine ("monster", colCreate);
+			if(testItem)
+						StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
 					
@@ -1419,7 +1421,6 @@ public class scr_manager : MonoBehaviour
 						
 
 						//               BOSS
-						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 4) {
@@ -1430,7 +1431,6 @@ public class scr_manager : MonoBehaviour
 						
 						//               BOSS
 
-						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 5) {
@@ -1440,7 +1440,6 @@ public class scr_manager : MonoBehaviour
 						enemyCreateRate = enemyRates [spaceId];
 						
 						//               BOSS
-						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 6) {
@@ -1449,7 +1448,6 @@ public class scr_manager : MonoBehaviour
 			
 						enemyCreateRate = enemyRates [spaceId];
 						//               BOSS
-						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 7) {
@@ -1458,7 +1456,6 @@ public class scr_manager : MonoBehaviour
 						enemyCreateRate = enemyRates [spaceId];
 						
 						//               BOSS
-						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 
 				}
@@ -1476,7 +1473,6 @@ public class scr_manager : MonoBehaviour
 			
 						enemyCreateRate = enemyRates [spaceId];
 						//               BOSS
-						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
@@ -1486,7 +1482,6 @@ public class scr_manager : MonoBehaviour
 						enemyCreateRate = enemyRates [spaceId];
 						
 						//               BOSS
-						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
@@ -1495,7 +1490,6 @@ public class scr_manager : MonoBehaviour
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 						enemyCreateRate = enemyRates [spaceId];
 						//               BOSS
-						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);

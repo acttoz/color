@@ -62,6 +62,7 @@ public class src_enemy : MonoBehaviour
 		void laugh ()
 		{
 				audio.Play ();
+		Debug.Log ("laugh");
 		}
 
 		void resetLife ()
@@ -107,13 +108,13 @@ public class src_enemy : MonoBehaviour
 		{
 				bosslife--;
 				if (bosslife > 0) {
-						GetComponent<SphereCollider> ().radius = 0.17f;
+//			GetComponent<SphereCollider> ().radius = 0.17f;
 						Instantiate (bomb, transform.position, Quaternion.identity);
 //						transform.localScale = new Vector2 (transform.localScale.x / 2f, transform.localScale.y / 2f);
 						GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 8);
 						animation.Play ("anim_boss");
 				} else {
-						GetComponent<SphereCollider> ().radius = 0;
+//						GetComponent<SphereCollider> ().radius = 0;
 						Instantiate (bomb, transform.position, Quaternion.identity);
 						animation.Play ("anim_boss2");
 						Instantiate (mPoint, transform.position, Quaternion.identity);

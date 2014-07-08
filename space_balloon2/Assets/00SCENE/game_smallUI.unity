@@ -487,12 +487,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d20361ebde22d48a0c2edbbf6a2a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testItem: 1
   enemyCreateRate: 10
   itemCreateRate: 4
   zoneCreateRate: 8
   scoreRate: 1
   stopRateControl: 1
-  superTime: 150
+  superTime: 1500
   levelLimit: 0
   enemyRates:
   - 10
