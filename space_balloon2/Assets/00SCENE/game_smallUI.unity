@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d20361ebde22d48a0c2edbbf6a2a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testItem: 1
+  testItem: 0
   enemyCreateRate: 10
   itemCreateRate: 4
   zoneCreateRate: 8
@@ -641,7 +641,6 @@ MonoBehaviour:
   go: {fileID: 8300000, guid: 47908c75bc1b5a3499f4b2067f3e80b6, type: 3}
   itemSound: {fileID: 8300000, guid: a8760869ffd891e41a9f19543d2c530e, type: 3}
   timesup: {fileID: 8300000, guid: a9e58fd52f26b8c468041df1ed29dfb1, type: 3}
-  sBoss: {fileID: 8300000, guid: d9ca90e11a97c2242a3ab34aca78767b, type: 3}
 --- !u!4 &934688260
 Transform:
   m_ObjectHideFlags: 0

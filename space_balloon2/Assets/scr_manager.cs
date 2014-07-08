@@ -4,7 +4,7 @@ using System.Collections;
 public class scr_manager : MonoBehaviour
 {
 		bool onToast = false;
-	public bool testItem=false;
+		public bool testItem = false;
 		public float enemyCreateRate;
 		public float itemCreateRate;
 		public float zoneCreateRate;
@@ -707,8 +707,8 @@ public class scr_manager : MonoBehaviour
 								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
-			if(testItem)
-						StartCoroutine ("monster", colCreate);
+						if (testItem)
+								StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
 					
@@ -1730,6 +1730,7 @@ public class scr_manager : MonoBehaviour
 //						btn_menu.GetComponent<SpriteRenderer> ().color = Color.yellow;
 						Time.timeScale = 1.0f;
 						//						gameReset ();
+						bgm.SendMessage ("superMode", 1);
 						Application.LoadLevel (1);
 				}
 				if (e.Selection == btn_replay) {
@@ -1762,8 +1763,10 @@ public class scr_manager : MonoBehaviour
 						if (LEVEL < 10) {
 								LEVEL++;
 								PlayerPrefs.SetInt ("LEVEL", LEVEL);
-								if (LEVEL == 10)
+								if (LEVEL == 10) {
 										Application.LoadLevel (1);
+										bgm.SendMessage ("superMode", 1);
+								}
 						}
 			
 						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
