@@ -39,10 +39,10 @@ public class src_balloon : MonoBehaviour
 //				fire.SetActive (false);
 				exist = true;
 				isUndead = false;
-//				if (num < 4)
-				shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-		if(num<3)
-				GetComponent<SpriteRenderer> ().sprite = balloon;
+				if (num < 4)
+						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+				if (num < 3)
+						GetComponent<SpriteRenderer> ().sprite = balloon;
 //				Debug.Log ("OnEnable()");
 				oCountDown.SetActive (false);
 				anim = GetComponent<Animator> ();
@@ -75,7 +75,7 @@ public class src_balloon : MonoBehaviour
 		{
 				onCount = true;
 				Destroy (GameObject.FindGameObjectWithTag ("monster"));
-		GetComponent<SpriteRenderer> ().sprite = balloon;
+				GetComponent<SpriteRenderer> ().sprite = balloon;
 				exist = false;
 				anim.SetBool ("balloonExist", false);
 				oCountDown.SetActive (true);
@@ -88,7 +88,7 @@ public class src_balloon : MonoBehaviour
 	
 		void countDown ()
 		{
-		Destroy (GameObject.FindGameObjectWithTag ("monster"));
+				Destroy (GameObject.FindGameObjectWithTag ("monster"));
 				if (!onCount)
 						return;
 				oCountDown.GetComponent<tk2dTextMesh> ().text = "" + countDownTime;
@@ -111,6 +111,7 @@ public class src_balloon : MonoBehaviour
 				anim.SetInteger ("super", num);
 				if (num > 4) {
 						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 0);
+						Debug.Log ("shine disappear");
 //						fire.SetActive (true);
 				}
 			

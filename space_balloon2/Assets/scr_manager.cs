@@ -138,6 +138,7 @@ public class scr_manager : MonoBehaviour
 		//RESET
 		void gameReset ()
 		{
+				isCounting = false;
 				int q = 0;
 				bgm.SendMessage ("superMode", q);
 				superLevel = 1;
@@ -899,7 +900,7 @@ public class scr_manager : MonoBehaviour
 //		superLevel = 5;
 		
 				//TEST
-//				superLevel = 4;
+//				superLevel = 5;
 //				superLevel = 3;
 				superLevel = tempLevel;
 				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1);
@@ -943,6 +944,7 @@ public class scr_manager : MonoBehaviour
 //						balloon.SendMessage ("cancel", 1);
 						balloon.SendMessage ("startCoundDown");
 						onCount = true;
+						isCounting = true;
 						onPlay = false;
 
 			//						if (audio.isPlaying)
@@ -1137,6 +1139,7 @@ public class scr_manager : MonoBehaviour
 	
 		void superMode (int num)
 		{
+				balloon.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				if (!onPlay)
 						return;
 
@@ -1176,7 +1179,22 @@ public class scr_manager : MonoBehaviour
 //				enemy [1].SendMessage ("superMode", num);
 //				enemy [2].SendMessage ("superMode", num);
 				bgm.SendMessage ("superMode", num);
-		
+				if (num > 1 && num < 11 && !isCounting) {
+
+						//levelUp Effect
+						isUndead = true;
+						undeadTime = 3;
+						lv.SendMessage ("levelUp");
+						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
+						audio.PlayOneShot (levelUp);
+						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
+						if (num > 5) {
+								enemyBomb ();
+								turnLightSpeed (120);
+						}
+				}
+				isCounting = false;
+
 				//********************score
 				CancelInvoke ("scoreCount");
 				switch (num) {
@@ -1192,15 +1210,9 @@ public class scr_manager : MonoBehaviour
 				case 2:
 //						enemyBomb ();
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.2";
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
-						audio.PlayOneShot (levelUp);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
+		
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 			//LEVEL2
 						if (LEVEL == 2 && onPlay) {
@@ -1212,16 +1224,9 @@ public class scr_manager : MonoBehaviour
 				case 3:
 //						enemyBomb ();
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.3";
-						audio.PlayOneShot (levelUp);
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 			//LEVEL3
 						if (LEVEL == 3 && onPlay) {
 				 
@@ -1236,16 +1241,9 @@ public class scr_manager : MonoBehaviour
 				case 4:
 //						enemyBomb ();
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 12);
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.4";
-						audio.PlayOneShot (levelUp);
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (!isMonster)
 								balloonSprite.sprite = superBalloon4;
 			//LEVEL4
@@ -1259,16 +1257,9 @@ public class scr_manager : MonoBehaviour
 //						enemyBomb ();
 						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 20);
 						
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.5";
-						audio.PlayOneShot (levelUp);
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (!isMonster)
 								balloonSprite.sprite = superBalloon5;
 			//LEVEL5
@@ -1278,106 +1269,62 @@ public class scr_manager : MonoBehaviour
 						}
 						break;
 				case 6:
-						enemyBomb ();
-						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv.6";
-						turnLightSpeed (120);
-						audio.PlayOneShot (levelUp);
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
+
+
 //						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [0];
 			//LEVEL5
 						 
 						break;
 				case 7:
-						enemyBomb ();
-						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv." + num;
-						audio.PlayOneShot (levelUp);
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 			//						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [num - 6];
 			//LEVEL5
 			
 						break;
 				case 8:
-						enemyBomb ();
-						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 15);
 						scoreRate = scoreRates [num - 6];
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv." + num;
-						audio.PlayOneShot (levelUp);
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 			//						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [num - 6];
 			//LEVEL5
 			
 						break;
 				case 9:
-						enemyBomb ();
-						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
 						scoreRate = scoreRates [num - 6];
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv." + num;
-						audio.PlayOneShot (levelUp);
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 			//						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [num - 6];
 			//LEVEL5
 			
 						break;
 				case 10:
-						enemyBomb ();
-						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
 						scoreRate = scoreRates [num - 6];
-						isUndead = true;
 						balloon.SendMessage ("undead", true);
-						undeadTime = 3;
-						lv.SendMessage ("levelUp");
 						lvText.text = "Lv." + num;
-						audio.PlayOneShot (levelUp);
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
-						Instantiate (effectSuper2, new Vector2 (0, 0), Quaternion.identity);
 			//						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [num - 6];
 			//LEVEL5
@@ -1393,6 +1340,7 @@ public class scr_manager : MonoBehaviour
 			
 			
 				}
+	
 				InvokeRepeating ("balloonStop", 0.5f, 0.1f);
 		}
 
@@ -1530,6 +1478,7 @@ public class scr_manager : MonoBehaviour
 						//               BOSS
 						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 10) {
 						spaceId = 11;
@@ -1539,6 +1488,7 @@ public class scr_manager : MonoBehaviour
 						//               BOSS
 						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 11) {
 						spaceId = 12;
@@ -1546,6 +1496,8 @@ public class scr_manager : MonoBehaviour
 						enemyCreateRate = enemyRates [spaceId];
 						//               BOSS
 						audio.PlayOneShot (sBoss);
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
+						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 		 
@@ -1748,10 +1700,7 @@ public class scr_manager : MonoBehaviour
 		}
 
 		/************************ Control **********************/
-	
-	
-	
-	
+		bool isCounting = false;
 		int dragFingerIndex = -1;
 	
 		void OnDrag (DragGesture gesture)
