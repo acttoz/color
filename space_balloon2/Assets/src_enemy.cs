@@ -5,6 +5,7 @@ public class src_enemy : MonoBehaviour
 {
 //	Random.Range(1, 5);
 		public bool isBoss;
+//		public AudioClip sBoss;
 		public GameObject pop, bomb, GAMEMANAGER, mPoint;
 		int bosslife = 2;
 //		bool exist = true;
@@ -50,11 +51,17 @@ public class src_enemy : MonoBehaviour
 		void Start ()
 		{
 				GAMEMANAGER = GameObject.Find ("GAMEMANAGER");
+				 
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
+		}
+
+		void laugh ()
+		{
+				audio.Play ();
 		}
 
 		void resetLife ()
@@ -123,18 +130,32 @@ public class src_enemy : MonoBehaviour
 //				Destroy (this.gameObject);
 		}
 
+		void enemyAttack ()
+		{
+				Instantiate (pop, transform.position, Quaternion.identity);
+				Instantiate (mPoint, transform.position, Quaternion.identity);
+				GAMEMANAGER.SendMessage ("getBalloonMSG", 11);
+				GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 6);
+				Destroy (this.gameObject);
+		}
+
+		void bossAttack (Collider myTrigger)
+		{
+				laugh ();
+				Instantiate (pop, myTrigger.transform.position, Quaternion.identity);
+				animation.Play ("anim_boss3");
+				myTrigger.gameObject.SendMessage ("boss", transform.position);
+		}
+
 		void OnTriggerStay (Collider myTrigger)
 		{
 				if (!isBoss) {
 						if (myTrigger.transform.tag == "bomb") {
-								Instantiate (pop, transform.position, Quaternion.identity);
-								Instantiate (mPoint, transform.position, Quaternion.identity);
-								GAMEMANAGER.SendMessage ("getBalloonMSG", 11);
-								GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 6);
-								Destroy (this.gameObject);
-				
+		
+								enemyAttack ();
 				
 						}
+				
 //						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
 //				
 //								Instantiate (pop, transform.position, Quaternion.identity);
@@ -151,10 +172,8 @@ public class src_enemy : MonoBehaviour
 //					
 				} else {
 						if (myTrigger.transform.tag == "bomb") {
-								Instantiate (pop, myTrigger.transform.position, Quaternion.identity);
-								animation.Play ("anim_boss3");
-								myTrigger.gameObject.SendMessage ("boss", transform.position);
-//								Destroy (myTrigger.gameObject);
+								
+								bossAttack (myTrigger);
 						}
 				}
 		}
@@ -163,11 +182,7 @@ public class src_enemy : MonoBehaviour
 		{
 				if (!isBoss) {
 						if (myTrigger.transform.tag == "bomb") {
-								Instantiate (pop, transform.position, Quaternion.identity);
-								Instantiate (mPoint, transform.position, Quaternion.identity);
-								GAMEMANAGER.SendMessage ("getBalloonMSG", 11);
-								GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 6);
-								Destroy (this.gameObject);
+								enemyAttack ();
 				
 				
 						}  
@@ -187,9 +202,8 @@ public class src_enemy : MonoBehaviour
 						//						}
 				} else {
 						if (myTrigger.transform.tag == "bomb") {
-								Instantiate (pop, myTrigger.transform.position, Quaternion.identity);
-								animation.Play ("anim_boss3");
-								myTrigger.gameObject.SendMessage ("boss", transform.position);
+								bossAttack (myTrigger);
+								
 						}
 				}
 		

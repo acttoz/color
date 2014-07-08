@@ -20,8 +20,8 @@ public class scr_warn : MonoBehaviour
 		void create ()
 		{
 				if (isBoss == 1) {
-						Instantiate (prf_boss, transform.position, Quaternion.identity);
-			
+						GameObject obj = Instantiate (prf_boss, transform.position, Quaternion.identity) as GameObject;
+						obj.SendMessage ("laugh");
 				} else {
 						Instantiate (prf_enemy, transform.position, Quaternion.identity);
 				}

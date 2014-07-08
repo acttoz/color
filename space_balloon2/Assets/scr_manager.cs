@@ -42,7 +42,7 @@ public class scr_manager : MonoBehaviour
 		int killNum = 0;
 		public bool isMonster = false;
 		public float undeadTime = 0;
-		public GameObject oBGM, oTutorial1, enemyPop, prf_FailTimer, oFailTimer, warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
+		public GameObject mPoint, oBGM, oTutorial1, enemyPop, prf_FailTimer, oFailTimer, warn_boss, prf_boss, lightSpeed, oBoss, backFirst, testBack, prf_enemy, backElement, backStars, oStars, mainCamera;
 		GameObject[] back;
 		public bool isUndead = false;
 //		float deadLine;
@@ -69,7 +69,7 @@ public class scr_manager : MonoBehaviour
 		int numHave = 0;
 		GameObject[] enemy, realEnemy;
 		int superTimer;
-		public AudioClip create, remove, pop, bing, levelUp, go, itemSound, timesup;
+		public AudioClip create, remove, pop, bing, levelUp, go, itemSound, timesup, sBoss;
 		tk2dTextMesh scoreText;
 		tk2dTextMesh lvText;
 		tk2dTextMesh timeText, resultText, gemText1;
@@ -138,21 +138,28 @@ public class scr_manager : MonoBehaviour
 		//RESET
 		void gameReset ()
 		{
+				int q = 0;
+				bgm.SendMessage ("superMode", q);
 				superLevel = 1;
 				if (item1 == 1)
 						superLevel = 2;
 				tempLevel = superLevel;
 				StopCoroutine ("enemyCreate");
-				if (oBoss == null) {
-						oBoss = Instantiate (prf_boss, new Vector2 (0, 0), Quaternion.identity) as GameObject;
-				}
-				oBoss.SendMessage ("resetLife");
 				CancelInvoke ("backCreate");
 				GameObject[] temp2;
 				temp2 = GameObject.FindGameObjectsWithTag ("bombparent");
 				for (int i=0; i<temp2.Length; i++) {
 						Destroy (temp2 [i]);
 				}
+
+				//boss reset
+				GameObject[] tempBoss;
+				tempBoss = GameObject.FindGameObjectsWithTag ("boss");
+				for (int i=0; i<tempBoss.Length; i++) {
+						Destroy (tempBoss [i]);
+				}
+				oBoss = Instantiate (prf_boss, new Vector2 (0, 0), Quaternion.identity) as GameObject;
+
 				mainCamera.camera.clearFlags = CameraClearFlags.SolidColor;
 				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
 		
@@ -698,7 +705,7 @@ public class scr_manager : MonoBehaviour
 								resetStar (3);
 						star1.sprite = tempStar;
 						numHave++;
-//						StartCoroutine ("monster", colCreate);
+						StartCoroutine ("monster", colCreate);
 						audio.PlayOneShot (itemSound);
 //						StartCoroutine ("monster", colCreate);
 					
@@ -1009,6 +1016,7 @@ public class scr_manager : MonoBehaviour
 
 		void timeOut ()
 		{
+				onPlay = false;
 				StartCoroutine ("timesUp");
 
 		}
@@ -1197,7 +1205,7 @@ public class scr_manager : MonoBehaviour
 			//LEVEL2
 						if (LEVEL == 2 && onPlay) {
 								PlayerPrefs.SetInt ("2", 1);
-								StartCoroutine ("timesUp");
+								timeOut ();
 						}
 						
 						break;
@@ -1216,8 +1224,10 @@ public class scr_manager : MonoBehaviour
 						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
 			//LEVEL3
 						if (LEVEL == 3 && onPlay) {
+				 
 								PlayerPrefs.SetInt ("3", 1);
-								StartCoroutine ("timesUp");
+								timeOut ();
+								
 						}
 						break;
 			
@@ -1241,7 +1251,7 @@ public class scr_manager : MonoBehaviour
 			//LEVEL4
 						if (LEVEL == 4 && onPlay) {
 								PlayerPrefs.SetInt ("4", 1);
-								StartCoroutine ("timesUp");
+								timeOut ();
 						}
 						break;
 
@@ -1264,11 +1274,11 @@ public class scr_manager : MonoBehaviour
 			//LEVEL5
 						if (LEVEL == 5 && onPlay) {
 								PlayerPrefs.SetInt ("5", 1);
-								StartCoroutine ("timesUp");
+								timeOut ();
 						}
 						break;
 				case 6:
-//						enemyBomb ();
+						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
@@ -1290,7 +1300,7 @@ public class scr_manager : MonoBehaviour
 						 
 						break;
 				case 7:
-//						enemyBomb ();
+						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
@@ -1311,7 +1321,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 8:
-//						enemyBomb ();
+						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 15);
 						scoreRate = scoreRates [num - 6];
@@ -1332,7 +1342,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 9:
-//						enemyBomb ();
+						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
 						scoreRate = scoreRates [num - 6];
@@ -1353,7 +1363,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 10:
-//						enemyBomb ();
+						enemyBomb ();
 						turnLightSpeed (120);
 						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
 						scoreRate = scoreRates [num - 6];
@@ -1391,6 +1401,7 @@ public class scr_manager : MonoBehaviour
 				enemy = GameObject.FindGameObjectsWithTag ("enemy");
 				for (int i=0; i<enemy.Length; i++) {
 						Instantiate (effectPointBack, enemy [i].transform.position, Quaternion.identity);
+						Instantiate (mPoint, enemy [i].transform.position, Quaternion.identity);
 						Destroy (enemy [i]);
 				}
 		}
@@ -1426,11 +1437,12 @@ public class scr_manager : MonoBehaviour
 				//LEVEL1
 				if (LEVEL == 1 && onPlay && score > 20) {
 						PlayerPrefs.SetInt ("1", 1);
-						StartCoroutine ("timesUp");
+						timeOut ();
 				}
 				if (LEVEL == 9 && onPlay && score > 1000) {
 						PlayerPrefs.SetInt ("9", 1);
-						StartCoroutine ("timesUp");
+						timeOut ();
+					
 				}
 //				if (score > spacesHeight [spaceId] && spaceId == 0) {
 //						mainCamera.animation.Play ("anim_maincamera");
@@ -1459,6 +1471,7 @@ public class scr_manager : MonoBehaviour
 						
 
 						//               BOSS
+						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 4) {
@@ -1468,6 +1481,8 @@ public class scr_manager : MonoBehaviour
 						enemyCreateRate = enemyRates [spaceId];
 						
 						//               BOSS
+
+						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 5) {
@@ -1477,6 +1492,7 @@ public class scr_manager : MonoBehaviour
 						enemyCreateRate = enemyRates [spaceId];
 						
 						//               BOSS
+						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 6) {
@@ -1485,6 +1501,7 @@ public class scr_manager : MonoBehaviour
 			
 						enemyCreateRate = enemyRates [spaceId];
 						//               BOSS
+						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 7) {
@@ -1493,6 +1510,7 @@ public class scr_manager : MonoBehaviour
 						enemyCreateRate = enemyRates [spaceId];
 						
 						//               BOSS
+						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 
 				}
@@ -1510,6 +1528,7 @@ public class scr_manager : MonoBehaviour
 			
 						enemyCreateRate = enemyRates [spaceId];
 						//               BOSS
+						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 10) {
@@ -1518,6 +1537,7 @@ public class scr_manager : MonoBehaviour
 						enemyCreateRate = enemyRates [spaceId];
 						
 						//               BOSS
+						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 				if (score > spacesHeight [spaceId] && spaceId == 11) {
@@ -1525,6 +1545,7 @@ public class scr_manager : MonoBehaviour
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 						enemyCreateRate = enemyRates [spaceId];
 						//               BOSS
+						audio.PlayOneShot (sBoss);
 						Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
 				}
 		 
@@ -1606,7 +1627,6 @@ public class scr_manager : MonoBehaviour
 			//LEVEL8
 						if (oBoss != null) 
 								Destroy (oBoss);
-						Debug.Log (GameObject.FindGameObjectWithTag ("boss"));
 						if (LEVEL == 8 && onPlay) {
 								onPlay = false;
 								PlayerPrefs.SetInt ("8", 1);
