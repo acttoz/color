@@ -176,8 +176,8 @@ public class scr_manager : MonoBehaviour
 	 
 				if (item2 == 1)
 						isShield = true;
-				if (oBoss != null)
-						oBoss.transform.localScale = new Vector2 (1.2f, 1.2f);
+//				if (oBoss != null)
+//						oBoss.transform.localScale = new Vector2 (1.2f, 1.2f);
 				//				oBoss.GetComponent<SphereCollider> ().radius = 0.34f;
 				resetStar (0);
 				isMonster = false;
