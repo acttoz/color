@@ -544,21 +544,10 @@ public class scr_manager : MonoBehaviour
 
 				case 2:
 						if (selectedMonster2) {
-								if (superLevel == levelLimit) {
-										if (selectedMonster1) {
-												createItem = itemBlue;
-												colCreate = "b";
-												tempStar = bStar;
-										} else {
-												createItem = itemPurple;
-												colCreate = "p";
-												tempStar = pStar;
-										}
-								} else {
+									 
 										createItem = itemOrange;
 										colCreate = "o";
 										tempStar = oStar;
-								}
 						} else {
 								createItem = itemBlue;
 								colCreate = "b";

@@ -47,7 +47,7 @@ public class Highscore : MonoBehaviour
 	
 		
 				WWWForm form = new WWWForm ();
-				form.AddField ("limit", getLimitScore);
+				form.AddField ("limit", 50);
 		
 				WWW www = new WWW (GetHighscoreUrl, form);
 				yield return www;
