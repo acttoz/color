@@ -3,7 +3,7 @@ using System.Collections;
 
 public class scr_button : MonoBehaviour
 {
-	public GameObject oGem,btn1, btn2, btn3, btn4, loading, UI, realBtn, shareManager, BGM, popNetwork, prf_hints;
+		public GameObject oGem, btn1, btn2, btn3, btn4, loading, UI, realBtn, shareManager, BGM, popNetwork, prf_hints;
 		bool isNetwork = false;
 		string today = "";
 		int getGemlevel = 0;
@@ -12,11 +12,17 @@ public class scr_button : MonoBehaviour
 		{
 				getGemlevel = 0;
 				today = System.DateTime.Today.ToShortDateString ();
-				if (PlayerPrefs.GetInt ("HINTS", 0) == 0) {
-						Instantiate (prf_hints, new Vector2 (0, 0), Quaternion.identity);
-						PlayerPrefs.SetInt ("HINTS", 1);
+				switch (Application.platform) {
+				case RuntimePlatform.Android:
+						if (PlayerPrefs.GetInt ("HINTS", 0) == 0) {
+								Instantiate (prf_hints, new Vector2 (0, 0), Quaternion.identity);
+								PlayerPrefs.SetInt ("HINTS", 1);
+						}
+			//		PlayerPrefs.SetInt ("NUMGEM", 1000000);
+						break;
+				case RuntimePlatform.IPhonePlayer:
+						break;
 				}
-//		PlayerPrefs.SetInt ("NUMGEM", 1000000);
 				StartCoroutine (CheckInternet ());
 				if (GameObject.FindGameObjectWithTag ("BGM") == null) {
 						Instantiate (BGM, new Vector2 (0, 0), Quaternion.identity);
@@ -94,12 +100,12 @@ public class scr_button : MonoBehaviour
 			
 				}
 				if (gesture.Selection.name.Equals ("share")) {
-			getGemlevel = 0;
-			if (!today.Equals (PlayerPrefs.GetString ("TODAY", ""))) {
-				PlayerPrefs.SetString ("TODAY", today);
-				getGemlevel=1;
-			}
-			shareManager.SendMessage ("NativeShare");
+						getGemlevel = 0;
+						if (!today.Equals (PlayerPrefs.GetString ("TODAY", ""))) {
+								PlayerPrefs.SetString ("TODAY", today);
+								getGemlevel = 1;
+						}
+						shareManager.SendMessage ("NativeShare");
 
 
 				}
@@ -116,16 +122,16 @@ public class scr_button : MonoBehaviour
 
 		void OnApplicationPause (bool paused)
 		{
-		Debug.Log ("pause"+getGemlevel);
+				Debug.Log ("pause" + getGemlevel);
 				if (paused && getGemlevel == 1) {
 						getGemlevel = 2;
-			Debug.Log ("pause2"+getGemlevel);
+						Debug.Log ("pause2" + getGemlevel);
 			
 				}
-		if (!paused && getGemlevel == 2) {
+				if (!paused && getGemlevel == 2) {
 
-			Debug.Log ("getgem");
-			oGem.SendMessage("getGem");
+						Debug.Log ("getgem");
+						oGem.SendMessage ("getGem");
 			
 				}
 		}
