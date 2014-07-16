@@ -505,7 +505,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.962154269, y: .226059169, z: -7.34000015}
+  m_LocalPosition: {x: 0, y: .226059169, z: -7.34000015}
   m_LocalScale: {x: .834256351, y: .702291429, z: 1}
   m_Children: []
   m_Father: {fileID: 400014}
@@ -572,7 +572,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.77440596, y: -.623498678, z: -.0202636719}
+  m_LocalPosition: {x: -.651031435, y: -10.7219372, z: -.0202636719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400018}
@@ -1024,12 +1024,12 @@ MonoBehaviour:
   data:
     version: 1
     font: {fileID: 11400000, guid: 534e0a91dfe79d243aecfd4d66d54081, type: 2}
-    text: Times up
+    text: Result
     color: {r: 1, g: 1, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
     useGradient: 0
     textureGradient: 0
-    anchor: 3
+    anchor: 4
     renderLayer: 2
     scale: {x: .615974665, y: .615974247, z: 0}
     kerning: 0

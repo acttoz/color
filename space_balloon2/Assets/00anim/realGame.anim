@@ -18,41 +18,20 @@ AnimationClip:
         value: {x: -0, y: -0, z: -8.74227766e-08, w: 1}
         inSlope: {x: 0, y: 0, z: -5.99999952, w: -5.99813175}
         outSlope: {x: 0, y: 0, z: -5.99999952, w: -5.99813175}
-        tangentMode: 0
+        tangentMode: 1108082688
       - time: .283333331
         value: {x: 0, y: 0, z: -.99999994, w: .00031145016}
         inSlope: {x: 0, y: 0, z: -.0018684864, w: -6}
         outSlope: {x: 0, y: 0, z: -.0018684864, w: -6}
-        tangentMode: 0
+        tangentMode: 879558692
       - time: .449999988
         value: {x: -0, y: -0, z: -.0006229133, w: -.999999821}
         inSlope: {x: -0, y: -0, z: 5.99626255, w: -6.00186777}
         outSlope: {x: -0, y: -0, z: 5.99626255, w: -6.00186777}
-        tangentMode: 1081485612
+        tangentMode: 879558657
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: img_PanelPortrait/img_ButtonRectYellow2
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: {x: -0, y: -0, z: -0, w: -1}
-        inSlope: {x: 0, y: 0, z: -5.99957228, w: 5.92837286}
-        outSlope: {x: 0, y: 0, z: -5.99957228, w: 5.92837286}
-        tangentMode: 0
-      - time: .166666672
-        value: {x: 0, y: 0, z: -.999928713, w: -.0119378548}
-        inSlope: {x: 0, y: 0, z: -.0716221333, w: 5.99914455}
-        outSlope: {x: 0, y: 0, z: -.0716221333, w: 5.99914455}
-        tangentMode: 0
-      - time: .333333343
-        value: {x: -0, y: -0, z: -.023874009, w: .999714971}
-        inSlope: {x: -0, y: -0, z: 5.85632801, w: 6.06991673}
-        outSlope: {x: -0, y: -0, z: 5.85632801, w: 6.06991673}
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    path: img_PanelPortrait/img_ButtonRectYellow
   m_CompressedRotationCurves: []
   m_PositionCurves:
   - curve:
@@ -62,31 +41,15 @@ AnimationClip:
         value: {x: 0, y: -1.83953881, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
+        tangentMode: 1767993972
       - time: .333333343
         value: {x: 0, y: -1.83953881, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
+        tangentMode: 96
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: img_PanelPortrait
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: {x: 3.51377111e-07, y: 2.17669058, z: 0}
-        inSlope: {x: -9.45860767, y: 15.230238, z: 0}
-        outSlope: {x: -9.45860767, y: 15.230238, z: 0}
-        tangentMode: 0
-      - time: .333333343
-        value: {x: -3.15286899, y: 7.25343657, z: 0}
-        inSlope: {x: -9.45860767, y: 15.230238, z: 0}
-        outSlope: {x: -9.45860767, y: 15.230238, z: 0}
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    path: img_PanelPortrait/img_ButtonRectYellow
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -94,12 +57,12 @@ AnimationClip:
         value: {x: 3.85036659, y: 7.02950144, z: 0}
         inSlope: {x: -11.575695, y: -14.4601173, z: 0}
         outSlope: {x: -11.575695, y: -14.4601173, z: 0}
-        tangentMode: -1113093360
+        tangentMode: 0
       - time: .449999988
         value: {x: -.00819824357, y: 2.20946264, z: 0}
         inSlope: {x: -11.575695, y: -14.4601173, z: 0}
         outSlope: {x: -11.575695, y: -14.4601173, z: 0}
-        tangentMode: 1079007305
+        tangentMode: 879558692
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: img_PanelPortrait/img_ButtonRectYellow2
@@ -110,22 +73,22 @@ AnimationClip:
         value: {x: .0109077543, y: 0, z: .0200195312}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
+        tangentMode: 1819043161
       - time: .449999988
         value: {x: .0109077543, y: 0, z: .0200195312}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: -1114460512
+        tangentMode: -2147483648
       - time: .516666651
         value: {x: -.217025891, y: -.256417513, z: .0200195312}
         inSlope: {x: -.0818082094, y: 0, z: 0}
         outSlope: {x: -.0818082094, y: 0, z: 0}
-        tangentMode: 1065348434
+        tangentMode: 1017380864
       - time: .583333313
         value: {x: 0, y: 0, z: .0200195312}
         inSlope: {x: 3.2553885, y: 3.84626293, z: 0}
         outSlope: {x: 3.2553885, y: 3.84626293, z: 0}
-        tangentMode: -1158354944
+        tangentMode: 1017380864
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: 
@@ -133,32 +96,16 @@ AnimationClip:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
-        value: {x: 2.30390692, y: 3.27295828, z: 1}
-        inSlope: {x: -6.91172075, y: -9.81887436, z: -1083}
-        outSlope: {x: -6.91172075, y: -9.81887436, z: -1083}
-        tangentMode: 0
-      - time: .333333343
-        value: {x: 0, y: 0, z: -360}
-        inSlope: {x: -6.91172075, y: -9.81887436, z: -1083}
-        outSlope: {x: -6.91172075, y: -9.81887436, z: -1083}
-        tangentMode: -1158354944
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    path: img_PanelPortrait/img_ButtonRectYellow
-  - curve:
-      serializedVersion: 2
-      m_Curve:
       - time: .116666667
         value: {x: 0, y: 0, z: 1}
         inSlope: {x: 7.39058781, y: 10.4991598, z: 0}
         outSlope: {x: 7.39058781, y: 10.4991598, z: 0}
-        tangentMode: 1079080998
+        tangentMode: 1051372203
       - time: .449999988
         value: {x: 2.46352911, y: 3.49971962, z: 1}
         inSlope: {x: 7.39058781, y: 10.4991598, z: 0}
         outSlope: {x: 7.39058781, y: 10.4991598, z: 0}
-        tangentMode: 0
+        tangentMode: 27
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: img_PanelPortrait/img_ButtonRectYellow2
@@ -256,120 +203,6 @@ AnimationClip:
       m_PostInfinity: 2
     attribute: m_LocalPosition.z
     path: img_PanelPortrait
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 3.51377111e-07
-        inSlope: -9.45860767
-        outSlope: -9.45860767
-        tangentMode: 10
-      - time: .333333343
-        value: -3.15286899
-        inSlope: -9.45860767
-        outSlope: -9.45860767
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.x
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 2.17669058
-        inSlope: 15.230238
-        outSlope: 15.230238
-        tangentMode: 10
-      - time: .333333343
-        value: 7.25343657
-        inSlope: 15.230238
-        outSlope: 15.230238
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.y
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .333333343
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalPosition.z
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 2.30390692
-        inSlope: -6.91172075
-        outSlope: -6.91172075
-        tangentMode: 10
-      - time: .333333343
-        value: 0
-        inSlope: -6.91172075
-        outSlope: -6.91172075
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalScale.x
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 3.27295828
-        inSlope: -9.81887436
-        outSlope: -9.81887436
-        tangentMode: 10
-      - time: .333333343
-        value: 0
-        inSlope: -9.81887436
-        outSlope: -9.81887436
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalScale.y
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 1
-        inSlope: -1083
-        outSlope: -1083
-        tangentMode: 10
-      - time: .333333343
-        value: -360
-        inSlope: -1083
-        outSlope: -1083
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalScale.z
-    path: img_PanelPortrait/img_ButtonRectYellow
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -673,102 +506,6 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: .166666672
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: .333333343
-        value: -0
-        inSlope: -0
-        outSlope: -0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalRotation.x
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: .166666672
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: .333333343
-        value: -0
-        inSlope: -0
-        outSlope: -0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalRotation.y
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -0
-        inSlope: -5.99957228
-        outSlope: -5.99957228
-        tangentMode: 0
-      - time: .166666672
-        value: -.999928713
-        inSlope: -.0716221333
-        outSlope: -.0716221333
-        tangentMode: 0
-      - time: .333333343
-        value: -.023874009
-        inSlope: 5.85632801
-        outSlope: 5.85632801
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalRotation.z
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: -1
-        inSlope: 5.92837286
-        outSlope: 5.92837286
-        tangentMode: 0
-      - time: .166666672
-        value: -.0119378548
-        inSlope: 5.99914455
-        outSlope: 5.99914455
-        tangentMode: 0
-      - time: .333333343
-        value: .999714971
-        inSlope: 6.06991673
-        outSlope: 6.06991673
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_LocalRotation.w
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -780,63 +517,6 @@ AnimationClip:
     classID: 136
     script: {fileID: 0}
   m_EulerEditorCurves:
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .333333343
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: localEulerAnglesBaked.x
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .333333343
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: localEulerAnglesBaked.y
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: -1088.20801
-        outSlope: -1088.20801
-        tangentMode: 10
-      - time: .333333343
-        value: -362.736023
-        inSlope: -1088.20801
-        outSlope: -1088.20801
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: localEulerAnglesBaked.z
-    path: img_PanelPortrait/img_ButtonRectYellow
-    classID: 4
-    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:

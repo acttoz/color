@@ -29,7 +29,7 @@ public class Highscore : MonoBehaviour
 		void Start ()
 		{
 				scoreText = GetComponent<tk2dTextMesh> ();
-				StartCoroutine ("GetScore");		
+					
 		}
 
 		void Update ()
@@ -127,6 +127,7 @@ public class Highscore : MonoBehaviour
 				if (www.text == "done") {
 						//						StartCoroutine ("GetScore");
 						GameObject.Find ("UI_MENU").SendMessage ("returnName", "OK");
+			StartCoroutine ("GetScore");	
 				} else {
 						//						print ("There was an error posting the high score: " + www.error);
 						GameObject.Find ("UI_MENU").SendMessage ("returnName", www.error + "");
@@ -152,6 +153,8 @@ public class Highscore : MonoBehaviour
 				if (www.text == "done") {
 						//						StartCoroutine ("GetScore");
 						GameObject.Find ("UI_MENU").SendMessage ("returnName", "OK");
+			StartCoroutine ("GetScore");	
+			
 				} else {
 						//						print ("There was an error posting the high score: " + www.error);
 						GameObject.Find ("UI_MENU").SendMessage ("returnName", www.error + "");

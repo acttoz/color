@@ -3,11 +3,19 @@ using System.Collections;
 
 public class scr_button : MonoBehaviour
 {
-		public GameObject btn1, btn2, btn3, btn4, loading, UI, realBtn, shareManager, BGM, popNetwork;
+	public GameObject oGem,btn1, btn2, btn3, btn4, loading, UI, realBtn, shareManager, BGM, popNetwork, prf_hints;
 		bool isNetwork = false;
+		string today = "";
+		int getGemlevel = 0;
 		// Use this for initialization
 		void Start ()
 		{
+				getGemlevel = 0;
+				today = System.DateTime.Today.ToShortDateString ();
+				if (PlayerPrefs.GetInt ("HINTS", 0) == 0) {
+						Instantiate (prf_hints, new Vector2 (0, 0), Quaternion.identity);
+						PlayerPrefs.SetInt ("HINTS", 1);
+				}
 //		PlayerPrefs.SetInt ("NUMGEM", 1000000);
 				StartCoroutine (CheckInternet ());
 				if (GameObject.FindGameObjectWithTag ("BGM") == null) {
@@ -86,12 +94,50 @@ public class scr_button : MonoBehaviour
 			
 				}
 				if (gesture.Selection.name.Equals ("share")) {
-						shareManager.SendMessage ("OnClick");
+			getGemlevel = 0;
+			if (!today.Equals (PlayerPrefs.GetString ("TODAY", ""))) {
+				PlayerPrefs.SetString ("TODAY", today);
+				getGemlevel=1;
+			}
+			shareManager.SendMessage ("NativeShare");
+
+
 				}
+
+				if (gesture.Selection.name.Equals ("hints(Clone)")) {
+						Destroy (gesture.Selection.gameObject);
+				}
+
+
 
 				 
 
 		}
+
+		void OnApplicationPause (bool paused)
+		{
+		Debug.Log ("pause"+getGemlevel);
+				if (paused && getGemlevel == 1) {
+						getGemlevel = 2;
+			Debug.Log ("pause2"+getGemlevel);
+			
+				}
+		if (!paused && getGemlevel == 2) {
+
+			Debug.Log ("getgem");
+			oGem.SendMessage("getGem");
+			
+				}
+		}
+
+//		void OnApplicationFocus (bool focusStatus)
+//		{
+//		Debug.Log ("focus"+getGemlevel);
+//				if (focusStatus && getGemlevel == 2) {
+//						Destroy (this.gameObject);
+//			Debug.Log ("focus2"+getGemlevel);
+//				}
+//		}
 
 		void playAudio ()
 		{
