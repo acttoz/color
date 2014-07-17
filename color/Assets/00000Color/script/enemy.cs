@@ -3,6 +3,7 @@ using System.Collections;
 
 public class enemy : MonoBehaviour
 {
+
 		float speed = 2;
 		int xTemp = 1;
 		int yTemp = 1;
@@ -32,7 +33,11 @@ public class enemy : MonoBehaviour
 		void OnTriggerEnter (Collider myTrigger)
 		{
 		 
-		
+				if (myTrigger.tag == "touch") {
+						Destroy (myTrigger);
+			STATE._STATE="READY";
+						
+				}
 				if (myTrigger.gameObject.name == "down") {
 			
 						rigidbody.velocity = new Vector3 (rigidbody.velocity.x, -rigidbody.velocity.y, 0);

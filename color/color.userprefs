@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_toStart.cs">
+    <Files>
+      <File FileName="Assets\00000Color\script\finger_gesture.cs" Line="211" Column="2" />
+      <File FileName="Assets\00000Color\script\color_mat.cs" Line="35" Column="4" />
+      <File FileName="Assets\FingerGestures Samples\1) Finger Events\Scripts\FingerEventsSamplePart1.cs" Line="80" Column="10" />
+      <File FileName="Assets\FingerGestures Samples\Assets\Scripts\SampleUI.cs" Line="38" Column="49" />
+      <File FileName="Assets\00000Color\script\enemy.cs" Line="42" Column="4" />
+      <File FileName="Assets\00000Color\script\STATE.cs" Line="10" Column="12" />
+      <File FileName="Assets\scr_toStart.cs" Line="24" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

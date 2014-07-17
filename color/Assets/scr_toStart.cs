@@ -19,7 +19,10 @@ public class scr_toStart : MonoBehaviour
 		void OnTap ()
 		{
 				
-				GameObject.Find ("GAMEMANAGER").SendMessage ("monsterChoice");
-				Destroy (this.gameObject);
+//				GameObject.Find ("GAMEMANAGER").SendMessage ("monsterChoice");
+				if (STATE._STATE.Equals ("WAIT")) {
+						Destroy (this.gameObject);
+						STATE._STATE = "PLAY";
+				}
 		}
 }

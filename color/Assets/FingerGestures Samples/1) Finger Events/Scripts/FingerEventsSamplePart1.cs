@@ -87,7 +87,7 @@ public class FingerEventsSamplePart1 : SampleBase
             if( selection == fingerStationaryObject )
             {
                 UI.StatusText = "Begin stationary on finger " + e.Finger.Index;
-
+				Debug.Log("Begin stationary on finger ");
                 // remember which finger we're using
                 stationaryFingerIndex = e.Finger.Index;
 
@@ -115,7 +115,7 @@ public class FingerEventsSamplePart1 : SampleBase
 
                 // make sure the emitter is turned on
                 stationaryParticleEmitter.emit = true;
-
+				Debug.Log("update");
                 UI.StatusText = "Charge: " + ( 100 * chargePercent ).ToString( "N1" ) + "%";
             }
         }
@@ -126,7 +126,7 @@ public class FingerEventsSamplePart1 : SampleBase
                 float timeStationary = e.ElapsedTime;
 
                 UI.StatusText = "Stationary ended on finger " + e.Finger + " - " + timeStationary.ToString( "N1" ) + " seconds elapsed";
-
+				Debug.Log("Stationary ended");
                 // turn off the stationary particle emitter when we begin to move the finger, as it's no longer stationary
                 StopStationaryParticleEmitter();
 
