@@ -3,15 +3,22 @@ using System.Collections;
 
 public class color_mat : MonoBehaviour
 {
-		bool isPlus = false;
-		bool isMinus = false;
+		private bool isPlus = false;
+		private bool isMinus = false;
+//		private Transform whiteMAT_position;
+		private SpriteRenderer[] cpnt_whiteMAT_sprite;
 		// Use this for initialization
 		void Start ()
 		{
-
+//				whiteMAT_position = GetComponentInChildren<Transform> ();
+//		whiteMAT_position.localPosition = new Vector3 (0, 0, 0);
+				cpnt_whiteMAT_sprite = GetComponentsInChildren<SpriteRenderer> ();
+				cpnt_whiteMAT_sprite [1].sortingOrder = cpnt_whiteMAT_sprite [0].sortingOrder;
+				cpnt_whiteMAT_sprite [1].sortingLayerName = "mat";
 				GetComponent<SpriteRenderer> ().color *= new Color (1, 1, 1, 0);
 				InvokeRepeating ("plusColor", 0, 0.01f);
 				InvokeRepeating ("minusColor", 0, 0.01f);
+				isMinus = true;
 		}
 	
 		// Update is called once per frame
@@ -26,18 +33,19 @@ public class color_mat : MonoBehaviour
 //				Debug.Log (GetComponent<SpriteRenderer> ().color.a + "");
 				if (isPlus && GetComponent<SpriteRenderer> ().color.a < 1) {
 			
-						GetComponent<SpriteRenderer> ().color += new Color (0, 0, 0, RATE.colorPlusRate / 1000f);
+						GetComponent<SpriteRenderer> ().color += new Color (0, 0, 0, RATE.colorPlusRate / 10000f);
 				}
 
 				if (GetComponent<SpriteRenderer> ().color.a >= 1) {
 						CancelInvoke ("minusColor");
+			animation.Play ();
 				}
 		}
 
 		void minusColor ()
 		{
 				if (isMinus && GetComponent<SpriteRenderer> ().color.a > 0 && GetComponent<SpriteRenderer> ().color.a != 1)
-						GetComponent<SpriteRenderer> ().color -= new Color (0, 0, 0, RATE.colorMinusRate / 1000f);
+						GetComponent<SpriteRenderer> ().color -= new Color (0, 0, 0, RATE.colorMinusRate / 10000f);
 		}
 
 		void onColor ()

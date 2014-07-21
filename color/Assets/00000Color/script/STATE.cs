@@ -29,7 +29,7 @@ public class STATE : MonoBehaviour
 						break;
 				case  "READY":
 						Instantiate (prfGameset, new Vector2 (0, 0), Quaternion.identity);
-						_STATE = "WAIT";
+			_STATE="WAIT";
 						break;
 				case  "START":
 						Debug.Log ("START");
