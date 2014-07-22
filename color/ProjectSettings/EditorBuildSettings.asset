@@ -6,21 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/00SCENE/sce_intro.unity
+    path: Assets/11SCENE/sce_intro.unity
   - enabled: 0
-    path: Assets/00SCENE/menu_Android.unity
+    path: Assets/11SCENE/menu_Android.unity
   - enabled: 0
-    path: Assets/00SCENE/sce_level.unity
+    path: Assets/11SCENE/sce_level.unity
   - enabled: 0
-    path: Assets/00SCENE/sce_store.unity
+    path: Assets/11SCENE/sce_store.unity
   - enabled: 0
-    path: Assets/00SCENE/sce_tutorial.unity
+    path: Assets/11SCENE/sce_tutorial.unity
   - enabled: 0
-    path: Assets/00SCENE/game.unity
+    path: Assets/11SCENE/game.unity
   - enabled: 0
-    path: Assets/00SCENE/sce_reallevel.unity
+    path: Assets/11SCENE/sce_reallevel.unity
   - enabled: 0
-    path: Assets/00SCENE/sce_rank.unity
+    path: Assets/11SCENE/sce_rank.unity
   - enabled: 0
     path: Assets/MainScene.unity
   - enabled: 0

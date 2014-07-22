@@ -3565,8 +3565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc71d18e81aac84fac938f39818e3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colorPlusRate: 20
-  _colorMinusRate: 10
+  _colorPlusRate: 40
+  _colorMinusRate: 15
 --- !u!114 &1457606920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4324,7 +4324,8 @@ GameObject:
   - 4: {fileID: 1702835778}
   - 212: {fileID: 1702835777}
   - 114: {fileID: 1702835779}
-  - 64: {fileID: 1702835780}
+  - 111: {fileID: 1702835781}
+  - 60: {fileID: 1702835780}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -4378,19 +4379,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55bae3f495792e46a2feb889b2b8744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &1702835780
-MeshCollider:
+--- !u!60 &1702835780
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1702835776}
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: -4.79999971, y: 3.19999981}
+      - {x: -4.79999971, y: -3.19999981}
+      - {x: 4.79999971, y: -3.19999981}
+      - {x: 4.79999971, y: 3.19999981}
+--- !u!111 &1702835781
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1702835776}
   m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 05f5ec7fbb0f2a4498b1488016d0be35, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 05f5ec7fbb0f2a4498b1488016d0be35, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1727857732
 GameObject:
   m_ObjectHideFlags: 0

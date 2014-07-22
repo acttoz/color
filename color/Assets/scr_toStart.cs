@@ -21,8 +21,9 @@ public class scr_toStart : MonoBehaviour
 				
 //				GameObject.Find ("GAMEMANAGER").SendMessage ("monsterChoice");
 				if (STATE._STATE.Equals ("WAIT")) {
-						Destroy (this.gameObject);
-						STATE._STATE = "PLAY";
+//			Destroy (this.gameObject);
+			Application.LoadLevel(0);
+//						STATE._STATE = "PLAY";
 				}
 		}
 }

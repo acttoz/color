@@ -15,7 +15,7 @@ public class color_mat : MonoBehaviour
 				cpnt_whiteMAT_sprite = GetComponentsInChildren<SpriteRenderer> ();
 				cpnt_whiteMAT_sprite [1].sortingOrder = cpnt_whiteMAT_sprite [0].sortingOrder;
 				cpnt_whiteMAT_sprite [1].sortingLayerName = "mat";
-				GetComponent<SpriteRenderer> ().color *= new Color (1, 1, 1, 0);
+//				GetComponent<SpriteRenderer> ().color *= new Color (1, 1, 1, 0);
 				InvokeRepeating ("plusColor", 0, 0.01f);
 				InvokeRepeating ("minusColor", 0, 0.01f);
 				isMinus = true;
@@ -24,8 +24,7 @@ public class color_mat : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				if (STATE._STATE.Equals ("WAIT"))
-						GetComponent<SpriteRenderer> ().color *= new Color (1, 1, 1, 0);
+				 
 		}
 
 		void plusColor ()
