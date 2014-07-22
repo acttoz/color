@@ -242,6 +242,7 @@
      <Compile Include="Assets\scr_name2text.cs" />
      <Compile Include="Assets\scr_num5.cs" />
      <Compile Include="Assets\scr_numGem.cs" />
+     <Compile Include="Assets\scr_quest.cs" />
      <Compile Include="Assets\scr_rank_manager.cs" />
      <Compile Include="Assets\scr_realLevel.cs" />
      <Compile Include="Assets\scr_selectLevel.cs" />
