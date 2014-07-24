@@ -382,7 +382,7 @@ MonoBehaviour:
   data:
     version: 1
     font: {fileID: 11400000, guid: 534e0a91dfe79d243aecfd4d66d54081, type: 2}
-    text: Survive for 30
+    text: Survive for 20
     color: {r: 1, g: 1, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
     useGradient: 0
@@ -457,8 +457,6 @@ MonoBehaviour:
   oCondition: {fileID: 0}
   oPoint: {fileID: 100014}
   oSuccess: {fileID: 100002}
-  conLevel: 030000000400000005000000070000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
-  conPoint: 0a000000140000001e00000028000000320000003c000000460000005000000064000000c8000000c8000000
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

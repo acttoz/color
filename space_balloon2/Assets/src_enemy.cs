@@ -109,13 +109,13 @@ public class src_enemy : MonoBehaviour
 //				bosslife--;
 //				if (bosslife > 0) {
 //			GetComponent<SphereCollider> ().radius = 0.17f;
-						Instantiate (bomb, transform.position, Quaternion.identity);
+				Instantiate (bomb, transform.position, Quaternion.identity);
 //						transform.localScale = new Vector2 (transform.localScale.x / 2f, transform.localScale.y / 2f);
-						GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 8);
-						animation.Play ("anim_boss");
-						Instantiate (mPoint, transform.position, Quaternion.identity);
-						GAMEMANAGER.SendMessage ("getBalloonMSG", 12);
-								Destroy (this.gameObject);
+				GameObject.Find ("GAMEMANAGER").SendMessage ("getBalloonMSG", 8);
+				animation.Play ("anim_boss");
+				Instantiate (mPoint, transform.position, Quaternion.identity);
+				GAMEMANAGER.SendMessage ("getBalloonMSG", 12);
+//				Destroy (this.gameObject);
 //				} else {
 //						GetComponent<SphereCollider> ().radius = 0;
 //						Instantiate (bomb, transform.position, Quaternion.identity);

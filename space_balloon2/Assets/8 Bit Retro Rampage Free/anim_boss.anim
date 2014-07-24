@@ -19,14 +19,14 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: {x: 1, y: 1, z: 0}
-        inSlope: {x: -.1967213, y: -.1967213, z: 0}
-        outSlope: {x: -.1967213, y: -.1967213, z: 0}
-        tangentMode: 0
+        inSlope: {x: -.491803288, y: -.491803288, z: 0}
+        outSlope: {x: -.491803288, y: -.491803288, z: 0}
+        tangentMode: 1057244228
       - time: 1.01666665
-        value: {x: .800000012, y: .800000012, z: 0}
-        inSlope: {x: -.1967213, y: -.1967213, z: 0}
-        outSlope: {x: -.1967213, y: -.1967213, z: 0}
-        tangentMode: 0
+        value: {x: .5, y: .5, z: 0}
+        inSlope: {x: -.491803288, y: -.491803288, z: 0}
+        outSlope: {x: -.491803288, y: -.491803288, z: 0}
+        tangentMode: 1065353216
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: 
@@ -186,13 +186,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 1
-        inSlope: -.1967213
-        outSlope: -.1967213
+        inSlope: -.491803288
+        outSlope: -.491803288
         tangentMode: 10
       - time: 1.01666665
-        value: .800000012
-        inSlope: -.1967213
-        outSlope: -.1967213
+        value: .5
+        inSlope: -.491803288
+        outSlope: -.491803288
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -205,13 +205,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 1
-        inSlope: -.1967213
-        outSlope: -.1967213
+        inSlope: -.491803288
+        outSlope: -.491803288
         tangentMode: 10
       - time: 1.01666665
-        value: .800000012
-        inSlope: -.1967213
-        outSlope: -.1967213
+        value: .5
+        inSlope: -.491803288
+        outSlope: -.491803288
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -346,4 +346,11 @@ AnimationClip:
     classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []
-  m_Events: []
+  m_Events:
+  - time: 1.01666665
+    functionName: destroySelf
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

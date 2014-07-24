@@ -1508,13 +1508,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oEnemyNum: {fileID: 2077935056}
-  testItem: 1
+  testItem: 0
   enemyCreateRate: 10
   itemCreateRate: 4
   zoneCreateRate: 8
   scoreRate: 1
   stopRateControl: 1
-  superTime: 3000
+  superTime: 300
   levelLimit: 0
   enemyRates:
   - 10
@@ -1578,16 +1578,16 @@ MonoBehaviour:
   - {fileID: 100004, guid: c1f7e87237daff245ac8f03ecfe1f35b, type: 2}
   - {fileID: 100002, guid: a081ed19e930daf4c8fafe3acb254f70, type: 2}
   spacesHeight:
-  - 9
-  - 10
-  - 40
-  - 10000
-  - 40000
-  - 70000
-  - 120000
-  - 170000
-  - 230000
-  - 300000
+  - 900
+  - 2000
+  - 4000
+  - 8000
+  - 14000
+  - 30000
+  - 60000
+  - 100000
+  - 160000
+  - 240000
   - 400000
   - 600000
   - 900000
