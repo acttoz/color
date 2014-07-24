@@ -4,6 +4,7 @@ using System.Collections;
 public class scr_manager : MonoBehaviour
 {
 		bool onToast = false;
+		bool isQuest;
 		public bool testItem = false;
 		public float enemyCreateRate;
 		public float itemCreateRate;
