@@ -199,7 +199,12 @@ public class scr_selectLevel : MonoBehaviour
 				PlayerPrefs.SetInt ("LEVEL", num - 4);
 				UI.SetActive (false);
 				loading.SetActive (true);
-				Application.LoadLevel (5);
+				if (!isQuest) {
+						Application.LoadLevel (5);
+				
+				} else {
+						Application.LoadLevel (8);
+				}
 				yield return new WaitForSeconds (1.5f);
 		}
 

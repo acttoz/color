@@ -4,7 +4,9 @@ using System.Collections;
 public class scr_manager : MonoBehaviour
 {
 		bool onToast = false;
-		bool isQuest;
+		int questEnemy = 0;
+		int questTarget = 0;
+		public GameObject oEnemyNum;
 		public bool testItem = false;
 		public float enemyCreateRate;
 		public float itemCreateRate;
@@ -80,6 +82,25 @@ public class scr_manager : MonoBehaviour
 		public static int superLevel = 0;
 		float mUp, mDown, mLeft, mRight;
 
+
+
+
+
+
+		/// <summary>
+		/// 
+		/// 
+		/// 
+		/// 
+		///       QUEST
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// </summary>
+
+
 		// Use this for initialization
 		bool existBalloon = false;
 //		bool timeStarted = false;
@@ -116,32 +137,69 @@ public class scr_manager : MonoBehaviour
 		IEnumerator enemyCreate ()
 		{
 				while (true) {
-						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
-						float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
-		
-						enemyNum++;
-						if (LEVEL == 5 && enemyNum > 2)
-								StopCoroutine ("enemyCreate");
-						if (LEVEL == 4 && enemyNum > 1)
-								StopCoroutine ("enemyCreate");
-						if (LEVEL == 3 && enemyNum > 1)
-								StopCoroutine ("enemyCreate");
-						if (LEVEL == 2 && enemyNum > 0)
-								StopCoroutine ("enemyCreate");
-						if (LEVEL == 1 && enemyNum > 0)
-								StopCoroutine ("enemyCreate");
-		
-		
-						Instantiate (prf_enemy, new Vector2 (tempX, tempY), Quaternion.identity);
+						InitEnemy ();
 						yield return new WaitForSeconds (enemyCreateRate / 1.2f);
-			
 				}
+		}
+
+		void InitEnemy ()
+		{
+				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
+				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
+		
+				enemyNum++;
+				if (LEVEL == 5 && enemyNum > 2)
+						StopCoroutine ("enemyCreate");
+				if (LEVEL == 4 && enemyNum > 1)
+						StopCoroutine ("enemyCreate");
+				if (LEVEL == 3 && enemyNum > 1)
+						StopCoroutine ("enemyCreate");
+				if (LEVEL == 2 && enemyNum > 0)
+						StopCoroutine ("enemyCreate");
+				if (LEVEL == 1 && enemyNum > 0)
+						StopCoroutine ("enemyCreate");
+		
+		
+				Instantiate (prf_enemy, new Vector2 (tempX, tempY), Quaternion.identity);
 		}
 		//RESET
 		void gameReset ()
 		{
 
 				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
+				if (LEVEL > 10) {
+						Value.isQuest = true;
+						Value.questNum = LEVEL - 10;
+						Value.questLevel = PlayerPrefs.GetInt ("QUEST" + Value.questNum, 0);
+						if (LEVEL != 12)
+								questTarget = Value.quests [Value.questNum - 1] [Value.questLevel];
+				}
+				tk2dTextMesh questEnemyText = GameObject.Find ("questEnemy").GetComponent<tk2dTextMesh> ();
+				switch (Value.questNum) {
+				case 1:
+						questEnemyText.text = "Destroy";
+						break;
+				case 2:
+						questEnemyText.text = "";
+						break;
+				case 3:
+						questEnemyText.text = "Destroy";
+						break;
+				case 4:
+						questEnemyText.text = "Seconds";
+						break;
+				case 5:
+						questEnemyText.text = "Seconds";
+						break;
+				case 6:
+						questEnemyText.text = "Collect";
+						break;
+			
+
+			
+
+				}
+				questEnemy = 0;
 		
 				isCounting = false;
 				int q = 0;
@@ -215,6 +273,13 @@ public class scr_manager : MonoBehaviour
 				for (int i=0; i<enemy.Length; i++) {
 						Destroy (enemy [i]);
 				}
+				if (LEVEL == 11) {
+						for (int i=0; i<questTarget; i++)
+								InitEnemy ();
+
+				}
+				oEnemyNum.GetComponent<tk2dTextMesh> ().text = 0 + "";
+				questEnemy = 0;
 //				oBoss.transform.tag = "enemy";
 //				oBoss.GetComponentInChildren<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				undeadTime = 0;
@@ -737,6 +802,9 @@ public class scr_manager : MonoBehaviour
 						if (colHave1 == colCreate) {
 								//monster
 								isMonster = true;
+								questEnemy = 0;
+								oEnemyNum.GetComponent<tk2dTextMesh> ().text = 0 + "";
+				
 								star3.sprite = tempStar;
 								isUndead = true;
 								balloon.SendMessage ("undead", true);
@@ -788,14 +856,14 @@ public class scr_manager : MonoBehaviour
 				}
 		}
 
-		void monsterOrange ()
-		{
-				isMonster = false;
-				if (superLevel < levelLimit) {
-						superLevel++;
-						superMode (superLevel);
-				}
-		}
+//		void monsterOrange ()
+//		{
+//				isMonster = false;
+//				if (superLevel < levelLimit) {
+//						superLevel++;
+//						superMode (superLevel);
+//				}
+//		}
 
 		IEnumerator scoreUp ()
 		{
@@ -1407,6 +1475,7 @@ public class scr_manager : MonoBehaviour
 						Instantiate (spaces [spaceId], new Vector2 (0, 12.8f), Quaternion.identity);
 						enemyCreateRate = enemyRates [spaceId];
 						
+						
 				}
 
 				if (score > spacesHeight [spaceId] && spaceId == 3) {
@@ -1592,11 +1661,32 @@ public class scr_manager : MonoBehaviour
 			//point 100
 						score += 100;
 						scoreText.text = " :  " + score;
+						if (LEVEL == 11) {
+								questEnemy++;
+								oEnemyNum.GetComponent<tk2dTextMesh> ().text = "" + questEnemy;
+				
+								if (questEnemy >= questTarget && onPlay) {
+										Value.questLevel++;
+										timeOut ();
+								}
+						}
 						break;
 				case 12:
 			//point 500
 						score += 500;
 						scoreText.text = " :  " + score;
+						questEnemy++;
+						oEnemyNum.GetComponent<tk2dTextMesh> ().text = questEnemy + "";
+						Debug.Log (Value.questNum + " " + Value.quests [3] [Value.questLevel] + " " + questEnemy);
+						if (Value.isQuest && Value.questNum == 3 && Value.quests [2] [Value.questLevel] == questEnemy) {
+								Value.questLevel++;
+								timeOut ();
+						}
+						if (Value.isQuest && Value.questNum == 3 && Value.quests [2] [Value.questLevel] != questEnemy) {
+								Instantiate (warn_boss, new Vector2 (0, 0), Quaternion.identity);
+						}
+			
+			
 						break;
 				default:
 						break;
@@ -1735,7 +1825,7 @@ public class scr_manager : MonoBehaviour
 						adNum = PlayerPrefs.GetInt ("ADTIME", 0);
 						adNum++;
 						PlayerPrefs.SetInt ("ADTIME", adNum);
-						if (adNum > 10 && adNum % 3 == 0)
+						if (adNum > 10 && adNum % 2 == 0)
 								admob.SendMessage ("ShowInterstitial");
 						
 						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
@@ -1781,7 +1871,7 @@ public class scr_manager : MonoBehaviour
 		
 				if (e.Selection == btn_pause && onPlay) {
 //						btn_pause.GetComponent<SpriteRenderer> ().color = Color.yellow;
-						btn_pause.GetComponent<SpriteRenderer> ().color = Color.white;
+//						btn_pause.GetComponent<SpriteRenderer> ().color = Color.white;
 						existBalloon = false;
 						StartCoroutine (pauseGame ());
 						//							 					Application.LoadLevel (0);
@@ -1795,7 +1885,7 @@ public class scr_manager : MonoBehaviour
 
 				if (e.Selection == btn_resume) {
 //						btn_resume.GetComponent<SpriteRenderer> ().color = Color.yellow;
-						btn_resume.GetComponent<SpriteRenderer> ().color = Color.white;
+//						btn_resume.GetComponent<SpriteRenderer> ().color = Color.white;
 						Destroy (GameObject.Find ("prf_pause(Clone)"));
 						onPlay = true;
 						existBalloon = false;
