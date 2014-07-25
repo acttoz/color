@@ -29,8 +29,9 @@ public class scr_quest : MonoBehaviour
 						break;
 				case questID.SPACE:
 						level = PlayerPrefs.GetInt ("QUEST2", 0);
-			Debug.Log(level+"");
-						oCondition.GetComponent<SpriteRenderer> ().sprite = spaces [level];
+						Debug.Log (level + "");
+						if (level < 8)
+								oCondition.GetComponent<SpriteRenderer> ().sprite = spaces [level];
 						break;
 				case questID.KILL:
 						level = PlayerPrefs.GetInt ("QUEST3", 0);
@@ -48,14 +49,19 @@ public class scr_quest : MonoBehaviour
 						break;
 				}
 				conLevel = Value.quests [(int)quest];	
-				conPoint = Value.questGem;
 
-				if (quest != questID.SPACE && quest != questID.ALIVE1 && quest != questID.ALIVE2)
-						oCondition.GetComponent<tk2dTextMesh> ().text = conLevel [level] + "";
+				if (quest == questID.SPACE) {
+						conPoint = Value.questGem2;
+				} else {
+						conPoint = Value.questGem;
+				}
+				if (level < 8) {
+						if (quest != questID.SPACE && quest != questID.ALIVE1 && quest != questID.ALIVE2)
+								oCondition.GetComponent<tk2dTextMesh> ().text = conLevel [level] + "";
 				
-				oPoint.GetComponent<tk2dTextMesh> ().text = conPoint [level] + "";
-
-				if (level == 5) {
+						oPoint.GetComponent<tk2dTextMesh> ().text = conPoint [level] + "";
+				} else {
+				
 						//master
 						oSuccess.SetActive (true);
 						GetComponent<BoxCollider> ().enabled = false;

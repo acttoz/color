@@ -155,7 +155,7 @@ public class scr_manager : MonoBehaviour
 		{
 				while (true) {
 						InitEnemy ();
-			if(Value.isQuest){
+			if(Value.isQuest&&Value.questNum==6){
 						questEnemy++;
 						if (questEnemy > Value.quests [Value.questNum] [Value.questLevel]) {
 								Value.questLevel++;
@@ -315,7 +315,7 @@ public class scr_manager : MonoBehaviour
 						Destroy (enemy [i]);
 				}
 				if (LEVEL == 11) {
-						for (int i=0; i<questTarget; i++)
+						for (int i=0; i<(questTarget+2); i++)
 								InitEnemy ();
 
 				}

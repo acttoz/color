@@ -106,7 +106,7 @@ PlayerSettings:
   iPadHighResLandscapeSplashScreen: {fileID: 0}
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: C:/Dropbox/0 UI/moon.keystore
+  AndroidKeystoreName: d:/Dropbox/0 UI/moon.keystore
   AndroidKeyaliasName: mainactivity
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:
