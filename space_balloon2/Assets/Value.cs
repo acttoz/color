@@ -16,7 +16,7 @@ public class Value : MonoBehaviour
 		new int[]{1,2,3,4,5,6,7,8},
 		new int[]{12,14,16,18,20,22,24,26},
 		new int[]{3,4,5,6,7,8,9,10},
-		new int[]{7,12,17,22,25,30,32,35}
+		new int[]{17,20,23,26,29,32,35,38}
 		};
 		public static int[] questGem = new int[]{5,10,20,30,50,70,100,200};
 		public static int[] questGem2 = new int[]{100,200,300,400,500,700,1000,2000};

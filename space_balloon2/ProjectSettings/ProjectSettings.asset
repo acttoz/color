@@ -77,8 +77,8 @@ PlayerSettings:
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: a2d1e9578ef893e4f8fe56b9e752f1d0
-  iPhoneBundleVersion: 1.0
-  AndroidBundleVersionCode: 3
+  iPhoneBundleVersion: 1.2
+  AndroidBundleVersionCode: 4
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -106,7 +106,7 @@ PlayerSettings:
   iPadHighResLandscapeSplashScreen: {fileID: 0}
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: d:/Dropbox/0 UI/moon.keystore
+  AndroidKeystoreName: C:/work/space_balloon2/moon.keystore
   AndroidKeyaliasName: mainactivity
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:
