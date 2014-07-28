@@ -144,7 +144,7 @@ public class scr_manager : MonoBehaviour
 						oEnemyNum.GetComponent<tk2dTextMesh> ().text = questEnemy + "";
 				} else {
 						CancelInvoke ("seconds");
-						questEnemy = 20;
+						questEnemy = 15;
 						Value.questLevel++;
 						timeOut ();
 				}
@@ -155,12 +155,13 @@ public class scr_manager : MonoBehaviour
 		{
 				while (true) {
 						InitEnemy ();
-			if(Value.isQuest&&Value.questNum==6){
-						questEnemy++;
-						if (questEnemy > Value.quests [Value.questNum] [Value.questLevel]) {
-								Value.questLevel++;
-								timeOut ();
-				}}
+						if (Value.isQuest && Value.questNum == 6) {
+								questEnemy++;
+								if (questEnemy > Value.quests [Value.questNum] [Value.questLevel]) {
+										Value.questLevel++;
+										timeOut ();
+								}
+						}
 						yield return new WaitForSeconds (enemyCreateRate / 1.2f);
 				}
 		}
@@ -188,8 +189,8 @@ public class scr_manager : MonoBehaviour
 
 		void InitBoss ()
 		{
-				float tempX = (Random.Range (-4 * 100, 4 * 100)) / 100;
-				float tempY = (Random.Range (-4 * 100, 4 * 100)) / 100;
+				float tempX = (Random.Range (-3f * 100f, 3f * 100f)) / 100f;
+				float tempY = (Random.Range (-4f * 100f, 4f * 100f)) / 100f;
 		
 		 
 		
@@ -199,6 +200,7 @@ public class scr_manager : MonoBehaviour
 		//RESET
 		void gameReset ()
 		{
+				CancelInvoke ("seconds");
 
 				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
 				if (LEVEL > 10) {
@@ -337,7 +339,7 @@ public class scr_manager : MonoBehaviour
 						}
 				}
 				if (Value.questNum == 4 || Value.questNum == 5) {
-						questEnemy = 20;
+						questEnemy = 15;
 						oEnemyNum.GetComponent<tk2dTextMesh> ().text = questEnemy + "";
 			
 				}
@@ -758,10 +760,9 @@ public class scr_manager : MonoBehaviour
 						break;
 				}
 //				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
-				if (LEVEL > 5) {
+		if (LEVEL > 5 && LEVEL != 14 && LEVEL != 15&& LEVEL != 16) {
 						if (!isUndead && !isMonster) {
 								existItem = Instantiate (createItem, new Vector3 (tempX, 7, 0), Quaternion.identity) as GameObject;
-
 						}
 				}
 		}
@@ -1294,7 +1295,7 @@ public class scr_manager : MonoBehaviour
 						superTimer = 3;
 						superLevel = 1;
 //						InvokeRepeating ("normalModeCount", 0.1f, 1f);
-				} else if (LEVEL != 6 && LEVEL != 7 && LEVEL != 8) {
+				} else if (LEVEL != 6 && LEVEL != 7 && LEVEL != 8 && LEVEL != 11 && LEVEL != 13 && LEVEL != 14 && LEVEL != 15 && LEVEL != 16) {
 						zoneReset ();
 						if (num == 1)
 								InvokeRepeating ("zoneCreate", 0.1f, zoneCreateRate);

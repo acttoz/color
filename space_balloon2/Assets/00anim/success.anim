@@ -219,7 +219,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.58333337
+  - time: 1.70000005
     functionName: getGem
     data: 
     objectReferenceParameter: {fileID: 0}

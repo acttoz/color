@@ -4150,7 +4150,7 @@ MonoBehaviour:
   data:
     version: 1
     font: {fileID: 11400000, guid: 534e0a91dfe79d243aecfd4d66d54081, type: 2}
-    text: Survive for 20
+    text: Survive for 15
     color: {r: 1, g: 1, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
     useGradient: 0
@@ -5276,6 +5276,10 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ca20218d380ee1347b7011f0b33605dd, type: 2}
+      propertyPath: data.text
+      value: Survive for 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca20218d380ee1347b7011f0b33605dd, type: 2}
   m_RootGameObject: {fileID: 1469856187}
@@ -6206,7 +6210,7 @@ MonoBehaviour:
   data:
     version: 1
     font: {fileID: 11400000, guid: 534e0a91dfe79d243aecfd4d66d54081, type: 2}
-    text: Survive for 20
+    text: Survive for 15
     color: {r: 1, g: 1, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
     useGradient: 0
@@ -6890,6 +6894,10 @@ Prefab:
     - target: {fileID: 3300004, guid: 8825e725aa8cdcd448b016ecb3a9e2cc, type: 2}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 8825e725aa8cdcd448b016ecb3a9e2cc, type: 2}
+      propertyPath: data.text
+      value: Survive for 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8825e725aa8cdcd448b016ecb3a9e2cc, type: 2}
