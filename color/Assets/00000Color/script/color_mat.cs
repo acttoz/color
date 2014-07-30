@@ -13,8 +13,8 @@ public class color_mat : MonoBehaviour
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
 //		whiteMAT_position.localPosition = new Vector3 (0, 0, 0);
 				cpnt_whiteMAT_sprite = GetComponentsInChildren<SpriteRenderer> ();
-				cpnt_whiteMAT_sprite [1].sortingOrder = cpnt_whiteMAT_sprite [0].sortingOrder;
-				cpnt_whiteMAT_sprite [1].sortingLayerName = "mat";
+				cpnt_whiteMAT_sprite [1].sortingOrder = cpnt_whiteMAT_sprite [0].sortingOrder-1;
+				cpnt_whiteMAT_sprite [1].sortingLayerName = cpnt_whiteMAT_sprite [0].sortingLayerName;
 //				GetComponent<SpriteRenderer> ().color *= new Color (1, 1, 1, 0);
 				InvokeRepeating ("plusColor", 0, 0.01f);
 				InvokeRepeating ("minusColor", 0, 0.01f);
@@ -37,13 +37,13 @@ public class color_mat : MonoBehaviour
 
 				if (GetComponent<SpriteRenderer> ().color.a >= 1) {
 						CancelInvoke ("minusColor");
-			animation.Play ();
+						animation.Play ();
 				}
 		}
 
 		void minusColor ()
 		{
-				if (isMinus && GetComponent<SpriteRenderer> ().color.a > 0 && GetComponent<SpriteRenderer> ().color.a != 1)
+				if (isMinus && GetComponent<SpriteRenderer> ().color.a > 0)
 						GetComponent<SpriteRenderer> ().color -= new Color (0, 0, 0, RATE.colorMinusRate / 10000f);
 		}
 
