@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{0D283153-1F1E-2E82-70FA-E337E85182C7}</ProjectGuid>
+	<ProjectGuid>{DC33F2AB-F115-2F06-789E-DAE89A77CAE0}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_2;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BackBtn.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Core\Events\EventDispatcher.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Core\Events\EventDispatcherBase.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Data\BaseEvent.cs" />
@@ -87,7 +88,27 @@
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\Enum\InstagramEvents.cs" />
      <Compile Include="Assets\Extensions\MobileSocialPlugin\Scripts\IOS\NativeSharing\MSPIOSSocialManager.cs" />
      <Compile Include="Assets\Final_audio_play.cs" />
+     <Compile Include="Assets\FingerGestures Samples\1) Finger Events\Scripts\FingerEventsSamplePart1.cs" />
+     <Compile Include="Assets\FingerGestures Samples\1) Finger Events\Scripts\FingerEventsSamplePart2.cs" />
+     <Compile Include="Assets\FingerGestures Samples\2) Gestures\Scripts\BasicGesturesSample.cs" />
+     <Compile Include="Assets\FingerGestures Samples\2) Gestures\Scripts\PinchTwistSample.cs" />
+     <Compile Include="Assets\FingerGestures Samples\2) Gestures\Scripts\PointCloudGestureRenderer.cs" />
+     <Compile Include="Assets\FingerGestures Samples\2) Gestures\Scripts\PointCloudGestureSample.cs" />
+     <Compile Include="Assets\FingerGestures Samples\3) Toolbox\Scripts\DragTrail.cs" />
+     <Compile Include="Assets\FingerGestures Samples\3) Toolbox\Scripts\EmitParticlesOnSwipe.cs" />
+     <Compile Include="Assets\FingerGestures Samples\3) Toolbox\Scripts\ToolboxDragSample.cs" />
+     <Compile Include="Assets\FingerGestures Samples\3) Toolbox\Scripts\ToolboxFingerEventsSample.cs" />
+     <Compile Include="Assets\FingerGestures Samples\3) Toolbox\Scripts\ToolboxOneFingerGestureSample.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\BasicSample.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\EmitParticles.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\MaxFPS.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\MenuNode.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SampleBase.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SampleUI.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\StartMenu.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SwipeParticlesEmitter.cs" />
      <Compile Include="Assets\Highscore\Script\Highscore.cs" />
+     <Compile Include="Assets\MANAGER2.cs" />
      <Compile Include="Assets\MANAGER_START.cs" />
      <Compile Include="Assets\MGR_Quest.cs" />
      <Compile Include="Assets\Planet Earth\Scripts\CameraZoom.cs" />
@@ -642,6 +663,27 @@
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenShakeScale.cs" />
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenStop.cs" />
      <Compile Include="Assets\PlayMaker\Include\iTweenFSMEvents.cs" />
+     <Compile Include="Assets\Scripts\BackgroundParallax.cs" />
+     <Compile Include="Assets\Scripts\BackgroundPropSpawner.cs" />
+     <Compile Include="Assets\Scripts\Bomb.cs" />
+     <Compile Include="Assets\Scripts\BombPickup.cs" />
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Destroyer.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\Gun.cs" />
+     <Compile Include="Assets\Scripts\HealthPickup.cs" />
+     <Compile Include="Assets\Scripts\LayBombs.cs" />
+     <Compile Include="Assets\Scripts\Pauser.cs" />
+     <Compile Include="Assets\Scripts\PickupSpawner.cs" />
+     <Compile Include="Assets\Scripts\PlayerControl.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\Remover.cs" />
+     <Compile Include="Assets\Scripts\Rocket.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\ScoreShadow.cs" />
+     <Compile Include="Assets\Scripts\SetParticleSortingLayer.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Store.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
@@ -681,6 +723,9 @@
      <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapColliderBuilder2D.cs" />
      <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapData.cs" />
      <Compile Include="Assets\TK2DROOT\tk2dTileMap\Code\tk2dTileMapMeshBuilder.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoCoin.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoFollowCam.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap_demo\Demo1\Scripts\tk2dTileMapDemoPlayer.cs" />
      <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIBaseItemControl.cs" />
      <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIDragItem.cs" />
      <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Controls\tk2dUIDropDownItem.cs" />
@@ -709,10 +754,62 @@
      <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUISpriteAnimator.cs" />
      <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUITime.cs" />
      <Compile Include="Assets\TK2DROOT\tk2dUI\Code\Core\tk2dUITouch.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIBaseDemoController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo2Controller.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo3Controller.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo5Controller.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo6Controller.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemoController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoAnimController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoButtonController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoCameraController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoReloadController.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d_demo\tk2dDemoRuntimeSpriteController.cs" />
      <Compile Include="Assets\ToonEffect_V2\Examples\Gui.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSequence.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSequencer.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSheet.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\CheckMethod.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\ActionBase.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\BoolComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\ColliderComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\ComparerBase.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\FloatComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\GeneralComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\IntComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\IsRenderedByCamera.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\StringComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\TransformComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\ValueDoesNotChange.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\Vector2Comparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\Vector3Comparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\Vector4Comparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\VectorComparerBase.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\InvalidPathException.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\MemberResolver.cs" />
+     <Compile Include="Assets\UnityTestTools\Common\ITestResult.cs" />
+     <Compile Include="Assets\UnityTestTools\Common\ResultWriter\ResultSummarizer.cs" />
+     <Compile Include="Assets\UnityTestTools\Common\ResultWriter\StackTraceFilter.cs" />
+     <Compile Include="Assets\UnityTestTools\Common\ResultWriter\XmlResultWriter.cs" />
+     <Compile Include="Assets\UnityTestTools\Common\TestResultState.cs" />
+     <Compile Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Scripts\GameScore.cs" />
+     <Compile Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\CodeBasedAssertionExample.cs" />
+     <Compile Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\CustomComponent.cs" />
+     <Compile Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\DynamicIntegrationTest.cs" />
+     <Compile Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\ThrowCustomException.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\ITestRunnerCallback.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\IntegrationTest.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\IntegrationTestAttribute.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\IntegrationTestsProvider.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestComponent.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestResult.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestResultRenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestRunner.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\TestRunnerCallbackList.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestingAssets\CallTesting.cs" />
      <Compile Include="Assets\Value.cs" />
      <Compile Include="Assets\audio_play.cs" />
      <Compile Include="Assets\backkey.cs" />
@@ -723,8 +820,10 @@
      <Compile Include="Assets\iTween\iTween.cs" />
      <Compile Include="Assets\key.cs" />
      <Compile Include="Assets\layerBatch.cs" />
+     <Compile Include="Assets\level.cs" />
      <Compile Include="Assets\mission.cs" />
      <Compile Include="Assets\monster_choice.cs" />
+     <Compile Include="Assets\moon.cs" />
      <Compile Include="Assets\nextBtn.cs" />
      <Compile Include="Assets\openingStart.cs" />
      <Compile Include="Assets\point.cs" />
@@ -923,6 +1022,7 @@
      <None Include="Assets\Plugins\Android\proguard.txt" />
      <None Include="Assets\Plugins\Android\res\values-hi\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-ko\auth_strings.xml" />
+     <None Include="Assets\Solar System\readme.txt" />
      <None Include="Assets\Plugins\Android\res\values-zh-rHK\common_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hi\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\common_signin_btn_text_light.xml" />
@@ -1113,14 +1213,14 @@
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt-rPT\auth_strings.xml" />
  <Reference Include="PlayMaker">
- <HintPath>C:/work/space_soonam/Assets/PlayMaker/PlayMaker.dll</HintPath>
+ <HintPath>Assets\PlayMaker\PlayMaker.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{DB65934D-107A-D70A-BE76-12DD1E936E82}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{0700EB65-CD24-C41C-F9B9-2AD7BEAF76DF}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{DE0724F5-AAF4-7D3B-A8DC-69B08327C6AB}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{E45B9754-5613-1D9D-61B2-2E6D65104581}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/00SCENE/00earth.unity
   - enabled: 1
     path: Assets/00SCENE/00moon.unity
+  - enabled: 1
+    path: Assets/00SCENE/00earthmoon.unity

@@ -92,7 +92,7 @@ EllipsoidParticleEmitter:
   rndAngularVelocity: 0
   rndRotation: 0
   Simulate in Worldspace?: 1
-  m_OneShot: 1
+  m_OneShot: 0
   m_Ellipsoid: {x: .5, y: .5, z: .5}
   m_MinEmitterRange: 10
 --- !u!1002 &1500001

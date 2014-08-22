@@ -58,20 +58,20 @@ public class tk2dUIExtIndicator : MonoBehaviour
     /// <param name="level">desired level</param>
     public void ChangeLevel(int level)
     {
-        currentLevel = Mathf.Clamp(level, 0, maxLevels);
-
-        for (int i = 0; i < indicatorSprites.Length; i++)
-        {
-            tk2dSprite indicator = indicatorSprites[i];
-            if (behavior == IndicatorBehavior.Select)
-            {
-                indicator.SetSprite((i + 1) == currentLevel ? spriteNameActive : spriteNameInactive);
-            }
-            else if (behavior == IndicatorBehavior.Progress)
-            {
-                indicator.SetSprite((i + 1) <= currentLevel ? spriteNameActive : spriteNameInactive);
-            }
-        }
+//        currentLevel = Mathf.Clamp(level, 0, maxLevels);
+//
+//        for (int i = 0; i < indicatorSprites.Length; i++)
+//        {
+//            tk2dSprite indicator = indicatorSprites[i];
+//            if (behavior == IndicatorBehavior.Select)
+//            {
+//                indicator.SetSprite((i + 1) == currentLevel ? spriteNameActive : spriteNameInactive);
+//            }
+//            else if (behavior == IndicatorBehavior.Progress)
+//            {
+//                indicator.SetSprite((i + 1) <= currentLevel ? spriteNameActive : spriteNameInactive);
+//            }
+//        }
     }
 
     /// <summary>
