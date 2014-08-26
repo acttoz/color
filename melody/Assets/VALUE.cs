@@ -35,7 +35,7 @@ public class VALUE : MonoBehaviour
 		{
 				if (!isPlaying) {
 						audioTime = 0;
-						InvokeRepeating ("audioPlay", 0.5f, 0.5f);
+						InvokeRepeating ("audioPlay", 0.5f, 0.35f);
 						isPlaying = true;
 				}
 		}
