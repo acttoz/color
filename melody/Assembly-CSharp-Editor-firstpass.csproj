@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{6701AD2A-EF5F-D0B9-096A-341D45F2F3CA}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_2;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;ENABLE_DUCK_TYPING</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\DragRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerDownDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerEventDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerGesturesEditorUtils.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerGesturesInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerHoverDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerMotionDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerUpDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\GestureRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\LongPressRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\PinchRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\PointCloudGestureEditor.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\PointCloudGestureTemplateInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\PointCloudRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\SwipeRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\TapRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\TwistRecognizerInspector.cs" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitSolidVertexColor.shader" />
+     <None Include="Assets\PlayMaker\Readme.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
+     <None Include="Assets\Plugins\FingerGestures\Readme.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitPremulVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\PremulVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d_demo\Credits.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\goodies\PackedTextMesh.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\Blend2TexVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
+     <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito24.fnt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitCutoutVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
+     <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\CutoutVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d_demo\demobmfont\test.fnt" />
+     <None Include="Assets\PlayMaker\Resources\PlayMakerAssemblies.txt" />
+     <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Font\OldSansBlack\OldSansBlack.fnt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito16.fnt" />
+     <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito32.fnt" />
+     <None Include="Assets\PlayMaker\Versions\readme.txt" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
+     <None Include="Assets\TK2DROOT\tk2d_demo\democameradata\source\democamerafont.fnt" />
+ <Reference Include="PlayMaker">
+ <HintPath>C:/work/melody/Assets/PlayMaker/PlayMaker.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/PlayMakerEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditorResources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/PlayMakerEditorResources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.de.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/de/PlayMakerEditor.de.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.es-ES.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/es-ES/PlayMakerEditor.es-ES.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.fr.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/fr/PlayMakerEditor.fr.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.it.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/it/PlayMakerEditor.it.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.ja.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/ja/PlayMakerEditor.ja.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.nl.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/nl/PlayMakerEditor.nl.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.pt-BR.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/pt-BR/PlayMakerEditor.pt-BR.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.sv-SE.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/sv-SE/PlayMakerEditor.sv-SE.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.zh-CN.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/zh-CN/PlayMakerEditor.zh-CN.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.zh-TW.resources">
+ <HintPath>C:/work/melody/Assets/PlayMaker/Editor/zh-TW/PlayMakerEditor.zh-TW.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="tk2dExternal">
+ <HintPath>C:/work/melody/Assets/TK2DROOT/tk2d/Editor/tk2dExternal.dll</HintPath>
+ </Reference>
+ <Reference Include="tk2dSkin">
+ <HintPath>C:/work/melody/Assets/TK2DROOT/tk2d/Editor/tk2dSkin.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{A61388D8-A7FC-B469-7B8C-502209759837}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
