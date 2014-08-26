@@ -55,10 +55,10 @@ public class VALUE : MonoBehaviour
 //						Debug.Log ("3 " + tempAudioTime);
 				
 						audio.PlayOneShot (note [melody [tempAudioTime]]);
-//						Debug.Log ("9PLay");
+						Debug.Log ("9PLay");
 				} else {
 						audio.PlayOneShot (note [melody [audioTime]]);
-//						Debug.Log ("justPlay");
+						Debug.Log ("justPlay");
 				}
 
 
