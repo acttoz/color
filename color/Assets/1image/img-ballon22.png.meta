@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: 611bf1516e40a4b47b5d579e94228018
+guid: baa926305d7260c42b8e09b0d3302612
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: img-ballon22
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8

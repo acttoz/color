@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: 56e7ac5f60a7bef4aae72ce8c9203c63
+guid: d62318530838cae48a4e1fbacca2f3f8
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: monster_purple1q
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 3
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8

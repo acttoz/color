@@ -137,11 +137,23 @@ public class finger_gesture : MonoBehaviour
 				//				Debug.Log ("click");
 		}
 
-		int stationaryFingerIndex = -1;
+		void OnFingerHover (FingerHoverEvent e)
+		{
+				if (e.Selection.tag == "mat") {
+						// finger entered the object
+						if (e.Phase == FingerHoverPhase.Enter) {
+								e.Selection.SendMessage ("onColor");
+						} else if (e.Phase == FingerHoverPhase.Exit) { // finger left the object
+								e.Selection.SendMessage ("offColor");
+						}
+				}
+		}
 
+		int stationaryFingerIndex = -1;
+	
 		void OnFingerStationary (FingerMotionEvent e)
 		{
-
+		
 				if (e.Selection.tag == "mat") {
 						if (e.Phase == FingerMotionPhase.Started) {
 								if (stationaryFingerIndex != -1)
@@ -157,9 +169,41 @@ public class finger_gesture : MonoBehaviour
 //								}
 						} else if (e.Phase == FingerMotionPhase.Updated) {
 								Debug.Log ("update" + e.Selection);
+								e.Selection.SendMessage ("onColor");
 //								e.Selection.SendMessage ("onColor");
 //			Debug.Log("stationaryU");
 						
+						} else if (e.Phase == FingerMotionPhase.Ended) {
+								if (e.Finger.Index == stationaryFingerIndex) {
+										Debug.Log ("stationaryE");
+										e.Selection.SendMessage ("offColor");
+										stationaryFingerIndex = -1;
+								}
+						}
+				}
+		}
+
+		void OnMoving (FingerMotionEvent e)
+		{
+		
+				if (e.Selection.tag == "mat") {
+						if (e.Phase == FingerMotionPhase.Started) {
+								if (stationaryFingerIndex != -1)
+										return;
+				
+								Debug.Log ("stationaryS");
+				
+								//								if (e.Selection.tag == "mat") {
+//								e.Selection.SendMessage ("onColor");
+				
+								stationaryFingerIndex = e.Finger.Index;
+				
+								//								}
+						} else if (e.Phase == FingerMotionPhase.Updated) {
+								Debug.Log ("update" + e.Selection);
+								//								e.Selection.SendMessage ("onColor");
+								//			Debug.Log("stationaryU");
+				
 						} else if (e.Phase == FingerMotionPhase.Ended) {
 								if (e.Finger.Index == stationaryFingerIndex) {
 										Debug.Log ("stationaryE");

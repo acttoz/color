@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: e4c209b3f319df441afec34776531b5c
+guid: b3fc6e7c77fd1e0438322845e8dec8dc
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: _0003_phone
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8

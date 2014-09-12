@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: 710e36dcf5bf7754b90721b66d30012f
+guid: 6cc948731a8f77f43a979ea8c5b32324
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: monster_orange111
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8

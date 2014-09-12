@@ -22,7 +22,7 @@ public class touch_effect : MonoBehaviour
 
 				if (cooldown <= 0) {
 				
-						Instantiate (prfEffect, this.gameObject.transform.position, Quaternion.identity);
+//						Instantiate (prfEffect, this.gameObject.transform.position, Quaternion.identity);
 		
 						//For showcasing reasons: some effects don't look good if they appear half underground. I move these effects a bit upward.
 

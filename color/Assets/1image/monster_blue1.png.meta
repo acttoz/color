@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: af2e2c65e6a822e4bb42989601c7dd15
+guid: baa31df4a01a2af4aa5bfe7f2ee508f0
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: monster_blue1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 6
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8

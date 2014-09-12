@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: 3b0fe3f870fa7a24783cd3ef63d84b1e
+guid: 45e85b0ecf8a91345a59cbff4fa76c9a
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: img_IconStar
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
