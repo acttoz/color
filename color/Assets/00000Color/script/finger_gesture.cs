@@ -149,74 +149,77 @@ public class finger_gesture : MonoBehaviour
 				}
 		}
 
-		int stationaryFingerIndex = -1;
-	
-		void OnFingerStationary (FingerMotionEvent e)
-		{
-		
-				if (e.Selection.tag == "mat") {
-						if (e.Phase == FingerMotionPhase.Started) {
-								if (stationaryFingerIndex != -1)
-										return;
-			
-								Debug.Log ("stationaryS");
-			
-//								if (e.Selection.tag == "mat") {
-								e.Selection.SendMessage ("onColor");
-				
-								stationaryFingerIndex = e.Finger.Index;
-				
+//		int stationaryFingerIndex = -1;
+//	
+//		void OnFingerStationary (FingerMotionEvent e)
+//		{
+//		
+//				if (e.Selection.tag == "mat") {
+//						if (e.Phase == FingerMotionPhase.Started) {
+//								if (stationaryFingerIndex != -1)
+//										return;
+//			
+//								Debug.Log ("stationaryS");
+//			
+////								if (e.Selection.tag == "mat") {
+//								e.Selection.SendMessage ("onColor");
+//				
+//								stationaryFingerIndex = e.Finger.Index;
+//				
+////								}
+//						} else if (e.Phase == FingerMotionPhase.Updated) {
+//								Debug.Log ("update" + e.Selection);
+//								e.Selection.SendMessage ("onColor");
+////								e.Selection.SendMessage ("onColor");
+////			Debug.Log("stationaryU");
+//						
+//						} else if (e.Phase == FingerMotionPhase.Ended) {
+//								if (e.Finger.Index == stationaryFingerIndex) {
+//										Debug.Log ("stationaryE");
+//										e.Selection.SendMessage ("offColor");
+//										stationaryFingerIndex = -1;
 //								}
-						} else if (e.Phase == FingerMotionPhase.Updated) {
-								Debug.Log ("update" + e.Selection);
-								e.Selection.SendMessage ("onColor");
-//								e.Selection.SendMessage ("onColor");
-//			Debug.Log("stationaryU");
-						
-						} else if (e.Phase == FingerMotionPhase.Ended) {
-								if (e.Finger.Index == stationaryFingerIndex) {
-										Debug.Log ("stationaryE");
-										e.Selection.SendMessage ("offColor");
-										stationaryFingerIndex = -1;
-								}
-						}
-				}
-		}
+//						}
+//				}
+//		}
 
-		void OnMoving (FingerMotionEvent e)
-		{
-		
-				if (e.Selection.tag == "mat") {
-						if (e.Phase == FingerMotionPhase.Started) {
-								if (stationaryFingerIndex != -1)
-										return;
-				
-								Debug.Log ("stationaryS");
-				
-								//								if (e.Selection.tag == "mat") {
-//								e.Selection.SendMessage ("onColor");
-				
-								stationaryFingerIndex = e.Finger.Index;
-				
-								//								}
-						} else if (e.Phase == FingerMotionPhase.Updated) {
-								Debug.Log ("update" + e.Selection);
-								//								e.Selection.SendMessage ("onColor");
-								//			Debug.Log("stationaryU");
-				
-						} else if (e.Phase == FingerMotionPhase.Ended) {
-								if (e.Finger.Index == stationaryFingerIndex) {
-										Debug.Log ("stationaryE");
-										e.Selection.SendMessage ("offColor");
-										stationaryFingerIndex = -1;
-								}
-						}
-				}
-		}
+//		void OnMoving (FingerMotionEvent e)
+//		{
+//		
+//				if (e.Selection.tag == "mat") {
+//						if (e.Phase == FingerMotionPhase.Started) {
+//								if (stationaryFingerIndex != -1)
+//										return;
+//				
+//								Debug.Log ("stationaryS");
+//				
+//								//								if (e.Selection.tag == "mat") {
+////								e.Selection.SendMessage ("onColor");
+//				
+//								stationaryFingerIndex = e.Finger.Index;
+//				
+//								//								}
+//						} else if (e.Phase == FingerMotionPhase.Updated) {
+//								Debug.Log ("update" + e.Selection);
+//								//								e.Selection.SendMessage ("onColor");
+//								//			Debug.Log("stationaryU");
+//				
+//						} else if (e.Phase == FingerMotionPhase.Ended) {
+//								if (e.Finger.Index == stationaryFingerIndex) {
+//										Debug.Log ("stationaryE");
+//										e.Selection.SendMessage ("offColor");
+//										stationaryFingerIndex = -1;
+//								}
+//						}
+//				}
+//		}
 
 		void OnFingerDown (FingerDownEvent e)
 		{
-				obj_touchObj = Instantiate (prf_touchObj, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
+				if (e.Selection.tag == "mat") {
+		
+						obj_touchObj = Instantiate (prf_touchObj, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
+				}
 //		if (onToast) {
 //			if (e.Selection == monsterIcons [0]) {
 //				if (!selectedMonster1)

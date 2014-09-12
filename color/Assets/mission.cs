@@ -7,7 +7,7 @@ public class mission : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-				GetComponent<SpriteRenderer> ().sprite = missions [PlayerPrefs.GetInt ("LEVEL", 1) - 1];
+//				GetComponent<SpriteRenderer> ().sprite = missions [PlayerPrefs.GetInt ("LEVEL", 1) - 1];
 		}
 	
 		// Update is called once per frame

@@ -4,26 +4,26 @@ using System.Collections;
 public class scr_toStart : MonoBehaviour
 {
 		
-		// Use this for initialization
-		void Start ()
-		{
+	// Use this for initialization
+	void Start ()
+	{
 	
-		}
+	}
 	
-		// Update is called once per frame
-		void Update ()
-		{
+	// Update is called once per frame
+	void Update ()
+	{
 	
-		}
+	}
 
-		void OnTap ()
-		{
+	void OnTap ()
+	{
 				
 //				GameObject.Find ("GAMEMANAGER").SendMessage ("monsterChoice");
-				if (STATE._STATE.Equals ("WAIT")) {
+		if (STATE._STATE.Equals ("WAIT")) {
 //			Destroy (this.gameObject);
-			Application.LoadLevel(0);
+			Application.LoadLevel (0);
 //						STATE._STATE = "PLAY";
-				}
 		}
+	}
 }
