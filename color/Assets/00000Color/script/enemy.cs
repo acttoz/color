@@ -34,8 +34,9 @@ public class enemy : MonoBehaviour
 		{
 		 
 				if (myTrigger.tag == "touch") {
+			STATE._STATE = "gFAIL";
 						Destroy (myTrigger);
-			STATE._STATE="READY";
+						Destroy (this.gameObject, 0.1f);
 						
 				}
 				if (myTrigger.gameObject.name == "down") {

@@ -18,11 +18,13 @@ public class finger_gesture : MonoBehaviour
 	
 		}
 
-		bool isCounting = false;
+//		bool isCounting = false;
 		int dragFingerIndex = -1;
 	
 		void OnDrag (DragGesture gesture)
 		{
+				if (!STATE._STATE.Equals ("gIDLE"))
+						return;
 				// first finger
 				FingerGestures.Finger finger = gesture.Fingers [0];
 		
@@ -139,6 +141,8 @@ public class finger_gesture : MonoBehaviour
 
 		void OnFingerHover (FingerHoverEvent e)
 		{
+				if (!STATE._STATE.Equals ("gIDLE"))
+						return;
 				if (e.Selection.tag == "mat") {
 						// finger entered the object
 						if (e.Phase == FingerHoverPhase.Enter) {
@@ -216,10 +220,9 @@ public class finger_gesture : MonoBehaviour
 
 		void OnFingerDown (FingerDownEvent e)
 		{
-				if (e.Selection.tag == "mat") {
-		
-						obj_touchObj = Instantiate (prf_touchObj, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
-				}
+				if (!STATE._STATE.Equals ("gIDLE"))
+						return;
+				obj_touchObj = Instantiate (prf_touchObj, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
 //		if (onToast) {
 //			if (e.Selection == monsterIcons [0]) {
 //				if (!selectedMonster1)
@@ -259,7 +262,10 @@ public class finger_gesture : MonoBehaviour
 //	//FINGERUP
 		void OnFingerUp (FingerUpEvent e)
 		{
-				if (!testUp)						
+				if (!STATE._STATE.Equals ("gIDLE"))
+						return;
+
+				if (obj_touchObj != null)
 						Destroy (obj_touchObj);
 //		//				tempLevel = superLevel;
 //		//				GameObject[] temp = GameObject.FindGameObjectsWithTag ("light");

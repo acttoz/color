@@ -135,6 +135,7 @@
      <Compile Include="Assets\GoogleMobileAdsDemoScript.cs" />
      <Compile Include="Assets\GoogleMobileAdsScript.cs" />
      <Compile Include="Assets\Highscore\Script\Highscore.cs" />
+     <Compile Include="Assets\MANAGER.cs" />
      <Compile Include="Assets\MANAGER_START.cs" />
      <Compile Include="Assets\Store.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
@@ -209,6 +210,7 @@
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSheet.cs" />
      <Compile Include="Assets\audio_play.cs" />
      <Compile Include="Assets\bombTimer.cs" />
+     <Compile Include="Assets\btn.cs" />
      <Compile Include="Assets\cusor.cs" />
      <Compile Include="Assets\game_camera.cs" />
      <Compile Include="Assets\gem5.cs" />

@@ -10,15 +10,16 @@ public class color_mat : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+				STATE.mats++;
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
 //		whiteMAT_position.localPosition = new Vector3 (0, 0, 0);
 				cpnt_whiteMAT_sprite = GetComponentsInChildren<SpriteRenderer> ();
-				cpnt_whiteMAT_sprite [1].sortingOrder = cpnt_whiteMAT_sprite [0].sortingOrder-1;
+				cpnt_whiteMAT_sprite [1].sortingOrder = cpnt_whiteMAT_sprite [0].sortingOrder - 1;
 				cpnt_whiteMAT_sprite [1].sortingLayerName = cpnt_whiteMAT_sprite [0].sortingLayerName;
 //				GetComponent<SpriteRenderer> ().color *= new Color (1, 1, 1, 0);
 				InvokeRepeating ("plusColor", 0, 0.01f);
 				InvokeRepeating ("minusColor", 0, 0.01f);
-				isMinus = true;
+				offColor ();
 		}
 	
 		// Update is called once per frame
@@ -30,14 +31,20 @@ public class color_mat : MonoBehaviour
 		void plusColor ()
 		{
 //				Debug.Log (GetComponent<SpriteRenderer> ().color.a + "");
-				if (isPlus && GetComponent<SpriteRenderer> ().color.a < 1) {
+				if (!isPlus || !STATE._STATE.Equals ("gIDLE"))
+						return;
+				if (GetComponent<SpriteRenderer> ().color.a < 1) {
 			
 						GetComponent<SpriteRenderer> ().color += new Color (0, 0, 0, RATE.colorPlusRate / 10000f);
-				}
-
-				if (GetComponent<SpriteRenderer> ().color.a >= 1) {
+				} else {
 						CancelInvoke ("minusColor");
+						CancelInvoke ("plusColor");
 						animation.Play ();
+						//success
+						STATE.mats--;
+						if (STATE.mats == 0)
+								STATE._STATE = "gSUCCESS";
+			
 				}
 		}
 

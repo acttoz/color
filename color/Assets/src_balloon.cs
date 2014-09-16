@@ -18,7 +18,7 @@ public class src_balloon : MonoBehaviour
 		public Sprite   balloon, rainbow, hot;
 		bool isUndead = false;
 		bool isMonster = false;
-		string monster;
+//		string monster;
 		// Use this for initialization
 		void Start ()
 		{
@@ -126,7 +126,7 @@ public class src_balloon : MonoBehaviour
 		void onMonster (string temp)
 		{
 				
-				monster = temp;
+//				monster = temp;
 				isMonster = true;
 				shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 0);
 		}
