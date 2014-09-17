@@ -11,6 +11,8 @@ Project("{70DDA5DF-B805-3DC6-D1C4-92574BCE9BFD}") = "color", "Assembly-UnityScri
 EndProject
 Project("{70DDA5DF-B805-3DC6-D1C4-92574BCE9BFD}") = "color", "Assembly-UnityScript.unityproj", "{24F0C6DB-77B0-A18C-2F1D-5857E23BDAD1}"
 EndProject
+Project("{70DDA5DF-B805-3DC6-D1C4-92574BCE9BFD}") = "color", "Assembly-UnityScript-Editor.unityproj", "{16A96D66-5576-736E-048E-BC37AED9F166}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,11 +39,15 @@ Global
 		{24F0C6DB-77B0-A18C-2F1D-5857E23BDAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F0C6DB-77B0-A18C-2F1D-5857E23BDAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F0C6DB-77B0-A18C-2F1D-5857E23BDAD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16A96D66-5576-736E-048E-BC37AED9F166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16A96D66-5576-736E-048E-BC37AED9F166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16A96D66-5576-736E-048E-BC37AED9F166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16A96D66-5576-736E-048E-BC37AED9F166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-														GlobalSection(MonoDevelopProperties) = preSolution
+																		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

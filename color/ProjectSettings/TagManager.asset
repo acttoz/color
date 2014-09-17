@@ -30,7 +30,7 @@ TagManager:
   Builtin Layer 2: Ignore Raycast
   Builtin Layer 3: 
   Builtin Layer 4: Water
-  Builtin Layer 5: 
+  Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: ui
@@ -58,10 +58,6 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
-  - name: Default
-    userID: 0
-    uniqueID: 0
-    locked: 0
   - name: mat
     userID: 4
     uniqueID: 4210564903
@@ -69,6 +65,10 @@ TagManager:
   - name: mat_over
     userID: 5
     uniqueID: 2868319427
+    locked: 0
+  - name: Default
+    userID: 0
+    uniqueID: 0
     locked: 0
   - name: enemy
     userID: 1
