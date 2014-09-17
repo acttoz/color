@@ -18,18 +18,26 @@ public class MANAGER : MonoBehaviour
 
 		public void success ()
 		{
+				Destroy (GameObject.FindGameObjectWithTag ("touch"));
 				Instantiate (prf_success, new Vector2 (0, 0), Quaternion.identity);
 		
 		}
 
 		public void fail ()
 		{
+				Destroy (GameObject.FindGameObjectWithTag ("touch"));
 				Instantiate (prf_fail, new Vector2 (0, 0), Quaternion.identity);
 		}
 
 		public void reset ()
 		{
-				Debug.Log ("reset");
+				GameObject[] oMats = GameObject.FindGameObjectsWithTag ("mat");
+				STATE.mats = 0;
+				STATE.matsAll = oMats.Length;
+				for (int i=0; i<oMats.Length; i++)
+						oMats [i].SendMessage ("reset");
+
+//				Debug.Log ("reset");
 		}
 
 		public void ready ()

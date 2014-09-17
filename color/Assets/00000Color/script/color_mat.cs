@@ -8,9 +8,9 @@ public class color_mat : MonoBehaviour
 //		private Transform whiteMAT_position;
 		private SpriteRenderer[] cpnt_whiteMAT_sprite;
 		// Use this for initialization
-		void Start ()
+		void reset ()
 		{
-				STATE.mats++;
+				
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
 //		whiteMAT_position.localPosition = new Vector3 (0, 0, 0);
 				cpnt_whiteMAT_sprite = GetComponentsInChildren<SpriteRenderer> ();
@@ -31,7 +31,7 @@ public class color_mat : MonoBehaviour
 		void plusColor ()
 		{
 //				Debug.Log (GetComponent<SpriteRenderer> ().color.a + "");
-				if (!isPlus || !STATE._STATE.Equals ("gIDLE"))
+				if (!isPlus)
 						return;
 				if (GetComponent<SpriteRenderer> ().color.a < 1) {
 			
@@ -41,8 +41,9 @@ public class color_mat : MonoBehaviour
 						CancelInvoke ("plusColor");
 						animation.Play ();
 						//success
-						STATE.mats--;
-						if (STATE.mats == 0)
+						STATE.mats++;
+			Debug.Log("mats"+STATE.mats+" "+STATE.matsAll);
+						if (STATE.mats == STATE.matsAll)
 								STATE._STATE = "gSUCCESS";
 			
 				}

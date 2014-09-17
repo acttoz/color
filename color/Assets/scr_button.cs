@@ -122,7 +122,6 @@ public class scr_button : MonoBehaviour
 
 		void OnApplicationPause (bool paused)
 		{
-				Debug.Log ("pause" + getGemlevel);
 				if (paused && getGemlevel == 1) {
 						getGemlevel = 2;
 						Debug.Log ("pause2" + getGemlevel);

@@ -14,7 +14,9 @@ public class STATE : MonoBehaviour
 		//				gFAIL,
 //		}
 		public static string _STATE = "READY";
+		public static bool isTouched = false;
 		public static int mats = 0;
+		public static int matsAll = 0;
 		tk2dTextMesh stateText;
 		MANAGER manager;
 		// Use this for initialization
@@ -23,6 +25,7 @@ public class STATE : MonoBehaviour
 				STATE._STATE = "READY";
 				stateText = GetComponentInChildren<tk2dTextMesh> ();
 				manager = GetComponent<MANAGER> ();
+				
 		}
 	
 		// Update is called once per frame
@@ -48,7 +51,8 @@ public class STATE : MonoBehaviour
 				case  "gTOUCH":
 						break;
 				case  "gSUCCESS":
-						Debug.Log ("SUCCESS");
+						manager.success ();
+						_STATE = "WAIT";
 						break;
 				case  "gFAIL":
 						manager.fail ();

@@ -51,6 +51,25 @@ public class finger_gesture : MonoBehaviour
 	
 		void OnTap (TapGesture e)
 		{
+//				if (!STATE._STATE.Equals ("WAIT") || STATE.isTouched)
+//						return;
+				Debug.Log (e.Selection.name);
+				switch (e.Selection.name) {
+				case  "btn_menu":
+//						STATE._STATE = "WAIT";
+						Application.LoadLevel (0);
+						break;
+				case  "btn_next":
+						break;
+				case  "btn_replay":
+						STATE._STATE = "READY";
+						Destroy (e.Selection.gameObject.transform.parent.parent.gameObject);
+						break;
+				case  "btn_play":
+						Application.LoadLevel (1);
+						break;
+		
+				}
 		
 //		if (e.Selection == btn_menu) {
 //			//						btn_menu.GetComponent<SpriteRenderer> ().color = Color.yellow;
@@ -220,9 +239,12 @@ public class finger_gesture : MonoBehaviour
 
 		void OnFingerDown (FingerDownEvent e)
 		{
-				if (!STATE._STATE.Equals ("gIDLE"))
-						return;
-				obj_touchObj = Instantiate (prf_touchObj, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
+				if (!STATE.isTouched) {
+						STATE.isTouched = true;
+						if (!STATE._STATE.Equals ("gIDLE"))
+								return;
+						obj_touchObj = Instantiate (prf_touchObj, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
+				}
 //		if (onToast) {
 //			if (e.Selection == monsterIcons [0]) {
 //				if (!selectedMonster1)
@@ -262,11 +284,16 @@ public class finger_gesture : MonoBehaviour
 //	//FINGERUP
 		void OnFingerUp (FingerUpEvent e)
 		{
-				if (!STATE._STATE.Equals ("gIDLE"))
-						return;
+				if (STATE.isTouched) {
+		
+						STATE.isTouched = false;
+		
+						if (!STATE._STATE.Equals ("gIDLE"))
+								return;
 
-				if (obj_touchObj != null)
-						Destroy (obj_touchObj);
+						if (obj_touchObj != null)
+								Destroy (obj_touchObj);
+				}
 //		//				tempLevel = superLevel;
 //		//				GameObject[] temp = GameObject.FindGameObjectsWithTag ("light");
 //		//				for (int i=0; i<temp.Length; i++) {
