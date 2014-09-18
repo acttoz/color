@@ -26,6 +26,7 @@ public class MANAGER : MonoBehaviour
 		public void fail ()
 		{
 				Destroy (GameObject.FindGameObjectWithTag ("touch"));
+				reset ();
 				Instantiate (prf_fail, new Vector2 (0, 0), Quaternion.identity);
 		}
 

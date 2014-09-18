@@ -5,12 +5,20 @@ public class color_mat : MonoBehaviour
 {
 		private bool isPlus = false;
 		private bool isMinus = false;
+		public AudioClip sSuccess;
 //		private Transform whiteMAT_position;
 		private SpriteRenderer[] cpnt_whiteMAT_sprite;
+		private SpriteRenderer matSprite;
+
+		void Start ()
+		{
+				matSprite = GetComponent<SpriteRenderer> ();
+		}
 		// Use this for initialization
 		void reset ()
 		{
-				
+				CancelInvoke ("minusColor");
+				CancelInvoke ("plusColor");
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
 //		whiteMAT_position.localPosition = new Vector3 (0, 0, 0);
 				cpnt_whiteMAT_sprite = GetComponentsInChildren<SpriteRenderer> ();
@@ -33,16 +41,21 @@ public class color_mat : MonoBehaviour
 //				Debug.Log (GetComponent<SpriteRenderer> ().color.a + "");
 				if (!isPlus)
 						return;
-				if (GetComponent<SpriteRenderer> ().color.a < 1) {
-			
-						GetComponent<SpriteRenderer> ().color += new Color (0, 0, 0, RATE.colorPlusRate / 10000f);
+				if (matSprite.color.a < 1) {
+						cpnt_whiteMAT_sprite [1].color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+						matSprite.color += new Color (0, 0, 0, RATE.colorPlusRate / 10000f);
+						if (!audio.isPlaying)
+								audio.Play ();
 				} else {
+						if (audio.isPlaying)
+								audio.Stop ();
+						audio.PlayOneShot (sSuccess);
 						CancelInvoke ("minusColor");
 						CancelInvoke ("plusColor");
 						animation.Play ();
 						//success
 						STATE.mats++;
-			Debug.Log("mats"+STATE.mats+" "+STATE.matsAll);
+						Debug.Log ("mats" + STATE.mats + " " + STATE.matsAll);
 						if (STATE.mats == STATE.matsAll)
 								STATE._STATE = "gSUCCESS";
 			
@@ -51,8 +64,12 @@ public class color_mat : MonoBehaviour
 
 		void minusColor ()
 		{
-				if (isMinus && GetComponent<SpriteRenderer> ().color.a > 0)
-						GetComponent<SpriteRenderer> ().color -= new Color (0, 0, 0, RATE.colorMinusRate / 10000f);
+				if (isMinus && matSprite.color.a > 0) {
+						if (audio.isPlaying)
+								audio.Stop ();
+						cpnt_whiteMAT_sprite [1].color = new Color (1, 1, 1);
+						matSprite.color -= new Color (0, 0, 0, RATE.colorMinusRate / 10000f);
+				}
 		}
 
 		void onColor ()
