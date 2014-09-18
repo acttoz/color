@@ -3,16 +3,7 @@ using System.Collections;
 
 public class STATE : MonoBehaviour
 {
-//		public enum STATES
-//		{
-		//				WAIT
-		//				START
-		//				NEXT,
-		//				gIDLE,
-		//				gTOUCH,
-		//				gSUCCESS,
-		//				gFAIL,
-//		}
+ 
 		public static string _STATE = "READY";
 		public static bool isTouched = false;
 		public static int mats = 0;
@@ -62,19 +53,5 @@ public class STATE : MonoBehaviour
 				}
 		}
 
-//		void CHANGESTATE (_STATE state)
-//		{
-//				switch (state) {
-//				case _STATE.DEFAULT:
-//						break;
-//				case _STATE.WAIT:
-//						break;
-//				case _STATE.PLAYING:
-//						break;
-//				case _STATE.START:
-//						Debug.Log ("START");
-//						break;
-//				}
-//		
-//		}
+ 
 }
