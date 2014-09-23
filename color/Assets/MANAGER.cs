@@ -4,10 +4,11 @@ using System.Collections;
 public class MANAGER : MonoBehaviour
 {
 		public GameObject prf_ready, prf_success, prf_fail, prf_enemy;
+		public static GameObject _MANAGER;
 		// Use this for initialization
 		void Start ()
 		{
-	
+				_MANAGER = this.gameObject;
 		}
 	
 		// Update is called once per frame
@@ -41,7 +42,7 @@ public class MANAGER : MonoBehaviour
 				for (int i=0; i<oEnemies.Length; i++)
 						Destroy (oEnemies [i]);
 				for (int i=0; i<5; i++)
-						Instantiate (prf_enemy, new Vector2 (Random.Range (-3f, 3f), Random.Range (-4f, 4f)), Quaternion.identity);
+						Instantiate (prf_enemy, new Vector2 (Random.Range (-3f, 3f), Random.Range (-2f, 2f)), Quaternion.identity);
 				STATE.mats = 0;
 				STATE.matsAll = oMats.Length;
 				for (int i=0; i<oMats.Length; i++)

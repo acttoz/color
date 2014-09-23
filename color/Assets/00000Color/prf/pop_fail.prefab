@@ -139,6 +139,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400034}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: pop_fail
   m_TagString: Untagged
@@ -280,7 +281,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.37040079, y: -.79680115, z: -7.02177477}
+  m_LocalPosition: {x: .144318387, y: -.218426719, z: -7.02177477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -417,6 +418,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03116df8274ab04796ed010ccb6f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect_smoke: {fileID: 100000, guid: 498900f60a11abc46b083e746e0d240f, type: 2}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
