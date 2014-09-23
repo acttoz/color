@@ -68,6 +68,8 @@ public class finger_gesture : MonoBehaviour
 				case  "btn_play":
 						Application.LoadLevel (1);
 						break;
+			 
+
 		
 				}
 		
