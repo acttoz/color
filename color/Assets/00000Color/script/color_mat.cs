@@ -3,15 +3,15 @@ using System.Collections;
 
 public class color_mat : MonoBehaviour
 {
-		public GameObject effectSuccess;
 		private bool isPlus = false;
 		private bool isMinus = false;
-		public AudioClip sSuccess;
 //		private Transform whiteMAT_position;
 		private GameObject whiteMat;
 		private SpriteRenderer whiteMatSprite;
 //		private Animation[] whiteMAT_anim;
 		private SpriteRenderer matSprite;
+		public GameObject effectSuccess;
+		public AudioClip sSuccess;
 
 		void Start ()
 		{
@@ -51,7 +51,10 @@ public class color_mat : MonoBehaviour
 				if (matSprite.color.a < 1) {
 						if (!audio.isPlaying)
 								audio.Play ();
-						whiteMat.animation.Play ();
+						if (!whiteMat.animation.isPlaying)
+								whiteMat.animation.Play ();
+						if (!animation.isPlaying)
+								animation.Play ();
 //						cpnt_whiteMAT_sprite [1].color = new Color (1, 0, 0);
 						matSprite.color += new Color (0, 0, 0, RATE.colorPlusRate / 10000f);
 						
@@ -64,7 +67,6 @@ public class color_mat : MonoBehaviour
 						audio.PlayOneShot (sSuccess);
 						CancelInvoke ("minusColor");
 						CancelInvoke ("plusColor");
-						animation.Play ();
 						//success
 						STATE.mats++;
 						Debug.Log ("mats" + STATE.mats + " " + STATE.matsAll);
@@ -80,6 +82,8 @@ public class color_mat : MonoBehaviour
 						audio.Stop ();
 				if (whiteMat.animation.isPlaying)
 						whiteMat.animation.Stop ();
+				if (animation.isPlaying)
+						animation.Stop ();
 		}
 
 		void minusColor ()

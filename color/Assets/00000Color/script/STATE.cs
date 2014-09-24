@@ -8,6 +8,7 @@ public class STATE : MonoBehaviour
 		public static bool isTouched = false;
 		public static int mats = 0;
 		public static int matsAll = 0;
+		public static int stars = 3;
 		tk2dTextMesh stateText;
 		MANAGER manager;
 		// Use this for initialization
