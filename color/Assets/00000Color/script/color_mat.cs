@@ -9,23 +9,35 @@ public class color_mat : MonoBehaviour
 //		private GameObject whiteMat;
 //		private SpriteRenderer whiteMatSprite;
 //		private Animation[] whiteMAT_anim;
-		private SpriteRenderer matSprite;
+//		private SpriteRenderer matSprite;
 		private EasySprite_HSV saturation;
+//		private EasySprite_Pattern pattern;
 		public GameObject effectSuccess;
-		public GameObject effectColoring;
+		public GameObject oClone;
 		public AudioClip sSuccess;
 
 		void Start ()
 		{
 //				whiteMat = gameObject.transform.parent.gameObject;
 //				whiteMatSprite = whiteMat.GetComponent<SpriteRenderer> ();
-				matSprite = GetComponent<SpriteRenderer> ();
+//				matSprite = GetComponent<SpriteRenderer> ();
+			
 				saturation = GetComponent<EasySprite_HSV> ();
+//				pattern = GetComponent<EasySprite_Pattern> ();
 		}
 		// Use this for initialization
 		void reset ()
 		{
-		Instantiate (this.gameObject, this.transform.position, Quaternion.identity);
+				saturation.enabled = false;
+		
+				if (oClone != null)
+						Destroy (oClone);
+				oClone = Instantiate (this.gameObject, this.transform.position, Quaternion.identity) as GameObject;
+				oClone.GetComponent<EasySprite_Pattern> ().enabled = true;
+				oClone.GetComponent<SpriteRenderer> ().sortingOrder = GetComponent<SpriteRenderer> ().sortingOrder + 1;
+				oClone.GetComponent<PolygonCollider2D> ().enabled = false;
+				oClone.SetActive (false);
+				saturation.enabled = true;
 				CancelInvoke ("minusColor");
 				CancelInvoke ("plusColor");
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
@@ -53,12 +65,8 @@ public class color_mat : MonoBehaviour
 						return;
 				}
 				if (saturation._Saturation < 1) {
-						if (!audio.isPlaying)
-								audio.Play ();
-//						if (!whiteMat.animation.isPlaying)
-//								whiteMat.animation.Play ();
-						if (!animation.isPlaying)
-								animation.Play ();
+						starPlus ();
+
 //						cpnt_whiteMAT_sprite [1].color = new Color (1, 0, 0);
 						saturation._Saturation += RATE.colorPlusRate / 10000f;
 						saturation._ValueBrightness += RATE.colorPlusRate / 20000f;
@@ -87,14 +95,25 @@ public class color_mat : MonoBehaviour
 						audio.Stop ();
 //				if (whiteMat.animation.isPlaying)
 //						whiteMat.animation.Stop ();
-				if (animation.isPlaying)
-						animation.Stop ();
+//				if (animation.isPlaying)
+//						animation.Stop ();
+//				pattern.enabled = false;
+				oClone.SetActive (false);
+//				saturation.enabled = true;
 		}
 
-		void plusing ()
+		void starPlus ()
 		{
-				Instantiate (effectColoring, transform.position, Quaternion.identity);
-		
+				if (!audio.isPlaying)
+						audio.Play ();
+				//						if (!whiteMat.animation.isPlaying)
+				//								whiteMat.animation.Play ();
+//				if (!animation.isPlaying)
+//						animation.Play ();
+				oClone.SetActive (true);
+//				pattern.enabled = true;
+//				saturation.enabled = false;
+				
 		}
 
 		void minusColor ()
@@ -119,44 +138,5 @@ public class color_mat : MonoBehaviour
 				isMinus = true;
 				isPlus = false;
 		}
-//
-//		void OnTriggerStay (Collider myTrigger)
-//		{
-//		
-//				if (myTrigger.transform.tag == "touch") {
-//						isPlus = true;
-//						isMinus = false;
-//				
-//				} else if (myTrigger.transform.tag == "Respawn") {
-//						isMinus = true;
-//						isPlus = false;
-//				}
-//			
-//				//						if (myTrigger.transform.tag == "bomb_o" && color.Equals ("o")) {
-//				//				
-//				//								Instantiate (pop, transform.position, Quaternion.identity);
-//				//								Destroy (this.gameObject);
-//				//				
-//				//				
-//				//						}
-//				//						if (myTrigger.transform.tag == "bomb_p" && color.Equals ("p")) {
-//				//				
-//				//								Instantiate (pop, transform.position, Quaternion.identity);
-//				//								Destroy (this.gameObject);
-//				//				
-//				//				
-//				//					
-//		}
-
-//		void onTriggerExit (Collider myTrigger)
-//		{
-//				Debug.Log ("Outminus1");
-//				if (myTrigger.transform.tag == "touch") {
-//						Debug.Log ("Outminus2");
-//						isMinus = true;
-//						isPlus = false;
-//			
-//				}
-//		}
-
+ 
 }
