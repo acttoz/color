@@ -50,7 +50,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100006
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +79,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400006}
+  m_RootOrder: 2
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -90,6 +91,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400006}
+  m_RootOrder: 1
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -101,6 +103,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400006}
+  m_RootOrder: 0
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -108,13 +111,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: -.707106709, y: 1.00485924e-14, z: -6.18172393e-08, w: .707106948}
-  m_LocalPosition: {x: .975425303, y: -.052205354, z: 0}
+  m_LocalPosition: {x: -1.45712757, y: -.0690870285, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
   - {fileID: 400002}
   - {fileID: 400000}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -155,7 +159,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 3
     startSpeed:
-      scalar: 3.24151754
+      scalar: 4.84282684
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -272,7 +276,7 @@ ParticleSystem:
         rgba: 4278255615
       minMaxState: 2
     startSize:
-      scalar: .370000005
+      scalar: .552779973
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -841,7 +845,7 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 0
     x:
-      scalar: .527076006
+      scalar: .787451506
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -874,7 +878,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     y:
-      scalar: .527076006
+      scalar: .787451506
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -907,7 +911,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     z:
-      scalar: .527076006
+      scalar: .787451506
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -940,7 +944,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     magnitude:
-      scalar: .527076006
+      scalar: .787451506
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1349,7 +1353,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 3.35483861
+      scalar: 5.01212883
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1923,7 +1927,7 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 0
     x:
-      scalar: .263538003
+      scalar: .393725753
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1956,7 +1960,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     y:
-      scalar: .263538003
+      scalar: .393725753
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1989,7 +1993,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     z:
-      scalar: .263538003
+      scalar: .393725753
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2022,7 +2026,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     magnitude:
-      scalar: .263538003
+      scalar: .393725753
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2294,7 +2298,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 3
     startSpeed:
-      scalar: -3.24151754
+      scalar: -4.84282684
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2421,7 +2425,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 2
     startSize:
-      scalar: .263538003
+      scalar: .393725753
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2950,7 +2954,7 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 0
     x:
-      scalar: .527076006
+      scalar: .787451506
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2983,7 +2987,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     y:
-      scalar: .527076006
+      scalar: .787451506
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3016,7 +3020,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     z:
-      scalar: .527076006
+      scalar: .787451506
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3049,7 +3053,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     magnitude:
-      scalar: .527076006
+      scalar: .787451506
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3321,7 +3325,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 3
     startSpeed:
-      scalar: .774999976
+      scalar: 1.15784991
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3448,7 +3452,7 @@ ParticleSystem:
         rgba: 4278255615
       minMaxState: 0
     startSize:
-      scalar: .262499988
+      scalar: .392174959
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3977,7 +3981,7 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 0
     x:
-      scalar: .25
+      scalar: .37349999
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4010,7 +4014,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     y:
-      scalar: .25
+      scalar: .37349999
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4043,7 +4047,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     z:
-      scalar: .25
+      scalar: .37349999
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4076,7 +4080,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     magnitude:
-      scalar: .25
+      scalar: .37349999
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4326,9 +4330,8 @@ ParticleSystemRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_MaxParticleSize: 5
   m_CameraVelocityScale: 0
@@ -4359,9 +4362,8 @@ ParticleSystemRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_MaxParticleSize: .5
   m_CameraVelocityScale: 0
@@ -4392,9 +4394,8 @@ ParticleSystemRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_RenderMode: 1
   m_MaxParticleSize: 5
   m_CameraVelocityScale: 0
@@ -4425,9 +4426,8 @@ ParticleSystemRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_RenderMode: 1
   m_MaxParticleSize: 5
   m_CameraVelocityScale: 0

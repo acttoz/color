@@ -6,29 +6,33 @@ public class color_mat : MonoBehaviour
 		private bool isPlus = false;
 		private bool isMinus = false;
 //		private Transform whiteMAT_position;
-		private GameObject whiteMat;
-		private SpriteRenderer whiteMatSprite;
+//		private GameObject whiteMat;
+//		private SpriteRenderer whiteMatSprite;
 //		private Animation[] whiteMAT_anim;
 		private SpriteRenderer matSprite;
+		private EasySprite_HSV saturation;
 		public GameObject effectSuccess;
+		public GameObject effectColoring;
 		public AudioClip sSuccess;
 
 		void Start ()
 		{
-				whiteMat = gameObject.transform.parent.gameObject;
-				whiteMatSprite = whiteMat.GetComponent<SpriteRenderer> ();
+//				whiteMat = gameObject.transform.parent.gameObject;
+//				whiteMatSprite = whiteMat.GetComponent<SpriteRenderer> ();
 				matSprite = GetComponent<SpriteRenderer> ();
+				saturation = GetComponent<EasySprite_HSV> ();
 		}
 		// Use this for initialization
 		void reset ()
 		{
+		Instantiate (this.gameObject, this.transform.position, Quaternion.identity);
 				CancelInvoke ("minusColor");
 				CancelInvoke ("plusColor");
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
 //		whiteMAT_position.localPosition = new Vector3 (0, 0, 0);
 //				whiteMAT_anim = GetComponentsInChildren<Animation> ();
-				whiteMatSprite.sortingOrder = matSprite.sortingOrder - 1;
-				whiteMatSprite.sortingLayerName = matSprite.sortingLayerName;
+//				whiteMatSprite.sortingOrder = matSprite.sortingOrder - 1;
+//				whiteMatSprite.sortingLayerName = matSprite.sortingLayerName;
 //				GetComponent<SpriteRenderer> ().color *= new Color (1, 1, 1, 0);
 				InvokeRepeating ("plusColor", 0, 0.01f);
 				InvokeRepeating ("minusColor", 0, 0.01f);
@@ -48,15 +52,16 @@ public class color_mat : MonoBehaviour
 						endPlus ();
 						return;
 				}
-				if (matSprite.color.a < 1) {
+				if (saturation._Saturation < 1) {
 						if (!audio.isPlaying)
 								audio.Play ();
-						if (!whiteMat.animation.isPlaying)
-								whiteMat.animation.Play ();
+//						if (!whiteMat.animation.isPlaying)
+//								whiteMat.animation.Play ();
 						if (!animation.isPlaying)
 								animation.Play ();
 //						cpnt_whiteMAT_sprite [1].color = new Color (1, 0, 0);
-						matSprite.color += new Color (0, 0, 0, RATE.colorPlusRate / 10000f);
+						saturation._Saturation += RATE.colorPlusRate / 10000f;
+						saturation._ValueBrightness += RATE.colorPlusRate / 20000f;
 						
 				} else {
 
@@ -80,18 +85,26 @@ public class color_mat : MonoBehaviour
 		{
 				if (audio.isPlaying)
 						audio.Stop ();
-				if (whiteMat.animation.isPlaying)
-						whiteMat.animation.Stop ();
+//				if (whiteMat.animation.isPlaying)
+//						whiteMat.animation.Stop ();
 				if (animation.isPlaying)
 						animation.Stop ();
 		}
 
+		void plusing ()
+		{
+				Instantiate (effectColoring, transform.position, Quaternion.identity);
+		
+		}
+
 		void minusColor ()
 		{
-				if (isMinus && matSprite.color.a > 0) {
+				if (isMinus && saturation._Saturation > 0) {
 						endPlus ();
-						whiteMatSprite.color = new Color (1, 1, 1);
-						matSprite.color -= new Color (0, 0, 0, RATE.colorMinusRate / 10000f);
+						saturation._Saturation -= RATE.colorPlusRate / 10000f;
+						saturation._ValueBrightness -= RATE.colorPlusRate / 20000f;
+			
+//						whiteMatSprite.color = new Color (1, 1, 1);
 				}
 		}
 
@@ -145,4 +158,5 @@ public class color_mat : MonoBehaviour
 //			
 //				}
 //		}
+
 }

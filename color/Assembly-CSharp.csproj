@@ -52,6 +52,32 @@
      <Compile Include="Assets\00000Color\script\enemy.cs" />
      <Compile Include="Assets\00000Color\script\finger_gesture.cs" />
      <Compile Include="Assets\00000Color\script\touch_effect.cs" />
+     <Compile Include="Assets\EasySprites\Example\Sinus.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_8bit_bw.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_8bit_c64.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_8bit_gb.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Additive.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Circle_Fade.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Clip.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Color.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Crystal.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Fire.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Ghost.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Gradient.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Grass.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_GrayScale.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_HSV.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Hologram.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Hologram2.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Hologram3.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Jelly.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Light.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Outline.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Pattern.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Pixel.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_PlasmaRainbow.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_PlasmaShield.cs" />
+     <Compile Include="Assets\EasySprites\Scripts\EasySprite_Wave.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Core\Events\EventDispatcher.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Core\Events\EventDispatcherBase.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Data\BaseEvent.cs" />
@@ -139,6 +165,7 @@
      <Compile Include="Assets\MANAGER.cs" />
      <Compile Include="Assets\MANAGER_START.cs" />
      <Compile Include="Assets\StarCount.cs" />
+     <Compile Include="Assets\StarPop.cs" />
      <Compile Include="Assets\StarTimer.cs" />
      <Compile Include="Assets\Store.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
@@ -300,6 +327,7 @@
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-ca\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-vi\common_strings.xml" />
      <None Include="Assets\ToonEffect_V2\Documentation\03 - HTSpriteSheet.cs parameters.txt" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Jelly.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\drawable\common_signin_btn_text_dark.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-fr\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-en-rIN\auth_strings.xml" />
@@ -311,6 +339,7 @@
      <None Include="Assets\Plugins\iOS\README.txt" />
      <None Include="Assets\Plugins\Androids\res\values-lv\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-ar\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_HSV.shader" />
      <None Include="Assets\Plugins\Androids\res\values-es-rUS\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-ar\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-fi\common_strings.xml" />
@@ -323,12 +352,15 @@
      <None Include="Assets\Plugins\Androids\README.txt" />
      <None Include="Assets\Plugins\Androids\res\values-hu\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-sv\common_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_8bit_bw.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-fr-rCA\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-et-rEE\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-sk\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-hi\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-cs\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-it\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Ghost.shader" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Light.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-vi\common_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-ru\auth_strings.xml" />
@@ -338,7 +370,9 @@
      <None Include="Assets\Plugins\Androids\res\values\common_colors.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values\admob_ads_attrs.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-fa\common_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Hologram3.shader" />
      <None Include="Assets\Plugins\Androids\res\values-ca\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Hologram2.shader" />
      <None Include="Assets\Plugins\Androids\res\values-pl\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-de\common_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
@@ -350,6 +384,7 @@
      <None Include="Assets\Plugins\Androids\res\values-km-rKH\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-es\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-in\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_GrayScale.shader" />
      <None Include="Assets\Plugins\Androids\res\values-en-rGB\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-tr\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\drawable\common_signin_btn_icon_dark.xml" />
@@ -376,6 +411,7 @@
      <None Include="Assets\Plugins\Androids\res\values-da\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-lv\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-nl\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_OutLine.shader" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\LitPremulVertexColor.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-km-rKH\common_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\PremulVertexColor.shader" />
@@ -420,6 +456,9 @@
      <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-sw\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values\common_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_8bit_gb.shader" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Fire.shader" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Additive.shader" />
      <None Include="Assets\Plugins\Androids\res\values-ro\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-hy-rAM\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-in\common_strings.xml" />
@@ -437,6 +476,7 @@
      <None Include="Assets\Plugins\Androids\res\values-ro\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-sl\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-el\common_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Hologram.shader" />
      <None Include="Assets\Plugins\Androids\res\values-iw\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-en-rIN\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-af\auth_strings.xml" />
@@ -485,6 +525,7 @@
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-iw\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-fi\auth_strings.xml" />
      <None Include="Assets\FX Mega Pack\FX Mega Pack - Readme.txt" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Pattern.shader" />
      <None Include="Assets\Plugins\Androids\res\values-iw\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-es\wallet_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-mn-rMN\common_strings.xml" />
@@ -494,8 +535,10 @@
      <None Include="Assets\Plugins\Androids\res\values-zh-rTW\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-th\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-lt\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_PlasmaRainbow.shader" />
      <None Include="Assets\Plugins\Androids\res\values-bg\auth_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Wave.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\color\wallet_secondary_text_holo_dark.xml" />
      <None Include="Assets\Highscore\Read Me\Read Me.txt" />
      <None Include="Assets\Plugins\Androids\res\values-fa\common_strings.xml" />
@@ -509,6 +552,7 @@
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-es-rUS\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-ru\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-tr\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Crystal.shader" />
      <None Include="Assets\Plugins\Androids\res\values-hy-rAM\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-en-rGB\auth_strings.xml" />
@@ -524,6 +568,7 @@
      <None Include="Assets\Highscore\Read Me\Create database table.txt" />
      <None Include="Assets\Plugins\Androids\res\values-it\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-de\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Pixel.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-zu\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-bg\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-pt\auth_strings.xml" />
@@ -541,14 +586,17 @@
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-en-rIN\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-bg\auth_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_8bit_c64.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-cs\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-lt\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\drawable\common_signin_btn_icon_light.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-zh-rCN\common_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Clip.shader" />
      <None Include="Assets\Plugins\Androids\res\values\wallet_attrs.xml" />
      <None Include="Assets\Plugins\Androids\res\values-fi\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-es\common_strings.xml" />
      <None Include="Assets\tk2dUIExtensions\Fonts\AveriaSansLibre.fnt" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Gradient.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-lt\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-zh-rTW\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-ka-rGE\common_strings.xml" />
@@ -561,6 +609,7 @@
      <None Include="Assets\Plugins\Androids\res\values-in\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-tl\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-pt-rBR\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Circle_Fade.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values\wallet_attrs.xml" />
      <None Include="Assets\Plugins\Androids\res\values-ka-rGE\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values\wallet_strings.xml" />
@@ -581,6 +630,7 @@
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\color\wallet_primary_text_holo_light.xml" />
      <None Include="Assets\tk2dUIExtensions\ReadMe.txt" />
      <None Include="Assets\Plugins\Androids\res\values-ka-rGE\common_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Color.shader" />
      <None Include="Assets\Plugins\Androids\res\values-el\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-sv\auth_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-iw\common_strings.xml" />
@@ -589,12 +639,15 @@
      <None Include="Assets\Plugins\Androids\res\values-tl\auth_strings.xml" />
      <None Include="Assets\ToonEffect_V2\Documentation\04 - How to create a sequence.txt" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-th\common_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_Grass.shader" />
      <None Include="Assets\ToonEffect_V2\Documentation\02 - How to create an effect.txt" />
      <None Include="Assets\Plugins\Androids\res\values-af\common_strings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
+     <None Include="Assets\00000Color\script\outline.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-da\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\res\values-hr\common_strings.xml" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-fr\auth_strings.xml" />
+     <None Include="Assets\EasySprites\Shaders\EasySprite2D_PlasmaShield.shader" />
      <None Include="Assets\Plugins\Androids\libproject\google-play-services_lib\res\values-pt-rPT\auth_strings.xml" />
   </ItemGroup>
   <ItemGroup>

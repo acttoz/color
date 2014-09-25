@@ -357,6 +357,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 820563798}
   m_RootOrder: 6
+--- !u!1 &467147779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 467147782}
+  - 212: {fileID: 467147781}
+  m_Layer: 0
+  m_Name: Sprite - Fire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &467147781
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467147779}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 873662322}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 627d9c335588e2d47a93bc217f2b0300, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &467147782
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467147779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .977786422, y: -.36350584, z: 0}
+  m_LocalScale: {x: .225572586, y: .225572586, z: .225572586}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &549003721
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectColoring: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: a8760869ffd891e41a9f19543d2c530e, type: 3}
 --- !u!60 &696455955
 PolygonCollider2D:
@@ -926,6 +977,55 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!21 &873662322
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/Pattern_EasyS2D
+  m_Shader: {fileID: 10753, guid: 0000000000000000e000000000000000, type: 0}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MainTex2
+        second:
+          m_Texture: {fileID: 2800000, guid: 86900f45e466b7247a52df721f9c6c35, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: PixelSnap
+        second: 0
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _OffsetX
+        second: 0
+      data:
+        first:
+          name: _OffsetY
+        second: 0
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &874364693
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +1076,199 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: -21
   m_Sprite: {fileID: 21300000, guid: fc80c8768a54f4542ad9267b3ed6ea91, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &964132556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 964132557}
+  - 212: {fileID: 964132564}
+  - 114: {fileID: 964132563}
+  - 60: {fileID: 964132562}
+  - 111: {fileID: 964132561}
+  - 82: {fileID: 964132560}
+  - 114: {fileID: 964132559}
+  - 114: {fileID: 964132558}
+  m_Layer: 0
+  m_Name: "_0000_\uBCA1\uD130-\uACE0\uAE09-\uAC1C\uCCB4"
+  m_TagString: mat
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &964132557
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964132556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.081195, y: -.51088202, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1769331175}
+  m_RootOrder: 0
+--- !u!114 &964132558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964132556}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69bfc29eca5e5a42aeaea8e4c1d3f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Alpha: 1
+  __MainTex2: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
+  _OffsetX: 0
+  _OffsetY: 0
+  _AutoScrollX: 0
+  _AutoScrollSpeedX: 0
+  _AutoScrollY: 1
+  _AutoScrollSpeedY: -2.8900001
+--- !u!114 &964132559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964132556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe58a5d9c0e27e543bd4c3355427c1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Alpha: 1
+  _HueShift: 0
+  _Saturation: 1
+  _ValueBrightness: 1
+--- !u!82 &964132560
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964132556}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 4be854fa6b325ad44b73d4646ed18a2f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .529999971
+  m_Pitch: 1.02999997
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!111 &964132561
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964132556}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 05f5ec7fbb0f2a4498b1488016d0be35, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: bfe52d1821b7c654bb634cef7b7e7b8e, type: 2}
+  - {fileID: 7400000, guid: 05f5ec7fbb0f2a4498b1488016d0be35, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!60 &964132562
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964132556}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: -1, y: 1}
+      - {x: -1, y: -1}
+      - {x: 1, y: -1}
+      - {x: 1, y: 1}
+--- !u!114 &964132563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964132556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55bae3f495792e46a2feb889b2b8744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectColoring: {fileID: 0}
+  sSuccess: {fileID: 8300000, guid: a8760869ffd891e41a9f19543d2c530e, type: 3}
+--- !u!212 &964132564
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964132556}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 1785657989}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 2868319427
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 080798b4a0131e04685bcd378045593c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &988094358
 GameObject:
@@ -1287,6 +1580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectColoring: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: a8760869ffd891e41a9f19543d2c530e, type: 3}
 --- !u!60 &1233778176
 PolygonCollider2D:
@@ -1505,6 +1799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectColoring: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: a8760869ffd891e41a9f19543d2c530e, type: 3}
 --- !u!60 &1245752039
 PolygonCollider2D:
@@ -1701,6 +1996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectColoring: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: a8760869ffd891e41a9f19543d2c530e, type: 3}
 --- !u!60 &1375353673
 PolygonCollider2D:
@@ -1876,6 +2172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectColoring: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: a8760869ffd891e41a9f19543d2c530e, type: 3}
 --- !u!60 &1414115442
 PolygonCollider2D:
@@ -2510,12 +2807,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 1739555288}
   m_Layer: 0
-  m_Name: mats
+  m_Name: mats1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1739555288
 Transform:
   m_ObjectHideFlags: 0
@@ -2535,6 +2832,34 @@ Transform:
   - {fileID: 1702835778}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &1769331174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1769331175}
+  m_Layer: 0
+  m_Name: mats2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1769331175
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1769331174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 964132557}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &1775513709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +2911,44 @@ SpriteRenderer:
   m_SortingOrder: -68
   m_Sprite: {fileID: 21300000, guid: 839c5c8b5d6d0f248956629f863d0be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1785657989
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &1921388820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,6 +3015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectColoring: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: a8760869ffd891e41a9f19543d2c530e, type: 3}
 --- !u!60 &1921388824
 PolygonCollider2D:
@@ -3043,7 +3407,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.26999998
+  orthographic size: 3.13000011
   m_Depth: -.460000008
   m_CullingMask:
     serializedVersion: 2
