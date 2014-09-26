@@ -11,33 +11,30 @@ public class color_mat : MonoBehaviour
 //		private Animation[] whiteMAT_anim;
 //		private SpriteRenderer matSprite;
 		private EasySprite_HSV saturation;
-//		private EasySprite_Pattern pattern;
+		private EasySprite_Pattern pattern;
 		public GameObject effectSuccess;
 		public GameObject oClone;
 		public AudioClip sSuccess;
+		public EasySprite_HSV cHSV;
+		public Texture2D rainbow;
 
 		void Start ()
 		{
 //				whiteMat = gameObject.transform.parent.gameObject;
 //				whiteMatSprite = whiteMat.GetComponent<SpriteRenderer> ();
 //				matSprite = GetComponent<SpriteRenderer> ();
-			
-				saturation = GetComponent<EasySprite_HSV> ();
 //				pattern = GetComponent<EasySprite_Pattern> ();
+				if (gameObject.name.Equals ("mat"))
+						makeRainbow ();
 		}
 		// Use this for initialization
 		void reset ()
 		{
-				saturation.enabled = false;
+//				saturation.enabled = false;
 		
-				if (oClone != null)
-						Destroy (oClone);
-				oClone = Instantiate (this.gameObject, this.transform.position, Quaternion.identity) as GameObject;
-				oClone.GetComponent<EasySprite_Pattern> ().enabled = true;
-				oClone.GetComponent<SpriteRenderer> ().sortingOrder = GetComponent<SpriteRenderer> ().sortingOrder + 1;
-				oClone.GetComponent<PolygonCollider2D> ().enabled = false;
-				oClone.SetActive (false);
-				saturation.enabled = true;
+//				if (oClone != null)
+//						Destroy (oClone);
+			
 				CancelInvoke ("minusColor");
 				CancelInvoke ("plusColor");
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
@@ -49,6 +46,26 @@ public class color_mat : MonoBehaviour
 				InvokeRepeating ("plusColor", 0, 0.01f);
 				InvokeRepeating ("minusColor", 0, 0.01f);
 				offColor ();
+		}
+
+		void makeRainbow ()
+		{
+				oClone = Instantiate (this.gameObject, this.transform.position, Quaternion.identity) as GameObject;
+				oClone.tag = "Untagged";
+				pattern = oClone.AddComponent ("EasySprite_Pattern") as EasySprite_Pattern;
+				pattern.__MainTex2 = rainbow;
+				pattern._AutoScrollY = true;
+				pattern._AutoScrollSpeedY = -2.5f;
+				//				pattern.enabled = true;
+				oClone.GetComponent<SpriteRenderer> ().sortingOrder = GetComponent<SpriteRenderer> ().sortingOrder + 1;
+				oClone.GetComponent<PolygonCollider2D> ().enabled = false;
+				oClone.renderer.material.shader = Shader.Find ("EasySprite2D/Pattern_EasyS2D");
+		
+				oClone.SetActive (false);
+				//				saturation.enabled = true;
+				saturation = gameObject.AddComponent ("EasySprite_HSV") as EasySprite_HSV;
+				saturation._HueShift = 0;
+				renderer.material.shader = Shader.Find ("EasySprite2D/HSV_EasyS2D");
 		}
 	
 		// Update is called once per frame
@@ -68,7 +85,9 @@ public class color_mat : MonoBehaviour
 						starPlus ();
 
 //						cpnt_whiteMAT_sprite [1].color = new Color (1, 0, 0);
+						pattern._Alpha = 1 - saturation._Saturation;
 						saturation._Saturation += RATE.colorPlusRate / 10000f;
+						pattern._Alpha -= RATE.colorPlusRate / 10000f;
 						saturation._ValueBrightness += RATE.colorPlusRate / 20000f;
 						
 				} else {
@@ -80,6 +99,7 @@ public class color_mat : MonoBehaviour
 						audio.PlayOneShot (sSuccess);
 						CancelInvoke ("minusColor");
 						CancelInvoke ("plusColor");
+						animation.Play ();
 						//success
 						STATE.mats++;
 						Debug.Log ("mats" + STATE.mats + " " + STATE.matsAll);
@@ -111,6 +131,7 @@ public class color_mat : MonoBehaviour
 //				if (!animation.isPlaying)
 //						animation.Play ();
 				oClone.SetActive (true);
+
 //				pattern.enabled = true;
 //				saturation.enabled = false;
 				
