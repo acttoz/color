@@ -171,11 +171,11 @@ public class scr_manager : MonoBehaviour
 				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
 		
 				enemyNum++;
-				if (LEVEL == 5 && enemyNum > 2)
+				if (LEVEL == 5 && enemyNum > 7)
 						StopCoroutine ("enemyCreate");
-				if (LEVEL == 4 && enemyNum > 1)
+				if (LEVEL == 4 && enemyNum > 5)
 						StopCoroutine ("enemyCreate");
-				if (LEVEL == 3 && enemyNum > 1)
+				if (LEVEL == 3 && enemyNum > 5)
 						StopCoroutine ("enemyCreate");
 				if (LEVEL == 2 && enemyNum > 0)
 						StopCoroutine ("enemyCreate");
@@ -771,13 +771,13 @@ public class scr_manager : MonoBehaviour
 				if (superLevel > 0 && superLevel < 20) {
 						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100f;
 						if (spaceId < 2) {
-								Instantiate (backElement, new Vector3 (tempX, 8, 0), Quaternion.identity);
+								Instantiate (backElement, new Vector3 (tempX, (mUp+3), 0), Quaternion.identity);
 						} else {
 //				Debug.Log(superLevel);
 								if (superLevel > 5) {
 										Instantiate (lightSpeed, new Vector3 (tempX, 8, 0), Quaternion.identity);
 								} else {
-										Instantiate (stars [Random.Range (0, 6)], new Vector3 (tempX, 8, 0), Quaternion.identity);
+					Instantiate (stars [Random.Range (0, 6)], new Vector3 (tempX, (mUp+3), 0), Quaternion.identity);
 								}
 						}
 				} else if (superLevel == 20 && score > 30) {
@@ -1332,16 +1332,16 @@ public class scr_manager : MonoBehaviour
 				switch (num) {
 				case 0:
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [0]);
-						InvokeRepeating ("backCreate", 0, levelRate [0] * 8);
+						InvokeRepeating ("backCreate", 0, levelRate [0] * 4);
 						
 						break;
 				case 1:
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
-						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
+						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 4);
 						break;
 				case 2:
 //						enemyBomb ();
-						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
+						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 4);
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv.2";
 		
@@ -1355,7 +1355,7 @@ public class scr_manager : MonoBehaviour
 						break;
 				case 3:
 //						enemyBomb ();
-						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 8);
+						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 4);
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv.3";
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
@@ -1372,7 +1372,7 @@ public class scr_manager : MonoBehaviour
 
 				case 4:
 //						enemyBomb ();
-						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 12);
+						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 6);
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv.4";
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
@@ -1387,7 +1387,7 @@ public class scr_manager : MonoBehaviour
 
 				case 5:
 //						enemyBomb ();
-						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 20);
+						InvokeRepeating ("backCreate", 0, levelRate [num - 1] * 10);
 						
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv.5";
@@ -1401,7 +1401,7 @@ public class scr_manager : MonoBehaviour
 						}
 						break;
 				case 6:
-						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
+						InvokeRepeating ("backCreate", 0, levelRate [4] * 5);
 						scoreRate = scoreRates [num - 6];
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv.6";
@@ -1415,7 +1415,7 @@ public class scr_manager : MonoBehaviour
 						 
 						break;
 				case 7:
-						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
+						InvokeRepeating ("backCreate", 0, levelRate [4] * 5);
 						scoreRate = scoreRates [num - 6];
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv." + num;
@@ -1427,7 +1427,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 8:
-						InvokeRepeating ("backCreate", 0, levelRate [4] * 15);
+						InvokeRepeating ("backCreate", 0, levelRate [4] * 7);
 						scoreRate = scoreRates [num - 6];
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv." + num;
@@ -1439,7 +1439,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 9:
-						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
+						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv." + num;
@@ -1451,7 +1451,7 @@ public class scr_manager : MonoBehaviour
 			
 						break;
 				case 10:
-						InvokeRepeating ("backCreate", 0, levelRate [4] * 20);
+						InvokeRepeating ("backCreate", 0, levelRate [4] * 10);
 						scoreRate = scoreRates [num - 6];
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv." + num;
@@ -1465,7 +1465,7 @@ public class scr_manager : MonoBehaviour
 		 
 				case 20:
 						InvokeRepeating ("scoreCount", 0.1f, 0.1f);
-						InvokeRepeating ("backCreate", 0, levelRate [1] * 8);
+						InvokeRepeating ("backCreate", 0, levelRate [1] * 4);
 						break;
 				default:
 						break;
@@ -1809,10 +1809,10 @@ public class scr_manager : MonoBehaviour
 				scoreText = GameObject.Find ("score").GetComponent<tk2dTextMesh> ();
 				lvText = GameObject.Find ("lv").GetComponent<tk2dTextMesh> ();
 				//				superTimer = superTime;
-				mUp = 5.5f;
+				mUp = 12;
 				mDown = mUp * -1;
 				//				existBalloon = false;
-				mLeft = GameObject.Find ("lv").transform.position.x;
+				mLeft = -7;
 				mRight = mLeft * -1;
 				////				Debug.Log ("screenSize=" + mUp + " " + mDown + " " + mLeft + " " + mRight + " ");
 				currentBalloon = new Vector2 (20, 20);
@@ -1878,15 +1878,15 @@ public class scr_manager : MonoBehaviour
 	
 		void OnTap (TapGesture e)
 		{
-				
-				if (e.Selection == btn_menu) {
+		Debug.Log (e.Selection.name);
+				if (e.Selection.name == "btn_menu") {
 //						btn_menu.GetComponent<SpriteRenderer> ().color = Color.yellow;
 						Time.timeScale = 1.0f;
 						//						gameReset ();
 						bgm.SendMessage ("superMode", 1);
 						Application.LoadLevel (1);
 				}
-				if (e.Selection == btn_replay) {
+				if (e.Selection.name == "btn_replay") {
 //						btn_replay.GetComponent<SpriteRenderer> ().color = Color.yellow;
 						int adNum;
 						adNum = PlayerPrefs.GetInt ("ADTIME", 0);
@@ -1895,7 +1895,7 @@ public class scr_manager : MonoBehaviour
 						if (adNum > 7 && adNum % 2 == 0)
 								admob.SendMessage ("ShowInterstitial");
 						
-						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
+//						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
 						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
 						Destroy (GameObject.Find ("prf_pause(Clone)"));
 						Time.timeScale = 1.0f;
@@ -1905,7 +1905,7 @@ public class scr_manager : MonoBehaviour
 						gameReset ();
 //												Application.LoadLevel (0);
 				}
-				if (e.Selection == btnNext) {
+				if (e.Selection.name == "btn_next") {
 //						btnNext.GetComponent<SpriteRenderer> ().color = Color.yellow;
 						btnNext.GetComponent<SpriteRenderer> ().color = Color.white;
 						int adNum;
@@ -1936,7 +1936,7 @@ public class scr_manager : MonoBehaviour
 				
 
 		
-				if (e.Selection == btn_pause && onPlay) {
+				if (e.Selection.name == "btn_pause" && onPlay) {
 //						btn_pause.GetComponent<SpriteRenderer> ().color = Color.yellow;
 //						btn_pause.GetComponent<SpriteRenderer> ().color = Color.white;
 						existBalloon = false;

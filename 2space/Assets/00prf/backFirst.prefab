@@ -80,6 +80,7 @@ Transform:
   - {fileID: 400004}
   - {fileID: 400002}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -87,10 +88,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.3499999, z: .00927734375}
-  m_LocalScale: {x: 1, y: 1, z: .960000455}
+  m_LocalPosition: {x: 0, y: -6.6639595, z: .00927734375}
+  m_LocalScale: {x: 2.01184154, y: 2.01184106, z: 1.93136835}
   m_Children: []
   m_Father: {fileID: 400000}
+  m_RootOrder: 2
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -102,6 +104,7 @@ Transform:
   m_LocalScale: {x: .987424433, y: .963229716, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
+  m_RootOrder: 1
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -113,6 +116,7 @@ Transform:
   m_LocalScale: {x: 1.38648617, y: 1.35251331, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
+  m_RootOrder: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,9 +168,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: -20
   m_SortingLayerID: 0
+  m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: f8aa5d852ab122b4cb857dbc12596f83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200002
@@ -187,9 +190,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: -20
   m_SortingLayerID: 0
+  m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: 836304380b2a21540bae92601f51d9ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200004
@@ -210,9 +212,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: -20
   m_SortingLayerID: 0
+  m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: 836304380b2a21540bae92601f51d9ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

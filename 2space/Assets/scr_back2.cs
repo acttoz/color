@@ -17,7 +17,7 @@ public class scr_back2 : MonoBehaviour
 		} else {
 			transform.position -= new Vector3 (0, levels [scr_manager.superLevel - 5], 0);
 		}
-		if (transform.position.y < -10)
+		if (transform.position.y < -20)
 			Destroy (this.gameObject);
 	}
 	
