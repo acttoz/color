@@ -155,12 +155,13 @@ public class scr_manager : MonoBehaviour
 		{
 				while (true) {
 						InitEnemy ();
-			if(Value.isQuest&&Value.questNum==6){
-						questEnemy++;
-						if (questEnemy > Value.quests [Value.questNum] [Value.questLevel]) {
-								Value.questLevel++;
-								timeOut ();
-				}}
+						if (Value.isQuest && Value.questNum == 6) {
+								questEnemy++;
+								if (questEnemy > Value.quests [Value.questNum] [Value.questLevel]) {
+										Value.questLevel++;
+										timeOut ();
+								}
+						}
 						yield return new WaitForSeconds (enemyCreateRate / 1.2f);
 				}
 		}
@@ -199,8 +200,9 @@ public class scr_manager : MonoBehaviour
 		//RESET
 		void gameReset ()
 		{
-
+		balloon.transform.position=new Vector2(0,0);
 				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
+				LEVEL = 9;
 				if (LEVEL > 10) {
 						Value.isQuest = true;
 						Value.questNum = LEVEL - 10;
@@ -443,7 +445,9 @@ public class scr_manager : MonoBehaviour
 				balloon.SetActive (false);
 				disableTouch ();
 				audio.PlayOneShot (timesup);
-				Instantiate (oTimeUp, new Vector2 (0, 0), Quaternion.identity);
+				GameObject otimesup = Instantiate (oTimeUp, new Vector2 (0, 0), Quaternion.identity) as GameObject;
+				otimesup.transform.parent = GameObject.Find ("UI").transform;
+		otimesup.transform.localPosition=new Vector2(0,0);
 				resultText = GameObject.Find ("numscore").GetComponent<tk2dTextMesh> ();
 				gemText1 = GameObject.Find ("numgem").GetComponent<tk2dTextMesh> ();
 //				gemText2 = GameObject.Find ("numgem2").GetComponent<tk2dTextMesh> ();
@@ -771,13 +775,13 @@ public class scr_manager : MonoBehaviour
 				if (superLevel > 0 && superLevel < 20) {
 						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100f;
 						if (spaceId < 2) {
-								Instantiate (backElement, new Vector3 (tempX, (mUp+3), 0), Quaternion.identity);
+								Instantiate (backElement, new Vector3 (tempX, (mUp + 3), 0), Quaternion.identity);
 						} else {
 //				Debug.Log(superLevel);
 								if (superLevel > 5) {
 										Instantiate (lightSpeed, new Vector3 (tempX, 8, 0), Quaternion.identity);
 								} else {
-					Instantiate (stars [Random.Range (0, 6)], new Vector3 (tempX, (mUp+3), 0), Quaternion.identity);
+										Instantiate (stars [Random.Range (0, 6)], new Vector3 (tempX, (mUp + 3), 0), Quaternion.identity);
 								}
 						}
 				} else if (superLevel == 20 && score > 30) {
@@ -1878,7 +1882,7 @@ public class scr_manager : MonoBehaviour
 	
 		void OnTap (TapGesture e)
 		{
-		Debug.Log (e.Selection.name);
+				Debug.Log (e.Selection.name);
 				if (e.Selection.name == "btn_menu") {
 //						btn_menu.GetComponent<SpriteRenderer> ().color = Color.yellow;
 						Time.timeScale = 1.0f;

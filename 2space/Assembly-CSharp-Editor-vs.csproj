@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{C90AA673-63C8-FB2E-7FBE-B49B2A685959}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Extensions\GooglePlayCommon\Editor\SAPostProcessAndroid.cs" />
+     <Compile Include="Assets\Extensions\GooglePlayCommon\Editor\SocialPlatfromMenu.cs" />
+     <Compile Include="Assets\Extensions\GooglePlayCommon\Editor\SocialPlatfromSettingsEditor.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\DragRecognizerInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerDownDetectorInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerEventDetectorInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerGesturesEditorUtils.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerGesturesInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerHoverDetectorInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerMotionDetectorInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\FingerUpDetectorInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\GestureRecognizerInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\LongPressRecognizerInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\PinchRecognizerInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\PointCloudGestureEditor.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\PointCloudGestureTemplateInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\PointCloudRecognizerInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\SwipeRecognizerInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\TapRecognizerInspector.cs" />
+     <Compile Include="Assets\FingerGestures Samples\Assets\Editor\FingerGestures\TwistRecognizerInspector.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Camera\tk2dCameraAnchorEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Camera\tk2dCameraEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Fonts\tk2dFontBuilder.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Fonts\tk2dFontEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Fonts\tk2dTextMeshEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Runtime\tk2dResourceEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Runtime\tk2dSystemUtility.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Shared\tk2dNaturalComparer.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\Atlas\tk2dAtlasBuilder.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\Atlas\tk2dAtlasRect.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\Atlas\tk2dMaxRectsBinPack.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationAnimOp.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationClipEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationClipTimelineEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationEditorPopup.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteAnimationEditor\tk2dSpriteAnimationPreview.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorFontView.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorPopup.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorProxy.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorSettingsView.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorSpriteSheetView.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorSpriteView.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpriteCollectionEditor\tk2dSpriteCollectionEditorTextureView.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\SpritePicker\tk2dSpritePickerPopup.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\TextureProcessing\tk2dFloydSteinbergDithering.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\Triangulator\tk2dSpriteFromTextureEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\Triangulator\tk2dTriangulator.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dAnimatedSpriteEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dClippedSpriteEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSlicedSpriteEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteAnimatorEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionBuilder.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionBuilderDeprecated.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionBuilderUtil.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionPlatformBuilder.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteCollectionTextureWatcher.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dSpriteThumbnailCache.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dStaticSpriteBatcherEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Sprites\tk2dTiledSpriteEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dEditorSkin.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dEditorUtility.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dGrid.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dGuiUtility.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dIndex.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dJSSupport.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dMenu.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dPreferencesEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dScaleUtility.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dSceneHelper.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dSpriteGuiUtility.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dUndo.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2d\Editor\tk2dUpdateWindow.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\Importer\tk2dTileMapImporter.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapBrushBuilder.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapBrushRenderer.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapEditorData.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapEditorDataInspector.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapSceneGUI.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapScratchpad.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapToolbar.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dTileMap\Editor\tk2dTileMapUtility.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIBaseItemControlEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIControlsHelperEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUICustomEditorGUILayout.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIDragItemEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIDropDownMenuEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIHoverItemEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIMultiStateToggleButtonEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIProgressBarEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIScrollableAreaEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIScrollbarEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUISoundItemEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUITextInputEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIToggleButtonEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIToggleButtonGroupEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIToggleControlEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUITweenItemEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIUpDownButtonEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Controls\tk2dUIUpDownHoverButtonEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUIItemBoundsHelper.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUIItemEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUILayoutContainerEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUILayoutContainerSizerEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUILayoutEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUIMaskEditor.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUIMethodBindingHelper.cs" />
+     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUISpriteAnimatorEditor.cs" />
+     <Compile Include="Assets\ToonEffect_V2\Plugins\Editor\HTSpriteSequencerEditor.cs" />
+     <Compile Include="Assets\ToonEffect_V2\Plugins\Editor\HTSpriteSequencerWizard.cs" />
+     <Compile Include="Assets\ToonEffect_V2\Plugins\Editor\HTSpriteSheetEditor.cs" />
+     <Compile Include="Assets\tk2dUIExtensions\Editor\Controls\tk2dUIExtProgressBarEditor.cs" />
+     <Compile Include="Assets\tk2dUIExtensions\Editor\Controls\tk2dUIExtStatusBarEditor.cs" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ro\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ca\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-vi\common_strings.xml" />
+     <None Include="Assets\ToonEffect_V2\Documentation\03 - HTSpriteSheet.cs parameters.txt" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\drawable\common_signin_btn_text_dark.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-en-rIN\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sw\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-en-rGB\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lo-rLA\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-nb\common_strings.xml" />
+     <None Include="Assets\Plugins\iOS\README.txt" />
+     <None Include="Assets\Plugins\Android\res\values-lv\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ar\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-es-rUS\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ar\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fi\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rTW\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt-rBR\common_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitSolidVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-da\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-it\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sw\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\README.txt" />
+     <None Include="Assets\Plugins\Android\res\values-hu\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sv\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr-rCA\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-et-rEE\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sk\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hi\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-cs\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-it\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-vi\common_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ru\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-de\auth_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ms-rMY\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\common_colors.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\admob_ads_attrs.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fa\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ca\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-pl\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-de\common_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
+     <None Include="Assets\Plugins\Android\res\values-be\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-it\auth_strings.xml" />
+     <None Include="Assets\Plugins\FingerGestures\Readme.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\common_signin_btn_text_dark.xml" />
+     <None Include="Assets\Plugins\Android\res\values-nl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-km-rKH\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-es\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-in\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-en-rGB\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-tr\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\common_signin_btn_icon_dark.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-mn-rMN\auth_strings.xml" />
+     <None Include="Assets\tk2dUIExtensions\Fonts\CarterOne.fnt" />
+     <None Include="Assets\Plugins\Android\res\color\wallet_secondary_text_holo_dark.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ja\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-el\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ca\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\wallet_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-lo-rLA\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-af\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sw\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\ids.xml" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr-rCA\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-nb\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-en-rIN\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ja\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rCN\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hu\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-am\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-da\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lv\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-nl\auth_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitPremulVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-km-rKH\common_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\PremulVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\res\values-zu\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-et-rEE\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-be\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-km-rKH\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-es-rUS\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\wallet_colors.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pl\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sr\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ru\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-fr\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ru\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ka-rGE\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hy-rAM\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\color\common_signin_btn_text_light.xml" />
+     <None Include="Assets\Plugins\Android\res\values-es-rUS\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-vi\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-fr-rCA\common_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\goodies\PackedTextMesh.shader" />
+     <None Include="Assets\Plugins\Android\res\color\common_signin_btn_text_dark.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\common_signin_btn_icon_light.xml" />
+     <None Include="Assets\Plugins\Android\res\values-en-rGB\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\maps_attrs.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ms-rMY\auth_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\Blend2TexVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\res\values-pl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\wallet_styles.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-et-rEE\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-km-rKH\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-cs\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rTW\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-tl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fa\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\proguard.txt" />
+     <None Include="Assets\Plugins\Android\res\values-hi\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ko\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rHK\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hi\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\common_signin_btn_text_light.xml" />
+     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sw\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ro\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hy-rAM\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-in\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sk\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ms-rMY\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hr\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sv\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sv\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\common_colors.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ja\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sr\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sr\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\proguard.txt" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ar\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ro\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-el\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-iw\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-en-rIN\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-af\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lo-rLA\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rHK\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\common_signin_btn_text_dark.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ko\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-vi\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-th\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-af\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sk\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-el\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-nl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ar\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-mn-rMN\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt-rBR\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt-rPT\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sr\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-fr\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rCN\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-hy-rAM\auth_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\res\values-lv\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rHK\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-hu\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ko\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fi\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-mn-rMN\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sl\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-be\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-bg\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-in\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-tr\common_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitCutoutVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-am\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-sl\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\common_strings.xml" />
+     <None Include="Assets\ToonEffect_V2\Documentation\01 - Package description.txt" />
+     <None Include="Assets\Plugins\Android\res\values-pt-rPT\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-es\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-pt-rPT\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\analytics.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zu\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-cs\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-iw\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-fi\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-iw\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-es\wallet_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-mn-rMN\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-uk\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-de\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ko\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rTW\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-th\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-lt\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-bg\auth_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\wallet_secondary_text_holo_dark.xml" />
+     <None Include="Assets\Highscore\Read Me\Read Me.txt" />
+     <None Include="Assets\Plugins\Android\res\values-fa\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-am\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-tl\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-fa\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\color\wallet_primary_text_holo_light.xml" />
+     <None Include="Assets\Plugins\Android\res\values-et-rEE\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sk\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rCN\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-es-rUS\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ru\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-tr\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-hy-rAM\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-en-rGB\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\wallet_colors.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-nl\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\maps_attrs.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rHK\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-lo-rLA\auth_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\CutoutVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-fr-rCA\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-hr\auth_strings.xml" />
+     <None Include="Assets\Highscore\Read Me\Create database table.txt" />
+     <None Include="Assets\Plugins\Android\res\values-it\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-de\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zu\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-bg\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-pt\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ro\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\version.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hu\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-uk\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-th\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-nb\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-es\wallet_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\version.xml" />
+     <None Include="Assets\Plugins\Android\res\values-pt\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\drawable\common_signin_btn_text_light.xml" />
+     <None Include="Assets\Plugins\Android\res\values-da\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-en-rIN\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-bg\auth_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-cs\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lt\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\drawable\common_signin_btn_icon_light.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rCN\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\wallet_attrs.xml" />
+     <None Include="Assets\Plugins\Android\res\values-fi\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-es\common_strings.xml" />
+     <None Include="Assets\tk2dUIExtensions\Fonts\AveriaSansLibre.fnt" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lt\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-zh-rTW\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ka-rGE\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-be\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-pt-rBR\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-hi\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-am\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ca\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-nb\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-in\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-tl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-pt-rBR\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\wallet_attrs.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ka-rGE\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values\wallet_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\README.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\common_signin_btn_text_light.xml" />
+     <None Include="Assets\Plugins\Android\res\values-uk\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-uk\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sl\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\drawable\common_signin_btn_icon_dark.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-hr\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\admob_ads_attrs.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zu\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-tr\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-lt\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-es\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-lv\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ja\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\color\wallet_primary_text_holo_light.xml" />
+     <None Include="Assets\tk2dUIExtensions\ReadMe.txt" />
+     <None Include="Assets\Plugins\Android\res\values-ka-rGE\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-el\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-sv\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-iw\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-ms-rMY\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values\wallet_styles.xml" />
+     <None Include="Assets\Plugins\Android\res\values-tl\auth_strings.xml" />
+     <None Include="Assets\ToonEffect_V2\Documentation\04 - How to create a sequence.txt" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-th\common_strings.xml" />
+     <None Include="Assets\ToonEffect_V2\Documentation\02 - How to create an effect.txt" />
+     <None Include="Assets\Plugins\Android\res\values-af\common_strings.xml" />
+     <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-da\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-hr\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-fr\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\libproject\google-play-services_lib\res\values-pt-rPT\auth_strings.xml" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/workspace/2space/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>C:/workspace/2space/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="tk2dExternal">
+ <HintPath>C:/workspace/2space/Assets/TK2DROOT/tk2d/Editor/tk2dExternal.dll</HintPath>
+ </Reference>
+ <Reference Include="tk2dSkin">
+ <HintPath>C:/workspace/2space/Assets/TK2DROOT/tk2d/Editor/tk2dSkin.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{E3A5C16E-D58A-46DC-504A-5DDEB15A07C3}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{944B0C8E-AB6C-809A-BD50-F343B8F1DF44}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
