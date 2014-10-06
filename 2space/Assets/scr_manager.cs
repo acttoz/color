@@ -200,7 +200,7 @@ public class scr_manager : MonoBehaviour
 		//RESET
 		void gameReset ()
 		{
-		balloon.transform.position=new Vector2(0,0);
+				balloon.transform.position = new Vector2 (0, 0);
 				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
 				LEVEL = 9;
 				if (LEVEL > 10) {
@@ -447,7 +447,7 @@ public class scr_manager : MonoBehaviour
 				audio.PlayOneShot (timesup);
 				GameObject otimesup = Instantiate (oTimeUp, new Vector2 (0, 0), Quaternion.identity) as GameObject;
 				otimesup.transform.parent = GameObject.Find ("UI").transform;
-		otimesup.transform.localPosition=new Vector2(0,0);
+				otimesup.transform.localPosition = new Vector2 (0, 0);
 				resultText = GameObject.Find ("numscore").GetComponent<tk2dTextMesh> ();
 				gemText1 = GameObject.Find ("numgem").GetComponent<tk2dTextMesh> ();
 //				gemText2 = GameObject.Find ("numgem2").GetComponent<tk2dTextMesh> ();
@@ -1321,9 +1321,14 @@ public class scr_manager : MonoBehaviour
 						isUndead = true;
 						undeadTime = 3;
 						lv.SendMessage ("levelUp");
-						Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity);
+						GameObject objUI = GameObject.Find ("UI");
+						GameObject obj1 = Instantiate (effectSuper1, new Vector2 (0, 0), Quaternion.identity) as GameObject;
+						obj1.transform.parent = objUI.transform;
+						obj1.transform.localPosition = new Vector2 (0, 0);
 						audio.PlayOneShot (levelUp);
-						Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity);
+						GameObject obj2 = Instantiate (super_back2, new Vector2 (0, 0), Quaternion.identity) as GameObject;
+						obj2.transform.parent = objUI.transform;
+						obj2.transform.localPosition = new Vector2 (0, 0);
 						if (num > 5) {
 								enemyBomb ();
 								turnLightSpeed (120);

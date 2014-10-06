@@ -454,7 +454,7 @@ MonoBehaviour:
   target: {fileID: 1608268332}
   distance: 10
   height: 0
-  heightDamping: 2
+  heightDamping: 3
   rotationDamping: 3
   leftX: -4
   downY: -6.4000001
@@ -659,7 +659,6 @@ GameObject:
   - 114: {fileID: 934688267}
   - 33: {fileID: 934688271}
   - 23: {fileID: 934688270}
-  - 114: {fileID: 934688269}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
@@ -680,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oEnemyNum: {fileID: 0}
   testItem: 0
-  enemyCreateRate: 10
+  enemyCreateRate: 5
   itemCreateRate: 4
   zoneCreateRate: 8
   scoreRate: 1
@@ -1029,50 +1028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474f0888c6600584a89bbaef88150f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &934688269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 934688258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994457055a9434b4aa7b65ad37262d67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _font: {fileID: 0}
-  _text: 
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  _color2: {r: 1, g: 1, b: 1, a: 1}
-  _useGradient: 0
-  _textureGradient: 0
-  _anchor: 6
-  _scale: {x: 1, y: 1, z: 1}
-  _kerning: 0
-  _maxChars: 16
-  _inlineStyling: 0
-  _formatting: 0
-  _wordWrapWidth: 0
-  spacing: 0
-  lineSpacing: 0
-  data:
-    version: 1
-    font: {fileID: 11400000, guid: 5c87ca630cd63a14c9ae3d84f13f40b3, type: 2}
-    text: dd
-    color: {r: 1, g: 1, b: 1, a: 1}
-    color2: {r: 1, g: 1, b: 1, a: 1}
-    useGradient: 0
-    textureGradient: 0
-    anchor: 4
-    renderLayer: 0
-    scale: {x: 1, y: 1, z: 1}
-    kerning: 0
-    maxChars: 16
-    inlineStyling: 0
-    formatting: 0
-    wordWrapWidth: 0
-    spacing: 0
-    lineSpacing: 0
 --- !u!23 &934688270
 Renderer:
   m_ObjectHideFlags: 0
@@ -1149,7 +1104,7 @@ MonoBehaviour:
   target: {fileID: 1608268332}
   distance: 10
   height: 0
-  heightDamping: 2
+  heightDamping: 3
   rotationDamping: 3
   leftX: -4
   downY: -6.4000001
@@ -2248,7 +2203,7 @@ Transform:
   m_GameObject: {fileID: 1608268327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.68391657}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1172556361}
   - {fileID: 1780493801}
@@ -2872,8 +2827,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1911685239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .600000024, y: .600000024, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -.495310783}
+  m_LocalScale: {x: .423514754, y: .423514754, z: .705857873}
   m_Children:
   - {fileID: 1608268332}
   m_Father: {fileID: 0}

@@ -21,7 +21,7 @@ public class src_enemy : MonoBehaviour
 		void Awake ()
 		{
 				if (!isBoss) {
-						speed = Random.Range (5, 12) / 10f;
+						speed = Random.Range (5, 12) / 20f;
 //						switch (Random.Range (1, 3)) {
 //						case 1:
 //								color = "b";
