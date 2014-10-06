@@ -13,10 +13,12 @@ public class color_mat : MonoBehaviour
 	private EasySprite_HSV saturation;
 //		private EasySprite_Pattern pattern;
 	public GameObject effectSuccess;
+	public GameObject effectSuccessBack;
 	public GameObject oClone;
 	public AudioClip sSuccess;
-	public EasySprite_HSV cHSV;
+//	public EasySprite_HSV cHSV;
 	public Texture2D rainbow;
+	public int bossID;
 
 	void Start ()
 	{
@@ -81,14 +83,14 @@ public class color_mat : MonoBehaviour
 			endPlus ();
 			return;
 		}
-		if (saturation._Saturation < 5) {
+		if (saturation._Saturation < 3) {
 			starPlus ();
 
 //						cpnt_whiteMAT_sprite [1].color = new Color (1, 0, 0);
 //						pattern._Alpha = 1 - saturation._Saturation;
-			saturation._Saturation += RATE.colorPlusRate / 2000f;
+			saturation._Saturation += RATE.colorPlusRate / 3000f;
 //						pattern._Alpha -= RATE.colorPlusRate / 10000f;
-			saturation._ValueBrightness += RATE.colorPlusRate / 4000f;
+			saturation._ValueBrightness += RATE.colorPlusRate / 6000f;
 						
 		} else {
 
@@ -98,6 +100,7 @@ public class color_mat : MonoBehaviour
 			//						pattern._Alpha -= RATE.colorPlusRate / 10000f;
 			saturation._ValueBrightness = 1;
 			Instantiate (effectSuccess, transform.position, Quaternion.identity);
+			Instantiate (effectSuccessBack,new Vector2(0,0), Quaternion.identity);
 			endPlus ();
 			audio.PlayOneShot (sSuccess);
 			CancelInvoke ("minusColor");
@@ -110,6 +113,10 @@ public class color_mat : MonoBehaviour
 				STATE._STATE = "gSUCCESS";
 			
 		}
+	}
+	void successAnim(){
+			animation.Play ("success");
+		
 	}
 
 	void endPlus ()
@@ -144,8 +151,8 @@ public class color_mat : MonoBehaviour
 	{
 		if (isMinus && saturation._Saturation > 0) {
 			endPlus ();
-			saturation._Saturation -= RATE.colorPlusRate / 2000f;
-			saturation._ValueBrightness -= RATE.colorPlusRate / 4000f;
+			saturation._Saturation -= RATE.colorPlusRate / 3000f;
+			saturation._ValueBrightness -= RATE.colorPlusRate / 6000f;
 			
 //						whiteMatSprite.color = new Color (1, 1, 1);
 		}
