@@ -10,6 +10,7 @@ public class STATE : MonoBehaviour
 		public static int matsAll = 0;//number of all mats
 		public static int stars = 3;
 		private GameObject oMats;//parent of mats
+		private GameObject oCamera;
 		private color_mat[] matArray;
 		private int[] bossIds;
 		tk2dTextMesh stateText;
@@ -17,6 +18,7 @@ public class STATE : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+				oCamera = GameObject.FindWithTag ("MainCamera");
 				STATE._STATE = "READY";
 				oMats = GameObject.Find ("mats");
 				matArray = oMats.GetComponentsInChildren<color_mat> ();
@@ -31,7 +33,7 @@ public class STATE : MonoBehaviour
 						bossIds [r] = tmp;
 				}
 				foreach (int i in bossIds)
-			matArray[i].bossID=bossIds[i];
+						matArray [i].bossID = bossIds [i];
 //				Debug.Log ("" + matArray);
 				stateText = GetComponentInChildren<tk2dTextMesh> ();
 				manager = GetComponent<MANAGER> ();
@@ -49,7 +51,8 @@ public class STATE : MonoBehaviour
 						_STATE = "WAIT";
 						break;
 				case  "WAIT":
-
+						oCamera.transform.position = new Vector3 (0, 0, -50);
+			
 						break;
 				case  "START":
 						manager.reset ();
@@ -58,6 +61,7 @@ public class STATE : MonoBehaviour
 				case  "NEXT":
 						break;
 				case  "gIDLE":
+						oCamera.transform.position = new Vector3 (-1.5f, 1.5f, -50);
 						break;
 				case  "gTOUCH":
 						break;
