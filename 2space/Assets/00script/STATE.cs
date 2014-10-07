@@ -15,7 +15,7 @@ public class STATE : MonoBehaviour
 		void Start ()
 		{
 				STATE._STATE = "READY";
-				stateText = GetComponentInChildren<tk2dTextMesh> ();
+				stateText = GameObject.Find("state").GetComponent<tk2dTextMesh> ();
 				manager = GetComponent<scr_manager> ();
 				
 		}
