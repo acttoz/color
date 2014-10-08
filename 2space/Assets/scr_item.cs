@@ -14,7 +14,7 @@ public class scr_item : MonoBehaviour
 		{
 		
 				rigidbody.velocity = new Vector3 (0, -speed, 0);
-
+				Destroy (this.gameObject, 6f);
 		}
 		// Update is called once per frame
 		void Update ()

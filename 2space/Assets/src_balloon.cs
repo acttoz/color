@@ -135,7 +135,7 @@ public class src_balloon : MonoBehaviour
 		{
 				
 				isMonster = false;
-				if (scr_manager.superLevel < 5)
+				if (Play.superLevel < 5)
 						shine.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 				
 		}
@@ -243,7 +243,7 @@ public class src_balloon : MonoBehaviour
 
 		void resetMonster ()
 		{
-				switch (scr_manager.superLevel) {
+				switch (Play.superLevel) {
 				case 4:
 						GetComponent<SpriteRenderer> ().sprite = rainbow;
 						break;
@@ -251,19 +251,19 @@ public class src_balloon : MonoBehaviour
 						GetComponent<SpriteRenderer> ().sprite = hot;
 						break;
 				case 6:
-						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						GetComponent<SpriteRenderer> ().sprite = ufos [Play.superLevel - 6];
 						break;
 				case 7:
-						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						GetComponent<SpriteRenderer> ().sprite = ufos [Play.superLevel - 6];
 						break;
 				case 8:
-						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						GetComponent<SpriteRenderer> ().sprite = ufos [Play.superLevel - 6];
 						break;
 				case 9:
-						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						GetComponent<SpriteRenderer> ().sprite = ufos [Play.superLevel - 6];
 						break;
 				case 10:
-						GetComponent<SpriteRenderer> ().sprite = ufos [scr_manager.superLevel - 6];
+						GetComponent<SpriteRenderer> ().sprite = ufos [Play.superLevel - 6];
 						break;
 				default:
 						GetComponent<SpriteRenderer> ().sprite = balloon;

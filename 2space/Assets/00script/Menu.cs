@@ -1,25 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class scr_toStart : MonoBehaviour
+public class Menu : MonoBehaviour
 {
-		
+		public static Menu instance;
 		// Use this for initialization
 		void Start ()
 		{
-	
+				instance = this;
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
 	
-		}
-
-		void OnTap ()
-		{
-				
-				GameObject.Find ("GAMEMANAGER").SendMessage ("gameStart");
-				Destroy (this.gameObject);
 		}
 }

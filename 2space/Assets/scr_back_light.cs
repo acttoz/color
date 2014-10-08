@@ -39,10 +39,10 @@ public class scr_back_light : MonoBehaviour
 		void Update ()
 		{
 				if (gogo) {
-						transform.position -= new Vector3 (0, levels [scr_manager.superLevel], 0);
+						transform.position -= new Vector3 (0, levels [Play.superLevel], 0);
 						if (transform.position.y < -8 || transform.position.y > 8)
 								Destroy (this.gameObject);
-						if (scr_manager.superLevel == 20)
+						if (Play.superLevel == 20)
 								GetComponent<SpriteRenderer> ().sprite = temp;
 				}
 		}
@@ -51,7 +51,7 @@ public class scr_back_light : MonoBehaviour
 	}
 //		void changeSpeed ()
 //		{
-//				level = levels [scr_manager.superLevel];
+//				level = levels [Play.superLevel];
 //		}
 
 

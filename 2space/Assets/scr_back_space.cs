@@ -36,14 +36,14 @@ public class scr_back_space : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				transform.Rotate (-levels [scr_manager.superLevel], 0, 0);
+				transform.Rotate (-levels [Play.superLevel], 0, 0);
 //				if (transform.position.y < -8 || transform.position.y > 8)
 //						Destroy (this.gameObject);
 		}
 
 //		void changeSpeed ()
 //		{
-//				level = levels [scr_manager.superLevel];
+//				level = levels [Play.superLevel];
 //		}
 
 

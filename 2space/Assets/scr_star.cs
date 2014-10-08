@@ -42,10 +42,10 @@ public class scr_star : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				transform.position -= new Vector3 (0, levels [scr_manager.superLevel], 0);
+				transform.position -= new Vector3 (0, levels [Play.superLevel], 0);
 				if (transform.position.y < -10 || transform.position.y > 10)
 						Destroy (this.gameObject);
-//				if (scr_manager.superLevel > 5) {
+//				if (Play.superLevel > 5) {
 //						for (int i=0; i<sr.Length; i++) {
 //								sr [i].sprite = temp;
 //						}
@@ -59,7 +59,7 @@ public class scr_star : MonoBehaviour
 
 //		void changeSpeed ()
 //		{
-//				level = levels [scr_manager.superLevel];
+//				level = levels [Play.superLevel];
 //		}
 
 

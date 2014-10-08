@@ -12,10 +12,10 @@ public class scr_back2 : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (scr_manager.superLevel < 6 || scr_manager.superLevel == 20) {
-			transform.position -= new Vector3 (0, levels [scr_manager.superLevel], 0);
+		if (Play.superLevel < 6 || Play.superLevel == 20) {
+			transform.position -= new Vector3 (0, levels [Play.superLevel], 0);
 		} else {
-			transform.position -= new Vector3 (0, levels [scr_manager.superLevel - 5], 0);
+			transform.position -= new Vector3 (0, levels [Play.superLevel - 5], 0);
 		}
 		if (transform.position.y < -20)
 			Destroy (this.gameObject);
@@ -23,7 +23,7 @@ public class scr_back2 : MonoBehaviour
 	
 	//		void changeSpeed ()
 	//		{
-	//				level = levels [scr_manager.superLevel];
+	//				level = levels [Play.superLevel];
 	//		}
 	
 	

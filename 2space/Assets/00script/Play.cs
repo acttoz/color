@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class scr_manager : MonoBehaviour
+public class Play : MonoBehaviour
 {
-		bool onToast = false;
+
 		int questEnemy = 0;
 		int questTarget = 0;
 		public GameObject oEnemyNum;
@@ -18,7 +18,6 @@ public class scr_manager : MonoBehaviour
 		public int levelLimit;
 		public float[] enemyRates;
 		public int[] scoreRates;
-		int LEVEL;
 		int numGem;
 		int enemyNum = 0;
 //		int failTime = 3;
@@ -28,7 +27,6 @@ public class scr_manager : MonoBehaviour
 		public Sprite[] sItems;
 		public float[] levelRate = new float[4];
 		float stopRate = 0;
-		int selectedMonsterNum = 0;
 		int item1, item2, item3, item4;
 		public GameObject itemShield;
 		bool isShield = false;
@@ -36,9 +34,6 @@ public class scr_manager : MonoBehaviour
 		public Color colSky;
 		public GameObject[] monsterIcons;
 		public Sprite[] ufos;
-		bool selectedMonster1 = false;
-		bool selectedMonster2 = false;
-		bool selectedMonster3 = false;
 		public GameObject[] spaces = new GameObject[13];
 		public GameObject[] stars = new GameObject[6];
 		public float[] spacesHeight = new float[12];
@@ -53,9 +48,10 @@ public class scr_manager : MonoBehaviour
 //		bool isUndead = false;
 		private Vector2 zonePosition;
 //		public GameObject[] oAirs = new GameObject[3];
-		public GameObject oZone, oEnergy, oStopSound, btnRestart, btnNext, balloon, itemBlue, itemOrange, itemPurple, monsterB, monsterO, monsterP, monsterEffect, super_back2;
+		public GameObject oZone, oEnergy, oStopSound, btnRestart, btnNext, balloon, itemBlue, itemOrange, itemPurple, monsterEffect, super_back2;
 		public Sprite bStar, oStar, pStar, eStar, superBalloon4, superBalloon5;
 		public GameObject itemEffectO, itemEffectB, effectPoint2, effectStop, itemEffectP, itemEffectBack, btn_pause, prf_pause, btn_resume;
+		GameObject existItem, createItem, btn_menu, btn_replay;
 //		int timer;
 		Vector2 previousBalloon, currentBalloon;
 //		int gameTime = 3;
@@ -63,13 +59,11 @@ public class scr_manager : MonoBehaviour
 		bool onPlay;
 		int min, sec, countScore = 0, countGem1 = 0;
 		Sprite tempStar;
-		SpriteRenderer star1, star2, star3, balloonSprite;
-		GameObject existItem, createItem, btn_menu, btn_replay;
+		SpriteRenderer balloonSprite;
 		public GameObject backStart, bgm, gauge, lv, oTimeUp;
 		public GameObject effectSuper1, effectSuper2, effectPop, effectPoint, effectPointBack;
 		public Vector3 backSize;
 		public Vector3 balloonSize;
-		string colHave1 = "n", colCreate = "n";//b;o,p
 		int numHave = 0;
 		GameObject[] enemy, realEnemy;
 		int superTimer;
@@ -80,166 +74,22 @@ public class scr_manager : MonoBehaviour
 		float score = 0;
 		int gem = 0;
 		public static int superLevel = 0;
-		float mUp, mDown, mLeft, mRight;
-
-
-
-
-
-
-		/// <summary>
-		/// 
-		/// 
-		/// 
-		/// 
-		///       QUEST
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// </summary>
-
-
-		// Use this for initialization
-		bool existBalloon = false;
-//		bool timeStarted = false;
-//		bool isScoreUp = false;
-		/// <summary>
-		/////////////////////////////////////// Games the start.//////////////////////////////////////////////
-		/// </summary>
-		/// /
-		/// /
-		/// /
-		/// /
-		/// /
-		/// /
-		///                      START
-		/// 
-		///                     RESET
-		/// 
-		/// 
-		/// 
+ 
 		void gameStart ()
 		{
 				audio.PlayOneShot (go);
-//		GameObject.Find ("ADS").SendMessage ("showAd");
 				enableTouch ();
 				//				timeStarted = true;
 				onPlay = true;
-				InvokeRepeating ("itemCreate", 1f, itemCreateRate);
-				
-				StartCoroutine ("enemyCreate");
-//				InvokeRepeating ("enemyCreate", 1f, enemyCreateRate);
 		
 				Instantiate (backFirst, new Vector2 (0, 0), Quaternion.identity);
 		}
-
-		void seconds ()
-		{
-				if (!onPlay)
-						return;
-				if (questEnemy > 0) {
-						questEnemy--;
-						oEnemyNum.GetComponent<tk2dTextMesh> ().text = questEnemy + "";
-				} else {
-						CancelInvoke ("seconds");
-						questEnemy = 20;
-						Value.questLevel++;
-						timeOut ();
-				}
-		
-		}
-		//ENEMY
-		IEnumerator enemyCreate ()
-		{
-				while (true) {
-						InitEnemy ();
-						if (Value.isQuest && Value.questNum == 6) {
-								questEnemy++;
-								if (questEnemy > Value.quests [Value.questNum] [Value.questLevel]) {
-										Value.questLevel++;
-										timeOut ();
-								}
-						}
-						yield return new WaitForSeconds (enemyCreateRate / 1.2f);
-				}
-		}
-
-		void InitEnemy ()
-		{
-				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
-				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
-		
-				enemyNum++;
-				if (LEVEL == 5 && enemyNum > 7)
-						StopCoroutine ("enemyCreate");
-				if (LEVEL == 4 && enemyNum > 5)
-						StopCoroutine ("enemyCreate");
-				if (LEVEL == 3 && enemyNum > 5)
-						StopCoroutine ("enemyCreate");
-				if (LEVEL == 2 && enemyNum > 0)
-						StopCoroutine ("enemyCreate");
-				if (LEVEL == 1 && enemyNum > 0)
-						StopCoroutine ("enemyCreate");
-		
-		
-				Instantiate (prf_enemy, new Vector2 (tempX, tempY), Quaternion.identity);
-		}
-
-		void InitBoss ()
-		{
-				float tempX = (Random.Range (-4 * 100, 4 * 100)) / 100;
-				float tempY = (Random.Range (-4 * 100, 4 * 100)) / 100;
-		
-		 
-		
-		
-				Instantiate (warn_boss, new Vector2 (tempX, tempY), Quaternion.identity);
-		}
+ 
 		//RESET
 		void gameReset ()
 		{
 				balloon.transform.position = new Vector2 (0, 0);
-				LEVEL = PlayerPrefs.GetInt ("LEVEL", 1);
-				LEVEL = 9;
-				if (LEVEL > 10) {
-						Value.isQuest = true;
-						Value.questNum = LEVEL - 10;
-						Value.questLevel = PlayerPrefs.GetInt ("QUEST" + Value.questNum, 0);
-						if (LEVEL != 12)
-								questTarget = Value.quests [Value.questNum - 1] [Value.questLevel];
-				} else {
-						Value.isQuest = false;
-				}
-				if (Value.isQuest) {
-						tk2dTextMesh questEnemyText = GameObject.Find ("questEnemy").GetComponent<tk2dTextMesh> ();
-						switch (Value.questNum) {
-						case 1:
-								questEnemyText.text = "Destroy";
-								break;
-						case 2:
-								questEnemyText.text = "";
-								break;
-						case 3:
-								questEnemyText.text = "Destroy";
-								break;
-						case 4:
-								questEnemyText.text = "Seconds";
-								break;
-						case 5:
-								questEnemyText.text = "Seconds";
-								break;
-						case 6:
-								questEnemyText.text = "Collect";
-								break;
-			
-
-			
-
-						}
-				}
-				questEnemy = 0;
+				
 		
 				isCounting = false;
 				int q = 0;
@@ -263,7 +113,7 @@ public class scr_manager : MonoBehaviour
 						Destroy (tempBoss [i]);
 				}
 
-				if (LEVEL != 6 && LEVEL != 7)
+				if (Level.instance.getLevel () != 6 && Level.instance.getLevel () != 7)
 						oBoss = Instantiate (prf_boss, new Vector2 (0, 0), Quaternion.identity) as GameObject;
 
 				mainCamera.camera.clearFlags = CameraClearFlags.SolidColor;
@@ -282,7 +132,8 @@ public class scr_manager : MonoBehaviour
 //				if (oBoss != null)
 //						oBoss.transform.localScale = new Vector2 (1.2f, 1.2f);
 				//				oBoss.GetComponent<SphereCollider> ().radius = 0.34f;
-				resetStar (0);
+//		MGR_Item item = new MGR_Item ();
+				Item.instance.resetStar (0);
 				isMonster = false;
 				spaceId = 0;
 				mainCamera.camera.backgroundColor = colSky;
@@ -316,24 +167,24 @@ public class scr_manager : MonoBehaviour
 				for (int i=0; i<enemy.Length; i++) {
 						Destroy (enemy [i]);
 				}
-				if (LEVEL == 11) {
+				if (Level.instance.getLevel () == 11) {
 						for (int i=0; i<(questTarget+2); i++)
-								InitEnemy ();
+								Enemy.instance.InitEnemy ();
 
 				}
-				if (LEVEL == 14) {
+				if (Level.instance.getLevel () == 14) {
 						for (int i=0; i<questTarget; i++)
-								InitEnemy ();
+								Enemy.instance.InitEnemy ();
 			
 				}
-				if (LEVEL == 15) {
+				if (Level.instance.getLevel () == 15) {
 						for (int i=0; i<questTarget; i++)
-								InitBoss ();
+								Enemy.instance.InitBoss ();
 				}
-				if (LEVEL == 16) {
+				if (Level.instance.getLevel () == 16) {
 						questEnemy = 0;
 						for (int i=0; i<10; i++) {
-								InitEnemy ();
+								Enemy.instance.InitEnemy ();
 								questEnemy++;
 								oEnemyNum.GetComponent<tk2dTextMesh> ().text = questEnemy + "";
 						}
@@ -360,16 +211,17 @@ public class scr_manager : MonoBehaviour
 				scoreText.text = ": " + score;
 				//				timeStarted = false;
 				disableTouch ();
-				//				resetStar ();
+				//				MANAGER.Item. resetStar ();
 				//				timer = gameTime;
 				///level reset
 				lvText.text = "Lv.1";
 				superTimer = superTime;
 		
 				bgm.SendMessage ("superMode", 1);
-				existBalloon = false;
+				MANAGER.STATE = "IDLE";
 				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
-//				if (LEVEL > 1)
+//		gameStart ();
+//				if (Level.instance.getLevel()> 1)
 						
 				// back & enemy reset
 				//				balloon.transform.localScale = new Vector3 (0, 0, 0);
@@ -393,36 +245,10 @@ public class scr_manager : MonoBehaviour
 //				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
 //		}
 
-		void monsterChoice ()
-		{
-				if (LEVEL > 8) {
-						onToast = true;
-						enableTouch ();
-						Instantiate (monsterIcons [3], new Vector2 (0, 0), Quaternion.identity);
-						monsterIcons [0] = GameObject.Find ("btn1");
-						monsterIcons [1] = GameObject.Find ("btn2");
-						monsterIcons [2] = GameObject.Find ("btn3");
-						selectedMonsterNum = 0;
-						selectedMonster1 = false;
-						selectedMonster2 = false;
-						selectedMonster3 = false;
-						for (int i=0; i<3; i++) {
-								monsterIcons [i].GetComponent<SpriteRenderer> ().color = new Color (0.5f, 0.5f, 0.5f, 1);
-						}
-				} else {
-						if (PlayerPrefs.GetInt ("TUTO1", 0) == 0) {
-								PlayerPrefs.SetInt ("TUTO1", 1);
-								Instantiate (oTutorial1, new Vector2 (0, 0), Quaternion.identity);
-						} else {
-								gameStart ();
-						}
-
-				}
-		}
+		
 	
 		IEnumerator pauseGame ()
 		{
-				onPlay = false;
 				Instantiate (prf_pause, new Vector2 (0, 0), Quaternion.identity);
 		
 				btn_menu = GameObject.Find ("btn_menu");
@@ -432,7 +258,6 @@ public class scr_manager : MonoBehaviour
 				yield return new WaitForSeconds (0.5f);
 				enableTouch ();
 				Time.timeScale = 0;
-				existBalloon = false;
 		}
 	
 		IEnumerator timesUp ()
@@ -440,7 +265,6 @@ public class scr_manager : MonoBehaviour
 
 				onPlay = false;
 				superLevel = 0;
-				existBalloon = false;
 				balloon.transform.localScale = new Vector3 (0, 0, 0);
 				balloon.SetActive (false);
 				disableTouch ();
@@ -652,141 +476,25 @@ public class scr_manager : MonoBehaviour
 		/// 
 		/// 
 		/// 
-		void itemCreate ()
-		{
-				if (oBoss == null)
-						oBoss = GameObject.FindGameObjectWithTag ("boss");
 		
-				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
-				if (existItem != null)
-						Destroy (existItem);
-				int tempCol = Random.Range (1, 5);
-				//test
-//				tempCol = 3;
-
-				
-				switch (tempCol) {
-				case 1:
-						if (selectedMonster1) {
-								colCreate = "b";
-								createItem = itemBlue;
-								tempStar = bStar;
-						} else {
-								createItem = itemOrange;
-								colCreate = "o";
-								tempStar = oStar;
-						}
-						break;
-
-				case 2:
-						if (selectedMonster2) {
-									 
-								createItem = itemOrange;
-								colCreate = "o";
-								tempStar = oStar;
-						} else {
-								createItem = itemBlue;
-								colCreate = "b";
-								tempStar = bStar;
-						}
-						break;
-
-				case 3:
-						if (selectedMonster3) {
-
-								if (oBoss != null) {
-										createItem = itemPurple;
-										colCreate = "p";
-										tempStar = pStar;
-								} else {
-										if (selectedMonster1) {
-												createItem = itemBlue;
-												colCreate = "b";
-												tempStar = bStar;
-										} else {
-												createItem = itemOrange;
-												colCreate = "o";
-												tempStar = oStar;
-										}
-								}
-						} else {
-								createItem = itemBlue;
-								colCreate = "b";
-								tempStar = bStar;
-						}
-						break;
-				case 4:
-						if (selectedMonster3) {
-								if (oBoss != null) {
-										createItem = itemPurple;
-										colCreate = "p";
-										tempStar = pStar;
-								} else {
-										if (selectedMonster1) {
-												createItem = itemBlue;
-												colCreate = "b";
-												tempStar = bStar;
-										} else {
-												createItem = itemOrange;
-												colCreate = "o";
-												tempStar = oStar;
-										}
-								}
-						} else {
-								createItem = itemOrange;
-								colCreate = "o";
-								tempStar = oStar;
-						}
-						break;
-				 
-		
-				}
-				
-				switch (LEVEL) {
-				case 6:
-						createItem = itemOrange;
-						colCreate = "o";
-						tempStar = oStar;
-						break;
-				case 7:
-						colCreate = "b";
-						createItem = itemBlue;
-						tempStar = bStar;
-						break;
-				case 8:
-						createItem = itemPurple;
-						colCreate = "p";
-						tempStar = pStar;
-						break;
-				default:
-						break;
-				}
-//				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
-				if (LEVEL > 5) {
-						if (!isUndead && !isMonster) {
-								existItem = Instantiate (createItem, new Vector3 (tempX, 7, 0), Quaternion.identity) as GameObject;
-
-						}
-				}
-		}
 		//BACK
 		void backCreate ()
 		{
 				if (superLevel > 0 && superLevel < 20) {
-						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100f;
+						float tempX = (Random.Range (MANAGER.mLeft * 100, MANAGER.mRight * 100)) / 100f;
 						if (spaceId < 2) {
-								Instantiate (backElement, new Vector3 (tempX, (mUp + 3), 0), Quaternion.identity);
+								Instantiate (backElement, new Vector3 (tempX, (MANAGER.mUp + 3), 0), Quaternion.identity);
 						} else {
 //				Debug.Log(superLevel);
 								if (superLevel > 5) {
 										Instantiate (lightSpeed, new Vector3 (tempX, 8, 0), Quaternion.identity);
 								} else {
-										Instantiate (stars [Random.Range (0, 6)], new Vector3 (tempX, (mUp + 3), 0), Quaternion.identity);
+										Instantiate (stars [Random.Range (0, 6)], new Vector3 (tempX, (MANAGER.mUp + 3), 0), Quaternion.identity);
 								}
 						}
 				} else if (superLevel == 20 && score > 30) {
 					
-						float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
+						float tempX = (Random.Range (MANAGER.mLeft * 100, MANAGER.mRight * 100)) / 100;
 						if (spaceId < 2) {
 								Instantiate (backElement, new Vector3 (tempX, -8, 0), Quaternion.identity);
 						} else {
@@ -800,9 +508,9 @@ public class scr_manager : MonoBehaviour
 				GameObject tempZone = GameObject.FindGameObjectWithTag ("zone");
 				if (tempZone != null)
 						tempZone.animation.Play ("anim_zoneOut");
-				float tempX = (Random.Range (mLeft * 100, mRight * 100)) / 100;
-				float tempY = (Random.Range (mDown * 100, mUp * 100)) / 100;
-				if (LEVEL > 1) {
+				float tempX = (Random.Range (MANAGER.mLeft * 100, MANAGER.mRight * 100)) / 100;
+				float tempY = (Random.Range (MANAGER.mDown * 100, MANAGER.mUp * 100)) / 100;
+				if (Level.instance.getLevel () > 1) {
 						zonePosition = new Vector2 (tempX, tempY);
 
 						GameObject obj = Instantiate (oZone, new Vector3 (tempX, tempY, 0), Quaternion.identity) as GameObject;
@@ -819,107 +527,8 @@ public class scr_manager : MonoBehaviour
 						Destroy (tempZone);
 		}
 
-		void getItem ()
-		{
-				switch (numHave) {
-				case 0:
-						colHave1 = colCreate;
-						if (colCreate.Equals ("b"))
-								resetStar (1);
-						if (colCreate.Equals ("o")) 
-								resetStar (2);
-						if (colCreate.Equals ("p"))
-								resetStar (3);
-						star1.sprite = tempStar;
-						numHave++;
-						if (testItem)
-								StartCoroutine ("monster", colCreate);
-						audio.PlayOneShot (itemSound);
-//						StartCoroutine ("monster", colCreate);
-					
-			//						StartCoroutine ("undead", 6f);
-//						StartCoroutine ("monster", colHave1);
-//						StopCoroutine ("undead",4f);
-						break;
-			
-				case 1:
-						if (colHave1 == colCreate) {
-								numHave++;
-//								StartCoroutine ("getAnim", GameObject.Find ("star2"));
-//						
-//								balloon.SendMessage ("biggerBomb", true);		
-								audio.PlayOneShot (itemSound);
-								star2.sprite = tempStar;
-						} else {
-								
-//								balloon.SendMessage ("biggerBomb", false);		
-//								Destroy (GameObject.FindGameObjectWithTag ("monster"));
-//								balloon.SendMessage ("resetMonster");
-
-								resetStar (0);
-								getItem ();
-						}
-						break;
 		
-				case 2:
-						audio.PlayOneShot (itemSound);
-						if (colHave1 == colCreate) {
-								//monster
-								isMonster = true;
-								questEnemy = 0;
-								if (Value.isQuest)
-										oEnemyNum.GetComponent<tk2dTextMesh> ().text = 0 + "";
-				
-								star3.sprite = tempStar;
-								isUndead = true;
-								balloon.SendMessage ("undead", true);
-								undeadTime = 3.5f;
-//								if (colCreate.Equals ("b"))
-//										Instantiate (monsterB, new Vector2 (0, 0), Quaternion.identity);
-//								if (colCreate.Equals ("o"))
-//										Instantiate (monsterO, new Vector2 (0, 0), Quaternion.identity);
-//								if (colCreate.Equals ("p"))
-//										Instantiate (monsterP, new Vector2 (0, 0), Quaternion.identity);
-								//moster
-								StartCoroutine ("monster", colCreate);
-								
-
-						} else {
-								isMonster = false;
-								resetStar (0);
-								getItem ();
-						}
-						break;
-				}
-				 
-
-		}
-
-		void itemUse (string col)
-		{
-				if (col.Equals ("b")) {
-//						timer += 10;
-						audio.PlayOneShot (levelUp);
-						Instantiate (itemEffectBack, itemEffectB.transform.position, Quaternion.identity);
-				}
-				if (col.Equals ("o")) {
-						audio.PlayOneShot (levelUp);
-//						StopCoroutine ("scoreUp");
-//						StartCoroutine ("scoreUp");
-						Instantiate (itemEffectBack, itemEffectO.transform.position, Quaternion.identity);
-				}
-				if (col.Equals ("p")) {
-						audio.PlayOneShot (levelUp);
-						Instantiate (itemEffectBack, itemEffectP.transform.position, Quaternion.identity);
-						if (gauge.transform.localScale.y > 1.3) {
-								float temp = 1.74f - gauge.transform.localScale.y;
-								gauge.transform.localScale += new Vector3 (0, temp, 0);
-						} else {
-								gauge.transform.localScale += new Vector3 (0, 0.5f, 0);
-						}
-						
-				}
-		}
+		
 
 //		void monsterOrange ()
 //		{
@@ -948,51 +557,7 @@ public class scr_manager : MonoBehaviour
 
 		}
 
-		IEnumerator monster (string mColHave)
-		{
-				//Stop item Create
-				//stop enemyTrigger
-				//enemy alpha
-//				Debug.Log (mColHave);
-
-				oStars.animation.Play ();
-
-				yield return new WaitForSeconds (0.5f);
-				StartCoroutine ("getAnim", GameObject.Find ("star1"));
-				StartCoroutine ("getAnim", GameObject.Find ("star2"));
-				StartCoroutine ("getAnim", GameObject.Find ("star3"));
-				 
-			
 		
-		
-				if (mColHave.Equals ("b"))
-						Instantiate (monsterB, new Vector2 (0, 0), Quaternion.identity);
-				if (mColHave.Equals ("o"))
-						Instantiate (monsterO, new Vector2 (0, 0), Quaternion.identity);
-				if (mColHave.Equals ("p"))
-						Instantiate (monsterP, new Vector2 (0, 0), Quaternion.identity);
-//				Instantiate (monsterEffect, new Vector2 (0, 0), Quaternion.identity);
-				yield return new WaitForSeconds (1f);
-				resetStar (0);
-//				resetStar ();
-		}
-
-		void resetStar (int num)
-		{
-				 
-				star1.sprite = sItems [num];
-				star2.sprite = sItems [num];
-				star3.sprite = sItems [num];
-						 
-				numHave = 0;
-		}
-
-		IEnumerator getAnim (GameObject star)
-		{
-				star.GetComponent<Animator> ().SetInteger ("item", 1);
-				yield return new WaitForSeconds (0.5f);
-				star.GetComponent<Animator> ().SetInteger ("item", 0);
-		}
 
 
 
@@ -1054,7 +619,6 @@ public class scr_manager : MonoBehaviour
 						
 				balloon.SendMessage ("create", superLevel);
 //				Debug.Log ("create Level" + superLevel);
-				existBalloon = true;
 				audio.PlayOneShot (create);
 		
 		}
@@ -1080,7 +644,7 @@ public class scr_manager : MonoBehaviour
 //						balloon.SendMessage ("cancel", 1);
 						balloon.SendMessage ("startCoundDown");
 						onCount = true;
-						isCounting = true;
+//						isCounting = true;
 						onPlay = false;
 
 			//						if (audio.isPlaying)
@@ -1116,7 +680,6 @@ public class scr_manager : MonoBehaviour
 						ep.transform.position = balloon.transform.position;
 //			ep.renderer.sortingLayerName = "ui";
 					 
-						existBalloon = false;
 						balloon.transform.localScale = new Vector3 (0, 0, 0);
 						balloon.SetActive (false);
 						StartCoroutine ("timesUp");
@@ -1125,14 +688,12 @@ public class scr_manager : MonoBehaviour
 		
 		
 				yield return new WaitForSeconds (0.2f);
-				if (existBalloon) {
-						existBalloon = false;
 //						balloon.transform.localScale = new Vector3 (0, 0, 0);
 			
 						
 			
 			
-						//						if (num == 1)
+				//						if (num == 1)
 //						balloon.SetActive (false);
 //						if (timer == 0)
 //								StartCoroutine ("timesUp");
@@ -1140,17 +701,17 @@ public class scr_manager : MonoBehaviour
 						
 					
 						 
-						//---------------
+				//---------------
 			
 			
 						
-				}
+		}
 		
 				
 		
-				//				Debug.Log ("removeTimer");
+		//				Debug.Log ("removeTimer");
 		
-		}
+
 
 		void timeOut ()
 		{
@@ -1200,7 +761,7 @@ public class scr_manager : MonoBehaviour
 		/// STOP
 		void balloonStop ()
 		{
-				if (existBalloon && superLevel < levelLimit) {
+				if (MANAGER.STATE.Equals("PLAY") && superLevel < levelLimit) {
 						
 						previousBalloon = zonePosition;
 						currentBalloon = balloon.transform.position;
@@ -1223,7 +784,7 @@ public class scr_manager : MonoBehaviour
 								oStopSound.audio.Stop ();
 								stopRate = 0;
 						}
-				} else if (existBalloon && superLevel == levelLimit) {
+		} else if (MANAGER.STATE.Equals("PLAY") && superLevel == levelLimit) {
 //						balloon.SendMessage ("stopBalloon", false);
 						oEnergy.animation.Stop ();
 						oStopSound.audio.Stop ();
@@ -1298,7 +859,7 @@ public class scr_manager : MonoBehaviour
 						superTimer = 3;
 						superLevel = 1;
 //						InvokeRepeating ("normalModeCount", 0.1f, 1f);
-				} else if (LEVEL != 6 && LEVEL != 7 && LEVEL != 8) {
+				} else if (Level.instance.getLevel () != 6 && Level.instance.getLevel () != 7 && Level.instance.getLevel () != 8) {
 						zoneReset ();
 						if (num == 1)
 								InvokeRepeating ("zoneCreate", 0.1f, zoneCreateRate);
@@ -1355,8 +916,8 @@ public class scr_manager : MonoBehaviour
 						lvText.text = "Lv.2";
 		
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
-			//LEVEL2
-						if (LEVEL == 2 && onPlay) {
+			//Level.instance.getLevel2
+						if (Level.instance.getLevel () == 2 && onPlay) {
 								PlayerPrefs.SetInt ("2", 1);
 								timeOut ();
 						}
@@ -1368,8 +929,8 @@ public class scr_manager : MonoBehaviour
 						balloon.SendMessage ("undead", true);
 						lvText.text = "Lv.3";
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
-			//LEVEL3
-						if (LEVEL == 3 && onPlay) {
+			//Level.instance.getLevel3
+						if (Level.instance.getLevel () == 3 && onPlay) {
 				 
 								PlayerPrefs.SetInt ("3", 1);
 								timeOut ();
@@ -1387,8 +948,8 @@ public class scr_manager : MonoBehaviour
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						if (!isMonster)
 								balloonSprite.sprite = superBalloon4;
-			//LEVEL4
-						if (LEVEL == 4 && onPlay) {
+			//Level.instance.getLevel4
+						if (Level.instance.getLevel () == 4 && onPlay) {
 								PlayerPrefs.SetInt ("4", 1);
 								timeOut ();
 						}
@@ -1403,8 +964,8 @@ public class scr_manager : MonoBehaviour
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [num - 1]);
 						if (!isMonster)
 								balloonSprite.sprite = superBalloon5;
-			//LEVEL5
-						if (LEVEL == 5 && onPlay) {
+			//Level.instance.getLevel5
+						if (Level.instance.getLevel () == 5 && onPlay) {
 								PlayerPrefs.SetInt ("5", 1);
 								timeOut ();
 						}
@@ -1420,7 +981,7 @@ public class scr_manager : MonoBehaviour
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [0];
-			//LEVEL5
+			//Level.instance.getLevel5
 						 
 						break;
 				case 7:
@@ -1432,7 +993,7 @@ public class scr_manager : MonoBehaviour
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [num - 6];
-			//LEVEL5
+			//Level.instance.getLevel5
 			
 						break;
 				case 8:
@@ -1444,7 +1005,7 @@ public class scr_manager : MonoBehaviour
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [num - 6];
-			//LEVEL5
+			//Level.instance.getLevel5
 			
 						break;
 				case 9:
@@ -1456,7 +1017,7 @@ public class scr_manager : MonoBehaviour
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [num - 6];
-			//LEVEL5
+			//Level.instance.getLevel5
 			
 						break;
 				case 10:
@@ -1468,7 +1029,7 @@ public class scr_manager : MonoBehaviour
 						InvokeRepeating ("scoreCount", 0.1f, levelRate [4]);
 						if (!isMonster)
 								balloonSprite.sprite = ufos [num - 6];
-			//LEVEL5
+			//Level.instance.getLevel5
 			
 						break;
 		 
@@ -1523,12 +1084,12 @@ public class scr_manager : MonoBehaviour
 						superLevel = 0;
 //						StartCoroutine ("timesUp");
 				}
-				//LEVEL1
-				if (LEVEL == 1 && onPlay && score > 20) {
+				//Level.instance.getLevel1
+				if (Level.instance.getLevel () == 1 && onPlay && score > 20) {
 						PlayerPrefs.SetInt ("1", 1);
 						timeOut ();
 				}
-				if (LEVEL == 9 && onPlay && score > 1000) {
+				if (Level.instance.getLevel () == 9 && onPlay && score > 1000) {
 						PlayerPrefs.SetInt ("9", 1);
 						timeOut ();
 					
@@ -1686,7 +1247,7 @@ public class scr_manager : MonoBehaviour
 						score += 50;
 						break;
 				case 4:
-						resetStar (0);
+						Item.instance.resetStar (0);
 						break;
 				case 5:
 						isUndead = true;
@@ -1696,24 +1257,24 @@ public class scr_manager : MonoBehaviour
 						isMonster = false;
 						break;
 				case 6:
-			//LEVEL6,7
+			//Level.instance.getLevel6,7
 						killNum++;
-						if (LEVEL == 6 && onPlay && killNum > 4) {
+						if (Level.instance.getLevel () == 6 && onPlay && killNum > 4) {
 								onPlay = false;
 								PlayerPrefs.SetInt ("6", 1);
 								StartCoroutine ("timesUp");
 						}
-						if (LEVEL == 7 && onPlay && killNum > 4) {
+						if (Level.instance.getLevel () == 7 && onPlay && killNum > 4) {
 								onPlay = false;
 								PlayerPrefs.SetInt ("7", 1);
 								StartCoroutine ("timesUp");
 						}
 						break;
 				case 7:
-			//LEVEL8
+			//Level.instance.getLevel8
 						if (oBoss != null) 
 								Destroy (oBoss);
-						if (LEVEL == 8 && onPlay) {
+						if (Level.instance.getLevel () == 8 && onPlay) {
 								onPlay = false;
 								PlayerPrefs.SetInt ("8", 1);
 								StartCoroutine ("timesUp");
@@ -1736,7 +1297,7 @@ public class scr_manager : MonoBehaviour
 			//point 100
 						score += 100;
 						scoreText.text = " :  " + score;
-						if (LEVEL == 11) {
+						if (Level.instance.getLevel () == 11) {
 								questEnemy++;
 								oEnemyNum.GetComponent<tk2dTextMesh> ().text = "" + questEnemy;
 				
@@ -1779,8 +1340,8 @@ public class scr_manager : MonoBehaviour
 				admob = GetComponent<GoogleMobileAdsScript> ();
 				admob.SendMessage ("RequestInterstitial");
 				//		score = 200;
-				//				PlayerPrefs.SetInt ("LEVEL", 9);
-				////				PlayerPrefs.SetInt ("LEVEL", 2);
+				//				PlayerPrefs.SetInt ("Level.instance.getLevel", 9);
+				////				PlayerPrefs.SetInt ("Level.instance.getLevel", 2);
 				item1 = PlayerPrefs.GetInt ("ITEM1", 0);
 				item2 = PlayerPrefs.GetInt ("ITEM2", 0);
 				item3 = PlayerPrefs.GetInt ("ITEM3", 0);
@@ -1811,19 +1372,13 @@ public class scr_manager : MonoBehaviour
 				//						Instantiate (testBack, new Vector2 (0, 0), Quaternion.identity);
 				//						
 				////				timer = gameTime;
-				star1 = GameObject.Find ("star1").GetComponent<SpriteRenderer> ();
-				star2 = GameObject.Find ("star2").GetComponent<SpriteRenderer> ();
-				star3 = GameObject.Find ("star3").GetComponent<SpriteRenderer> ();
+				
 				balloonSprite = balloon.GetComponentInChildren<SpriteRenderer> ();
 				scoreText = GameObject.Find ("score").GetComponent<tk2dTextMesh> ();
 				lvText = GameObject.Find ("lv").GetComponent<tk2dTextMesh> ();
 				//				superTimer = superTime;
-				mUp = 12;
-				mDown = mUp * -1;
-				//				existBalloon = false;
-				mLeft = -7;
-				mRight = mLeft * -1;
-				////				Debug.Log ("screenSize=" + mUp + " " + mDown + " " + mLeft + " " + mRight + " ");
+				
+				////				Debug.Log ("screenSize=" + MANAGER.mUp + " " + MANAGER.mDown + " " + MANAGER.mLeft + " " + MANAGER.mRight + " ");
 				currentBalloon = new Vector2 (20, 20);
 				//		
 				//				//				backSize = back.renderer.bounds.size; 
@@ -1865,7 +1420,7 @@ public class scr_manager : MonoBehaviour
 				FingerGestures.Finger finger = gesture.Fingers [0];
 		
 		
-				if (existBalloon) {
+				if (MANAGER.STATE.Equals ("PLAY")) {
 						if (gesture.Phase == ContinuousGesturePhase.Started) {
 								// remember which finger is dragging balloon
 								dragFingerIndex = finger.Index;
@@ -1908,39 +1463,13 @@ public class scr_manager : MonoBehaviour
 						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
 						Destroy (GameObject.Find ("prf_pause(Clone)"));
 						Time.timeScale = 1.0f;
-						existBalloon = false;
 						balloon.transform.localScale = new Vector3 (0, 0, 0);
 						balloon.SetActive (false);
 						gameReset ();
 //												Application.LoadLevel (0);
 				}
 				if (e.Selection.name == "btn_next") {
-//						btnNext.GetComponent<SpriteRenderer> ().color = Color.yellow;
-						btnNext.GetComponent<SpriteRenderer> ().color = Color.white;
-						int adNum;
-						adNum = PlayerPrefs.GetInt ("ADTIME", 0);
-						adNum++;
-						PlayerPrefs.SetInt ("ADTIME", adNum);
-						if (adNum > 7 && adNum % 2 == 0) 
-								admob.SendMessage ("ShowInterstitial");
-						//						PlayerPrefs.SetInt (LEVEL + "", 1);
-						//			LEVEL = 9;
-						if (LEVEL < 10) {
-								LEVEL++;
-								PlayerPrefs.SetInt ("LEVEL", LEVEL);
-								if (LEVEL == 10) {
-										Application.LoadLevel (1);
-										bgm.SendMessage ("superMode", 1);
-								}
-						}
-			
-						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
-						Destroy (GameObject.Find ("prf_pause(Clone)"));
-						Time.timeScale = 1.0f;
-						gameReset ();
-						//						gameReset ();
-						//						Application.LoadLevel (1);
-						//												Application.LoadLevel (0);
+
 				}
 				
 
@@ -1948,7 +1477,6 @@ public class scr_manager : MonoBehaviour
 				if (e.Selection.name == "btn_pause" && onPlay) {
 //						btn_pause.GetComponent<SpriteRenderer> ().color = Color.yellow;
 //						btn_pause.GetComponent<SpriteRenderer> ().color = Color.white;
-						existBalloon = false;
 						StartCoroutine (pauseGame ());
 						//							 					Application.LoadLevel (0);
 				}
@@ -1964,7 +1492,6 @@ public class scr_manager : MonoBehaviour
 //						btn_resume.GetComponent<SpriteRenderer> ().color = Color.white;
 						Destroy (GameObject.Find ("prf_pause(Clone)"));
 						onPlay = true;
-						existBalloon = false;
 						Time.timeScale = 1.0f;
 
 						//												Application.LoadLevel (0);
@@ -1977,65 +1504,48 @@ public class scr_manager : MonoBehaviour
 
 		void OnFingerDown (FingerDownEvent e)
 		{
-				if (onToast) {
-						if (e.Selection == monsterIcons [0]) {
+//				if (onToast) {
+//						if (e.Selection == monsterIcons [0]) {
+//
+//								if (!selectedMonster1)
+//										selectedMonsterNum++;
+//								selectedMonster1 = true;
+//								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+//				
+//						}
+//						if (e.Selection == monsterIcons [1]) {
+//								if (!selectedMonster2)
+//										selectedMonsterNum++;
+//								selectedMonster2 = true;
+//								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+//				
+//						}
+//						if (e.Selection == monsterIcons [2]) {
+//								if (!selectedMonster3)
+//										selectedMonsterNum++;
+//								selectedMonster3 = true;
+//								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
+//				
+//						}
+//				}
 
-								if (!selectedMonster1)
-										selectedMonsterNum++;
-								selectedMonster1 = true;
-								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-				
-						}
-						if (e.Selection == monsterIcons [1]) {
-								if (!selectedMonster2)
-										selectedMonsterNum++;
-								selectedMonster2 = true;
-								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-				
-						}
-						if (e.Selection == monsterIcons [2]) {
-								if (!selectedMonster3)
-										selectedMonsterNum++;
-								selectedMonster3 = true;
-								e.Selection.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
-				
-						}
-				}
-
-				if (!existBalloon && onPlay && e.Selection != btn_pause) {
-						existBalloon = true;
+				if (!MANAGER.STATE.Equals ("PLAY") && onPlay && e.Selection != btn_pause) {
+						MANAGER.STATE = "PLAY";
 						Create (GetWorldPos (e.Position));
 				}
-				if (!existBalloon && !onPlay && e.Selection == balloon && onCount) {
+				if (!MANAGER.STATE.Equals ("PLAY") && !onPlay && e.Selection == balloon && onCount) {
 						onPlay = true;
 						//			balloon.SendMessage("stopCount");
 						onCount = false;
-						existBalloon = true;
+						MANAGER.STATE = "PLAY";
+						
 						Create (GetWorldPos (e.Position));
 				}
 		}
 		//FINGERUP
 		void OnFingerUp (FingerUpEvent e)
 		{
-//				Destroy (GameObject.FindGameObjectWithTag ("monster"));
-//				tempLevel = superLevel;
-//				GameObject[] temp = GameObject.FindGameObjectsWithTag ("light");
-//				for (int i=0; i<temp.Length; i++) {
-//						Destroy (temp [i]);
-//				}
-				if (onToast) {
-						if (e.Selection == monsterIcons [0] || e.Selection == monsterIcons [1] || e.Selection == monsterIcons [2]) {
-								 
-								if (selectedMonsterNum == 2) {
-										Destroy (GameObject.Find ("toast 1(Clone)"));
-										onToast = false;
-										gameStart ();
-								}
-						}
-						 
-				}
 				if (e.Selection == btn_menu) {
-//						btn_menu.GetComponent<SpriteRenderer> ().color = Color.white;
 						
 				}
 				if (e.Selection == btnNext) {

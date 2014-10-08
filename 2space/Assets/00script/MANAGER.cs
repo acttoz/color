@@ -3,64 +3,70 @@ using System.Collections;
 
 public class MANAGER : MonoBehaviour
 {
-		public GameObject prf_ready, prf_success, prf_fail, prf_enemy, oStarTimer;
-		public static GameObject _MANAGER;
-
-
+ 
+		public static string STATE = "READY";
+		public static float mUp, mDown, mLeft, mRight;
+		public static bool isTouched = false;
+		public static int mats = 0;
+		public static int matsAll = 0;
+		public static int stars = 3;
+		tk2dTextMesh stateText;
+		Play manager;
 		// Use this for initialization
 		void Start ()
 		{
-				_MANAGER = this.gameObject;
+				
+
+				mUp = 12;
+				mLeft = -7;
+				mDown = mUp * -1;
+				mRight = mLeft * -1;
+				STATE = "IDLE";
+				stateText = GameObject.Find ("state").GetComponent<tk2dTextMesh> ();
+				manager = GetComponent<Play> ();
+
+				
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
-	 
+				stateText.text = STATE;
+				switch (STATE) {
+				case  "READY":
+//						manager.ready ();
+						STATE = "WAIT";
+						break;
+				case  "WAIT":
+
+						break;
+				case  "START":
+//						manager.reset ();
+						STATE = "IDLE";
+						break;
+				case  "NEXT":
+						break;
+				case  "IDLE":
+
+						break;
+				case  "PLAY":
+			
+						break;
+				case  "UNDEAD":
+						break;
+				case  "TOUCH":
+						break;
+				case  "SUCCESS":
+//						manager.success ();
+						STATE = "WAIT";
+						break;
+				case  "FAIL":
+//						manager.fail ();
+						STATE = "WAIT";
+						break;
+				
+				}
 		}
 
-		public void success ()
-		{
-				oStarTimer.animation.Stop ();
-		
-				Destroy (GameObject.FindGameObjectWithTag ("touch"));
-				Instantiate (prf_success, new Vector2 (0, 0), Quaternion.identity);
-		
-		}
-
-		public void fail ()
-		{
-				oStarTimer.animation.Stop ();
-				Destroy (GameObject.FindGameObjectWithTag ("touch"));
-				GameObject[] oMats = GameObject.FindGameObjectsWithTag ("mat");
-				for (int i=0; i<oMats.Length; i++)
-						oMats [i].SendMessage ("endPlus");
-				GameObject.FindGameObjectWithTag ("MainCamera").animation.Play ();
-//				reset ();
-				Instantiate (prf_fail, new Vector2 (0, 0), Quaternion.identity);
-		}
-
-		public void reset ()
-		{
-				//START
-				oStarTimer.animation.Rewind ();
-				oStarTimer.animation.Play ();
-				GameObject[] oMats = GameObject.FindGameObjectsWithTag ("mat");
-				GameObject[] oEnemies = GameObject.FindGameObjectsWithTag ("enemy");
-				for (int i=0; i<oEnemies.Length; i++)
-						Destroy (oEnemies [i]);
-				for (int i=0; i<5; i++)
-						Instantiate (prf_enemy, new Vector2 (Random.Range (-3f, 3f), Random.Range (-2f, 2f)), Quaternion.identity);
-				STATE.mats = 0;
-				STATE.matsAll = oMats.Length;
-				for (int i=0; i<oMats.Length; i++)
-						oMats [i].SendMessage ("reset");
-
-//				Debug.Log ("reset");
-		}
-
-		public void ready ()
-		{
-				Instantiate (prf_ready, new Vector2 (0, 0), Quaternion.identity);
-		}
+ 
 }
