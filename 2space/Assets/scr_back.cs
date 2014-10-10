@@ -14,7 +14,7 @@ public class scr_back : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-						transform.position -= new Vector3 (0, levels [Play.superLevel], 0);
+						transform.position -= new Vector3 (0, levels [Level.instance.superLevel], 0);
 				if (transform.position.y < -16 || transform.position.y > 16)
 						Destroy (this.gameObject);
 		}

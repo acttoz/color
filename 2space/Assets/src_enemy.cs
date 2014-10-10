@@ -7,7 +7,6 @@ public class src_enemy : MonoBehaviour
 		public bool isBoss;
 //		public AudioClip sBoss;
 		public GameObject pop, bomb, GAMEMANAGER, mPoint;
-		int bosslife = 2;
 //		bool exist = true;
 		string color;
 		public Sprite[] sprite = new Sprite[3];
@@ -67,7 +66,6 @@ public class src_enemy : MonoBehaviour
 
 		void resetLife ()
 		{
-				bosslife = 2;
 		}
 
 		void superMode (int num)

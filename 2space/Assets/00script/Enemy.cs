@@ -7,11 +7,39 @@ public class Enemy : MonoBehaviour
 		public GameObject warn_boss;
 		public float enemyCreateRate;
 		public int enemyNum;
-		public static Enemy instance;
+		public static Enemy mInstance;
 		// Use this for initialization
+		public Enemy ()
+		{
+				mInstance = this;
+		}
+	
+		public static Enemy instance {
+				get {
+						if (mInstance == null)
+								new Enemy ();
+						return mInstance;
+				}
+		}
+
+		public void reset ()
+		{				//boss reset
+				GameObject[] tempBoss;
+				tempBoss = GameObject.FindGameObjectsWithTag ("boss");
+				for (int i=0; i<tempBoss.Length; i++) {
+						Destroy (tempBoss [i]);
+				}
+				if (GameObject.Find ("prf_warn(Clone)") != null)
+						Destroy (GameObject.Find ("prf_warn(Clone)"));
+				GameObject[] prevEnemy = GameObject.FindGameObjectsWithTag ("enemy");
+				for (int i=0; i<prevEnemy.Length; i++) {
+						Destroy (prevEnemy [i]);
+				}
+		
+		}
+	
 		void Start ()
 		{
-				instance = this;
 				StartCoroutine ("enemyCreate");
 	
 		}
@@ -26,7 +54,7 @@ public class Enemy : MonoBehaviour
 		IEnumerator enemyCreate ()
 		{
 				while (true) {
-						if (MANAGER.STATE.Equals ("IDLE"))
+						if (MANAGER.instance.state.Equals ("IDLE"))
 								InitEnemy ();
 			 
 						yield return new WaitForSeconds (enemyCreateRate / 1.2f);
@@ -39,15 +67,15 @@ public class Enemy : MonoBehaviour
 				float tempY = (Random.Range (MANAGER.mDown * 100, MANAGER.mUp * 100)) / 100;
 		
 				enemyNum++;
-				if (Level.instance.getLevel () == 5 && enemyNum > 7)
+				if (Level.instance.level == 5 && enemyNum > 7)
 						StopCoroutine ("enemyCreate");
-				if (Level.instance.getLevel () == 4 && enemyNum > 5)
+				if (Level.instance.level == 4 && enemyNum > 5)
 						StopCoroutine ("enemyCreate");
-				if (Level.instance.getLevel () == 3 && enemyNum > 5)
+				if (Level.instance.level == 3 && enemyNum > 5)
 						StopCoroutine ("enemyCreate");
-				if (Level.instance.getLevel () == 2 && enemyNum > 0)
+				if (Level.instance.level == 2 && enemyNum > 0)
 						StopCoroutine ("enemyCreate");
-				if (Level.instance.getLevel () == 1 && enemyNum > 0)
+				if (Level.instance.level == 1 && enemyNum > 0)
 						StopCoroutine ("enemyCreate");
 		
 		

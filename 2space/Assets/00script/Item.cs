@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Item : MonoBehaviour
 {
-		int selectedMonsterNum = 0;
 		int numHave = 0;
 		public float itemCreateRate;
 		bool selectedMonster1 = true;
@@ -18,14 +17,48 @@ public class Item : MonoBehaviour
 		public GameObject itemBlue, itemOrange, itemPurple;
 		public GameObject itemEffectO, itemEffectB, itemEffectP, itemEffectBack;
 		public SpriteRenderer star1, star2, star3;
-		public static Item instance;
+		public static Item mInstance;
+//		int item1, item2, item3, item4;
 		// Use this for initialization
+		public Item ()
+		{
+				mInstance = this;
+		}
+	
+		public static Item instance {
+				get {
+						if (mInstance == null)
+								new Item ();
+						return mInstance;
+				}
+		}
+
+		public void reset ()
+		{
+				GameObject[] temp2;
+				temp2 = GameObject.FindGameObjectsWithTag ("bombparent");
+				for (int i=0; i<temp2.Length; i++) {
+						Destroy (temp2 [i]);
+				}
+				if (GameObject.FindGameObjectWithTag ("bomb_b") != null)
+						Destroy (GameObject.FindGameObjectWithTag ("bomb_b"));
+				if (GameObject.FindGameObjectWithTag ("bomb_o") != null)
+						Destroy (GameObject.FindGameObjectWithTag ("bomb_o"));
+				if (GameObject.FindGameObjectWithTag ("bomb_p") != null)
+						Destroy (GameObject.FindGameObjectWithTag ("bomb_p"));
+				resetStar (0);
+		}
+
 		void Start ()
 		{
-				instance = this;
 				star1 = GameObject.Find ("star1").GetComponent<SpriteRenderer> ();
 				star2 = GameObject.Find ("star2").GetComponent<SpriteRenderer> ();
 				star3 = GameObject.Find ("star3").GetComponent<SpriteRenderer> ();
+		
+//				item1 = PlayerPrefs.GetInt ("ITEM1", 0);
+//				item2 = PlayerPrefs.GetInt ("ITEM2", 0);
+//				item3 = PlayerPrefs.GetInt ("ITEM3", 0);
+//				item4 = PlayerPrefs.GetInt ("ITEM4", 0);
 				oStars = GameObject.Find ("stars");
 				itemCreateStart ();
 				resetStar (0);
@@ -45,7 +78,7 @@ public class Item : MonoBehaviour
 
 		void itemCreate ()
 		{
-				if (!MANAGER.STATE.Equals ("IDLE"))
+				if (!MANAGER.instance.state.Equals ("IDLE"))
 						return;
 				float tempX = (Random.Range (MANAGER.mLeft * 100, MANAGER.mRight * 100)) / 100;
 //				if (existItem != null)
@@ -132,7 +165,7 @@ public class Item : MonoBehaviour
 			
 				}
 		
-				switch (Level.instance.getLevel()) {
+				switch (Level.instance.level) {
 				case 6:
 						createItem = itemOrange;
 						colCreate = "o";
@@ -152,8 +185,8 @@ public class Item : MonoBehaviour
 						break;
 				}
 				//				float tempY = (Random.Range (MANAGER.mDown * 100, MANAGER.mUp * 100)) / 100;
-				if (Level.instance.getLevel() > 5) {
-						if (MANAGER.STATE.Equals ("IDLE")) {
+				if (Level.instance.level > 5) {
+						if (MANAGER.instance.state.Equals ("IDLE")) {
 								existItem = Instantiate (createItem, new Vector3 (tempX, MANAGER.mUp, 0), Quaternion.identity) as GameObject;
 				
 						}
@@ -212,7 +245,7 @@ public class Item : MonoBehaviour
 //										oEnemyNum.GetComponent<tk2dTextMesh> ().text = 0 + "";
 				
 								star3.sprite = tempStar;
-								MANAGER.STATE = "UNDEAD";
+								MANAGER.instance.state = "UNDEAD";
 //								balloon.SendMessage ("undead", true);
 //								undeadTime = 3.5f;
 								//								if (colCreate.Equals ("b"))

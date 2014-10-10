@@ -1,14 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\00script\Play.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\src_balloon.cs">
     <Files>
-      <File FileName="Assets\00script\MANAGER.cs" Line="52" Column="14" />
-      <File FileName="Assets\00script\Background.cs" Line="1" Column="1" />
-      <File FileName="Assets\00script\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\00script\Item.cs" Line="1" Column="1" />
-      <File FileName="Assets\00script\Level.cs" Line="26" Column="4" />
-      <File FileName="Assets\00script\Play.cs" Line="13" Column="30" />
-      <File FileName="Assets\00script\Menu.cs" Line="8" Column="16" />
+      <File FileName="Assets\00script\Play.cs" Line="200" Column="5" />
+      <File FileName="Assets\00script\MANAGER.cs" Line="120" Column="1" />
+      <File FileName="Assets\00script\Background.cs" Line="59" Column="1" />
+      <File FileName="Assets\00script\Enemy.cs" Line="47" Column="37" />
+      <File FileName="Assets\00script\Item.cs" Line="80" Column="4" />
+      <File FileName="Assets\00script\Level.cs" Line="50" Column="10" />
+      <File FileName="Assets\src_enemy.cs" Line="69" Column="1" />
+      <File FileName="Assets\src_balloon.cs" Line="20" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

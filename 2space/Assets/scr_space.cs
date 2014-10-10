@@ -37,7 +37,7 @@ public class scr_space : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				transform.position -= new Vector3 (0, levels [Play.superLevel] / 2, 0);
+				transform.position -= new Vector3 (0, levels [Level.instance.superLevel] / 2, 0);
 				if (transform.position.y < -13 || transform.position.y > 13)
 						Destroy (this.gameObject);
 
@@ -54,7 +54,7 @@ public class scr_space : MonoBehaviour
 
 //		void changeSpeed ()
 //		{
-//				level = levels [Play.superLevel];
+//				level = levels [Level.instance.superLevel];
 //		}
 
 
