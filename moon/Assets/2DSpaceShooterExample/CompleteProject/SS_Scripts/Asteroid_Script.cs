@@ -9,48 +9,48 @@
 /// - Hit/Explosion on Trigger Enter
 /// 
 /// </summary>
-
 using UnityEngine;
 using System.Collections;
 
-public class Asteroid_Script : MonoBehaviour 
+public class Asteroid_Script : MonoBehaviour
 {
-	//Public Var
-	public float maxTumble; 			//Maximum Speed of the angular velocity
-	public float minTumble; 			//Minimum Speed of the angular velocity
-	public float speed; 				//Asteroid Speed
-	public int health; 					//Asteroid Health (how much hit can it take)
-	public GameObject LaserGreenHit; 	//LaserGreenHit Prefab
-	public GameObject Explosion; 		//Explosion Prefab
-	public int ScoreValue; 				//How much the Asteroid give score after explosion
-
-	// Use this for initialization
-	void Start () 
-	{
-		rigidbody2D.angularVelocity = Random.Range(minTumble, maxTumble); 		//Angular movement based on random speed values
-		rigidbody2D.velocity = -1 * transform.up * speed; 						//Negative Velocity to move down towards the player ship
-	}
-
-	//Called when the Trigger entered
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		//Excute if the object tag was equal to one of these
-		if(other.tag == "PlayerLaser")
+		//Public Var
+		public float maxTumble; 			//Maximum Speed of the angular velocity
+		public float minTumble; 			//Minimum Speed of the angular velocity
+		public float speed; 				//Asteroid Speed
+		public int health; 					//Asteroid Health (how much hit can it take)
+		public GameObject LaserGreenHit; 	//LaserGreenHit Prefab
+		public GameObject Explosion; 		//Explosion Prefab
+		public int ScoreValue; 				//How much the Asteroid give score after explosion
+		public int id;
+		// Use this for initialization
+		void Start ()
 		{
-			Instantiate (LaserGreenHit, transform.position , transform.rotation); 		//Instantiate LaserGreenHit 
-			Destroy(other.gameObject);													//Destroy the Other (PlayerLaser)
-
-			//Check the Health if greater than 0
-			if(health > 0)
-				health--; 																//Decrement Health by 1
-
-			//Check the Health if less or equal 0
-			if(health <= 0)
-			{
-				Instantiate (Explosion, transform.position , transform.rotation); 		//Instantiate Explosion
-				SharedValues_Script.score +=ScoreValue; 								//Increment score by ScoreValue
-				Destroy(gameObject); 													//Destroy the Asteroid
-			}
+				rigidbody2D.angularVelocity = Random.Range (minTumble, maxTumble); 		//Angular movement based on random speed values
+				rigidbody2D.velocity = -1 * transform.up * speed; 						//Negative Velocity to move down towards the player ship
 		}
-	}
+
+		//Called when the Trigger entered
+		void OnTriggerEnter2D (Collider2D other)
+		{
+				//Excute if the object tag was equal to one of these
+				if (other.tag == "PlayerLaser") {
+						Instantiate (LaserGreenHit, transform.position, transform.rotation); 		//Instantiate LaserGreenHit 
+						Destroy (other.gameObject);													//Destroy the Other (PlayerLaser)
+
+						//Check the Health if greater than 0
+						if (health > 0)
+								health--; 																//Decrement Health by 1
+
+						//Check the Health if less or equal 0
+						if (health <= 0) {
+								GameObject.Find ("GameController").SendMessage ("toLevel",id);
+								Instantiate (Explosion, transform.position, transform.rotation); 		//Instantiate Explosion
+								SharedValues_Script.score += ScoreValue; 								//Increment score by ScoreValue
+								Destroy (gameObject); 													//Destroy the Asteroid
+						}
+				}
+		}
+
+		
 }
