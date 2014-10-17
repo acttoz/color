@@ -36,9 +36,10 @@ public class GameController_Script : MonoBehaviour
 
 		IEnumerator  level (int id)
 		{
+				PlayerPrefs.SetInt ("LEVEL", 1);
 				Debug.Log ("level");
 				yield return new WaitForSeconds (1f);
-				Application.LoadLevel (id);
+				Application.LoadLevel (id + 1);
 		}
 
 		bool isCounting = false;
