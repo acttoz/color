@@ -45,7 +45,7 @@ public class main : MonoBehaviour
 						if (camera.transform.position == returnPoint.transform.position) {
 
 								returnPosition = false;
-								StartCoroutine (cameraWait ());
+//								StartCoroutine (cameraWait ());
 			
 						}
 				}
@@ -53,7 +53,7 @@ public class main : MonoBehaviour
 
 		IEnumerator cameraWait ()
 		{
-				yield return new WaitForSeconds (1f);
+				yield return new WaitForSeconds (2.5f);
 				cameraWork ();
 		}
 

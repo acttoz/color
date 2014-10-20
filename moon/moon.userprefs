@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\Rocket Booster\Assets\GyroDroid\SampleScripts\TurntableSensorCamera.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\main.cs">
     <Files>
-      <File FileName="..\Rocket Booster\Assets\GyroDroid\SampleScripts\TurntableSensorCamera.cs" Line="20" Column="24" />
+      <File FileName="Assets\main.cs" Line="66" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
