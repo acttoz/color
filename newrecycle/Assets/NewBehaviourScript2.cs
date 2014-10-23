@@ -1,0 +1,24 @@
+using UnityEngine;
+using System.Collections;
+
+public class NewBehaviourScript2 : MonoBehaviour
+{
+
+	// Use this for initialization
+	void Start ()
+	{
+	
+	}
+	
+	// Update is called once per frame
+	void Update ()
+	{
+	
+	}
+
+	void OnClick ()
+	{
+		GameObject.Find ("Panel").SendMessage ("noButton");
+		Destroy (this.transform.parent.gameObject);
+	}
+}
