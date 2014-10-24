@@ -10,8 +10,8 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: Loud Develop
-  productName: Space Balloon
+  companyName: moon
+  productName: "\uC9C0\uAD6C&\uB2EC"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -26,7 +26,7 @@ PlayerSettings:
   m_UseDX11: 0
   m_Stereoscopic3D: 0
   iosShowActivityIndicatorOnLoading: -1
-  androidShowActivityIndicatorOnLoading: -1
+  androidShowActivityIndicatorOnLoading: 2
   displayResolutionDialog: 1
   allowedAutorotateToPortrait: 0
   allowedAutorotateToPortraitUpsideDown: 0
@@ -66,12 +66,12 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.moon.space.balloon
+  iPhoneBundleIdentifier: com.moon.earth.moon
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: a2d1e9578ef893e4f8fe56b9e752f1d0
-  iPhoneBundleVersion: 1.2
-  AndroidBundleVersionCode: 4
+  iPhoneBundleVersion: 1.0
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -81,7 +81,7 @@ PlayerSettings:
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0
-  APKExpansionFiles: 0
+  APKExpansionFiles: 1
   StripUnusedMeshComponents: 1
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 16
@@ -99,25 +99,25 @@ PlayerSettings:
   iPadHighResLandscapeSplashScreen: {fileID: 0}
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: d:/Dropbox/0 UI/moon.keystore
+  AndroidKeyaliasName: mainactivity
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 4ee837d250046614ba51985167ed8ec2, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 181611f30a753eb49add886394fe7791, type: 3}
       m_Size: 128
   - m_BuildTarget: Android
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 94acce17d08e5374c85fe2c9a57ad01b, type: 3}
+    - m_Icon: {fileID: 2800000, guid: ff73992b79e8cd54581a1232eda280cc, type: 3}
       m_Size: 144
-    - m_Icon: {fileID: 2800000, guid: 778e832589fbecd47befa41de0eb281c, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 181611f30a753eb49add886394fe7791, type: 3}
       m_Size: 96
-    - m_Icon: {fileID: 2800000, guid: 42f7a05436368a4478f9ad60a5ac13e3, type: 3}
+    - m_Icon: {fileID: 2800000, guid: b721e1b437534b9448793029cdb178d6, type: 3}
       m_Size: 72
-    - m_Icon: {fileID: 2800000, guid: 83e6c8f94b424604bb0b4f46c5173565, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 9237f38feac547b41acae01f232bc068, type: 3}
       m_Size: 48
-    - m_Icon: {fileID: 2800000, guid: 5684b7dd6c1732b409dfa2c1776d2dc4, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 9237f38feac547b41acae01f232bc068, type: 3}
       m_Size: 36
   - m_BuildTarget: iPhone
     m_Icons:
