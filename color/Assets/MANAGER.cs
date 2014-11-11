@@ -61,6 +61,6 @@ public class MANAGER : MonoBehaviour
 
 		public void ready ()
 		{
-				Instantiate (prf_ready, new Vector2 (0, 0), Quaternion.identity);
+				Instantiate (prf_ready, new Vector3 (0,0, 0), Quaternion.identity);
 		}
 }
