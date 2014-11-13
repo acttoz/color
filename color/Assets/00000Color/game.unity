@@ -104,85 +104,6 @@ Transform:
   - {fileID: 615040439}
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1 &187889749
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 187889751}
-  - 212: {fileID: 187889750}
-  m_Layer: 0
-  m_Name: "thief_0001_\uBCA1\uD130-\uACE0\uAE09-\uAC1C\uCCB4"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &187889750
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 187889749}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 947545787
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6b962d49272b6c34096ab158f897dd3b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &187889751
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 187889749}
-  m_LocalRotation: {x: 0, y: 0, z: .097736977, w: .995212317}
-  m_LocalPosition: {x: .0261636693, y: .0739111304, z: .55004853}
-  m_LocalScale: {x: .943162203, y: .943175316, z: 1.16578305}
-  m_Children: []
-  m_Father: {fileID: 1287413779}
-  m_RootOrder: 0
---- !u!1 &191944780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 191944781}
-  m_Layer: 0
-  m_Name: thief
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &191944781
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 191944780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.08718288, y: .305560529, z: -.550048828}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1016907106}
-  - {fileID: 1287413779}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
 --- !u!1 &279674263
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +155,44 @@ SpriteRenderer:
   m_SortingOrder: -32
   m_Sprite: {fileID: 21300000, guid: 839c5c8b5d6d0f248956629f863d0be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &291044330
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1.05999994
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &298214618
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +328,82 @@ Transform:
   m_Children: []
   m_Father: {fileID: 820563798}
   m_RootOrder: 6
+--- !u!21 &536893015
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1.05999994
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
+--- !u!21 &548911569
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &549003721
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,44 +815,6 @@ SpriteRenderer:
   m_SortingOrder: -21
   m_Sprite: {fileID: 21300000, guid: fc80c8768a54f4542ad9267b3ed6ea91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &915364635
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1.05999994
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &964132556
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +982,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 1894258088}
+  - {fileID: 548911569}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1046,56 +1043,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 820563798}
   m_RootOrder: 4
---- !u!1 &1016907104
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1016907106}
-  - 212: {fileID: 1016907105}
-  m_Layer: 0
-  m_Name: "thief_0000_\uBCA1\uD130-\uACE0\uAE09-\uAC1C\uCCB4"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1016907105
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1016907104}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 947545787
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: e5b08107e78c6d949a8e6d9f17627b76, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1016907106
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1016907104}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .107293963, y: .108848006, z: .550048828}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 191944781}
-  m_RootOrder: 0
 --- !u!1 &1062635238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,7 +1469,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 1529818551}
+  - {fileID: 291044330}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1738,44 +1685,6 @@ Transform:
   - {fileID: 1571147842}
   m_Father: {fileID: 0}
   m_RootOrder: 9
---- !u!21 &1139849032
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1.05999994
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &1163911789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +1995,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 1139849032}
+  - {fileID: 2029318877}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2096,49 +2005,6 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: ac582d5f47d954744a9bfaf8c6908b70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &1287413777
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1287413779}
-  - 111: {fileID: 1287413778}
-  m_Layer: 0
-  m_Name: pack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!111 &1287413778
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1287413777}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!4 &1287413779
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1287413777}
-  m_LocalRotation: {x: 0, y: 0, z: -.123435989, w: .992352605}
-  m_LocalPosition: {x: -.644588649, y: .198334932, z: .00507795811}
-  m_LocalScale: {x: .286233306, y: .286233306, z: .286233306}
-  m_Children:
-  - {fileID: 187889751}
-  m_Father: {fileID: 191944781}
-  m_RootOrder: 1
 --- !u!1 &1320112539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2067,8 @@ GameObject:
   - 114: {fileID: 1457606912}
   - 114: {fileID: 1457606911}
   - 114: {fileID: 1457606921}
+  - 114: {fileID: 1457606923}
+  - 114: {fileID: 1457606922}
   - 114: {fileID: 1457606918}
   - 114: {fileID: 1457606917}
   - 114: {fileID: 1457606916}
@@ -2368,7 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _colorPlusRate: 20
   _colorMinusRate: 50
-  _bossInitRate: 3.04999995
+  _bossInitRate: 5
 --- !u!114 &1457606920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2400,8 +2268,31 @@ MonoBehaviour:
   prf_ready: {fileID: 100016, guid: 7532ff655eaa3ba4ebaf8aa08dc02f4b, type: 2}
   prf_success: {fileID: 100034, guid: 9373b48026e95654ca8ac91500e7fdd1, type: 2}
   prf_fail: {fileID: 100034, guid: 8eb5b086e2d5f88478bea08b08806aec, type: 2}
-  prf_enemy: {fileID: 100002, guid: 392addc2ee314c544ab99904910d6cdc, type: 2}
   oStarTimer: {fileID: 615040438}
+--- !u!114 &1457606922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1457606910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c31c0867195abe4ebf7ec5a4e8a32e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1457606923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1457606910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d890b2ffbadc344b9c5c52346b6a94c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prf_enemy: {fileID: 100002, guid: 392addc2ee314c544ab99904910d6cdc, type: 2}
+  prf_thief: {fileID: 100002, guid: 334c8e11b35d65c4f9eb02b117402d13, type: 2}
 --- !u!1 &1463887137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,8 +2317,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1463887137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.47416353, y: -4.41251707, z: 0}
-  m_LocalScale: {x: 14.030015, y: 1.07932794, z: 1}
+  m_LocalPosition: {x: 2.47416663, y: -3.87064743, z: 0}
+  m_LocalScale: {x: 25.0358276, y: 1.92600369, z: 1}
   m_Children: []
   m_Father: {fileID: 683664460}
   m_RootOrder: 3
@@ -2461,48 +2352,10 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 4158156261
-  m_SortingOrder: 15
+  m_SortingLayerID: 4210564903
+  m_SortingOrder: -127
   m_Sprite: {fileID: 21300000, guid: e75703edb22e5204c97d5f31a8b82ce7, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
---- !u!21 &1529818551
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1.05999994
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &1571147841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,7 +2608,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 915364635}
+  - {fileID: 536893015}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2897,44 +2750,6 @@ SpriteRenderer:
   m_SortingOrder: -68
   m_Sprite: {fileID: 21300000, guid: 839c5c8b5d6d0f248956629f863d0be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &1894258088
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &1898033523
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +2906,44 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936221765}
   m_Mesh: {fileID: 0}
+--- !u!21 &2029318877
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1.05999994
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &2069862719
 GameObject:
   m_ObjectHideFlags: 0

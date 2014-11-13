@@ -1,68 +1,76 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+		public GameObject prf_enemy, prf_thief;
+		private GameObject[] oMats;//parent of mats
+		private int tempNum_id = 0;
+		private int[] bossIds;
 
-		float speed = 2;
-		int xTemp = 1;
-		int yTemp = 1;
-		// Use this for initialization
 		void Start ()
 		{
-	
 		}
 
-		void Awake ()
-		{
-				if (Random.Range (0, 2) == 0) {
-						xTemp = -1;
-				}
-				if (Random.Range (0, 2) == 0) {
-						yTemp = -1;
-				}
-				rigidbody.velocity = new Vector3 (xTemp * speed, yTemp * speed, 0);
-//				rigidbody.velocity = new Vector3 (2f, 2f, 0);
-		}
-		// Update is called once per frame
 		void Update ()
 		{
-	
 		}
 
-		void OnTriggerEnter (Collider myTrigger)
+		public void reset ()
 		{
-		 
-				if (myTrigger.tag == "touch") {
-			STATE._STATE = "gFAIL";
-						Destroy (myTrigger);
-//						Destroy (this.gameObject, 0.1f);
-						
+
+				GameObject[] oEnemies = GameObject.FindGameObjectsWithTag ("enemy");
+				for (int i=0; i<oEnemies.Length; i++)
+						Destroy (oEnemies [i]);
+				for (int i=0; i<5; i++)
+						Instantiate (prf_enemy, new Vector2 (Random.Range (-3f, 3f), Random.Range (-2f, 2f)), Quaternion.identity);
+				InitBossBot ();
+		}
+
+		public void randomBoss ()
+		{
+				oMats = GameObject.FindGameObjectsWithTag ("mat");
+				bossIds = new int[oMats.Length];
+				for (int i=0; i<oMats.Length; i++) {
+						bossIds [i] = i;
 				}
-				if (myTrigger.gameObject.name == "down") {
-			
-						rigidbody.velocity = new Vector3 (rigidbody.velocity.x, -rigidbody.velocity.y, 0);
-			
-			
+				for (int i=0; bossIds.Length>i; i++) {
+						int r = Random.Range (0, i);
+						int tmp = bossIds [i] + 0;
+						bossIds [i] = bossIds [r];
+						bossIds [r] = tmp;
 				}
-		
-				if (myTrigger.gameObject.name == "up") {
-			
-						rigidbody.velocity = new Vector3 (rigidbody.velocity.x, -rigidbody.velocity.y, 0);
-			
-			
-				}
-				if (myTrigger.gameObject.name == "left") {
-			
-						rigidbody.velocity = new Vector3 (-rigidbody.velocity.x, rigidbody.velocity.y, 0);
-			
-			
-				}
-				if (myTrigger.gameObject.name == "right") {
-			
-						rigidbody.velocity = new Vector3 (-rigidbody.velocity.x, rigidbody.velocity.y, 0);
-			
-			
+				
+		}
+
+		public void InitBossBot ()
+		{
+				tempNum_id = 0;
+				randomBoss ();
+				InvokeRepeating ("initBoss", RATE.bossInitRate, RATE.bossInitRate);
+		}
+
+		private void initBoss ()
+		{
+				if (tempNum_id < bossIds.Length) {
+						Instantiate (prf_thief, oMats [bossIds [tempNum_id]].transform.position, Quaternion.identity);
+						tempNum_id++;
 				}
 		}
+//		public static Enemy mInstance;
+//		// Use this for initialization
+//		public Enemy ()
+//		{
+//				mInstance = this;
+//		}
+//	
+//		public static Enemy instance {
+//				get {
+//						if (mInstance == null)
+//								new Enemy ();
+//						return mInstance;
+//				}
+//		}
+
+ 
 }

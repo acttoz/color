@@ -46,10 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\00000Color\script\Enemy.cs" />
+     <Compile Include="Assets\00000Color\script\Enemy1.cs" />
+     <Compile Include="Assets\00000Color\script\Mats.cs" />
      <Compile Include="Assets\00000Color\script\RATE.cs" />
      <Compile Include="Assets\00000Color\script\STATE.cs" />
      <Compile Include="Assets\00000Color\script\color_mat.cs" />
-     <Compile Include="Assets\00000Color\script\enemy.cs" />
      <Compile Include="Assets\00000Color\script\finger_gesture.cs" />
      <Compile Include="Assets\00000Color\script\touch_effect.cs" />
      <Compile Include="Assets\EasySprites\Example\Sinus.cs" />

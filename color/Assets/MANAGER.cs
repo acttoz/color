@@ -3,14 +3,30 @@ using System.Collections;
 
 public class MANAGER : MonoBehaviour
 {
-		public GameObject prf_ready, prf_success, prf_fail, prf_enemy, oStarTimer;
-		public static GameObject _MANAGER;
 
+		public GameObject prf_ready, prf_success, prf_fail, oStarTimer;
+		private Enemy iEnemy;
+		private Mats iMats;
+//		public static MANAGER mInstance;
+		// Use this for initialization
+//		public MANAGER ()
+//		{
+//				mInstance = this;
+//		}
+//	
+//		public static MANAGER instance {
+//				get {
+//						if (mInstance == null)
+//								new MANAGER ();
+//						return mInstance;
+//				}
+//		}
 
 		// Use this for initialization
 		void Start ()
 		{
-				_MANAGER = this.gameObject;
+				iEnemy = GetComponent<Enemy> ();
+				iMats = GetComponent<Mats> ();
 		}
 	
 		// Update is called once per frame
@@ -18,13 +34,14 @@ public class MANAGER : MonoBehaviour
 		{
 	 
 		}
-
+	
 		public void success ()
 		{
 				oStarTimer.animation.Stop ();
 		
 				Destroy (GameObject.FindGameObjectWithTag ("touch"));
 				Instantiate (prf_success, new Vector2 (0, 0), Quaternion.identity);
+				iMats.Stop ();
 		
 		}
 
@@ -32,12 +49,11 @@ public class MANAGER : MonoBehaviour
 		{
 				oStarTimer.animation.Stop ();
 				Destroy (GameObject.FindGameObjectWithTag ("touch"));
-				GameObject[] oMats = GameObject.FindGameObjectsWithTag ("mat");
-				for (int i=0; i<oMats.Length; i++)
-						oMats [i].SendMessage ("endPlus");
+			
 				GameObject.FindGameObjectWithTag ("MainCamera").animation.Play ();
 //				reset ();
 				Instantiate (prf_fail, new Vector2 (0, 0), Quaternion.identity);
+				iMats.Stop ();
 		}
 
 		public void reset ()
@@ -45,22 +61,17 @@ public class MANAGER : MonoBehaviour
 				//START
 				oStarTimer.animation.Rewind ();
 				oStarTimer.animation.Play ();
-				GameObject[] oMats = GameObject.FindGameObjectsWithTag ("mat");
-				GameObject[] oEnemies = GameObject.FindGameObjectsWithTag ("enemy");
-				for (int i=0; i<oEnemies.Length; i++)
-						Destroy (oEnemies [i]);
-				for (int i=0; i<5; i++)
-						Instantiate (prf_enemy, new Vector2 (Random.Range (-3f, 3f), Random.Range (-2f, 2f)), Quaternion.identity);
-				STATE.mats = 0;
-				STATE.matsAll = oMats.Length;
-				for (int i=0; i<oMats.Length; i++)
-						oMats [i].SendMessage ("reset");
+				iEnemy.reset ();
+				iMats.reset ();
+				
 
-//				Debug.Log ("reset");
+	
+		
+				//				Debug.Log ("reset");
 		}
 
 		public void ready ()
 		{
-				Instantiate (prf_ready, new Vector3 (0,0, 0), Quaternion.identity);
+				Instantiate (prf_ready, new Vector3 (0, 0, 0), Quaternion.identity);
 		}
 }
