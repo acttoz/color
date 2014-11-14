@@ -19,7 +19,6 @@ public class StarCount : MonoBehaviour
 		void starCount (int num)
 		{
 				STATE.stars = num;
-				Debug.Log ("" + STATE.stars);
 				if (num == 3) {
 						oStarBloomer.animation ["star_bloom"].speed = 1;
 				}		

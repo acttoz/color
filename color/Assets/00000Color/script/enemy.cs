@@ -47,13 +47,17 @@ public class Enemy : MonoBehaviour
 		{
 				tempNum_id = 0;
 				randomBoss ();
-				InvokeRepeating ("initBoss", RATE.bossInitRate, RATE.bossInitRate);
+				StartCoroutine (initBoss ());
 		}
 
-		private void initBoss ()
+		IEnumerator initBoss ()
 		{
-				if (tempNum_id < bossIds.Length) {
+				while (tempNum_id < bossIds.Length) {
 						Instantiate (prf_thief, oMats [bossIds [tempNum_id]].transform.position, Quaternion.identity);
+						oMats [bossIds [tempNum_id]].SendMessage ("thiefOn");
+						yield return new WaitForSeconds (RATE.bossInitRate);
+						oMats [bossIds [tempNum_id]].SendMessage ("thiefAttack");
+			
 						tempNum_id++;
 				}
 		}
