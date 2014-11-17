@@ -38,7 +38,7 @@ public class color_mat : MonoBehaviour
 		
 //				if (oClone != null)
 //						Destroy (oClone);
-			
+				state = "normal";
 				CancelInvoke ("minusColor");
 				CancelInvoke ("plusColor");
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
@@ -80,12 +80,12 @@ public class color_mat : MonoBehaviour
 		void thiefOn ()
 		{
 				state = "thief";
-				StartCoroutine (thiefBlink (0.1f));
+				transform.tag = "mat";
+				StartCoroutine ("thiefBlink", 0.1f);
 		}
 
 		void thiefOff ()
 		{
-				state = "normal";
 				StopCoroutine ("thiefBlink");
 				saturation._ValueBrightness = 1;
 		}
@@ -93,10 +93,13 @@ public class color_mat : MonoBehaviour
 		void thiefAttack ()
 		{
 				if (state.Equals ("thief")) {
-						thiefOff ();
-						saturation._Saturation = 0;
+						Debug.Log ("thiefattack");
+						saturation._Saturation = 5;
+						animation.Stop ();
 						STATE.mats--;
+						InvokeRepeating ("thiefMinusColor", 0, 0.01f);
 				}
+				thiefOff ();
 		}
 
 		IEnumerator thiefBlink (float term)
@@ -113,12 +116,12 @@ public class color_mat : MonoBehaviour
 		void plusColor ()
 		{
 //				Debug.Log (GetComponent<SpriteRenderer> ().color.a + "");
-				if (!isPlus || !STATE._STATE.Equals ("gIDLE")) {
+				if (!isPlus || !STATE._STATE.Equals ("gIDLE") || !state.Equals ("normal")) {
 						endPlus ();
 						return;
 				}
 				if (saturation._Saturation < 3) {
-						starPlus ();
+						startPlus ();
 
 //						cpnt_whiteMAT_sprite [1].color = new Color (1, 0, 0);
 //						pattern._Alpha = 1 - saturation._Saturation;
@@ -130,6 +133,8 @@ public class color_mat : MonoBehaviour
 
 						//////SUCCESS
 						///
+						state = "color";
+						transform.tag = "color";
 						saturation._Saturation = 1;
 						//						pattern._Alpha -= RATE.colorPlusRate / 10000f;
 						saturation._ValueBrightness = 1;
@@ -168,7 +173,7 @@ public class color_mat : MonoBehaviour
 //				saturation.enabled = true;
 		}
 
-		void starPlus ()
+		void startPlus ()
 		{
 				if (!audio.isPlaying)
 						audio.Play ();
@@ -187,11 +192,22 @@ public class color_mat : MonoBehaviour
 		{
 				if (isMinus && saturation._Saturation > 0) {
 						endPlus ();
-						saturation._Saturation -= RATE.colorPlusRate / 3000f;
-						saturation._ValueBrightness -= RATE.colorPlusRate / 6000f;
+						saturation._Saturation -= RATE.colorMinusRate / 3000f;
+						saturation._ValueBrightness -= RATE.colorMinusRate / 6000f;
 			
-//						whiteMatSprite.color = new Color (1, 1, 1);
+						//						whiteMatSprite.color = new Color (1, 1, 1);
 				}
+		}
+
+		void thiefMinusColor ()
+		{
+				if (saturation._Saturation > 0) {
+						saturation._Saturation -= RATE.colorMinusRate / 1000f;
+						Debug.Log ("thiefminus");	//						whiteMatSprite.color = new Color (1, 1, 1);
+				} else {
+						CancelInvoke ("thiefMinusColor");
+						state = "normal";
+				}				
 		}
 
 		void onColor ()
