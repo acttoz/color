@@ -35,10 +35,11 @@ public class color_mat : MonoBehaviour
 		void reset ()
 		{
 //				saturation.enabled = false;
-		
+				thiefOff ();
 //				if (oClone != null)
 //						Destroy (oClone);
 				state = "normal";
+				transform.tag = "mat";
 				CancelInvoke ("minusColor");
 				CancelInvoke ("plusColor");
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
@@ -203,7 +204,6 @@ public class color_mat : MonoBehaviour
 		{
 				if (saturation._Saturation > 0) {
 						saturation._Saturation -= RATE.colorMinusRate / 1000f;
-						Debug.Log ("thiefminus");	//						whiteMatSprite.color = new Color (1, 1, 1);
 				} else {
 						CancelInvoke ("thiefMinusColor");
 						state = "normal";

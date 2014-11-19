@@ -53,7 +53,7 @@ public class finger_gesture : MonoBehaviour
 		{
 //				if (!STATE._STATE.Equals ("WAIT") || STATE.isTouched)
 //						return;
-				Debug.Log (e.Selection.name);
+//				Debug.Log (e.Selection.name);
 				switch (e.Selection.name) {
 				case  "btn_menu":
 //						STATE._STATE = "WAIT";
