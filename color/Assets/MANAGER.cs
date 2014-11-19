@@ -40,7 +40,9 @@ public class MANAGER : MonoBehaviour
 				oStarTimer.animation.Stop ();
 		
 				Destroy (GameObject.FindGameObjectWithTag ("touch"));
-				Instantiate (prf_success, new Vector2 (0, 0), Quaternion.identity);
+				GameObject temp = Instantiate (prf_success, new Vector2 (0, 0), Quaternion.identity) as GameObject;
+				temp.transform.position -= new Vector3 (0, 0, 40);
+		
 				iMats.Stop ();
 
 		

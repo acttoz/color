@@ -33,8 +33,8 @@ public class Enemy1 : MonoBehaviour
 		void OnTriggerEnter (Collider myTrigger)
 		{
 		 
-				if (myTrigger.tag == "touch") {
-			STATE._STATE = "gFAIL";
+				if (myTrigger.tag == "touch" && finger_gesture.state.Equals ("brush")) {
+						STATE._STATE = "gFAIL";
 						Destroy (myTrigger);
 //						Destroy (this.gameObject, 0.1f);
 						

@@ -85,6 +85,7 @@ public class color_mat : MonoBehaviour
 
 		void thiefOff ()
 		{
+		state="normal";
 				StopCoroutine ("thiefBlink");
 				saturation._ValueBrightness = 1;
 		}

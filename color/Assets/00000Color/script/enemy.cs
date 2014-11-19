@@ -4,6 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour
 {
 		public GameObject prf_enemy, prf_thief;
+		private GameObject obj_thief;
 		private GameObject[] oMats;//parent of Colored mats
 		private int bossIds;
 	
@@ -42,25 +43,21 @@ public class Enemy : MonoBehaviour
 		{
 				if (GameObject.FindGameObjectsWithTag ("color") != null) {
 						//						tempNum_id = 0;
-						StopCoroutine ("initBoss");
 						randomBoss ();
-						StartCoroutine ("initBoss");
+						if (0 < oMats.Length) {
+								obj_thief = Instantiate (prf_thief, oMats [bossIds].transform.position, Quaternion.identity) as GameObject;
+								obj_thief.transform.position -= new Vector3 (0, 0, 20);
+								obj_thief.transform.parent = oMats [bossIds].transform;
+								oMats [bossIds].SendMessage ("thiefOn");
+								//						Debug.Log ("<<_____" + oMats [bossIds]);
+								//						Debug.Log ("id" + bossIds);
+								//						Debug.Log ("id" + bossIds);
+							
+								//						Debug.Log (oMats [bossIds] + "_____>>");
+								//						Debug.Log ("bossId" + bossIds);
+						}
 				}
 		}
 
-		IEnumerator initBoss ()
-		{
-				if (0 < oMats.Length) {
-						Instantiate (prf_thief, oMats [bossIds].transform.position, Quaternion.identity);
-						oMats [bossIds].SendMessage ("thiefOn");
-//						Debug.Log ("<<_____" + oMats [bossIds]);
-//						Debug.Log ("id" + bossIds);
-						yield return new WaitForSeconds (RATE.bossAttackRate);
-//						Debug.Log ("id" + bossIds);
-						oMats [bossIds].SendMessage ("thiefAttack");
-//						Debug.Log (oMats [bossIds] + "_____>>");
-//						Debug.Log ("bossId" + bossIds);
-				}
-		}
 	
 }

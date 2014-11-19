@@ -8,6 +8,7 @@ public class pop_fail : MonoBehaviour
 		void Start ()
 		{
 				StartCoroutine (waitSeconds (0.1f));
+				this.transform.position -= new Vector3 (0, 0, 20);
 		}
 	
 		// Update is called once per frame

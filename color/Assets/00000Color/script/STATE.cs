@@ -10,7 +10,6 @@ public class STATE : MonoBehaviour
 		public static int matsAll = 0;//number of all mats
 		public static int stars = 3;
 		private GameObject oCamera;
-
 		tk2dTextMesh stateText;
 		MANAGER manager;
 		// Use this for initialization
@@ -36,29 +35,41 @@ public class STATE : MonoBehaviour
 						_STATE = "WAIT";
 						break;
 				case  "WAIT":
-						oCamera.transform.position = new Vector3 (0, 0, -50);
-			
 						break;
 				case  "START":
 						manager.reset ();
+						cameraHover (true);
 						_STATE = "gIDLE";
 						break;
 				case  "NEXT":
 						break;
 				case  "gIDLE":
-						oCamera.transform.position = new Vector3 (-1.5f, 1.5f, -50);
 						break;
 				case  "gTOUCH":
 						break;
 				case  "gSUCCESS":
+						cameraHover (false);
 						manager.success ();
 						_STATE = "WAIT";
 						break;
 				case  "gFAIL":
+						cameraHover (false);
 						manager.fail ();
 						_STATE = "WAIT";
 						break;
 				
+				}
+		}
+
+		public void cameraHover (bool isHover)
+		{
+				if (isHover) {
+						Debug.Log ("cameraHover");
+						oCamera.transform.position = new Vector3 (-1.5f, 1.5f, -50);
+				}
+				if (!isHover) {
+						Debug.Log ("cameraHoverNot");
+						oCamera.transform.position = new Vector3 (0, 0, -50);
 				}
 		}
 
