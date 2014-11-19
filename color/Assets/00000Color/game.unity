@@ -74,6 +74,44 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!21 &10654989
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1.05999994
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &11046327
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +391,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 683664460}
   m_RootOrder: 2
---- !u!21 &553283096
+--- !u!21 &594733611
 Material:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -754,7 +792,7 @@ GameObject:
   - 111: {fileID: 964132558}
   - 114: {fileID: 964132559}
   m_Layer: 0
-  m_Name: mat
+  m_Name: mat1
   m_TagString: mat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -907,7 +945,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 1541554931}
+  - {fileID: 975016597}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -917,6 +955,44 @@ SpriteRenderer:
   m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: ee1f42ca673032d40a2a665febe8fb70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &975016597
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &988094358
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +1059,7 @@ GameObject:
   - 111: {fileID: 1062635241}
   - 114: {fileID: 1062635242}
   m_Layer: 0
-  m_Name: mat
+  m_Name: mat2
   m_TagString: mat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1395,7 +1471,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 1858654503}
+  - {fileID: 2123857035}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1689,7 +1765,7 @@ GameObject:
   - 111: {fileID: 1269296332}
   - 114: {fileID: 1269296333}
   m_Layer: 0
-  m_Name: mat
+  m_Name: mat4
   m_TagString: mat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1922,7 +1998,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 553283096}
+  - {fileID: 10654989}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2284,44 +2360,6 @@ SpriteRenderer:
   m_SortingOrder: -127
   m_Sprite: {fileID: 21300000, guid: e75703edb22e5204c97d5f31a8b82ce7, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
---- !u!21 &1541554931
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &1571147841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,7 +2425,7 @@ GameObject:
   - 111: {fileID: 1639796002}
   - 114: {fileID: 1639796003}
   m_Layer: 0
-  m_Name: mat
+  m_Name: mat3
   m_TagString: mat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2575,7 +2613,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 1829051010}
+  - {fileID: 594733611}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2717,82 +2755,6 @@ SpriteRenderer:
   m_SortingOrder: -68
   m_Sprite: {fileID: 21300000, guid: 839c5c8b5d6d0f248956629f863d0be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &1829051010
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1.05999994
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
---- !u!21 &1858654503
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1.05999994
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &1898033523
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,6 +3013,44 @@ SpriteRenderer:
   m_SortingOrder: -26
   m_Sprite: {fileID: 21300000, guid: 839c5c8b5d6d0f248956629f863d0be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &2123857035
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1.05999994
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &2132151359
 GameObject:
   m_ObjectHideFlags: 0

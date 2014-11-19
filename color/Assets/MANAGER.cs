@@ -42,6 +42,7 @@ public class MANAGER : MonoBehaviour
 				Destroy (GameObject.FindGameObjectWithTag ("touch"));
 				Instantiate (prf_success, new Vector2 (0, 0), Quaternion.identity);
 				iMats.Stop ();
+
 		
 		}
 
@@ -58,11 +59,11 @@ public class MANAGER : MonoBehaviour
 
 		public void reset ()
 		{
+				iEnemy.reset ();
+				iMats.reset ();
 				//START
 				oStarTimer.animation.Rewind ();
 				oStarTimer.animation.Play ();
-				iEnemy.reset ();
-				iMats.reset ();
 				
 
 	

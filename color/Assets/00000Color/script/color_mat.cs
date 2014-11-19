@@ -28,8 +28,9 @@ public class color_mat : MonoBehaviour
 //				whiteMatSprite = whiteMat.GetComponent<SpriteRenderer> ();
 //				matSprite = GetComponent<SpriteRenderer> ();
 //				pattern = GetComponent<EasySprite_Pattern> ();
-				if (gameObject.name.Equals ("mat"))
-						makeRainbow ();
+				saturation = GetComponent ("EasySprite_HSV") as EasySprite_HSV;
+				saturation._HueShift = 0;
+			 
 		}
 		// Use this for initialization
 		void reset ()
@@ -39,7 +40,6 @@ public class color_mat : MonoBehaviour
 //				if (oClone != null)
 //						Destroy (oClone);
 				state = "normal";
-				transform.tag = "mat";
 				CancelInvoke ("minusColor");
 				CancelInvoke ("plusColor");
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
@@ -68,8 +68,6 @@ public class color_mat : MonoBehaviour
 //		
 //				oClone.SetActive (false);
 				//				saturation.enabled = true;
-				saturation = GetComponent ("EasySprite_HSV") as EasySprite_HSV;
-				saturation._HueShift = 0;
 				renderer.material.shader = Shader.Find ("EasySprite2D/HSV_EasyS2D");
 		}
 	
@@ -148,7 +146,7 @@ public class color_mat : MonoBehaviour
 						animation.Play ("bloom");
 						//success
 						STATE.mats++;
-						Debug.Log ("mats" + STATE.mats + " " + STATE.matsAll);
+//						Debug.Log ("mats" + STATE.mats + " " + STATE.matsAll);
 						if (STATE.mats == STATE.matsAll)
 								STATE._STATE = "gSUCCESS";
 			

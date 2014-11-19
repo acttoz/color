@@ -18,6 +18,9 @@ public class Mats : MonoBehaviour
 
 		public void Stop ()
 		{
+				GameObject[] oColorMats = GameObject.FindGameObjectsWithTag ("color");
+				for (int i=0; i<oColorMats.Length; i++)
+						oColorMats [i].transform.tag = "mat";
 				GameObject[] oMats = GameObject.FindGameObjectsWithTag ("mat");
 				for (int i=0; i<oMats.Length; i++)
 						oMats [i].SendMessage ("endPlus");

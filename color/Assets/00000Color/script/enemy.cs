@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
 		{
 				if (GameObject.FindGameObjectsWithTag ("color") != null) {
 						//						tempNum_id = 0;
+						StopCoroutine ("initBoss");
 						randomBoss ();
 						StartCoroutine ("initBoss");
 				}
@@ -52,10 +53,13 @@ public class Enemy : MonoBehaviour
 				if (0 < oMats.Length) {
 						Instantiate (prf_thief, oMats [bossIds].transform.position, Quaternion.identity);
 						oMats [bossIds].SendMessage ("thiefOn");
-						Debug.Log ("bossId" + bossIds);
+//						Debug.Log ("<<_____" + oMats [bossIds]);
+//						Debug.Log ("id" + bossIds);
 						yield return new WaitForSeconds (RATE.bossAttackRate);
+//						Debug.Log ("id" + bossIds);
 						oMats [bossIds].SendMessage ("thiefAttack");
-						Debug.Log ("bossId" + bossIds);
+//						Debug.Log (oMats [bossIds] + "_____>>");
+//						Debug.Log ("bossId" + bossIds);
 				}
 		}
 	
