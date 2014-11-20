@@ -7,6 +7,7 @@ public class finger_gesture : MonoBehaviour
 		public GameObject prf_pump;
 		public GameObject prf_hammer;
 		public bool testUp;
+		private bool onColor=false;
 		private GameObject obj_touched;
 		public static string state = "brush";//pump,hammer
 		Enemy enemy;

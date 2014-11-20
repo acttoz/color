@@ -40,6 +40,7 @@ public class color_mat : MonoBehaviour
 //				if (oClone != null)
 //						Destroy (oClone);
 				state = "normal";
+				CancelInvoke ("thiefMinusColor");
 				CancelInvoke ("minusColor");
 				CancelInvoke ("plusColor");
 //				whiteMAT_position = GetComponentInChildren<Transform> ();
@@ -85,7 +86,7 @@ public class color_mat : MonoBehaviour
 
 		void thiefOff ()
 		{
-		state="normal";
+				state = "normal";
 				StopCoroutine ("thiefBlink");
 				saturation._ValueBrightness = 1;
 		}
@@ -204,8 +205,8 @@ public class color_mat : MonoBehaviour
 				if (saturation._Saturation > 0) {
 						saturation._Saturation -= RATE.colorMinusRate / 1000f;
 				} else {
-						CancelInvoke ("thiefMinusColor");
-						state = "normal";
+						
+						reset ();
 				}				
 		}
 
@@ -213,6 +214,7 @@ public class color_mat : MonoBehaviour
 		{
 				isPlus = true;
 				isMinus = false;
+				Debug.Log ("oncolor");
 		}
 
 		void offColor ()
