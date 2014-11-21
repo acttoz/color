@@ -39,6 +39,8 @@ public class color_mat : MonoBehaviour
 				thiefOff ();
 //				if (oClone != null)
 //						Destroy (oClone);
+				transform.tag = "mat";
+		
 				state = "normal";
 				CancelInvoke ("thiefMinusColor");
 				CancelInvoke ("minusColor");
@@ -89,18 +91,19 @@ public class color_mat : MonoBehaviour
 				state = "normal";
 				StopCoroutine ("thiefBlink");
 				saturation._ValueBrightness = 1;
+				transform.tag = "color";
 		}
 
 		void thiefAttack ()
 		{
 				if (state.Equals ("thief")) {
+						thiefOff ();
 						Debug.Log ("thiefattack");
 						saturation._Saturation = 5;
 						animation.Stop ();
 						STATE.mats--;
 						InvokeRepeating ("thiefMinusColor", 0, 0.01f);
 				}
-				thiefOff ();
 		}
 
 		IEnumerator thiefBlink (float term)

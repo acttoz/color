@@ -65,7 +65,7 @@ public class STATE : MonoBehaviour
 		{
 				if (isHover) {
 						Debug.Log ("cameraHover");
-						oCamera.transform.position = new Vector3 (-1.5f, 1.5f, -50);
+//						oCamera.transform.position = new Vector3 (-1.5f, 1.5f, -50);
 				}
 				if (!isHover) {
 						Debug.Log ("cameraHoverNot");
