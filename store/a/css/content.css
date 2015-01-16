@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* Bluewave Web Standard Team KKS 130225 */
+
+/* Guide */
+#wrapper{with:auto;height:300px;border:1px solid #888;background:#ffd6ef}
+
+/* divice 해상도에 따른 이미지 크기 조정 - 필요할 경우 사용 */
+@media screen and (-webkit-min-device-pixel-ratio:1.5){} /* 안드로이드 */
+
+/* Media Query */
+@media all and (min-width:768px){
+body,input,textarea,select,button,table{font-family:'나눔고딕',NanumGothic,NGW,'돋움',dotum,AppleGothic,sans-serif}
+@font-face{font-family:NGW;font-style:normal;font-weight:normal;src:url(../font/NanumGothic.eot);src:local(※),url(../font/NanumGothic.woff) format(woff)}
+@font-face{font-family:NGW;font-style:normal;font-weight:bold;src:url(../font/NanumGothicBold.eot);src:local(※),url(../font/NanumGothicBold.woff) format(woff)}
+}
+
+@media all and (min-width:768px) and (max-width:1024px){
+#wrapper{width:auto;height:300px;border:1px solid #888;background:#cccbff}
+}
+
+@media all and (min-width:1025px){
+#wrapper{width:1280px;height:300px;margin:0 auto;border:1px solid #888;background:#ebffc9}
+}

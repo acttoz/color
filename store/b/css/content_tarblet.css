@@ -1,0 +1,5 @@
+﻿@charset "utf-8";
+/* Bluewave Web Standard Team KKS 130225 */
+
+/* 테블릿,해상도 1024 및 노트북 */
+#wrapper{width:auto;height:300px;border:1px solid #888;background:#cccbff}

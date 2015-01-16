@@ -1,0 +1,8 @@
+﻿@charset "utf-8";
+/* Bluewave Web Standard Team KKS 130225 */
+
+/* Common */
+body,input,textarea,select,button,table{font-family:'돋움',dotum,AppleGothic,sans-serif}
+
+/* 스마트폰 */
+#wrapper{with:auto;height:300px;border:1px solid #888;background:#ffd6ef}

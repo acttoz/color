@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Kim kwangsung">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>자바스크립트 :: 반응형웹</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/content_mobile.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(window).resize(function(){
+		var width = parseInt($(this).width());
+		//$("#wrapper").text(width);
+		if (width<768) {
+			$("link[href*='content']").attr("href","css/content_mobile.css");
+	   } else if (width>=768 && width < 1025) {
+			$("link[href*='content']").attr("href","css/content_tarblet.css");
+	   } else if (width>1024) {
+			$("link[href*='content']").attr("href","css/content_web.css");
+		}
+	}).resize();
+});
+</script>
+</head>
+<body>	
+<!-- 스킵네비게이션 -->
+<div id="u_skip">
+<a href="#gnb"><span>메인 메뉴로 바로가기</span></a>
+<a href="#snb"><span>하위 메뉴로 바로가기</span></a>
+<a href="#content"><span>본문으로 바로가기</span></a>
+</div>
+<!-- //스킵네비게이션 -->		
+<div id="wrapper">자바스크립트 반응형웹</div>
+</body>
+</html>
