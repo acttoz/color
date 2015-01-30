@@ -3,29 +3,13 @@ using System.Collections;
 
 public class MANAGER : MonoBehaviour
 {
+		private int mScore;
 		private string STATE = "READY";
-		public static float mUp, mDown, mLeft, mRight;
-//		public static int  = 0;
-//		public static int matsAll = 0;
-//		public static int stars = 3;
-		tk2dTextMesh stateText;
-		GameObject bgm;
-		public GameObject   backFirst, backStart, oTimeUp, effectPop, mainCamera;
-		public Color colSky;
-		int tempLevel;
-		int mScore = 0;
-		int spaceId = 0;
-		public int[] spaceHeight;
-		public int scoreRate;
-		public tk2dTextMesh scoreText;
 		public static MANAGER mInstance;
+		public GameObject prf_ui_ready;
 
 		public MANAGER ()
 		{
-				mUp = 12;
-				mLeft = -7;
-				mDown = mUp * -1;
-				mRight = mLeft * -1;
 				mInstance = this;
 		}
 	
@@ -39,11 +23,6 @@ public class MANAGER : MonoBehaviour
 
 		void Start ()
 		{
-				
-				STATE = "PLAY";
-				stateText = GameObject.Find ("state").GetComponent<tk2dTextMesh> ();
-
-			
 				
 		}
 
@@ -59,30 +38,22 @@ public class MANAGER : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				stateText.text = STATE;
 				switch (STATE) {
 				case  "READY":
 //						manager.ready ();
+						ready ();
 						STATE = "WAIT";
 						break;
 				case  "WAIT":
 
 						break;
 				case  "START":
-//						manager.reset ();
 						STATE = "IDLE";
-						break;
-				case  "NEXT":
 						break;
 				case  "IDLE":
 
 						break;
-				case  "PLAY":
-			
-						break;
-				case  "UNDEAD":
-						break;
-				case  "TOUCH":
+				case  "JUMPING":
 						break;
 				case  "SUCCESS":
 //						manager.success ();
@@ -103,60 +74,30 @@ public class MANAGER : MonoBehaviour
 						mScore = value;
 				}
 		}
-	
-		void gameStart ()
+
+		void ready ()
 		{
-				Instantiate (backFirst, new Vector2 (0, 0), Quaternion.identity);
+				Instantiate (prf_ui_ready, new Vector2 (0, 0), Quaternion.identity);
+				gameReset ();
 		}
+
 	
 		//RESET
-		public void gameReset ()
+		void gameReset ()
 		{
-				int q = 1;
-				bgm = GameObject.Find ("BGM");
-				bgm.SendMessage ("superMode", q);
-				Level.instance.superLevel = 0;
-				tempLevel = Level.instance.superLevel;
-				mainCamera.camera.clearFlags = CameraClearFlags.SolidColor;
-		
-				Background.instance.reset ();
-				Item.instance.reset ();
-				Enemy.instance.reset ();
-				Level.instance.reset ();
-		
-				mainCamera.camera.backgroundColor = colSky;
-		
-				GameObject tempZone = GameObject.FindGameObjectWithTag ("zone");
-				if (tempZone != null)
-						Destroy (tempZone);
-		
-		
-				for (int i=0; i<10; i++) {
-						Enemy.instance.InitEnemy ();
-				}
-		
-				mScore = 0;
-		
-//				Instantiate (backStart, new Vector2 (0, 0), Quaternion.identity);
-		
+				 
+		}
+
+		void gameStart ()
+		{
 		}
 	
 		public void gameFail ()
 		{	
-				GameObject otimesup = Instantiate (oTimeUp, new Vector2 (0, 0), Quaternion.identity) as GameObject;
-				otimesup.transform.parent = GameObject.Find ("UI").transform;
-				otimesup.transform.localPosition = new Vector2 (0, 0);
+			 
 		}
 	
-		public IEnumerator Remove ()
-		{
-				
-				GameObject ep = (GameObject)GameObject.Instantiate (effectPop);
-				ep.transform.position = Play.instance.balloonPosition;
-				yield return new WaitForSeconds (0.5f);
-				gameFail ();
-		}
-	
+		 
 	
 	
 	 
@@ -164,14 +105,7 @@ public class MANAGER : MonoBehaviour
 		//SCORE
 		void scoreCount ()
 		{
-				score += scoreRate;
-				scoreText.text = " :  " + score;
-		
-		
-				if (mScore > spaceHeight [spaceId]) {
-						Background.instance.planet (spaceId);
-						spaceId++;
-				}
+				 
 		
 		}
 	
