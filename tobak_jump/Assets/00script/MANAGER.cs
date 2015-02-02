@@ -4,7 +4,7 @@ using System.Collections;
 public class MANAGER : MonoBehaviour
 {
 		private int mScore;
-		private string STATE = "READY";
+		private string STATE = "IDLE";
 		public static MANAGER mInstance;
 		public GameObject prf_ui_ready;
 
@@ -41,7 +41,7 @@ public class MANAGER : MonoBehaviour
 				switch (STATE) {
 				case  "READY":
 //						manager.ready ();
-						ready ();
+//						ready ();
 						STATE = "WAIT";
 						break;
 				case  "WAIT":

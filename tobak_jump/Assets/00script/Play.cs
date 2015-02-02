@@ -5,6 +5,7 @@ public class Play : MonoBehaviour
 {
 		
 		public static Play mInstance;
+		protected Animator animator;
 
 		public Play ()
 		{
@@ -40,8 +41,8 @@ public class Play : MonoBehaviour
 		}
  
 		/************************ Control **********************/
-		bool isCounting = false;
-		int dragFingerIndex = -1;
+//		bool isCounting = false;
+//		int dragFingerIndex = -1;
 	
 //		void OnDrag (DragGesture gesture)
 //		{
@@ -72,10 +73,20 @@ public class Play : MonoBehaviour
 		void OnTap (TapGesture e)
 		{
 				if (e.Selection.name == "touch_left") {
-						Player.instance.touchLeft ();
+						if (MANAGER.instance.state.Equals ("IDLE")) {
+								Debug.Log ("left");
+								Player.instance.touchLeft ();
+								Words.instance.moveWord ();
+								MANAGER.instance.state = "JUMPING";
+						}
+
 				}
-				if (e.Selection.name == "touch_Right") {
-						Player.instance.touchRight ();
+				if (e.Selection.name == "touch_right") {
+						if (MANAGER.instance.state.Equals ("IDLE")) {
+								Player.instance.touchRight ();
+								Words.instance.moveWord ();
+								MANAGER.instance.state = "JUMPING";
+						}
 				}
 				if (e.Selection.name == "btn_menu") {
 						Application.LoadLevel (1);

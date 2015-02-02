@@ -49,6 +49,7 @@
      <Compile Include="Assets\00script\Enemy.cs" />
      <Compile Include="Assets\00script\MANAGER.cs" />
      <Compile Include="Assets\00script\Play.cs" />
+     <Compile Include="Assets\00script\Player.cs" />
      <Compile Include="Assets\00script\RATE.cs" />
      <Compile Include="Assets\00script\Words.cs" />
      <Compile Include="Assets\2D Rope System\Scripts\Breakable.cs" />
@@ -675,7 +676,6 @@
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenShakeScale.cs" />
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenStop.cs" />
      <Compile Include="Assets\PlayMaker\Include\iTweenFSMEvents.cs" />
-     <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraUtil.cs" />
@@ -746,6 +746,7 @@
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSequence.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSequencer.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSheet.cs" />
+     <Compile Include="Assets\constrain.cs" />
      <Compile Include="Assets\iTween\iTween.cs" />
      <Compile Include="Assets\tk2dUIExtensions\Code\Controls\tk2dUIExtIndicator.cs" />
      <Compile Include="Assets\tk2dUIExtensions\Code\Controls\tk2dUIExtPager.cs" />
@@ -770,6 +771,7 @@
      <Compile Include="Assets\tk2dUIExtensions\Demo\Scripts\Windows\tk2dUIExtDemoWindowMissions.cs" />
      <Compile Include="Assets\tk2dUIExtensions\Demo\Scripts\Windows\tk2dUIExtDemoWindowPaused.cs" />
      <Compile Include="Assets\tk2dUIExtensions\Demo\Scripts\Windows\tk2dUIExtDemoWindowStore.cs" />
+     <Compile Include="Assets\word.cs" />
      <None Include="Assets\ToonEffect_V2\Documentation\03 - HTSpriteSheet.cs parameters.txt" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\LitSolidVertexColor.shader" />
      <None Include="Assets\PlayMaker\Readme.txt" />
