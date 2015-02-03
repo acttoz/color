@@ -22,6 +22,9 @@ public class tk2dSprite : tk2dBaseSprite
 
 		// Create mesh, independently to everything else
 		mesh = new Mesh();
+#if !UNITY_3_5
+		mesh.MarkDynamic();
+#endif
 		mesh.hideFlags = HideFlags.DontSave;
 		GetComponent<MeshFilter>().mesh = mesh;
 		
@@ -84,6 +87,9 @@ public class tk2dSprite : tk2dBaseSprite
 		if (mesh == null)
 		{
 			mesh = new Mesh();
+#if !UNITY_3_5
+			mesh.MarkDynamic();
+#endif
 			mesh.hideFlags = HideFlags.DontSave;
 			GetComponent<MeshFilter>().mesh = mesh;
 		}
@@ -179,13 +185,31 @@ public class tk2dSprite : tk2dBaseSprite
 			return;
 		
 		var sprite = collectionInst.spriteDefinitions[spriteId];
+
 		if (meshVertices == null || meshVertices.Length != sprite.positions.Length)
 		{
 			meshVertices = new Vector3[sprite.positions.Length];
-			meshNormals = (sprite.normals != null && sprite.normals.Length > 0)?(new Vector3[sprite.normals.Length]):(new Vector3[0]);
-			meshTangents = (sprite.tangents != null && sprite.tangents.Length > 0)?(new Vector4[sprite.tangents.Length]):(new Vector4[0]);
 			meshColors = new Color32[sprite.positions.Length];
 		}
+		
+		if (meshNormals == null || (sprite.normals != null && meshNormals.Length != sprite.normals.Length))
+		{
+			meshNormals = new Vector3[sprite.normals.Length];
+		}
+		else if (sprite.normals == null)
+		{
+			meshNormals = new Vector3[0];
+		}
+
+		if (meshTangents == null || (sprite.tangents != null && meshTangents.Length != sprite.tangents.Length))
+		{
+			meshTangents = new Vector4[sprite.tangents.Length];
+		}
+		else if (sprite.tangents == null)
+		{
+			meshTangents = new Vector4[0];
+		}
+
 		SetPositions(meshVertices, meshNormals, meshTangents);
 		SetColors(meshColors);
 
@@ -201,6 +225,7 @@ public class tk2dSprite : tk2dBaseSprite
 	
 	protected override void UpdateMaterial()
 	{
+		Renderer renderer = GetComponent<Renderer>();
 		if (renderer.sharedMaterial != collectionInst.spriteDefinitions[spriteId].materialInst)
 			renderer.material = collectionInst.spriteDefinitions[spriteId].materialInst;
 	}

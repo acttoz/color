@@ -907,6 +907,8 @@ namespace tk2dEditor.SpriteCollectionEditor
 			}
 		}
 
+		Vector2 attachPointScroll = Vector2.zero;
+
 		public void DrawAttachPointInspector(tk2dSpriteCollectionDefinition param, Texture2D texture) {
 			// catalog all names
 			HashSet<string> apHashSet = new HashSet<string>();
@@ -921,6 +923,8 @@ namespace tk2dEditor.SpriteCollectionEditor
 				apNameLookup.Add( apNames[i], i );
 			}
 			apNames.Add( "Create..." );
+
+			attachPointScroll = EditorGUILayout.BeginScrollView(attachPointScroll);
 
 			int toDelete = -1;
 			tk2dSpriteGuiUtility.showOpenEditShortcuts = false;
@@ -980,6 +984,8 @@ namespace tk2dEditor.SpriteCollectionEditor
 				editingAttachPointName = newEditingAttachPointName;
 				++apIdx;
 			}
+			
+			EditorGUILayout.EndScrollView();
 
 			if (GUILayout.Button("Add AttachPoint")) {
 				// Find an unused attach point name

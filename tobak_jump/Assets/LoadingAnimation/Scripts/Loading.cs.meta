@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: be99bba18281a424b8efa50d41317494
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - background: {fileID: 2800000, guid: 20d6d4b9c9c692147b53ff1be2b87cfa, type: 3}
+  - loadingSprite: {fileID: 2800000, guid: 941d388db611c7d4db5c78d48198a3f4, type: 3}
+  - loadingBarBackground: {fileID: 2800000, guid: 51588a7803a074141bca63d90e2661c7,
+      type: 3}
+  - loadingBarFill: {fileID: 2800000, guid: 7d250256b4c7a5c43a2c89cc249d643e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

@@ -134,6 +134,9 @@ public class tk2dSlicedSprite : tk2dBaseSprite
 		
 		// Create mesh, independently to everything else
 		mesh = new Mesh();
+#if !UNITY_3_5
+		mesh.MarkDynamic();
+#endif
 		mesh.hideFlags = HideFlags.DontSave;
 		GetComponent<MeshFilter>().mesh = mesh;
 	
@@ -272,6 +275,9 @@ public class tk2dSlicedSprite : tk2dBaseSprite
 		if (mesh == null)
 		{
 			mesh = new Mesh();
+#if !UNITY_3_5
+			mesh.MarkDynamic();
+#endif
 			mesh.hideFlags = HideFlags.DontSave;
 		}
 		else
@@ -356,7 +362,11 @@ public class tk2dSlicedSprite : tk2dBaseSprite
 #if !(UNITY_3_5 || UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2)
 				if (boxCollider2D != null) {
 					boxCollider2D.size = 2 * boundsExtents;
+#if (UNITY_3_5 || UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
 					boxCollider2D.center = boundsCenter;
+#else
+					boxCollider2D.offset = boundsCenter;
+#endif
 				}
 #endif
 			}
@@ -393,6 +403,7 @@ public class tk2dSlicedSprite : tk2dBaseSprite
 	
 	protected override void UpdateMaterial()
 	{
+		Renderer renderer = GetComponent<Renderer>();
 		if (renderer.sharedMaterial != collectionInst.spriteDefinitions[spriteId].materialInst)
 			renderer.material = collectionInst.spriteDefinitions[spriteId].materialInst;
 	}

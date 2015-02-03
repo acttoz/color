@@ -135,7 +135,7 @@ class tk2dClippedSpriteEditor : tk2dSpriteEditor
     	}
 	}
 
-    [MenuItem("GameObject/Create Other/tk2d/Clipped Sprite", false, 12901)]
+    [MenuItem(tk2dMenu.createBase + "Clipped Sprite", false, 12901)]
     static void DoCreateClippedSpriteObject()
     {
 		tk2dSpriteGuiUtility.GetSpriteCollectionAndCreate( (sprColl) => {

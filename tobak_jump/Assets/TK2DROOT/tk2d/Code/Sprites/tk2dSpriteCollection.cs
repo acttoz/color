@@ -40,6 +40,14 @@ public class tk2dSpriteColliderIsland
 }
 
 [System.Serializable]
+public class tk2dLinkedSpriteCollection
+{
+	public string name = ""; // name is the same as the find criteria
+	public tk2dSpriteCollection spriteCollection = null;
+}
+
+
+[System.Serializable]
 public class tk2dSpriteCollectionDefinition
 {
     public enum Anchor
@@ -554,6 +562,7 @@ public class tk2dSpriteCollection : MonoBehaviour
 	// platforms
 	public List<tk2dSpriteCollectionPlatform> platforms = new List<tk2dSpriteCollectionPlatform>();
 	public bool managedSpriteCollection = false; // true when generated and managed by system, eg. platform specific data
+	public tk2dSpriteCollection linkParent = null; // is this sprite collection linked to something else? eg. sync'ed diffused and normal sprite collection. This points to the parent
 	public bool HasPlatformData { get { return platforms.Count > 1; } }
 	public bool loadable = false;
 	public AtlasFormat atlasFormat = AtlasFormat.UnityTexture;
@@ -595,7 +604,7 @@ public class tk2dSpriteCollection : MonoBehaviour
 	public Material[] atlasMaterials;
 	public Texture2D[] atlasTextures;
 	public TextAsset[] atlasTextureFiles = new TextAsset[0];
-	
+
 	[SerializeField] private bool useTk2dCamera = false;
 	[SerializeField] private int targetHeight = 640;
 	[SerializeField] private float targetOrthoSize = 10.0f;
@@ -650,6 +659,9 @@ public class tk2dSpriteCollection : MonoBehaviour
 	public int version = 0;
 
 	public string assetName = "";
+
+	// Linked sprite collections
+	public List<tk2dLinkedSpriteCollection> linkedSpriteCollections = new List<tk2dLinkedSpriteCollection>();
 
 	// Fix up upgraded data structures
 	public void Upgrade()

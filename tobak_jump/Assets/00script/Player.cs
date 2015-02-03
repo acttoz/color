@@ -7,10 +7,12 @@ public class Player : MonoBehaviour
 		public static Player mInstance;
 		SpriteRenderer mSprite;
 		public Sprite sThink;
+		public Sprite sFall;
 		public Sprite[] sLeft;
 		public Sprite[] sRight;
 		public Sprite[] sStraight;
 		protected Animator animator;
+		public bool wasSuccess = true;
 
 		public Player ()
 		{
@@ -92,8 +94,14 @@ public class Player : MonoBehaviour
 
 		void thinkPose ()
 		{
-				mSprite.sprite = sThink;
-								MANAGER.instance.state = "IDLE";
+				if (wasSuccess) {
+						mSprite.sprite = sThink;
+						MANAGER.instance.state = "SUCCESS";
+				} else {
+						mSprite.sprite = sFall;
+						MANAGER.instance.state = "FAIL";
+						transform.parent.gameObject.GetComponent<Rigidbody2D> ().gravityScale = 1;
+				}
 		
 		}
 

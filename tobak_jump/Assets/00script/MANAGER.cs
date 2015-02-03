@@ -4,9 +4,10 @@ using System.Collections;
 public class MANAGER : MonoBehaviour
 {
 		private int mScore;
-		private string STATE = "IDLE";
+		public string STATE = "IDLE";
 		public static MANAGER mInstance;
-		public GameObject prf_ui_ready;
+		public GameObject prf_ui_ready, prf_ui_fail, prf_player;
+		tk2dTextMesh stateText;
 
 		public MANAGER ()
 		{
@@ -23,7 +24,7 @@ public class MANAGER : MonoBehaviour
 
 		void Start ()
 		{
-				
+				stateText = GetComponent<tk2dTextMesh> ();
 		}
 
 		public string state {
@@ -41,30 +42,31 @@ public class MANAGER : MonoBehaviour
 				switch (STATE) {
 				case  "READY":
 //						manager.ready ();
-//						ready ();
+						ready ();
 						STATE = "WAIT";
 						break;
 				case  "WAIT":
 
 						break;
 				case  "START":
+						Words.instance.reset ();
 						STATE = "IDLE";
 						break;
 				case  "IDLE":
-
 						break;
 				case  "JUMPING":
 						break;
 				case  "SUCCESS":
-//						manager.success ();
-						STATE = "WAIT";
+						success ();
+						STATE = "IDLE";
 						break;
 				case  "FAIL":
-//						manager.fail ();
+						fail ();
 						STATE = "WAIT";
 						break;
 				
 				}
+				stateText.text = "" + mScore;
 		}
 
 		public int score {
@@ -77,15 +79,27 @@ public class MANAGER : MonoBehaviour
 
 		void ready ()
 		{
-				Instantiate (prf_ui_ready, new Vector2 (0, 0), Quaternion.identity);
+				Instantiate (prf_ui_ready, new Vector3 (0, 0, -10), Quaternion.identity);
 				gameReset ();
+		}
+
+		void success ()
+		{
+				mScore += 10;
+		}
+
+		void fail ()
+		{
+				Instantiate (prf_ui_fail, new Vector3 (0, 0, -10), Quaternion.identity);
 		}
 
 	
 		//RESET
 		void gameReset ()
 		{
-				 
+				Words.instance.reset ();
+				mScore = 0;
+				Instantiate (prf_player, new Vector2 (0, 0), Quaternion.identity);
 		}
 
 		void gameStart ()

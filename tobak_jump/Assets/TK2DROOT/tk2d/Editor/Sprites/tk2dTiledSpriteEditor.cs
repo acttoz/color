@@ -150,7 +150,7 @@ class tk2dTiledSpriteEditor : tk2dSpriteEditor
     	}
 	}
 
-    [MenuItem("GameObject/Create Other/tk2d/Tiled Sprite", false, 12901)]
+    [MenuItem(tk2dMenu.createBase + "Tiled Sprite", false, 12901)]
     static void DoCreateSlicedSpriteObject()
     {
 		tk2dSpriteGuiUtility.GetSpriteCollectionAndCreate( (sprColl) => {

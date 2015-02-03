@@ -1243,7 +1243,7 @@ public class tk2dTileMapEditor : Editor, ITileMapEditorHost
 		}
 	}
 	
-    [MenuItem("GameObject/Create Other/tk2d/TileMap", false, 13850)]
+    [MenuItem(tk2dMenu.createBase + "TileMap", false, 13850)]
 	static void Create()
 	{
 		tk2dSpriteCollectionData sprColl = null;

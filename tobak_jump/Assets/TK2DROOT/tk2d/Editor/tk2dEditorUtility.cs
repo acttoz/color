@@ -6,7 +6,7 @@ using System.IO;
 [InitializeOnLoad]
 public static class tk2dEditorUtility
 {
-	public static double version = 2.4;
+	public static double version = 2.5;
 	public static int releaseId = 0; // < -10001 = alpha 1, other negative = beta release, 0 = final, positive = final hotfix
 
 	static tk2dEditorUtility() {
@@ -21,6 +21,16 @@ public static class tk2dEditorUtility
 #else
 		Undo.undoRedoPerformed += OnUndoRedo;
 #endif
+	}
+
+	[MenuItem(tk2dMenu.root + "Rebuild All Sprites", false, 10280)]
+	static void RebuildAllSprites() {
+		tk2dBaseSprite[] allSprites = Object.FindObjectsOfType(typeof(tk2dBaseSprite)) as tk2dBaseSprite[];
+		tk2dTextMesh[] allTextMeshes = Object.FindObjectsOfType(typeof(tk2dTextMesh)) as tk2dTextMesh[];
+		tk2dStaticSpriteBatcher[] allBatchers = Object.FindObjectsOfType(typeof(tk2dStaticSpriteBatcher)) as tk2dStaticSpriteBatcher[];
+		foreach (var t in allSprites) 		{ t.ForceBuild(); }
+		foreach (var t in allTextMeshes) 	{ t.ForceBuild(); }
+		foreach (var t in allBatchers) 		{ t.ForceBuild(); }
 	}
 
 	static void OnUndoRedo() {
@@ -369,7 +379,11 @@ public static class tk2dEditorUtility
 		Selection.objects = new Object[0];
 		
 		System.GC.Collect();
+#if (UNITY_3_5 || UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
 		EditorUtility.UnloadUnusedAssets();
+#else
+		EditorUtility.UnloadUnusedAssetsImmediate();
+#endif
 		
 		index = null;
 		
@@ -380,7 +394,11 @@ public static class tk2dEditorUtility
 	{
 		System.GC.Collect();
 		System.GC.WaitForPendingFinalizers();
+#if (UNITY_3_5 || UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
 		EditorUtility.UnloadUnusedAssets();
+#else
+		EditorUtility.UnloadUnusedAssetsImmediate();
+#endif
 	}
 
 	public static void DeleteAsset(UnityEngine.Object obj)
@@ -466,7 +484,7 @@ public static class tk2dEditorUtility
 	}
 #endif
 
-    [MenuItem("GameObject/Create Other/tk2d/Empty GameObject", false, 55000)]
+    [MenuItem(tk2dMenu.createBase + "Empty GameObject", false, 55000)]
     static void DoCreateEmptyGameObject()
     {
 		GameObject go = tk2dEditorUtility.CreateGameObjectInScene("GameObject");
