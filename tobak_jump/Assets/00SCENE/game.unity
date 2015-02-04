@@ -292,7 +292,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
       propertyPath: m_Mesh
@@ -1519,7 +1519,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
       propertyPath: m_Mesh
@@ -1758,21 +1758,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentWords: {fileID: 1661703280}
-  back: {fileID: 0}
   prf_word: {fileID: 100000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
-  answer4: 0000000000000000
-  answer3: 0000000000000000
-  answer2: 0000000000000000
-  answer1: 0000000000000000
   word4:
   - 
   - 
-  oWords:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  target: {fileID: 0}
 --- !u!114 &227851490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,9 +1770,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 227851485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c326cf4ba47196d438cfa16f55f3dc52, type: 3}
+  m_Script: {fileID: 11500000, guid: 103352df78c2e1749959f1bc1f48b93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isScore: 0
+  Skin: {fileID: 0}
+  windowWidth: 380
+  windowRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  maxNameLength: 10
+  getLimitScore: 15
+  loading: {fileID: 0}
+  scoreList: {fileID: 0}
 --- !u!114 &227851491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3409,7 +3411,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
       propertyPath: m_Mesh
@@ -3628,7 +3630,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3300000, guid: afb2d173c7722eb4fa8c42e3d4a2fe06, type: 2}
       propertyPath: m_Mesh

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Play : MonoBehaviour
@@ -93,18 +93,9 @@ public class Play : MonoBehaviour
 						Destroy (e.Selection.gameObject.transform.parent.gameObject, 0.5f);
 						Invoke ("ready", 0.5f);
 				}
-				if (e.Selection.name == "btn_replay") {
-						//						btn_replay.GetComponent<SpriteRenderer> ().color = Color.yellow;
-						int adNum;
-						adNum = PlayerPrefs.GetInt ("ADTIME", 0);
-						adNum++;
-						PlayerPrefs.SetInt ("ADTIME", adNum);
-			
-						//						btn_replay.GetComponent<SpriteRenderer> ().color = Color.white;
-						Destroy (GameObject.Find ("prf_timesup 1(Clone)"));
-						Destroy (GameObject.Find ("prf_pause(Clone)"));
-						Time.timeScale = 1.0f;
-						//												Application.LoadLevel (0);
+				if (e.Selection.name == "btn_submit") { 
+						Rank rank = new Rank (100, "문병무");
+						rank.postRank ();
 				}
 				if (e.Selection.name == "btn_next") {
 			

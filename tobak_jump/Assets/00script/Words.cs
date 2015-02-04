@@ -4,21 +4,19 @@ using System.Collections;
 public class Words : MonoBehaviour
 {
 		public GameObject parentWords;
-		public GameObject back;
 		public GameObject prf_word;
 		public static Words mInstance;
 		int randomWord;
 		int randomAnswer;
-		public int[] answer4 = {0,0};
-		public int[] answer3 = {0,0};
-		public int[] answer2 = {0,0};
-		public int[] answer1 = {0,0};
+		int[] answer4 = {0,0};
+		int[] answer3 = {0,0};
+		int[] answer2 = {0,0};
+		int[] answer1 = {0,0};
 		public string[] word4 = new string[2];
 //		public string[] word3 = new string[2];
 //		public string[] word2 = new string[2];
 //		public string[] word1 = new string[2];
-		public GameObject[] oWords = new GameObject[4];
-		public Transform target;
+		GameObject oWords;
 		int wordsPosition = 0;
 		// Use this for initialization
 		public Words ()
@@ -36,7 +34,6 @@ public class Words : MonoBehaviour
 
 		public void reset ()
 		{
-				
 				StartCoroutine ("initGame");
 		}
 
@@ -90,8 +87,8 @@ public class Words : MonoBehaviour
 						word4 [0] = korean [randomWord];
 						word4 [1] = tobak [randomWord];
 				}
-				oWords [3] = Instantiate (prf_word, new Vector2 (0, 9), Quaternion.identity) as GameObject;
-				oWords [3].transform.parent = GameObject.Find ("Words").transform;
+				oWords = Instantiate (prf_word, new Vector2 (0, 9), Quaternion.identity) as GameObject;
+				oWords.transform.parent = GameObject.Find ("Words").transform;
 		}
 
 		public void jump (int jumpDirection)

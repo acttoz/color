@@ -51,6 +51,7 @@
      <Compile Include="Assets\00script\Play.cs" />
      <Compile Include="Assets\00script\Player.cs" />
      <Compile Include="Assets\00script\RATE.cs" />
+     <Compile Include="Assets\00script\Rank.cs" />
      <Compile Include="Assets\00script\Words.cs" />
      <Compile Include="Assets\2D Rope System\Scripts\Breakable.cs" />
      <Compile Include="Assets\2D Rope System\Scripts\Drag.cs" />

@@ -134,6 +134,7 @@ public class MANAGER : MonoBehaviour
 		void fail ()
 		{
 				Instantiate (prf_ui_fail, new Vector3 (0, 0, -10), Quaternion.identity);
+				StopCoroutine ("MoveObject");
 		}
 
 	
@@ -145,7 +146,6 @@ public class MANAGER : MonoBehaviour
 				Instantiate (prf_player, new Vector2 (0, 0), Quaternion.identity);
 				oBack.transform.position = new Vector2 (0, 0);
 				MovingBack ba = new MovingBack ();
-				StopCoroutine ("MoveObject");
 				oFires.transform.position = new Vector2 (0, 0);
 		}
 
