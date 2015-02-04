@@ -120,6 +120,7 @@
      <Compile Include="Assets\Highscore\Script\Highscore.cs" />
      <Compile Include="Assets\LoadingAnimation\Scripts\Example.cs" />
      <Compile Include="Assets\LoadingAnimation\Scripts\Loading.cs" />
+     <Compile Include="Assets\MovingBack.cs" />
      <Compile Include="Assets\PlayMaker Custom Actions\GUIElement\SetGUITexturePixelInsetPosition.cs" />
      <Compile Include="Assets\PlayMaker Custom Actions\Input\AnyKeyStoreString.cs" />
      <Compile Include="Assets\PlayMaker Custom Actions\Rect\RectContains2.cs" />
@@ -679,6 +680,7 @@
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenShakeScale.cs" />
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenStop.cs" />
      <Compile Include="Assets\PlayMaker\Include\iTweenFSMEvents.cs" />
+     <Compile Include="Assets\Sort.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraUtil.cs" />
@@ -815,7 +817,6 @@
      <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
      <None Include="Assets\Highscore\Read Me\Read Me.txt" />
      <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
-     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\CutoutVertexColor.shader" />
      <None Include="Assets\TK2DROOT\tk2d_demo\demobmfont\test.fnt" />
      <None Include="Assets\Highscore\Read Me\Create database table.txt" />

@@ -77,28 +77,19 @@ public class Play : MonoBehaviour
 	
 		void OnTap (TapGesture e)
 		{
-				if (e.Selection.name == "touch_left") {
-						if (MANAGER.instance.state.Equals ("IDLE")) {
-								Player.instance.touchLeft ();
-								Words.instance.jump (0);
-								MANAGER.instance.state = "JUMPING";
-						}
-
+				if (e.Selection.name == "touch_left" && MANAGER.instance.state.Equals ("IDLE")) {
+						MANAGER.instance.touch (0);
 				}
-				if (e.Selection.name == "touch_right") {
-						if (MANAGER.instance.state.Equals ("IDLE")) {
-								Player.instance.touchRight ();
-								Words.instance.jump (1);
-								MANAGER.instance.state = "JUMPING";
-						}
+				if (e.Selection.name == "touch_right" && MANAGER.instance.state.Equals ("IDLE")) {
+						MANAGER.instance.touch (1);
 				}
 				if (e.Selection.name == "ready(Clone)" && MANAGER.instance.state.Equals ("WAIT")) {
-						iTween.PunchScale (e.Selection, iTween.Hash ("x", 0.1, "y", 0.1, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", 0.2f));
+						iTween.PunchScale (e.Selection, iTween.Hash ("x", 0.1, "y", 0.1));
 						Destroy (e.Selection.gameObject, 0.5f);
 						MANAGER.instance.state = "IDLE";
 				}
 				if (e.Selection.name == "btn_restart") {
-						iTween.PunchScale (e.Selection, iTween.Hash ("x", 0.1, "y", 0.1, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", 0.2f));
+						iTween.PunchScale (e.Selection, iTween.Hash ("x", 0.1, "y", 0.1));
 						Destroy (e.Selection.gameObject.transform.parent.gameObject, 0.5f);
 						Invoke ("ready", 0.5f);
 				}

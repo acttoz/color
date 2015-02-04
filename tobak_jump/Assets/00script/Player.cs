@@ -27,29 +27,28 @@ public class Player : MonoBehaviour
 				}
 		}
 
-		public void touchLeft ()
+		public void touch (int direction)
 		{
-				if (state < 2) {
-						//left
-						jumpStraight ();
+				if (direction == 0) {
+						if (state < 2) {
+								//left
+								jumpStraight ();
+						} else {
+								//right
+								jumpLeft ();
+						}
+						state = 1;
 				} else {
-						//right
-						jumpLeft ();
+						if (state < 2) {
+								//left
+								jumpRight ();
+						} else {
+								//right
+								jumpStraight ();
+						}
+						state = 2;
 				}
-				state = 1;
 
-		}
-
-		public void touchRight ()
-		{
-				if (state < 2) {
-						//left
-						jumpRight ();
-				} else {
-						//right
-						jumpStraight ();
-				}
-				state = 2;
 		}
 
 		void jumpLeft ()
@@ -98,11 +97,16 @@ public class Player : MonoBehaviour
 						mSprite.sprite = sThink;
 						MANAGER.instance.state = "SUCCESS";
 				} else {
-						mSprite.sprite = sFall;
+						failAction ();
 						MANAGER.instance.state = "FAIL";
-						transform.parent.gameObject.GetComponent<Rigidbody2D> ().gravityScale = 1;
 				}
 		
+		}
+
+		public void failAction ()
+		{
+				mSprite.sprite = sFall;
+				transform.parent.gameObject.GetComponent<Rigidbody2D> ().gravityScale = 1;
 		}
 
 		void setPosition (int num)

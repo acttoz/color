@@ -93,7 +93,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.484375}
+  m_LocalPosition: {x: -.0230484232, y: -1.09502363, z: -3.484375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
@@ -121,8 +121,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 3.484375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2, y: -.0544023514, z: 3.484375}
+  m_LocalScale: {x: .800000012, y: .800000012, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 3
@@ -145,8 +145,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 3.484375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.05382204, y: -.0544023514, z: 3.484375}
+  m_LocalScale: {x: .800000012, y: .800000012, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 1
@@ -169,7 +169,7 @@ Renderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -9
 --- !u!23 &2300002
 Renderer:
   m_ObjectHideFlags: 1
@@ -189,7 +189,7 @@ Renderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -8
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -233,13 +233,13 @@ MonoBehaviour:
   data:
     version: 1
     font: {fileID: 11400000, guid: 6629a265ac496a041ac9a3af92d0c724, type: 2}
-    text: sa
+    text: "\uC81C\uAC70"
     color: {r: .139705896, g: .139705896, b: .139705896, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
     useGradient: 0
     textureGradient: 0
     anchor: 4
-    renderLayer: 0
+    renderLayer: -9
     scale: {x: 1, y: 1, z: 1}
     kerning: 0
     maxChars: 16
@@ -277,13 +277,13 @@ MonoBehaviour:
   data:
     version: 1
     font: {fileID: 11400000, guid: 6629a265ac496a041ac9a3af92d0c724, type: 2}
-    text: sa
+    text: "\uC81C\uAC70"
     color: {r: .139705896, g: .139705896, b: .139705896, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
     useGradient: 0
     textureGradient: 0
     anchor: 4
-    renderLayer: 0
+    renderLayer: -8
     scale: {x: 1, y: 1, z: 1}
     kerning: 0
     maxChars: 16
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199942f9d07119f40b654d7104b001fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limit: -6
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

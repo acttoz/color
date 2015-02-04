@@ -4,9 +4,10 @@ using System.Collections;
 public class MANAGER : MonoBehaviour
 {
 		private int mScore;
+		public float fireTime;
 		public string STATE = "IDLE";
 		public static MANAGER mInstance;
-		public GameObject prf_ui_ready, prf_ui_fail, prf_player;
+		public GameObject prf_ui_ready, prf_ui_fail, prf_player, oBack, oFires;
 		tk2dTextMesh stateText;
 
 		public MANAGER ()
@@ -77,6 +78,48 @@ public class MANAGER : MonoBehaviour
 				}
 		}
 
+		public void touch (int direction)
+		{
+				Player.instance.touch (direction);
+				Words.instance.jump (direction);
+				MANAGER.instance.state = "JUMPING";
+				oBack.SendMessage ("move");
+				moveFire ();
+		}
+
+		void moveFire ()
+		{
+				StopCoroutine ("MoveObject");
+				
+				StartCoroutine ("MoveObject");
+		
+		}
+	
+		IEnumerator MoveObject ()
+		{
+				Vector3 endPos = new Vector3 (0, 5.5f, 0);
+				Vector3 startPos = new Vector3 (0, 0, 0);
+				Vector3 currentPos = oFires.transform.position;
+				float i = 0.0f;
+				float rate = 1.0f / 0.3f;
+				while (i < 1.0f) {
+						i += Time.deltaTime * rate;
+						oFires.transform.position = Vector3.Lerp (oFires.transform.position, startPos, i);
+						yield return null; 
+				}
+				yield return new WaitForSeconds (1f);
+				i = 0.0f;
+				rate = 1.0f / fireTime;
+				while (i < 1.0f) {
+						i += Time.deltaTime * rate;
+						oFires.transform.position = Vector3.Lerp (startPos, endPos, i);
+						yield return null; 
+				}
+				fail ();
+				Player.instance.failAction ();
+		
+		}
+
 		void ready ()
 		{
 				Instantiate (prf_ui_ready, new Vector3 (0, 0, -10), Quaternion.identity);
@@ -100,6 +143,10 @@ public class MANAGER : MonoBehaviour
 				Words.instance.reset ();
 				mScore = 0;
 				Instantiate (prf_player, new Vector2 (0, 0), Quaternion.identity);
+				oBack.transform.position = new Vector2 (0, 0);
+				MovingBack ba = new MovingBack ();
+				StopCoroutine ("MoveObject");
+				oFires.transform.position = new Vector2 (0, 0);
 		}
 
 		void gameStart ()

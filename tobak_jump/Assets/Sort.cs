@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroySelf : MonoBehaviour
+public class Sort : MonoBehaviour
 {
-		public float limit;
 
 		// Use this for initialization
 		void Start ()
 		{
+				particleSystem.renderer.sortingLayerName = "fire";
 	
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
-				if (this.transform.position.y < limit)
-						Destroy (this.gameObject);
+	
 		}
 }
