@@ -119,6 +119,7 @@
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\StartMenu.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SwipeParticlesEmitter.cs" />
      <Compile Include="Assets\Highscore\Script\Highscore.cs" />
+     <Compile Include="Assets\InputText.cs" />
      <Compile Include="Assets\LoadingAnimation\Scripts\Example.cs" />
      <Compile Include="Assets\LoadingAnimation\Scripts\Loading.cs" />
      <Compile Include="Assets\MovingBack.cs" />
@@ -681,6 +682,7 @@
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenShakeScale.cs" />
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenStop.cs" />
      <Compile Include="Assets\PlayMaker\Include\iTweenFSMEvents.cs" />
+     <Compile Include="Assets\Ranking.cs" />
      <Compile Include="Assets\Sort.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
      <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
@@ -767,6 +769,7 @@
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSequencer.cs" />
      <Compile Include="Assets\ToonEffect_V2\Plugins\HTSpriteSheet.cs" />
      <Compile Include="Assets\constrain.cs" />
+     <Compile Include="Assets\destroyTimer.cs" />
      <Compile Include="Assets\iTween\iTween.cs" />
      <Compile Include="Assets\score.cs" />
      <Compile Include="Assets\tk2dUIExtensions\Code\Controls\tk2dUIExtIndicator.cs" />

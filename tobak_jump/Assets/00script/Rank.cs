@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Text;
 using System.Security;
@@ -6,28 +6,17 @@ using System.Security;
 public class Rank : MonoBehaviour
 {
 		public bool isScore = false;
-		string secretKey = "0453";
-		string PostScoreUrl = "http://actoze.dothome.co.kr/tobak/postScore.php?";
-		string PostNameUrl = "http://actoze.dothome.co.kr/tobak/postName.php?";
-		string GetHighscoreUrl = "http://actoze.dothome.co.kr/tobak/getHighscore.php";
+		public string secretKey = "0453";
+		public string PostScoreUrl;
+		public string GetHighscoreUrl;
 //		private string WindowTitel = "";
-		private string Scores = "";
-		private string Names = "";
+		private string rankText = "";
 		private tk2dTextMesh scoreText;
-		private string[] rankList = new string[50];
-		public GUISkin Skin;
-		public float windowWidth = 380;
-		private float windowHeight = 300;
-		public Rect windowRect;
-		public int maxNameLength = 10;
-		public int getLimitScore = 15;
-		public GameObject loading, scoreList;
-		string name;
-		int score;
+		private string[] rankList;
 	
 		void Start ()
 		{
-					
+				scoreText = GetComponent<tk2dTextMesh> ();
 		}
 
 		void Update ()
@@ -35,15 +24,20 @@ public class Rank : MonoBehaviour
 
 		}
 
+		public void RankShow ()
+		{
+		
+				StartCoroutine ("GetScore");
+		}
+
 		public Rank (int score, string name)
 		{
-				this.score = score;
-				this.name = name;
+				
+				StartCoroutine ("PostScore");
 		}
 
 		IEnumerator GetScore ()
 		{
-				Scores = "";
 			
 //				WindowTitel = "Loading";
 	
@@ -53,73 +47,43 @@ public class Rank : MonoBehaviour
 		
 				WWW www = new WWW (GetHighscoreUrl, form);
 				yield return www;
-		
-				if (www.text == "") {
-						loading.GetComponent<tk2dTextMesh> ().text = "Network Error..";
-						print ("There was an error getting the high score: " + www.error);
-//						WindowTitel = "There was an error getting the high score";
-						yield return new WaitForSeconds (1f);
-						Application.LoadLevel (1);
-				} else {
-						loading.SetActive (false);
-//						WindowTitel = "Done";
-						textSplit (www.text);
-						showRank (10);
-//						Score = textSplit (www.text)[0];
-				}
+//				scoreText.text = www.text;
+				rankList = www.text.Split ('\n');
+//				Debug.Log (www.text);
+				showRank ();
 		}
 
-		void showRank (int lastId)
+		void showRank ()
 		{
-				Names = "";
-				Scores = "";
-				for (int i=lastId-10; i<lastId; i++) {
-
+				rankText = "";
+				for (int i=0; i<rankList.Length-1; i++) {
 						string[] temp = rankList [i].Split (',');
+			Debug.Log(temp[1]);
 
-						Names += (i + 1) + ". " + temp [0];
-						if (i < lastId)
-								Names += "\n";
+						rankText += (i + 1) + ".   " + temp [0] + "     " + temp [1] + "\n";
 
-						Scores += temp [1];
-						if (i < lastId)
-								Scores += "\n";
 				}
 
 
-				scoreText.text = Names;
-				scoreList.SendMessage ("showScores", Scores);
+				scoreText.text = rankText;
 		}
 
-		public void postRank ()
+		public void postRank (string name, int score)
 		{
-				StartCoroutine ("PostScore");
-		}
-
-		void textSplit (string www)
-		{
-				rankList = www.Split ('\n');
+				StartCoroutine (PostScore (name, score));
 		}
 	
-		public IEnumerator PostScore ()
+		IEnumerator PostScore (string name, int score)
 		{
-		
-				string hash = Md5Sum (name + score + secretKey).ToLower ();
 		
 				WWWForm form = new WWWForm ();
 				form.AddField ("name", name);
 				form.AddField ("score", score);
-				form.AddField ("hash", hash);
 		
 				WWW www = new WWW (PostScoreUrl, form);
 //				WindowTitel = "Wait";
 				yield return www;
-		
-				if (www.text == "done") {
-						Debug.Log ("done");
-				} else {
-						Debug.Log ("networkError");
-				}
+				MANAGER.instance.toast (2);
 		}
 	
 		public string Md5Sum (string input)

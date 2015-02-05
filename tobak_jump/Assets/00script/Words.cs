@@ -77,7 +77,7 @@ public class Words : MonoBehaviour
 				answer4 [0] = 0;
 				answer4 [1] = 0;
 				randomAnswer = Random.Range (0, 2);
-				randomWord = Random.Range (0, 100);
+				randomWord = Random.Range (0, 98);
 				answer4 [randomAnswer] = 1;
 				
 				if (randomAnswer == 0) {

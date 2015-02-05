@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MovingBack : MonoBehaviour
 {
-		float position;
+		public float position;
 		// Use this for initialization
 		void Start ()
 		{
@@ -16,7 +16,7 @@ public class MovingBack : MonoBehaviour
 	
 		}
 
-		public MovingBack ()
+		public void reset ()
 		{
 				position = 0;
 		}

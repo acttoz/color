@@ -23,7 +23,6 @@ public class Play : MonoBehaviour
 		void Start ()
 		{
 			
- 
 		}
 	
 		// Update is called once per frame
@@ -94,8 +93,12 @@ public class Play : MonoBehaviour
 						Invoke ("ready", 0.5f);
 				}
 				if (e.Selection.name == "btn_submit") { 
-						Rank rank = new Rank (100, "문병무");
-						rank.postRank ();
+						iTween.PunchScale (e.Selection, iTween.Hash ("x", 0.1, "y", 0.1));
+						MANAGER.instance.rankSubmit ();
+				}
+				if (e.Selection.name == "btn_exit") { 
+						iTween.PunchScale (e.Selection, iTween.Hash ("x", 0.1, "y", 0.1));
+						Application.LoadLevel (0);
 				}
 				if (e.Selection.name == "btn_next") {
 			

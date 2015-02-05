@@ -7,8 +7,9 @@ public class MANAGER : MonoBehaviour
 		public float fireTime;
 		public string STATE = "IDLE";
 		public static MANAGER mInstance;
-		public GameObject prf_ui_ready, prf_ui_fail, prf_player, oBack, oFires;
+		public GameObject prf_ui_ready, prf_ui_fail, prf_player, oBack, oFires, oToast, oToast_send;
 		tk2dTextMesh stateText;
+		public string inputText;
 
 		public MANAGER ()
 		{
@@ -48,6 +49,9 @@ public class MANAGER : MonoBehaviour
 						break;
 				case  "WAIT":
 
+						break;
+				case  "toast":
+			
 						break;
 				case  "START":
 						Words.instance.reset ();
@@ -145,8 +149,28 @@ public class MANAGER : MonoBehaviour
 				mScore = 0;
 				Instantiate (prf_player, new Vector2 (0, 0), Quaternion.identity);
 				oBack.transform.position = new Vector2 (0, 0);
-				MovingBack ba = new MovingBack ();
+				oBack.GetComponent<MovingBack> ().position = 0;
 				oFires.transform.position = new Vector2 (0, 0);
+		}
+
+		public void rankSubmit ()
+		{
+				if (!inputText.Equals (""))
+						GetComponent<Rank> ().postRank (inputText, mScore);
+				else
+						toast (1);
+		}
+
+		public void toast (int num)
+		{
+				switch (num) {
+				case 1:
+						Instantiate (oToast, new Vector2 (0, 0), Quaternion.identity);
+						break;
+				case 2:
+						Instantiate (oToast_send, new Vector2 (0, 0), Quaternion.identity);
+						break;
+				}
 		}
 
 		void gameStart ()
