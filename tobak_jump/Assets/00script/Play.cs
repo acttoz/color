@@ -95,6 +95,9 @@ public class Play : MonoBehaviour
 				if (e.Selection.name == "btn_submit") { 
 						iTween.PunchScale (e.Selection, iTween.Hash ("x", 0.1, "y", 0.1));
 						MANAGER.instance.rankSubmit ();
+						
+
+			
 				}
 				if (e.Selection.name == "btn_exit") { 
 						iTween.PunchScale (e.Selection, iTween.Hash ("x", 0.1, "y", 0.1));

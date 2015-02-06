@@ -82,7 +82,6 @@
      <None Include="Assets\PlayMaker\Resources\PlayMakerAssemblies.txt" />
      <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Font\OldSansBlack\OldSansBlack.fnt" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
-     <None Include="Assets\LoadingAnimation\Readme.txt" />
      <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito16.fnt" />
      <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito32.fnt" />
      <None Include="Assets\tk2dUIExtensions\Fonts\AveriaSansLibre.fnt" />

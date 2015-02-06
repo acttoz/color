@@ -120,8 +120,6 @@
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SwipeParticlesEmitter.cs" />
      <Compile Include="Assets\Highscore\Script\Highscore.cs" />
      <Compile Include="Assets\InputText.cs" />
-     <Compile Include="Assets\LoadingAnimation\Scripts\Example.cs" />
-     <Compile Include="Assets\LoadingAnimation\Scripts\Loading.cs" />
      <Compile Include="Assets\MovingBack.cs" />
      <Compile Include="Assets\PlayMaker Custom Actions\GUIElement\SetGUITexturePixelInsetPosition.cs" />
      <Compile Include="Assets\PlayMaker Custom Actions\Input\AnyKeyStoreString.cs" />
@@ -827,7 +825,6 @@
      <None Include="Assets\PlayMaker\Resources\PlayMakerAssemblies.txt" />
      <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Font\OldSansBlack\OldSansBlack.fnt" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\LitBlendVertexColor.shader" />
-     <None Include="Assets\LoadingAnimation\Readme.txt" />
      <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito16.fnt" />
      <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito32.fnt" />
      <None Include="Assets\tk2dUIExtensions\Fonts\AveriaSansLibre.fnt" />

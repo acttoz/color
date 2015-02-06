@@ -11,7 +11,7 @@ PlayerSettings:
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: Loud Develop
-  productName: Space Balloon
+  productName: "\uD1A0\uBC15\uC774\uB9D0\uCC3E\uAE30"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -56,6 +56,7 @@ PlayerSettings:
   visibleInBackground: 0
   macFullscreenMode: 2
   d3d9FullscreenMode: 1
+  d3d11ForceExclusiveMode: 0
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -93,6 +94,9 @@ PlayerSettings:
   iPhoneSplashScreen: {fileID: 0}
   iPhoneHighResSplashScreen: {fileID: 0}
   iPhoneTallHighResSplashScreen: {fileID: 0}
+  iPhone47inSplashScreen: {fileID: 0}
+  iPhone55inPortraitSplashScreen: {fileID: 0}
+  iPhone55inLandscapeSplashScreen: {fileID: 0}
   iPadPortraitSplashScreen: {fileID: 0}
   iPadHighResPortraitSplashScreen: {fileID: 0}
   iPadLandscapeSplashScreen: {fileID: 0}
@@ -105,19 +109,19 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 4ee837d250046614ba51985167ed8ec2, type: 3}
+    - m_Icon: {fileID: 2800000, guid: b6beba8d488d2b142b57ee390b751a48, type: 3}
       m_Size: 128
   - m_BuildTarget: Android
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 94acce17d08e5374c85fe2c9a57ad01b, type: 3}
+    - m_Icon: {fileID: 2800000, guid: b6beba8d488d2b142b57ee390b751a48, type: 3}
       m_Size: 144
-    - m_Icon: {fileID: 2800000, guid: 778e832589fbecd47befa41de0eb281c, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 8edad7d9302104f4097b6a17053b9b32, type: 3}
       m_Size: 96
-    - m_Icon: {fileID: 2800000, guid: 42f7a05436368a4478f9ad60a5ac13e3, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 87dfd6d0c214dcc409d1ab69eb1a0315, type: 3}
       m_Size: 72
-    - m_Icon: {fileID: 2800000, guid: 83e6c8f94b424604bb0b4f46c5173565, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 84a394e350832724ea2b701c9d90fd83, type: 3}
       m_Size: 48
-    - m_Icon: {fileID: 2800000, guid: 5684b7dd6c1732b409dfa2c1776d2dc4, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 84a394e350832724ea2b701c9d90fd83, type: 3}
       m_Size: 36
   - m_BuildTarget: iPhone
     m_Icons:

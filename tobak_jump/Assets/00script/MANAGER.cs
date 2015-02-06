@@ -155,10 +155,13 @@ public class MANAGER : MonoBehaviour
 
 		public void rankSubmit ()
 		{
-				if (!inputText.Equals (""))
+				if (!inputText.Equals ("")) {
 						GetComponent<Rank> ().postRank (inputText, mScore);
-				else
+						GameObject.Find ("btn_submit").GetComponent<BoxCollider2D> ().enabled = false;
+						GameObject.Find ("btn_submit").GetComponentInChildren<SpriteRenderer> ().color = new Color (224f / 255f, 224f / 255f, 224f / 255f, 1f);
+				} else {
 						toast (1);
+				}
 		}
 
 		public void toast (int num)
