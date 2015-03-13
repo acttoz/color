@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\onetouch22\Assets\Script\Player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\00000Color\script\finger_gesture.cs">
     <Files>
-      <File FileName="..\onetouch22\Assets\Script\Player.cs" Line="43" Column="41" />
-      <File FileName="..\onetouch22\Assets\Script\GameManager.cs" Line="87" Column="4" />
-      <File FileName="..\onetouch22\Assets\Script\TouchCtrl.cs" Line="24" Column="4" />
+      <File FileName="Assets\00000Color\script\finger_gesture.cs" Line="131" Column="14" />
+      <File FileName="..\onetouch22\Assets\Script\Player.cs" Line="10" Column="33" />
+      <File FileName="Assets\00000Color\script\STATE.cs" Line="9" Column="43" />
+      <File FileName="Assets\MANAGER.cs" Line="50" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

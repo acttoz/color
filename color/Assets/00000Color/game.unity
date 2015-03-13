@@ -157,242 +157,6 @@ SpriteRenderer:
   m_SortingOrder: -19
   m_Sprite: {fileID: 21300000, guid: b047391402f2f5946978b9f81a3862c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &92771717
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 92771719}
-  - 114: {fileID: 92771718}
-  m_Layer: 0
-  m_Name: MasterAudio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &92771718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 92771717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c355370a70a4ae5bf187f77a55d870, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulkLocationMode: 0
-  groupTemplateName: Default Single
-  showGroupCreation: 1
-  useGroupTemplates: 1
-  curDragGroupMode: 0
-  groupTemplates:
-  - {fileID: 100002, guid: a036130946440784697f97e58f7bce74, type: 2}
-  - {fileID: 100002, guid: 40c1daaa2126cfa4a92cff681c252244, type: 2}
-  - {fileID: 100002, guid: fb6bac59c3f50474592e085946e6cf40, type: 2}
-  - {fileID: 100002, guid: a2da8b1d9cf62c248be3137aaef60a3b, type: 2}
-  - {fileID: 100002, guid: 691a6f1209fa3d54a8a36630f80dc933, type: 2}
-  - {fileID: 100002, guid: fccdbba7982ee434eb05b210a8f0b0b2, type: 2}
-  - {fileID: 100002, guid: f566e977847e4434db293e9d8833b1e9, type: 2}
-  - {fileID: 100002, guid: 5b226bf0d31bc3d43b3f8066831be1b5, type: 2}
-  - {fileID: 100002, guid: 0a3d648f3837d9c46b3ac8b058e7557a, type: 2}
-  - {fileID: 100002, guid: c56a14c1d4a84c244b1decb06321b99d, type: 2}
-  - {fileID: 100002, guid: c9e80ee524d0d424e8dc825e559382d7, type: 2}
-  - {fileID: 100002, guid: df4db02d422d1c446bdd07cba1454dd8, type: 2}
-  - {fileID: 100002, guid: 2461dd99b7e13564a840a5239bda2424, type: 2}
-  - {fileID: 100002, guid: 553ff58c879c78e42845aad5471ce96e, type: 2}
-  - {fileID: 100002, guid: ac1ae426ab9cbb84c9b9f3fbc1d746c3, type: 2}
-  - {fileID: 100002, guid: 69de77074efd0d54f8feda75753661d7, type: 2}
-  - {fileID: 100002, guid: 8c6f43ba11a24f547b4dc41570bef8a9, type: 2}
-  - {fileID: 100002, guid: a07236567302b6c4085ab35237ee1ffa, type: 2}
-  - {fileID: 100002, guid: 7bb65142c02eb9d478b4c53dce6d68cd, type: 2}
-  mixerMuted: 0
-  playlistsMuted: 0
-  langMode: 0
-  testLanguage: 10
-  defaultLanguage: 10
-  supportedLanguages: 0a000000
-  busFilter: 
-  useTextGroupFilter: 0
-  textGroupFilter: 
-  resourceClipsPauseDoNotUnload: 0
-  resourceClipsAllLoadAsync: 1
-  playlistControllerPrefab: {fileID: 400000, guid: 8d628ddcfa7a21e49a762de30fc7e9dd,
-    type: 2}
-  persistBetweenScenes: 0
-  areGroupsExpanded: 1
-  soundGroupTemplate: {fileID: 400008, guid: 877a3a4bf0a4abf43aba41125e1d3101, type: 2}
-  soundGroupVariationTemplate: {fileID: 400000, guid: 08eea2d8c4572c7479da53cfbc14bde6,
-    type: 2}
-  groupBuses: []
-  wideMixer: 0
-  groupByBus: 1
-  showGizmos: 1
-  showAdvancedSettings: 0
-  showLocalization: 0
-  playListExpanded: 1
-  playlistsExpanded: 1
-  musicPlaylists: []
-  masterAudioVolume: 1
-  ignoreTimeScale: 0
-  useGaplessPlaylists: 0
-  saveRuntimeChanges: 0
-  prioritizeOnDistance: 0
-  rePrioritizeEverySecIndex: 0
-  visualAdvancedExpanded: 0
-  logAdvancedExpanded: 0
-  showFadingSettings: 0
-  stopZeroVolumeVariations: 0
-  stopZeroVolumeGroups: 0
-  stopZeroVolumeBuses: 0
-  stopZeroVolumePlaylists: 0
-  resourceAdvancedExpanded: 0
-  useClipAgePriority: 0
-  LogSounds: 0
-  logCustomEvents: 0
-  disableLogging: 0
-  showMusicDucking: 0
-  enableMusicDucking: 1
-  musicDuckingSounds: []
-  defaultRiseVolStart: .5
-  duckedVolumeMultiplier: .5
-  crossFadeTime: 1
-  masterPlaylistVolume: 1
-  showGroupSelect: 0
-  newEventName: my event
-  showCustomEvents: 0
-  customEvents: []
-  frames: 0
---- !u!4 &92771719
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 92771717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1399598355}
-  - {fileID: 172210088}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
---- !u!1 &172210087
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 172210088}
-  - 114: {fileID: 172210089}
-  m_Layer: 0
-  m_Name: ready
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &172210088
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 172210087}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1132993544}
-  m_Father: {fileID: 92771719}
-  m_RootOrder: 1
---- !u!114 &172210089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 172210087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db10a6d491569a8419b6f5e1bffc5243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  busIndex: 0
-  isSelected: 0
-  isExpanded: 1
-  groupMasterVolume: 1
-  retriggerPercentage: 50
-  curVariationMode: 0
-  alwaysHighestPriority: 0
-  chainLoopDelayMin: 0
-  chainLoopDelayMax: 0
-  chainLoopMode: 0
-  chainLoopNumLoops: 0
-  useDialogFadeOut: 0
-  dialogFadeOutTime: .5
-  curVariationSequence: 0
-  useInactivePeriodPoolRefill: 0
-  inactivePeriodSeconds: 5
-  groupVariations:
-  - {fileID: 1132993546}
-  bulkVariationMode: 0
-  resourceClipsAllLoadAsync: 1
-  logSound: 0
-  copySettingsExpanded: 0
-  selectedVariationIndex: 0
-  childGroupMode: 0
-  childSoundGroups: []
-  limitMode: 0
-  limitPerXFrames: 1
-  minimumTimeBetween: .100000001
-  useClipAgePriority: 0
-  limitPolyphony: 0
-  voiceLimitCount: 1
-  targetDespawnedBehavior: 0
-  despawnFadeTime: 1
-  isSoloed: 0
-  isMuted: 0
---- !u!21 &212398404
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1.05999994
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &279674263
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +393,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 820563798}
   m_RootOrder: 6
---- !u!21 &534145697
+--- !u!21 &544567176
 Material:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -661,7 +425,7 @@ Material:
       data:
         first:
           name: _Sat
-        second: 1.05999994
+        second: 1
       data:
         first:
           name: _Val
@@ -927,6 +691,44 @@ Transform:
   - {fileID: 1463887138}
   m_Father: {fileID: 11046328}
   m_RootOrder: 0
+--- !u!21 &714532893
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1.05999994
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &770537760
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,49 +774,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 770537760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.41068792, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1310184086}
   m_RootOrder: 0
---- !u!21 &807348525
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &820563797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,44 +880,6 @@ SpriteRenderer:
   m_SortingOrder: -21
   m_Sprite: {fileID: 21300000, guid: fc80c8768a54f4542ad9267b3ed6ea91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &949404475
-Material:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: EasySprite2D/HSV_EasyS2D
-  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
-  m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Alpha
-        second: 0
-      data:
-        first:
-          name: _HueShift
-        second: 0
-      data:
-        first:
-          name: _Sat
-        second: 1.05999994
-      data:
-        first:
-          name: _Val
-        second: 1
-    m_Colors: {}
 --- !u!1 &964132556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1048,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 807348525}
+  - {fileID: 544567176}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1433,6 +1159,44 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 472b1cccae2fb4c4aaea7e151f711ba7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!21 &1058037186
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1.05999994
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &1062635238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1624,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 949404475}
+  - {fileID: 714532893}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1878,7 +1642,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1079434340}
-  - 61: {fileID: 1079434341}
+  - 111: {fileID: 1079434342}
+  - 58: {fileID: 1079434341}
   m_Layer: 0
   m_Name: btn_hammer
   m_TagString: Untagged
@@ -1900,8 +1665,8 @@ Transform:
   - {fileID: 1437678066}
   m_Father: {fileID: 11046328}
   m_RootOrder: 4
---- !u!61 &1079434341
-BoxCollider2D:
+--- !u!58 &1079434341
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1909,8 +1674,23 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 3.1400001, y: 2.97000003}
-  m_Center: {x: 0, y: 0}
+  m_Radius: 1.34000003
+  m_Center: {x: 0, y: -.0399999991}
+--- !u!111 &1079434342
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1079434339}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 453f796bb7d0fd349a7edf11beb0ec3b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 453f796bb7d0fd349a7edf11beb0ec3b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1085304831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,7 +1709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!111 &1085304832
 Animation:
   m_ObjectHideFlags: 0
@@ -2066,144 +1846,6 @@ SpriteRenderer:
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: e75703edb22e5204c97d5f31a8b82ce7, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
---- !u!1 &1132993543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1132993544}
-  - 82: {fileID: 1132993547}
-  - 114: {fileID: 1132993546}
-  - 114: {fileID: 1132993545}
-  m_Layer: 0
-  m_Name: ready1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1132993544
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132993543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 172210088}
-  m_RootOrder: 0
---- !u!114 &1132993545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132993543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b7eb7dcef8b0e48a8572747ca7c64d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1132993546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132993543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931518f9ca6c3844891dee74db8ed494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
-  audLocation: 0
-  resourceFileName: 
-  fxTailTime: 0
-  original_pitch: 0
-  isExpanded: 1
-  isChecked: 1
-  useFades: 0
-  fadeInTime: 0
-  fadeOutTime: 0
-  useRandomStartTime: 0
-  randomStartMinPercent: 0
-  randomStartMaxPercent: 0
-  useIntroSilence: 0
-  introSilenceMin: 0
-  introSilenceMax: 0
-  fadeMaxVolume: 0
-  curFadeMode: 0
-  curDetectEndMode: 0
---- !u!82 &1132993547
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132993543}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: c2da7f3483d439247b9fa3971fc0fcd3, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1 &1163911789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,144 +1909,6 @@ SpriteRenderer:
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: e75703edb22e5204c97d5f31a8b82ce7, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
---- !u!1 &1246641688
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1246641690}
-  - 82: {fileID: 1246641692}
-  - 114: {fileID: 1246641689}
-  - 114: {fileID: 1246641691}
-  m_Layer: 0
-  m_Name: BING1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1246641689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1246641688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931518f9ca6c3844891dee74db8ed494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
-  audLocation: 0
-  resourceFileName: 
-  fxTailTime: 0
-  original_pitch: 0
-  isExpanded: 1
-  isChecked: 1
-  useFades: 0
-  fadeInTime: 0
-  fadeOutTime: 0
-  useRandomStartTime: 0
-  randomStartMinPercent: 0
-  randomStartMaxPercent: 0
-  useIntroSilence: 0
-  introSilenceMin: 0
-  introSilenceMax: 0
-  fadeMaxVolume: 0
-  curFadeMode: 0
-  curDetectEndMode: 0
---- !u!4 &1246641690
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1246641688}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1399598355}
-  m_RootOrder: 0
---- !u!114 &1246641691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1246641688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b7eb7dcef8b0e48a8572747ca7c64d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!82 &1246641692
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1246641688}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 3eee42970a8ce5f4c8aaa85b57bfc223, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1 &1269296329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,7 +2157,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 534145697}
+  - {fileID: 1699974113}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2671,6 +2175,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1310184086}
+  - 95: {fileID: 1310184087}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2685,13 +2190,28 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1310184085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.39206743, y: -2.6454258, z: .0200195312}
+  m_LocalPosition: {x: -4.11001635, y: -2.70707798, z: .0200195312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 770537762}
   - {fileID: 1011344603}
   m_Father: {fileID: 11046328}
   m_RootOrder: 5
+--- !u!95 &1310184087
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1310184085}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ced62d6065ea2f409ae84020c2c4f74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1320112539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,81 +2261,6 @@ Transform:
   m_LocalScale: {x: 2.27747393, y: 2.27747393, z: 1}
   m_Children: []
   m_Father: {fileID: 1898033524}
-  m_RootOrder: 0
---- !u!1 &1399598353
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1399598355}
-  - 114: {fileID: 1399598354}
-  m_Layer: 0
-  m_Name: BING
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1399598354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1399598353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db10a6d491569a8419b6f5e1bffc5243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  busIndex: 0
-  isSelected: 0
-  isExpanded: 1
-  groupMasterVolume: 1
-  retriggerPercentage: 50
-  curVariationMode: 0
-  alwaysHighestPriority: 0
-  chainLoopDelayMin: 0
-  chainLoopDelayMax: 0
-  chainLoopMode: 0
-  chainLoopNumLoops: 0
-  useDialogFadeOut: 0
-  dialogFadeOutTime: .5
-  curVariationSequence: 0
-  useInactivePeriodPoolRefill: 0
-  inactivePeriodSeconds: 5
-  groupVariations:
-  - {fileID: 1246641689}
-  bulkVariationMode: 0
-  resourceClipsAllLoadAsync: 1
-  logSound: 0
-  copySettingsExpanded: 0
-  selectedVariationIndex: 0
-  childGroupMode: 0
-  childSoundGroups: []
-  limitMode: 0
-  limitPerXFrames: 1
-  minimumTimeBetween: .100000001
-  useClipAgePriority: 0
-  limitPolyphony: 0
-  voiceLimitCount: 1
-  targetDespawnedBehavior: 0
-  despawnFadeTime: 1
-  isSoloed: 0
-  isMuted: 0
---- !u!4 &1399598355
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1399598353}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1246641690}
-  m_Father: {fileID: 92771719}
   m_RootOrder: 0
 --- !u!1 &1437678065
 GameObject:
@@ -3374,7 +2819,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 212398404}
+  - {fileID: 1058037186}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3434,6 +2879,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!21 &1699974113
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: EasySprite2D/HSV_EasyS2D
+  m_Shader: {fileID: 4800000, guid: 50cf30c0218260049bd27eddd7a39bf0, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 0
+      data:
+        first:
+          name: _Sat
+        second: 1.05999994
+      data:
+        first:
+          name: _Val
+        second: 1
+    m_Colors: {}
 --- !u!1 &1769331174
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,8 +3007,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1898033524}
-  - 61: {fileID: 1898033525}
-  - 114: {fileID: 1898033526}
+  - 111: {fileID: 1898033527}
+  - 58: {fileID: 1898033525}
   m_Layer: 0
   m_Name: btn_brush
   m_TagString: Untagged
@@ -3548,8 +3031,8 @@ Transform:
   - {fileID: 317791996}
   m_Father: {fileID: 11046328}
   m_RootOrder: 3
---- !u!61 &1898033525
-BoxCollider2D:
+--- !u!58 &1898033525
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -3557,628 +3040,23 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 4.73999977, y: 4.15999985}
-  m_Center: {x: 0, y: 0}
---- !u!114 &1898033526
-MonoBehaviour:
+  m_Radius: 1.38
+  m_Center: {x: -.159999996, y: -.0900000036}
+--- !u!111 &1898033527
+Animation:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1898033523}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d492d00279c38d04bbbd764b09166bfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showGizmo: 1
-  soundSpawnMode: 2
-  disableSounds: 0
-  hideUnused: 1
-  showPoolManager: 0
-  showNGUI: 0
-  logMissingEvents: 1
-  startSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  visibleSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  invisibleSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  collisionSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  collisionExitSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  triggerSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  triggerExitSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  mouseEnterSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  mouseExitSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  mouseClickSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents:
-    - actionName: Your action name
-      isExpanded: 1
-      soundType: BING
-      allPlaylistControllersForGroupCmd: 0
-      allSoundTypesForGroupCmd: 0
-      allSoundTypesForBusCmd: 0
-      volume: 1
-      useFixedPitch: 0
-      pitch: 1
-      emitParticles: 0
-      particleCountToEmit: 1
-      delaySound: 0
-      currentSoundFunctionType: 0
-      currentPlaylistCommand: 0
-      currentSoundGroupCommand: 0
-      currentBusCommand: 0
-      currentCustomEventCommand: 0
-      currentGlobalCommand: 0
-      busName: 
-      playlistName: 
-      playlistControllerName: 
-      startPlaylist: 1
-      fadeVolume: 0
-      fadeTime: 1
-      clipName: '[None]'
-      variationType: 1
-      variationName: 
-      theCustomEventName: 
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  mouseUpSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  mouseDragSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  spawnedSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  despawnedSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  enableSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  disableSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  collision2dSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  collisionExit2dSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  triggerEnter2dSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  triggerExit2dSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  particleCollisionSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  nguiOnClickSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  nguiMouseDownSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  nguiMouseUpSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  nguiMouseEnterSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  nguiMouseExitSound:
-    useLayerFilter: 0
-    useTagFilter: 0
-    matchingLayers: 00000000
-    matchingTags:
-    - Default
-    customSoundActive: 0
-    isCustomEvent: 0
-    customEventName: 
-    mechanimEventActive: 0
-    isMechanimStateCheckEvent: 0
-    mechanimStateName: 
-    mechEventPlayedForState: 0
-    SoundEvents: []
-    mouseDragStopMode: 0
-    mouseDragFadeOutTime: 1
-    retriggerLimitMode: 0
-    limitPerXFrm: 0
-    limitPerXSec: 0
-    triggeredLastFrame: -100
-    triggeredLastTime: -100
-  userDefinedSounds: []
-  mechanimStateChangedSounds: []
-  useStartSound: 0
-  useVisibleSound: 0
-  useInvisibleSound: 0
-  useCollisionSound: 0
-  useCollisionExitSound: 0
-  useTriggerEnterSound: 0
-  useTriggerExitSound: 0
-  useMouseEnterSound: 0
-  useMouseExitSound: 0
-  useMouseClickSound: 1
-  useMouseUpSound: 0
-  useMouseDragSound: 0
-  useSpawnedSound: 0
-  useDespawnedSound: 0
-  useEnableSound: 0
-  useDisableSound: 0
-  useCollision2dSound: 0
-  useCollisionExit2dSound: 0
-  useTriggerEnter2dSound: 0
-  useTriggerExit2dSound: 0
-  useParticleCollisionSound: 0
-  useNguiOnClickSound: 0
-  useNguiMouseDownSound: 0
-  useNguiMouseUpSound: 0
-  useNguiMouseEnterSound: 0
-  useNguiMouseExitSound: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 453f796bb7d0fd349a7edf11beb0ec3b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 453f796bb7d0fd349a7edf11beb0ec3b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1936221765
 GameObject:
   m_ObjectHideFlags: 0
@@ -4426,8 +3304,8 @@ Camera:
   m_GameObject: {fileID: 2132151359}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 3
-  m_BackGroundColor: {r: .459829152, g: .746219158, b: .772058845, a: 1}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: .406520337, g: .757352948, b: .74283576, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -4442,7 +3320,7 @@ Camera:
   m_Depth: -.460000008
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

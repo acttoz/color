@@ -7,7 +7,7 @@ public class finger_gesture : MonoBehaviour
 		public GameObject prf_pump;
 		public GameObject prf_hammer;
 		public bool testUp;
-		private bool onColor=false;
+		private bool onColor = false;
 		private GameObject obj_touched;
 		public static string state = "brush";//pump,hammer
 		Enemy enemy;
@@ -77,14 +77,14 @@ public class finger_gesture : MonoBehaviour
 						Application.LoadLevel (1);
 						break;
 				case  "btn_brush":
+						e.Selection.gameObject.animation.Play ();
 						Component_STATE.cameraHover (true);
 						state = "brush";
-						Debug.Log ("brush");
 						break;
 				case  "btn_pump":
 						break;
 				case  "btn_hammer":
-						Debug.Log ("hammer");
+						e.Selection.gameObject.animation.Play ();
 						Component_STATE.cameraHover (false);
 						state = "hammer";
 						break;
@@ -125,9 +125,7 @@ public class finger_gesture : MonoBehaviour
 
 						if (state.Equals ("brush")) {
 								obj_touched = Instantiate (prf_brush, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
-						} else if (state.Equals ("pump")) {
-								obj_touched = Instantiate (prf_pump, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
-						} else {
+						}  else {
 								obj_touched = Instantiate (prf_hammer, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
 								if (e.Selection.tag.Equals ("boss"))
 										e.Selection.SendMessage ("thiefOff");
