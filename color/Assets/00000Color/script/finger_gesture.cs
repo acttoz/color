@@ -30,6 +30,8 @@ public class finger_gesture : MonoBehaviour
 	
 		void OnDrag (DragGesture gesture)
 		{
+				if (!STATE.isTouched) 
+						return;
 				if (!STATE._STATE.Equals ("gIDLE") || state.Equals ("hammer"))
 						return;
 				// first finger
@@ -76,18 +78,7 @@ public class finger_gesture : MonoBehaviour
 				case  "btn_play":
 						Application.LoadLevel (1);
 						break;
-				case  "btn_brush":
-						e.Selection.gameObject.animation.Play ();
-						Component_STATE.cameraHover (true);
-						state = "brush";
-						break;
-				case  "btn_pump":
-						break;
-				case  "btn_hammer":
-						e.Selection.gameObject.animation.Play ();
-						Component_STATE.cameraHover (false);
-						state = "hammer";
-						break;
+			 
 
 		
 				}
@@ -98,6 +89,7 @@ public class finger_gesture : MonoBehaviour
 		{
 				if (!STATE._STATE.Equals ("gIDLE"))
 						return;
+
 				if (e.Selection.tag == "mat" && state.Equals ("brush")) {
 						// finger entered the object
 						if (e.Phase == FingerHoverPhase.Enter) {
@@ -118,20 +110,41 @@ public class finger_gesture : MonoBehaviour
  
 		void OnFingerDown (FingerDownEvent e)
 		{
-				if (!STATE.isTouched) {
-						STATE.isTouched = true;
-						if (!STATE._STATE.Equals ("gIDLE"))
-								return;
+				if (!STATE._STATE.Equals ("gIDLE"))
+						return;
+				switch (e.Selection.name) {
+		 
+				case  "btn_brush":
+						e.Selection.gameObject.animation.Play ();
+						Component_STATE.cameraHover (true);
+						state = "brush";
+						break;
+			 
+				case  "btn_hammer":
+						e.Selection.gameObject.animation.Play ();
+						Component_STATE.cameraHover (false);
+						state = "hammer";
+						break;
 
-						if (state.Equals ("brush")) {
-								obj_touched = Instantiate (prf_brush, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
-						}  else {
-								obj_touched = Instantiate (prf_hammer, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
-								if (e.Selection.tag.Equals ("boss"))
-										e.Selection.SendMessage ("thiefOff");
+				default:
+						if (!STATE.isTouched) {
+								STATE.isTouched = true;
+				
+				
+								if (state.Equals ("brush")) {
+										obj_touched = Instantiate (prf_brush, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
+								} else {
+										obj_touched = Instantiate (prf_hammer, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
+										if (e.Selection.tag.Equals ("boss"))
+												e.Selection.SendMessage ("thiefOff");
+								}
+				
 						}
-
+						break;
+			
+			
 				}
+
  
 		}
 
