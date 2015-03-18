@@ -4,8 +4,9 @@ using System.Collections;
 public class finger_gesture : MonoBehaviour
 {
 		public GameObject prf_brush;
-		public GameObject prf_pump;
 		public GameObject prf_hammer;
+		public GameObject oPlayer;
+		Animator animator;
 		public bool testUp;
 		private bool onColor = false;
 		private GameObject obj_touched;
@@ -17,6 +18,7 @@ public class finger_gesture : MonoBehaviour
 		{
 				enemy = GetComponent<Enemy> ();
 				Component_STATE = GetComponent<STATE> ();
+				animator = oPlayer.GetComponent<Animator> ();
 		}
 	
 		// Update is called once per frame
@@ -118,12 +120,14 @@ public class finger_gesture : MonoBehaviour
 						e.Selection.gameObject.animation.Play ();
 						Component_STATE.cameraHover (true);
 						state = "brush";
+						animator.SetBool ("artist", true);
 						break;
 			 
 				case  "btn_hammer":
 						e.Selection.gameObject.animation.Play ();
 						Component_STATE.cameraHover (false);
 						state = "hammer";
+						animator.SetBool ("artist", false);
 						break;
 
 				default:
@@ -150,14 +154,14 @@ public class finger_gesture : MonoBehaviour
 
 		void OnFingerUp (FingerUpEvent e)
 		{
-				if (STATE.isTouched) {
+		if (STATE.isTouched) {
 		
 						STATE.isTouched = false;
 		
 						if (!STATE._STATE.Equals ("gIDLE"))
 								return;
 
-						if (obj_touched != null)
+			if (obj_touched != null&& state.Equals ("brush"))
 								Destroy (obj_touched);
 				}
  

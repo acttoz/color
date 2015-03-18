@@ -1,13 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\00000Color\script\finger_gesture.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\00000Color\script\color_mat.cs">
     <Files>
-      <File FileName="Assets\00000Color\script\finger_gesture.cs" Line="92" Column="3" />
+      <File FileName="Assets\00000Color\script\finger_gesture.cs" Line="142" Column="20" />
       <File FileName="..\onetouch22\Assets\Script\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\00000Color\script\STATE.cs" Line="29" Column="17" />
-      <File FileName="Assets\MANAGER.cs" Line="27" Column="4" />
+      <File FileName="Assets\00000Color\script\STATE.cs" Line="1" Column="1" />
+      <File FileName="Assets\MANAGER.cs" Line="11" Column="33" />
       <File FileName="Assets\00000Color\script\Mats.cs" Line="1" Column="1" />
-      <File FileName="Assets\Plugins\FingerGestures\Scripts\FingerGestures.cs" Line="450" Column="18" />
+      <File FileName="Assets\Plugins\FingerGestures\Scripts\FingerGestures.cs" Line="1" Column="1" />
+      <File FileName="Assets\00000Color\script\color_mat.cs" Line="214" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
