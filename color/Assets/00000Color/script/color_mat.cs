@@ -19,7 +19,7 @@ public class color_mat : MonoBehaviour
 		public GameObject oClone;
 		public AudioClip sSuccess;
 //	public EasySprite_HSV cHSV;
-		public Texture2D rainbow;
+//		public Texture2D rainbow;
 		public int bossID;
 
 		void Start ()
@@ -56,23 +56,7 @@ public class color_mat : MonoBehaviour
 				offColor ();
 		}
 
-		void makeRainbow ()
-		{
-//				oClone = Instantiate (this.gameObject, this.transform.position, Quaternion.identity) as GameObject;
-//				oClone.tag = "Untagged";
-//				pattern = oClone.AddComponent ("EasySprite_Pattern") as EasySprite_Pattern;
-//				pattern.__MainTex2 = rainbow;
-//				pattern._AutoScrollY = true;
-//				pattern._AutoScrollSpeedY = -2.5f;
-//				//				pattern.enabled = true;
-//				oClone.GetComponent<SpriteRenderer> ().sortingOrder = GetComponent<SpriteRenderer> ().sortingOrder + 1;
-//				oClone.GetComponent<PolygonCollider2D> ().enabled = false;
-//				oClone.renderer.material.shader = Shader.Find ("EasySprite2D/Pattern_EasyS2D");
-//		
-//				oClone.SetActive (false);
-				//				saturation.enabled = true;
-				renderer.material.shader = Shader.Find ("EasySprite2D/HSV_EasyS2D");
-		}
+		 
 	
 		// Update is called once per frame
 		void Update ()

@@ -5,6 +5,8 @@ public class MANAGER : MonoBehaviour
 {
 
 		public GameObject prf_ready, prf_success, prf_fail, oStarTimer;
+		public GameObject[] canvas;
+		private GameObject oCanvas;
 		private Enemy iEnemy;
 		private Mats iMats;
 //		public static MANAGER mInstance;
@@ -66,6 +68,8 @@ public class MANAGER : MonoBehaviour
 				//START
 				oStarTimer.animation.Rewind ();
 				oStarTimer.animation.Play ();
+
+			
 				
 
 	
@@ -76,5 +80,7 @@ public class MANAGER : MonoBehaviour
 		public void ready ()
 		{
 				Instantiate (prf_ready, new Vector3 (0, 0, 0), Quaternion.identity);
+				//level setting
+				oCanvas = Instantiate (canvas [STATE.LEVEL - 1], new Vector2 (0, 0), Quaternion.identity) as GameObject;
 		}
 }

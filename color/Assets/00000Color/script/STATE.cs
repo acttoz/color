@@ -9,6 +9,7 @@ public class STATE : MonoBehaviour
 		public static int mats = 0;//colored mat
 		public static int matsAll = 0;//number of all mats
 		public static int stars = 3;
+		public static int LEVEL = 1;
 		private GameObject oCamera;
 		tk2dTextMesh stateText;
 		MANAGER manager;
@@ -38,7 +39,8 @@ public class STATE : MonoBehaviour
 						break;
 				case  "START":
 						manager.reset ();
-						cameraHover (true);
+
+//						cameraHover (true);
 						_STATE = "gIDLE";
 						break;
 				case  "NEXT":
@@ -48,12 +50,13 @@ public class STATE : MonoBehaviour
 				case  "gTOUCH":
 						break;
 				case  "gSUCCESS":
-						cameraHover (false);
+						LEVEL = Random.Range (1, 4);
+//						cameraHover (false);
 						manager.success ();
 						_STATE = "WAIT";
 						break;
 				case  "gFAIL":
-						cameraHover (false);
+//						cameraHover (false);
 						manager.fail ();
 						_STATE = "WAIT";
 						break;
