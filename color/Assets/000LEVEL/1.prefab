@@ -928,7 +928,6 @@ MonoBehaviour:
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!114 &11400004
 MonoBehaviour:
@@ -961,7 +960,6 @@ MonoBehaviour:
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!114 &11400008
 MonoBehaviour:
@@ -994,7 +992,6 @@ MonoBehaviour:
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!114 &11400012
 MonoBehaviour:
@@ -1027,7 +1024,6 @@ MonoBehaviour:
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!212 &21200000
 SpriteRenderer:
@@ -1041,7 +1037,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1063,7 +1059,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1085,7 +1081,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1107,7 +1103,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

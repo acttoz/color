@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
 	
 		public void InitBossBot ()
 		{
-				if (GameObject.FindGameObjectsWithTag ("color") != null) {
+				if (GameObject.FindGameObjectsWithTag ("color") != null&&STATE._STATE.Equals("gIdle")) {
 						//						tempNum_id = 0;
 						randomBoss ();
 						if (0 < oMats.Length) {

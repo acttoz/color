@@ -46,6 +46,7 @@ public class MANAGER : MonoBehaviour
 				temp.transform.position -= new Vector3 (0, 0, 40);
 		
 				iMats.Stop ();
+ 
 
 		
 		}
@@ -65,6 +66,7 @@ public class MANAGER : MonoBehaviour
 		{
 				iEnemy.reset ();
 				iMats.reset ();
+				
 				//START
 				oStarTimer.animation.Rewind ();
 				oStarTimer.animation.Play ();
@@ -81,6 +83,8 @@ public class MANAGER : MonoBehaviour
 		{
 				Instantiate (prf_ready, new Vector3 (0, 0, 0), Quaternion.identity);
 				//level setting
+				if (oCanvas != null)
+						Destroy (oCanvas);
 				oCanvas = Instantiate (canvas [STATE.LEVEL - 1], new Vector2 (0, 0), Quaternion.identity) as GameObject;
 		}
 }

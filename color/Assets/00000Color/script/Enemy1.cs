@@ -4,7 +4,7 @@ using System.Collections;
 public class Enemy1 : MonoBehaviour
 {
 
-		float speed = 2;
+		public float speed = 2;
 		int xTemp = 1;
 		int yTemp = 1;
 		// Use this for initialization

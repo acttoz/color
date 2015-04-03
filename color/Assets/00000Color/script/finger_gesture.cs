@@ -71,6 +71,8 @@ public class finger_gesture : MonoBehaviour
 						Application.LoadLevel (0);
 						break;
 				case  "btn_next":
+						STATE._STATE = "READY";
+						Destroy (e.Selection.gameObject.transform.parent.parent.gameObject);
 						break;
 		
 				case  "btn_replay":
