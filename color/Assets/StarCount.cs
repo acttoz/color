@@ -28,7 +28,15 @@ public class StarCount : MonoBehaviour
 						
 				}
 				if (num == 0) {
+
 						STATE._STATE = "gFAIL";
 				}
+		}
+
+		void stopCount ()
+		{
+				audio.Stop ();
+				animation.Stop ();
+
 		}
 }

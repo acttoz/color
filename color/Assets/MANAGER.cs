@@ -39,7 +39,7 @@ public class MANAGER : MonoBehaviour
 	
 		public void success ()
 		{
-				oStarTimer.animation.Stop ();
+				oStarTimer.SendMessage ("stopCount");
 		
 				Destroy (GameObject.FindGameObjectWithTag ("touch"));
 				GameObject temp = Instantiate (prf_success, new Vector2 (0, 0), Quaternion.identity) as GameObject;
@@ -53,7 +53,8 @@ public class MANAGER : MonoBehaviour
 
 		public void fail ()
 		{
-				oStarTimer.animation.Stop ();
+				oStarTimer.SendMessage ("stopCount");
+				
 				Destroy (GameObject.FindGameObjectWithTag ("touch"));
 			
 				GameObject.FindGameObjectWithTag ("MainCamera").animation.Play ();
