@@ -55,6 +55,7 @@
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_8bit_bw.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Ghost.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Light.shader" />
+     <None Include="Assets\Electricity Tool\readme(eng).txt" />
      <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Hologram3.shader" />
@@ -74,6 +75,7 @@
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Fire.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Additive.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Hologram.shader" />
+     <None Include="Assets\Electricity Tool\readme(rus).txt" />
      <None Include="Assets\DarkTonic\MasterAudio\ReleaseNotes.txt" />
      <None Include="Assets\DarkTonic\MasterAudio\audioImportSettings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />

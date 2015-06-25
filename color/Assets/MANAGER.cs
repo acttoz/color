@@ -9,6 +9,8 @@ public class MANAGER : MonoBehaviour
 		private GameObject oCanvas;
 		private Enemy iEnemy;
 		private Mats iMats;
+		private Buzz iBuzz;
+		private ElectricityLine3D EL;
 //		public static MANAGER mInstance;
 		// Use this for initialization
 //		public MANAGER ()
@@ -29,6 +31,9 @@ public class MANAGER : MonoBehaviour
 		{
 				iEnemy = GetComponent<Enemy> ();
 				iMats = GetComponent<Mats> ();
+				iBuzz = GetComponent<Buzz> ();
+				EL = GetComponent<ElectricityLine3D> ();
+
 		}
 	
 		// Update is called once per frame
@@ -47,7 +52,9 @@ public class MANAGER : MonoBehaviour
 		
 				iMats.Stop ();
  
-
+				iBuzz.get ();
+				EL.Clear ();
+				audio.Stop ();
 		
 		}
 
@@ -61,13 +68,18 @@ public class MANAGER : MonoBehaviour
 //				reset ();
 				Instantiate (prf_fail, new Vector2 (0, 0), Quaternion.identity);
 				iMats.Stop ();
+				EL.Clear ();
+				iBuzz.lose ();
+				audio.Stop ();
+		
 		}
 
 		public void reset ()
 		{
 				iEnemy.reset ();
 				iMats.reset ();
-				
+				iBuzz.reset ();
+
 				//START
 				oStarTimer.animation.Rewind ();
 				oStarTimer.animation.Play ();

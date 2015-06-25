@@ -1,11 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\00000Color\script\Enemy.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\buzzes.cs">
     <Files>
-      <File FileName="Assets\MANAGER.cs" Line="33" Column="2" />
-      <File FileName="..\Togle\Assets\00 script\backkey.cs" Line="28" Column="1" />
-      <File FileName="Assets\00000Color\script\Enemy.cs" Line="45" Column="89" />
-      <File FileName="Assets\00000Color\script\STATE.cs" Line="25" Column="5" />
+      <File FileName="Assets\00000Color\script\finger_gesture.cs" Line="170" Column="42" />
+      <File FileName="Assets\Electricity Tool\Scripts\ElectricityLine3D.cs" Line="1" Column="1" />
+      <File FileName="Assets\MANAGER.cs" Line="1" Column="1" />
+      <File FileName="..\Togle\Assets\00 script\backkey.cs" Line="1" Column="1" />
+      <File FileName="Assets\00000Color\script\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\00000Color\script\STATE.cs" Line="1" Column="1" />
+      <File FileName="Assets\00000Color\script\color_mat.cs" Line="1" Column="1" />
+      <File FileName="Assets\00000Color\script\Mats.cs" Line="1" Column="1" />
+      <File FileName="Assets\Buzz.cs" Line="27" Column="31" />
+      <File FileName="Assets\buzzes.cs" Line="14" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

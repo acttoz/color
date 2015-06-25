@@ -13,12 +13,16 @@ public class finger_gesture : MonoBehaviour
 		public static string state = "brush";//pump,hammer
 		Enemy enemy;
 		STATE Component_STATE;
+		Buzz iBuzz;
+		ElectricityLine3D EL;
 		// Use this for initialization
 		void Start ()
 		{
 				enemy = GetComponent<Enemy> ();
 				Component_STATE = GetComponent<STATE> ();
+				iBuzz = GetComponent<Buzz> ();
 				animator = oPlayer.GetComponent<Animator> ();
+				EL = GetComponent<ElectricityLine3D> ();
 		}
 	
 		// Update is called once per frame
@@ -139,6 +143,9 @@ public class finger_gesture : MonoBehaviour
 				
 								if (state.Equals ("brush")) {
 										obj_touched = Instantiate (prf_brush, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
+										audio.Play ();
+										EL.AddPoints (obj_touched.transform);
+
 								} else {
 										obj_touched = Instantiate (prf_hammer, GetWorldPos (e.Position), Quaternion.identity) as GameObject;
 										if (e.Selection.tag.Equals ("boss"))
@@ -156,15 +163,21 @@ public class finger_gesture : MonoBehaviour
 
 		void OnFingerUp (FingerUpEvent e)
 		{
-		if (STATE.isTouched) {
+				if (STATE.isTouched) {
 		
 						STATE.isTouched = false;
 		
 						if (!STATE._STATE.Equals ("gIDLE"))
 								return;
 
-			if (obj_touched != null&& state.Equals ("brush"))
+						if (obj_touched != null && state.Equals ("brush"))
 								Destroy (obj_touched);
+
+						EL.Clear ();
+						iBuzz.get ();
+
+						audio.Stop ();
+			
 				}
  
 		}

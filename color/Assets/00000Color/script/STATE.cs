@@ -8,8 +8,9 @@ public class STATE : MonoBehaviour
 		public static bool isTouched = false;
 		public static int mats = 0;//colored mat
 		public static int matsAll = 0;//number of all mats
+		public static int buzz = 0;//number of buzz
 		public static int stars = 3;
-		public static int LEVEL = 1;
+		public static int LEVEL = 3;
 		private GameObject oCamera;
 		tk2dTextMesh stateText;
 		MANAGER manager;
@@ -50,7 +51,7 @@ public class STATE : MonoBehaviour
 				case  "gTOUCH":
 						break;
 				case  "gSUCCESS":
-						LEVEL = Random.Range (1, 4);
+//						LEVEL = Random.Range (1, 4);
 //						cameraHover (false);
 						manager.success ();
 						_STATE = "WAIT";

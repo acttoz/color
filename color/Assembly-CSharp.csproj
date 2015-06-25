@@ -56,6 +56,7 @@
      <Compile Include="Assets\00000Color\script\color_mat.cs" />
      <Compile Include="Assets\00000Color\script\finger_gesture.cs" />
      <Compile Include="Assets\00000Color\script\touch_effect.cs" />
+     <Compile Include="Assets\Buzz.cs" />
      <Compile Include="Assets\DarkTonic\MasterAudio\ExampleScenes\Scripts\MA_Bootstrapper.cs" />
      <Compile Include="Assets\DarkTonic\MasterAudio\ExampleScenes\Scripts\MA_DestroyFinishedParticle.cs" />
      <Compile Include="Assets\DarkTonic\MasterAudio\ExampleScenes\Scripts\MA_EnemyOne.cs" />
@@ -126,6 +127,10 @@
      <Compile Include="Assets\EasySprites\Scripts\EasySprite_PlasmaRainbow.cs" />
      <Compile Include="Assets\EasySprites\Scripts\EasySprite_PlasmaShield.cs" />
      <Compile Include="Assets\EasySprites\Scripts\EasySprite_Wave.cs" />
+     <Compile Include="Assets\Electricity Tool\Scripts\Bezier.cs" />
+     <Compile Include="Assets\Electricity Tool\Scripts\ElectricityLine3D.cs" />
+     <Compile Include="Assets\Electricity Tool\Scripts\GUI_Control_Demonstration.cs" />
+     <Compile Include="Assets\Electricity Tool\Scripts\RotateThis.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Core\Events\EventDispatcher.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Core\Events\EventDispatcherBase.cs" />
      <Compile Include="Assets\Extensions\FlashLikeEvents\Events\Data\BaseEvent.cs" />
@@ -290,6 +295,7 @@
      <Compile Include="Assets\audio_play.cs" />
      <Compile Include="Assets\bombTimer.cs" />
      <Compile Include="Assets\btn.cs" />
+     <Compile Include="Assets\buzzes.cs" />
      <Compile Include="Assets\cusor.cs" />
      <Compile Include="Assets\effectMGR.cs" />
      <Compile Include="Assets\game_camera.cs" />
@@ -379,6 +385,7 @@
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_8bit_bw.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Ghost.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Light.shader" />
+     <None Include="Assets\Electricity Tool\readme(eng).txt" />
      <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Hologram3.shader" />
@@ -398,6 +405,7 @@
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Fire.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Additive.shader" />
      <None Include="Assets\EasySprites\Shaders\EasySprite2D_Hologram.shader" />
+     <None Include="Assets\Electricity Tool\readme(rus).txt" />
      <None Include="Assets\DarkTonic\MasterAudio\ReleaseNotes.txt" />
      <None Include="Assets\DarkTonic\MasterAudio\audioImportSettings.xml" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />

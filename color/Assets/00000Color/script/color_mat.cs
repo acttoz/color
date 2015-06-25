@@ -15,15 +15,18 @@ public class color_mat : MonoBehaviour
 		private EasySprite_HSV saturation;
 //		private EasySprite_Pattern pattern;
 		public GameObject effectSuccess;
+		public GameObject effectSpark;
 		public GameObject effectSuccessBack;
 		public GameObject oClone;
 		public AudioClip sSuccess;
+		GameObject manager;
 //	public EasySprite_HSV cHSV;
 //		public Texture2D rainbow;
 		public int bossID;
 
 		void Start ()
 		{
+				manager = GameObject.Find ("0000MANAGER");
 //				whiteMat = gameObject.transform.parent.gameObject;
 //				whiteMatSprite = whiteMat.GetComponent<SpriteRenderer> ();
 //				matSprite = GetComponent<SpriteRenderer> ();
@@ -121,12 +124,15 @@ public class color_mat : MonoBehaviour
 
 						//////SUCCESS
 						///
+						manager.SendMessage ("AddPoints", this.transform);
+
 						state = "color";
 						transform.tag = "color";
 						saturation._Saturation = 1;
 						//						pattern._Alpha -= RATE.colorPlusRate / 10000f;
 						saturation._ValueBrightness = 1;
 						Instantiate (effectSuccess, transform.position, Quaternion.identity);
+						Instantiate (effectSpark, transform.position, Quaternion.identity);
 						Instantiate (effectSuccessBack, new Vector2 (0, 0), Quaternion.identity);
 						endPlus ();
 						audio.PlayOneShot (sSuccess);

@@ -203,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.284630775, y: .143250823, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 458556}
@@ -1196,10 +1196,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: normal
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectSpark: {fileID: 100000, guid: 0fea72a978ebecb44b48f77d2db47b43, type: 2}
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!114 &11458552
 MonoBehaviour:
@@ -1229,10 +1229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: normal
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectSpark: {fileID: 100000, guid: 0fea72a978ebecb44b48f77d2db47b43, type: 2}
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!114 &11458556
 MonoBehaviour:
@@ -1262,10 +1262,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: normal
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectSpark: {fileID: 100000, guid: 0fea72a978ebecb44b48f77d2db47b43, type: 2}
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!114 &11458560
 MonoBehaviour:
@@ -1295,10 +1295,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: normal
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectSpark: {fileID: 100000, guid: 0fea72a978ebecb44b48f77d2db47b43, type: 2}
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!114 &11458564
 MonoBehaviour:
@@ -1328,10 +1328,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: normal
   effectSuccess: {fileID: 100006, guid: 59ae907b6d92eca429919ceca64459df, type: 2}
+  effectSpark: {fileID: 100000, guid: 0fea72a978ebecb44b48f77d2db47b43, type: 2}
   effectSuccessBack: {fileID: 100000, guid: 9f5c70097b5cb9f4e9108c2b40d7dba8, type: 2}
   oClone: {fileID: 0}
   sSuccess: {fileID: 8300000, guid: 4cd6ef2fe097b854ebaa6acd1b3825e7, type: 3}
-  rainbow: {fileID: 2800000, guid: 0049f8cc733a34b469e64643a65e47f0, type: 3}
   bossID: 0
 --- !u!212 &21258548
 SpriteRenderer:
@@ -1367,7 +1367,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1389,7 +1389,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1411,7 +1411,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1455,7 +1455,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
