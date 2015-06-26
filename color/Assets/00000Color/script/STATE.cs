@@ -9,8 +9,10 @@ public class STATE : MonoBehaviour
 		public static int mats = 0;//colored mat
 		public static int matsAll = 0;//number of all mats
 		public static int buzz = 0;//number of buzz
+		public static int buzzScore = 0;//number of buzz
 		public static int stars = 3;
 		public static int LEVEL = 3;
+		public static int SCORE = 0;
 		private GameObject oCamera;
 		tk2dTextMesh stateText;
 		MANAGER manager;

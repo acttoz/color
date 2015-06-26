@@ -217,6 +217,7 @@
      <Compile Include="Assets\Highscore\Script\Highscore.cs" />
      <Compile Include="Assets\MANAGER.cs" />
      <Compile Include="Assets\MANAGER_START.cs" />
+     <Compile Include="Assets\Score.cs" />
      <Compile Include="Assets\StarCount.cs" />
      <Compile Include="Assets\StarPop.cs" />
      <Compile Include="Assets\StarTimer.cs" />

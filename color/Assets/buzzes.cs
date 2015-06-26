@@ -21,7 +21,11 @@ public class buzzes : MonoBehaviour
 
 						transform.position = Vector3.MoveTowards (transform.position, new Vector3 (3.3f, 2.4f, 0), step);
 						if (transform.position == new Vector3 (3.3f, 2.4f, 0)) {
-								Instantiate (oEffectScore, this.transform.position, Quaternion.identity);
+								STATE.buzz--;
+								STATE.SCORE += (STATE.buzzScore += 5);
+				oScore.SendMessage("Collect");
+								if (STATE.buzzScore == 0)
+										STATE.buzzScore = 0;
 								Destroy (this.gameObject);
 						}
 				}

@@ -160,8 +160,9 @@ public class color_mat : MonoBehaviour
 						audio.Stop ();
 //				if (whiteMat.animation.isPlaying)
 //						whiteMat.animation.Stop ();
-				if (animation.isPlaying)
+				if (animation.isPlaying) {
 						animation.Stop ();
+				}
 //				pattern.enabled = false;
 //				oClone.SetActive (false);
 //				saturation.enabled = true;
