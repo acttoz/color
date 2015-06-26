@@ -122,15 +122,15 @@ public class finger_gesture : MonoBehaviour
 						return;
 				switch (e.Selection.name) {
 		 
-				case  "btn_brush":
-						e.Selection.gameObject.animation.Play ();
+				case  "police":
+						//e.Selection.gameObject.animation.Play ();
 						Component_STATE.cameraHover (true);
 						state = "brush";
 						animator.SetBool ("artist", true);
 						break;
 			 
-				case  "btn_hammer":
-						e.Selection.gameObject.animation.Play ();
+				case  "artist":
+						//e.Selection.gameObject.animation.Play ();
 						Component_STATE.cameraHover (false);
 						state = "hammer";
 						animator.SetBool ("artist", false);

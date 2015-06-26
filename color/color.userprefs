@@ -1,15 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MANAGER.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\00000Color\script\finger_gesture.cs">
     <Files>
-      <File FileName="Assets\MANAGER.cs" Line="80" Column="4" />
-      <File FileName="Assets\00000Color\script\finger_gesture.cs" Line="1" Column="1" />
-      <File FileName="Assets\00000Color\script\STATE.cs" Line="1" Column="1" />
-      <File FileName="Assets\00000Color\script\color_mat.cs" Line="1" Column="1" />
-      <File FileName="Assets\00000Color\script\Mats.cs" Line="1" Column="1" />
-      <File FileName="Assets\00000Color\script\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\00000Color\script\Enemy1.cs" Line="5" Column="2" />
-      <File FileName="Assets\EasySprites\Scripts\EasySprite_HSV.cs" Line="12" Column="65" />
+      <File FileName="Assets\00000Color\script\finger_gesture.cs" Line="9" Column="1" />
+      <File FileName="Assets\Electricity Tool\Scripts\ElectricityLine3D.cs" Line="42" Column="30" />
+      <File FileName="Assets\buzzes.cs" Line="13" Column="29" />
+      <File FileName="Assets\StarPop.cs" Line="9" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

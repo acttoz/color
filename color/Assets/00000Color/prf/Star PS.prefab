@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -.707106709, y: 1.00485924e-14, z: -6.18172393e-08, w: .707106948}
-  m_LocalPosition: {x: 2.54968882, y: .0312234834, z: 0}
+  m_LocalPosition: {x: -.0322929956, y: 1.23866141, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,7 +128,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 3
     startSpeed:
-      scalar: 3.24151754
+      scalar: 4.88172579
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -245,7 +245,7 @@ ParticleSystem:
         rgba: 4278255615
       minMaxState: 2
     startSize:
-      scalar: .370000005
+      scalar: .557220042
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -814,7 +814,7 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 0
     x:
-      scalar: .527076006
+      scalar: .793776512
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -847,7 +847,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     y:
-      scalar: .527076006
+      scalar: .793776512
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -880,7 +880,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     z:
-      scalar: .527076006
+      scalar: .793776512
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -913,7 +913,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     magnitude:
-      scalar: .527076006
+      scalar: .793776512
       maxCurve:
         serializedVersion: 2
         m_Curve:

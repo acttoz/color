@@ -19,11 +19,11 @@ public class buzzes : MonoBehaviour
 				if (getScore) {
 						float step = speed * Time.deltaTime;
 
-						transform.position = Vector3.MoveTowards (transform.position, new Vector3 (3.3f, 2.4f, 0), step);
-						if (transform.position == new Vector3 (3.3f, 2.4f, 0)) {
+						transform.position = Vector3.MoveTowards (transform.position, oScore.transform.position, step);
+						if (transform.position == oScore.transform.position) {
 								STATE.buzz--;
-								STATE.SCORE += (STATE.buzzScore += 5);
-				oScore.SendMessage("Collect");
+								STATE.SCORE += (STATE.buzzScore += 1);
+								oScore.SendMessage ("Collect");
 								if (STATE.buzzScore == 0)
 										STATE.buzzScore = 0;
 								Destroy (this.gameObject);
