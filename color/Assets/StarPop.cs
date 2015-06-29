@@ -6,7 +6,7 @@ public class StarPop : MonoBehaviour
 		GameObject oScore;
 		public GameObject oEffectScore;
 		bool getScore = false;
-		private float speed = 50;
+		private float speed = 100;
 		public int starNum;
 		bool collect = false;
 		// Use this for initialization

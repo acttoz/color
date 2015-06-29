@@ -6,7 +6,7 @@ public class buzzes : MonoBehaviour
 		GameObject oScore;
 		public GameObject oEffectScore;
 		bool getScore = false;
-		private float speed = 15;
+		private float speed = 20;
 		// Use this for initialization
 		void Start ()
 		{
